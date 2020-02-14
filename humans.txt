@@ -3,7 +3,9 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Błażej Pawlak -- Co-founder
+    Jakub Jelonek -- Co-founder
+    Radosław Ratajczak -- Co-founder
 
 # THANKS
 
