@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - master # or the name of your main branch
+      - master
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -19,11 +19,13 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      - uses: sonarsource/sonarqube-scan-action@master
+      - name: SonarQube scan
+        uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      - uses: sonarsource/sonarqube-quality-gate-action@master
+      - name: SonarQube quality gate report
+        uses: sonarsource/sonarqube-quality-gate-action@master
         timeout-minutes: 5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
