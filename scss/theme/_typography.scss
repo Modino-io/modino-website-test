@@ -1,3 +1,6 @@
+@use "palette";
+@use "sass:map";
+
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
@@ -13,6 +16,7 @@
 
 html {
   font-size: 16px;
+  color: map.get(palette.$modino-colors, surface, text);
 }
 
 body {
