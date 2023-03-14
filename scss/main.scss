@@ -1,27 +1,8 @@
-@use "theme";
+@use "styles";
 @use "sass:map";
 
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
-
 :root {
-  --mdc-typography-font-family: "Nunito", sans-serif;
   --mdc-theme-primary: #004680;
-}
-
-* {
-  font-family: "Nunito", sans-serif;
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src: local("Ubuntu");
-  font-weight: 700;
-}
-
-html,
-body {
-  background-color: map.get(theme.$modino-colors, surface, background);
 }
 
 /* ==========================================================================

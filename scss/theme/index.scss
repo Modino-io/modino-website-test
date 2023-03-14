@@ -1,3 +1,11 @@
 @forward "palette";
 @forward "tokens";
 @forward "system";
+@forward "typography";
+
+@use "palette";
+@use "sass:map";
+
+* {
+  box-sizing: border-box;
+}

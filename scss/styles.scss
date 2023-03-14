@@ -1,0 +1,25 @@
+@use "theme";
+@use "sass:map";
+
+html,
+body {
+  background-color: map.get(theme.$modino-colors, surface, background);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: theme.spacing(16);
+}
+
+.m-header {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  line-height: 2rem;
+
+  &__highlight {
+    color: map.get(theme.$modino-colors, primary, 900);
+  }
+}
