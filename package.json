@@ -1,0 +1,35 @@
+{
+  "name": "modino-website",
+  "version": "1.0.0",
+  "description": "modino.io web page",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": " --no-source-map scss/main.scss:css/main.css",
+    "sass:watch": "sass --no-source-map --watch scss/main.scss:css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Modino-io/modino-cupcake-website.git"
+  },
+  "keywords": [
+    "modino",
+    "iot",
+    "security",
+    "safe",
+    "update"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Modino-io/modino-cupcake-website/issues"
+  },
+  "homepage": "https://github.com/Modino-io/modino-cupcake-website#readme",
+  "dependencies": {
+    "node-sass": "^8.0.0",
+    "sass": "^1.59.2"
+  }
+}
