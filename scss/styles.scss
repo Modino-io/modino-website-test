@@ -1,7 +1,6 @@
 @use "theme";
 @use "sass:map";
 
-html,
 body {
   background-color: map.get(theme.$modino-colors, surface, background);
 }
@@ -11,15 +10,166 @@ section {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: theme.spacing(16);
+  padding: 0 theme.spacing(16);
 }
 
 .m-header {
   font-family: "Ubuntu", sans-serif;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 3rem;
+  line-height: 4rem;
+  margin-block-end: theme.spacing(24);
 
   &__highlight {
     color: map.get(theme.$modino-colors, primary, 900);
+  }
+}
+
+.m-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  height: 145px;
+  width: 100%;
+  padding: 0 theme.spacing(32);
+  z-index: 10;
+
+  &_sticky {
+    position: fixed;
+    height: 64px;
+    background-color: map.get(theme.$modino-colors, surface, background);
+    box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%),
+      0 3px 14px 2px rgb(0 0 0 / 12%);
+    transition: all ease 500ms;
+  }
+
+  &__logo {
+    height: 50px;
+  }
+}
+
+.m-top-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  height: 100vh;
+  margin-block-end: theme.spacing(64);
+  background-image: url("../img/top_hero.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  &__wrapper {
+    max-width: 500px;
+    width: 50%;
+  }
+
+  &__title {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    margin-block-end: theme.spacing(8);
+  }
+
+  &__description {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    margin-block-end: theme.spacing(24);
+  }
+
+  &__action-button {
+  }
+
+  .m-header {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
+
+.m-mission {
+  padding-block-end: theme.spacing(80);
+
+  .m-quote {
+    position: relative;
+    width: 50%;
+    max-width: 600px;
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    &__image {
+      position: absolute;
+      top: -28px;
+      left: -57px;
+      z-index: -1;
+      width: 72px;
+      height: 72px;
+      svg {
+        width: 100%;
+        height: 100%;
+        path {
+          fill: map.get(theme.$modino-colors, surface, border);
+          fill-opacity: 0.87;
+        }
+      }
+    }
+
+    &__author {
+      display: flex;
+      align-items: center;
+      margin-block-start: theme.spacing(8);
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    &__author-image {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin-inline-end: theme.spacing(8);
+    }
+  }
+}
+
+.m-values {
+  margin-block-end: theme.spacing(64);
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 0 theme.spacing(16);
+
+    &:not(:last-of-type) {
+      border-right: 1px solid map.get(theme.$modino-colors, surface, border);
+    }
+  }
+
+  &__item-image {
+    height: 140px;
+    margin-block-end: theme.spacing(24);
+  }
+
+  &__item-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-block-end: theme.spacing(8);
+  }
+
+  &__item-description {
+    text-align: center;
   }
 }

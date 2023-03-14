@@ -11,6 +11,7 @@
 
 html {
   font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 body {
@@ -24,7 +25,6 @@ body {
   box-sizing: border-box;
 }
 
-html,
 body {
   background-color: #fbfbfb;
 }
@@ -34,20 +34,165 @@ section {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 
 .m-header {
   font-family: "Ubuntu", sans-serif;
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 3rem;
+  line-height: 4rem;
+  margin-block-end: 3rem;
 }
 .m-header__highlight {
   color: #004680;
 }
 
+.m-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  height: 145px;
+  width: 100%;
+  padding: 0 4rem;
+  z-index: 10;
+}
+.m-menu_sticky {
+  position: fixed;
+  height: 64px;
+  background-color: #fbfbfb;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  transition: all ease 500ms;
+}
+.m-menu__logo {
+  height: 50px;
+}
+
+.m-top-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  margin-block-end: 8rem;
+  background-image: url("../img/top_hero.svg");
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+.m-top-hero__wrapper {
+  max-width: 500px;
+  width: 50%;
+}
+.m-top-hero__title {
+  font-size: 3.5rem;
+  line-height: 4rem;
+  margin-block-end: 1rem;
+}
+.m-top-hero__description {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin-block-end: 3rem;
+}
+.m-top-hero .m-header {
+  font-size: 3.5rem;
+  line-height: 4rem;
+}
+
+.m-mission {
+  padding-block-end: 10rem;
+}
+.m-mission .m-quote {
+  position: relative;
+  width: 50%;
+  max-width: 600px;
+}
+.m-mission .m-quote__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.m-mission .m-quote__image {
+  position: absolute;
+  top: -28px;
+  left: -57px;
+  z-index: -1;
+  width: 72px;
+  height: 72px;
+}
+.m-mission .m-quote__image svg {
+  width: 100%;
+  height: 100%;
+}
+.m-mission .m-quote__image svg path {
+  fill: #e4e4e4;
+  fill-opacity: 0.87;
+}
+.m-mission .m-quote__author {
+  display: flex;
+  align-items: center;
+  margin-block-start: 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.m-mission .m-quote__author-image {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-inline-end: 1rem;
+}
+
+.m-values {
+  margin-block-end: 8rem;
+}
+.m-values__list {
+  display: flex;
+  flex-direction: row;
+}
+.m-values__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 0 2rem;
+}
+.m-values__item:not(:last-of-type) {
+  border-right: 1px solid #e4e4e4;
+}
+.m-values__item-image {
+  height: 140px;
+  margin-block-end: 3rem;
+}
+.m-values__item-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-block-end: 1rem;
+}
+.m-values__item-description {
+  text-align: center;
+}
+
 :root {
   --mdc-theme-primary: #004680;
+}
+
+cite {
+  font-style: normal;
+}
+
+blockquote {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+body,
+html {
+  margin: 0;
 }
 
 /* ==========================================================================
