@@ -1,100 +1,53 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Modino - Safe and secure updates for IoT</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafafa" />
 
-<head>
-  <meta charset="utf-8">
-  <title>Modino - Safe and secure updates for IoT</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
 
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+      var submitted = false;
+    </script>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
-
-  <script type="text/javascript">var submitted = false;</script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158512110-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-158512110-1');
-  </script>
-</head>
-
-<body>
-  <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
-
-  <!-- Add your site or application content here -->
-  <div class="main">
-    <div class="logo">
-      <img src="img/logo.svg" alt="Modino.io logo" />
-    </div>
-    <div class="signup_form">
-      <form name="gform" id="gform" enctype="text/plain" style="font-size:19px;"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSdxd-vdE0mMhVWXk7W984AZANColX6B99SxC6nWYhXwkMrowg/formResponse"
-        target="hidden_iframe" onsubmit="submitted=true;">
-
-        <input type="email" tabindex="-1" class="email-field" name="entry.178096326" required id="entry.178096326"
-          placeholder="Your email address..." autofocus>
-        <input type="submit" value="Sign me up!" id="validate" class="submit-button">
-      </form>
-    </div>
-  </div>
-
-
-  <!-- Helpers -->
-  <iframe title="Helper form submission frame" name="hidden_iframe" id="hidden_iframe" style="display:none;"
-    onload="if(submitted) {}"></iframe>
-
-  <!-- Scripts -->
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"
-    integrity="sha512-0QDLUJ0ILnknsQdYYjG7v2j8wERkKufvjBNmng/EdR/s/SE7X8cQ9y0+wMzuQT0lfXQ/NhG+zhmHNOWTUS3kMA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-
-  <script type="text/javascript">
-    $('#gform').on('submit', function (e) {
-      $('#gform *').fadeOut(0);
-      $('#gform').prepend('Thanks for signing up! We\'ll get back to you as soon as we launch.');
-    });
-  </script>
-
-  <script type="text/javascript">
-    function validateEmail(emailAddress) {
-      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(emailAddress);
-    }
-    if (screen && screen.width < 780) {
-      function validate() {
-        var emailValue = document.getElementById("entry.178096326").value;
-        if (!validateEmail(emailValue)) {
-          document.getElementById("entry.178096326").className += " red-border formInvalid";
-          alert("Please provide a valid email address");
-          document.getElementById("entry.178096326").removeAttribute("formInvalid")
-
-          return false;
-        }
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-158512110-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
-    }
+      gtag("js", new Date());
 
-    $("#validate").bind("click", validate);
-  </script>
+      gtag("config", "UA-158512110-1");
+    </script>
+  </head>
 
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
