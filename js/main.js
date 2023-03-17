@@ -12,7 +12,7 @@ document.addEventListener("scroll", () => {
     menu.classList.remove("m-menu_sticky");
   }
 
-  if (mainCtaButton.getBoundingClientRect().bottom <= 50) {
+  if (menuCtaButton && mainCtaButton.getBoundingClientRect().bottom <= 50) {
     menuCtaButton.classList.remove("mdc-button--outlined");
     menuCtaButton.classList.add("mdc-button--raised");
   } else {

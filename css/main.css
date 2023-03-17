@@ -25,15 +25,32 @@ body {
   box-sizing: border-box;
 }
 
+.mdc-button {
+  border-radius: 6px;
+}
+
+[class*=mdc-button] {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  text-transform: none;
+}
+
 body {
   background-color: #fbfbfb;
+  overflow-x: hidden;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   padding: 0 2rem;
 }
 
@@ -55,8 +72,17 @@ section {
   top: 0;
   height: 145px;
   width: 100%;
-  padding: 0 4rem;
-  z-index: 10;
+  z-index: 2;
+}
+.m-menu__navigation {
+  width: 100%;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 .m-menu_sticky {
   position: fixed;
@@ -70,19 +96,31 @@ section {
 }
 
 .m-top-hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   height: 100vh;
   margin-block-end: 8rem;
+}
+.m-top-hero::before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35vw, calc(-50vh - 6vw));
+  width: 120vw;
+  height: 100%;
   background-image: url("../img/top_hero.svg");
-  background-position: top right;
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
 .m-top-hero__wrapper {
-  max-width: 500px;
-  width: 50%;
+  width: 500px;
 }
 .m-top-hero__title {
   font-size: 3.5rem;
@@ -95,7 +133,14 @@ section {
   font-weight: 400;
   margin-block-end: 3rem;
 }
-.m-top-hero .m-header {
+.m-top-hero__action-button {
+  padding: 0.75rem 2rem;
+  height: unset;
+}
+.m-top-hero__action-button .mdc-button__label {
+  display: block;
+}
+.m-top-hero .m-header__title {
   font-size: 3.5rem;
   line-height: 4rem;
 }
@@ -118,7 +163,7 @@ section {
 .m-mission .m-quote__image {
   position: absolute;
   top: -28px;
-  left: -57px;
+  left: -53px;
   z-index: -1;
   width: 72px;
   height: 72px;
@@ -129,7 +174,6 @@ section {
 }
 .m-mission .m-quote__image svg path {
   fill: #e4e4e4;
-  fill-opacity: 0.87;
 }
 .m-mission .m-quote__author {
   display: flex;
@@ -157,7 +201,15 @@ section {
   flex-direction: column;
   align-items: center;
   flex: 1;
-  padding: 0 2rem;
+}
+.m-values__item:first-of-type {
+  padding-inline-end: 3rem;
+}
+.m-values__item:last-of-type {
+  padding-inline-start: 3rem;
+}
+.m-values__item:not(:last-of-type):not(:first-of-type) {
+  padding: 0 3rem;
 }
 .m-values__item:not(:last-of-type) {
   border-right: 1px solid #e4e4e4;
@@ -175,6 +227,32 @@ section {
   text-align: center;
 }
 
+@media screen and (max-width: 480px) {
+  .m-header {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .m-menu__cta-button {
+    display: none;
+  }
+  .m-top-hero {
+    background-position: top 0 right 25%;
+  }
+  .m-top-hero__wrapper {
+    position: relative;
+    top: -20vh;
+    width: unset;
+  }
+  .m-top-hero__title {
+    font-size: 2.375rem;
+    line-height: 2.375rem;
+  }
+  .m-top-hero__description {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-block-end: 1.5rem;
+  }
+}
 :root {
   --mdc-theme-primary: #004680;
 }
