@@ -73,8 +73,16 @@ section {
   }
 
   &__cta-button {
-    --mdc-outlined-button-outline-color: #004680;
-    --mdc-outlined-button-hover-state-layer-color: #e4e9ed;
+    --mdc-outlined-button-outline-color: #{map.get(
+        theme.$modino-colors,
+        primary,
+        900
+      )};
+    --mdc-outlined-button-hover-state-layer-color: #{map.get(
+        theme.$modino-colors,
+        secondary-2,
+        50
+      )};
     --mdc-outlined-button-focus-state-layer-opacity: 1;
     --mdc-outlined-button-pressed-state-layer-opacity: 1;
 
@@ -85,14 +93,14 @@ section {
     &.mdc-ripple-upgraded--background-focused {
       .mdc-button__ripple {
         &:before {
-          background-color: #bac7d4;
+          background-color: map.get(theme.$modino-colors, secondary-2, 100);
         }
       }
     }
 
     .mdc-button__ripple {
       &:after {
-        background-color: #8ea3b7;
+        background-color: map.get(theme.$modino-colors, secondary-2, 200);
         z-index: 1;
       }
     }
