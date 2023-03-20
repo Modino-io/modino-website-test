@@ -43,7 +43,8 @@ body {
 }
 
 main {
-  max-width: 960px;
+  max-width: 1240px;
+  padding: 0 4rem;
   margin: 0 auto;
 }
 
@@ -51,17 +52,21 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
 }
 
 .m-header {
   font-family: "Ubuntu", sans-serif;
   font-size: 3rem;
   line-height: 4rem;
-  margin-block-end: 3rem;
+  margin: 3rem 0;
 }
 .m-header__highlight {
   color: #004680;
+}
+
+.highlight {
+  color: #004680;
+  font-weight: 700;
 }
 
 .m-menu {
@@ -69,8 +74,8 @@ section {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  top: 0;
-  height: 145px;
+  top: 3rem;
+  height: px;
   width: 100%;
   z-index: 2;
 }
@@ -102,7 +107,7 @@ section {
   align-items: flex-start;
   justify-content: center;
   height: 100vh;
-  margin-block-end: 8rem;
+  margin-block-end: 5rem;
 }
 .m-top-hero::before {
   content: "";
@@ -146,7 +151,7 @@ section {
 }
 
 .m-mission {
-  padding-block-end: 10rem;
+  padding-block-end: 7rem;
 }
 .m-mission .m-quote {
   position: relative;
@@ -154,19 +159,23 @@ section {
   max-width: 600px;
 }
 .m-mission .m-quote__text {
-  display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
+  word-break: break-word;
+}
+.m-mission .m-quote span {
+  position: relative;
 }
 .m-mission .m-quote__image {
   position: absolute;
-  top: -28px;
-  left: -53px;
+  top: -37px;
+  left: -54px;
   z-index: -1;
-  width: 72px;
-  height: 72px;
+  width: 100px;
+  height: 100px;
 }
 .m-mission .m-quote__image svg {
   width: 100%;
@@ -178,19 +187,20 @@ section {
 .m-mission .m-quote__author {
   display: flex;
   align-items: center;
-  margin-block-start: 1rem;
+  justify-content: center;
   font-size: 1rem;
   line-height: 1.5rem;
+  margin-block-start: 1rem;
 }
 .m-mission .m-quote__author-image {
-  border-radius: 50%;
   width: 50px;
   height: 50px;
+  border-radius: 50%;
   margin-inline-end: 1rem;
 }
 
 .m-values {
-  margin-block-end: 8rem;
+  margin-block-end: 5rem;
 }
 .m-values__list {
   display: flex;
@@ -216,32 +226,50 @@ section {
 }
 .m-values__item-image {
   height: 140px;
+  padding-block-start: 2rem;
   margin-block-end: 3rem;
 }
 .m-values__item-title {
   font-size: 1.5rem;
   line-height: 2rem;
+  margin: 0;
   margin-block-end: 1rem;
 }
 .m-values__item-description {
+  margin: 0;
+  padding-block-end: 2rem;
+}
+.m-values__item-image, .m-values__item-title, .m-values__item-description {
   text-align: center;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: 1.5rem;
 }
 
 @media screen and (max-width: 480px) {
+  main {
+    padding: 0 1.5rem;
+  }
   .m-header {
     font-size: 2rem;
     line-height: 2rem;
+    margin: 2rem 0;
   }
   .m-menu__cta-button {
     display: none;
   }
   .m-top-hero {
-    background-position: top 0 right 25%;
+    text-align: center;
+    margin-block-end: 2rem;
+  }
+  .m-top-hero::before {
+    transform: translate(calc(-50vw - 2vh), -47vh);
+    background-size: 180%;
   }
   .m-top-hero__wrapper {
     position: relative;
     top: -20vh;
-    width: unset;
+    width: 100%;
+    align-items: center;
   }
   .m-top-hero__title {
     font-size: 2.375rem;
@@ -251,6 +279,61 @@ section {
     font-size: 1rem;
     line-height: 1.25rem;
     margin-block-end: 1.5rem;
+  }
+  .m-mission {
+    padding-block-end: 4rem;
+  }
+  .m-mission .m-quote {
+    width: 100%;
+  }
+  .m-mission .m-quote__text {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .m-mission .m-quote__image {
+    width: 80px;
+    height: 80px;
+    top: -37px;
+    left: -25px;
+  }
+  .m-values {
+    margin-block-end: 2rem;
+  }
+  .m-values__list {
+    display: flex;
+    flex-direction: column;
+  }
+  .m-values__item {
+    margin-block-start: 1rem;
+  }
+  .m-values__item:first-of-type {
+    padding-inline-end: 0;
+  }
+  .m-values__item:last-of-type {
+    padding-inline-start: 0;
+  }
+  .m-values__item:not(:last-of-type):not(:first-of-type) {
+    padding: 0;
+  }
+  .m-values__item:not(:last-of-type) {
+    border-right: none;
+  }
+  .m-values__item-image {
+    height: 100px;
+    padding-block-start: 1.5rem;
+    margin-block-end: 1.5rem;
+  }
+  .m-values__item-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .m-values__item-description {
+    padding-block-end: 2rem;
+  }
+  .m-values__item-image, .m-values__item-title, .m-values__item-description {
+    text-align: center;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
 }
 :root {
