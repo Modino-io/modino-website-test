@@ -25,8 +25,10 @@ document.addEventListener("scroll", () => {
   ) {
     menuCtaButton.classList.remove("mdc-button--outlined");
     menuCtaButton.classList.add("mdc-button--unelevated");
+    menuCtaButton.classList.add("cta-accent-button");
   } else {
     menuCtaButton.classList.add("mdc-button--outlined");
     menuCtaButton.classList.remove("mdc-button--unelevated");
+    menuCtaButton.classList.remove("cta-accent-button");
   }
 });
