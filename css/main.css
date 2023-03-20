@@ -40,6 +40,7 @@ body {
 body {
   background-color: #fbfbfb;
   overflow-x: hidden;
+  padding-block-start: 3rem;
 }
 
 main {
@@ -70,28 +71,30 @@ section {
 }
 
 .m-menu {
+  position: sticky;
+  top: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  top: 3rem;
-  height: px;
-  width: 100%;
+  flex-grow: 1;
   z-index: 2;
 }
+.m-menu__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
 .m-menu__navigation {
-  width: 100%;
-  justify-self: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 960px;
+  justify-self: center;
+  flex-grow: 1;
+  height: 84px;
+  max-width: 1240px;
+  padding: 0 4rem;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 .m-menu_sticky {
-  position: fixed;
-  height: 64px;
   background-color: #fbfbfb;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
   transition: all ease 500ms;
@@ -246,6 +249,9 @@ section {
 }
 
 @media screen and (max-width: 480px) {
+  body {
+    padding-block-start: 1.5rem;
+  }
   main {
     padding: 0 1.5rem;
   }
@@ -253,6 +259,13 @@ section {
     font-size: 2rem;
     line-height: 2rem;
     margin: 2rem 0;
+  }
+  .m-menu {
+    margin-block-start: 1.5rem;
+  }
+  .m-menu__navigation {
+    height: 46px;
+    padding: 0 1.5rem;
   }
   .m-menu__cta-button {
     display: none;
@@ -262,8 +275,9 @@ section {
     margin-block-end: 2rem;
   }
   .m-top-hero::before {
-    transform: translate(calc(-50vw - 2vh), -47vh);
+    transform: translate(calc(-50vw - 3vh), -70vh);
     background-size: 180%;
+    height: 120%;
   }
   .m-top-hero__wrapper {
     position: relative;

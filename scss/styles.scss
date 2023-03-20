@@ -4,6 +4,7 @@
 body {
   background-color: map.get(theme.$modino-colors, surface, background);
   overflow-x: hidden;
+  padding-block-start: theme.spacing(24);
 }
 
 main {
@@ -35,30 +36,32 @@ section {
 }
 
 .m-menu {
+  position: sticky;
+  top: 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  top: theme.spacing(24);
-  height: px;
-  width: 100%;
-
+  flex-grow: 1;
   z-index: 2;
 
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
   &__navigation {
-    width: 100%;
-    justify-self: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 960px;
+    justify-self: center;
+    flex-grow: 1;
+    height: 84px;
+    max-width: 1240px;
+    padding: 0 theme.spacing(32);
     margin: 0 auto;
-    padding: 0 theme.spacing(16);
   }
 
   &_sticky {
-    position: fixed;
-    height: 64px;
     background-color: map.get(theme.$modino-colors, surface, background);
     box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%),
       0 3px 14px 2px rgb(0 0 0 / 12%);
@@ -243,6 +246,10 @@ section {
 }
 
 @media screen and (max-width: 480px) {
+  body {
+    padding-block-start: theme.spacing(12);
+  }
+
   main {
     padding: 0 theme.spacing(12);
   }
@@ -254,6 +261,13 @@ section {
   }
 
   .m-menu {
+    margin-block-start: theme.spacing(12);
+
+    &__navigation {
+      height: 46px;
+      padding: 0 theme.spacing(12);
+    }
+
     &__cta-button {
       display: none;
     }
@@ -264,8 +278,9 @@ section {
     margin-block-end: theme.spacing(16);
 
     &::before {
-      transform: translate(calc(-50vw - 2vh), calc(-50vh + 3vh));
+      transform: translate(calc(-50vw - 3vh), calc(-50vh - 20vh));
       background-size: 180%;
+      height: 120%;
     }
 
     &__wrapper {

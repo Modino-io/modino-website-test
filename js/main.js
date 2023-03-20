@@ -1,4 +1,5 @@
 const menu = document.getElementsByClassName("m-menu")[0];
+const menuNav = document.getElementsByClassName("m-menu__navigation")[0];
 const menuCtaButton = menu.getElementsByClassName("m-menu__cta-button")[0];
 
 const mainCtaButton = document.getElementById("main-cta-button");
@@ -12,15 +13,16 @@ const menuCtaButtonRipple = new MDCRipple(
 );
 
 document.addEventListener("scroll", () => {
-  let scrollTop = window.scrollY;
-
-  if (scrollTop > 0) {
+  if (menuNav.getBoundingClientRect().top == 0) {
     menu.classList.add("m-menu_sticky");
   } else {
     menu.classList.remove("m-menu_sticky");
   }
 
-  if (menuCtaButton && mainCtaButton.getBoundingClientRect().bottom <= 50) {
+  if (
+    menuCtaButton &&
+    mainCtaButton.getBoundingClientRect().top <= mainCtaButton.clientHeight
+  ) {
     menuCtaButton.classList.remove("mdc-button--outlined");
     menuCtaButton.classList.add("mdc-button--unelevated");
   } else {
