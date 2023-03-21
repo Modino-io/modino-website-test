@@ -91,6 +91,7 @@ section {
   display: flex;
   flex-grow: 1;
   z-index: 2;
+  transition: all ease 100ms;
 }
 .m-menu__wrapper {
   display: flex;
@@ -114,8 +115,11 @@ section {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
   transition: all ease 500ms;
 }
+.m-menu_sticky .m-menu__logo {
+  content: url("./../img/MODINO_logo_short.svg");
+}
 .m-menu__logo {
-  height: 50px;
+  width: 140px;
 }
 .m-menu__cta-button {
   --mdc-outlined-button-outline-color: #004680;
@@ -300,6 +304,9 @@ section {
   }
   .m-menu__cta-button {
     display: none;
+  }
+  .m-menu__logo {
+    width: 100px;
   }
   .m-top-hero {
     text-align: center;
