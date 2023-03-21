@@ -12,7 +12,11 @@ const menuCtaButtonRipple = new MDCRipple(
   menu.getElementsByClassName("m-menu__cta-button")[0]
 );
 
-document.addEventListener("scroll", () => {
+setMenu();
+
+document.addEventListener("scroll", setMenu);
+
+function setMenu() {
   if (menuNav.getBoundingClientRect().top == 0) {
     menu.classList.add("m-menu_sticky");
   } else {
@@ -31,4 +35,4 @@ document.addEventListener("scroll", () => {
     menuCtaButton.classList.remove("mdc-button--unelevated");
     menuCtaButton.classList.remove("cta-accent-button");
   }
-});
+}
