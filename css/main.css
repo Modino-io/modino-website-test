@@ -171,8 +171,8 @@ section {
   margin-block-end: 1rem;
 }
 .m-top-hero__description {
-  font-size: 1.25rem;
-  line-height: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 400;
   margin-block-end: 3rem;
 }
@@ -192,49 +192,65 @@ section {
   padding-block-end: 7rem;
 }
 .m-mission .m-quote {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   position: relative;
-  width: 50%;
-  max-width: 600px;
 }
 .m-mission .m-quote__text {
+  display: inline-flex;
+  position: relative;
+  flex: 2;
+  background-color: #004680;
+  color: #fbfbfb;
+  padding: 2rem 3rem;
+  border-radius: 6px;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  max-width: 600px;
   font-size: 1.5rem;
   line-height: 2rem;
-  word-break: break-word;
-}
-.m-mission .m-quote span {
-  position: relative;
-}
-.m-mission .m-quote__image {
-  position: absolute;
-  top: -37px;
-  left: -54px;
-  z-index: -1;
-  width: 100px;
-  height: 100px;
-}
-.m-mission .m-quote__image svg {
-  width: 100%;
-  height: 100%;
-}
-.m-mission .m-quote__image svg path {
-  fill: #e4e4e4;
 }
 .m-mission .m-quote__author {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: -2rem;
+  left: 3rem;
   font-size: 1rem;
   line-height: 1.5rem;
+  color: rgba(0, 0, 0, 0.87);
   margin-block-start: 1rem;
 }
 .m-mission .m-quote__author-image {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  border: 4px solid #fbfbfb;
   margin-inline-end: 1rem;
+}
+.m-mission .m-quote__explanation-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  top: 2rem;
+  left: -1.5rem;
+  flex: 1;
+  max-width: 300px;
+  padding: 2rem 1.5rem;
+  background-color: #fbfbfb;
+  border-radius: 6px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.m-mission .m-quote__explanation-title {
+  font-weight: 700;
+  margin: 0;
+  margin-block-end: 1.5rem;
+}
+.m-mission .m-quote__explanation-description {
+  margin-block-end: 0;
 }
 
 .m-values {
