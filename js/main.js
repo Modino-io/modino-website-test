@@ -17,7 +17,8 @@ setMenu();
 document.addEventListener("scroll", setMenu);
 
 function setMenu() {
-  if (menuNav.getBoundingClientRect().top == 0) {
+  menuNav.getBoundingClientRect().top;
+  if (menuNav.getBoundingClientRect().top < window.scrollY) {
     menu.classList.add("m-menu_sticky");
   } else {
     menu.classList.remove("m-menu_sticky");
