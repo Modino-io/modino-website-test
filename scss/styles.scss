@@ -8,12 +8,12 @@ body {
 
 body {
   background-color: map.get(theme.$modino-colors, surface, background);
-  padding-block-start: theme.spacing(24);
+  padding-block-start: theme.spacing(12);
 }
 
 main {
   position: relative;
-  top: -84px;
+  top: -46px;
   max-width: 1240px;
   margin: 0 auto;
 }
@@ -22,14 +22,14 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 theme.spacing(32);
+  padding: theme.spacing(0, 12);
 }
 
 .m-header {
   font-family: "Ubuntu", sans-serif;
-  font-size: 3rem;
-  line-height: 4rem;
-  margin: theme.spacing(24, 0);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin: theme.spacing(16) 0;
 
   &__highlight {
     color: map.get(theme.$modino-colors, primary, 900);
@@ -61,11 +61,15 @@ section {
     align-items: center;
     justify-content: space-between;
     justify-self: center;
-    height: 84px;
+    height: 46px;
     max-width: 1240px;
-    padding: 0 theme.spacing(32);
+    padding: 0 theme.spacing(12);
     margin: 0 auto;
     flex-grow: 1;
+  }
+
+  &__cta-button {
+    display: none;
   }
 
   &_sticky {
@@ -79,7 +83,7 @@ section {
   }
 
   &__logo {
-    width: 140px;
+    width: 100px;
   }
 
   &__cta-button {
@@ -124,7 +128,8 @@ section {
   align-items: flex-start;
   justify-content: center;
   height: 100vh;
-  margin-block-end: theme.spacing(40);
+  text-align: center;
+  margin-block-end: theme.spacing(16);
 
   &::before {
     content: "";
@@ -133,8 +138,9 @@ section {
     z-index: -1;
     left: 50%;
     top: 50%;
-    transform: translate(calc(-50vw + 10vw), calc(-50vh - 25vw));
-    width: 130vw;
+
+    transform: translate(-50%, calc(-50% - 12vw));
+    width: calc(70vh + 70vw);
     height: 130vh;
     background-image: url("../img/top_hero.svg");
     background-repeat: no-repeat;
@@ -143,20 +149,24 @@ section {
   }
 
   &__wrapper {
-    width: 500px;
+    position: relative;
+    top: -20vh;
+    width: 100%;
+    align-items: center;
   }
 
   &__title {
-    font-size: 3.5rem;
-    line-height: 4rem;
-    margin-block-end: theme.spacing(8);
+    font-size: 2.375rem;
+    line-height: 2.375rem;
   }
 
   &__description {
-    font-size: 1.5rem;
-    line-height: 2rem;
     font-weight: 400;
-    margin-block-end: theme.spacing(24);
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-block-end: theme.spacing(12);
   }
 
   &__action-button {
@@ -175,25 +185,22 @@ section {
 }
 
 .m-mission {
-  padding-block-end: theme.spacing(56);
+  margin-block-end: theme.spacing(32);
 
   .m-quote {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     position: relative;
-    max-width: 680px;
-    margin-block-end: theme.spacing(48);
+    width: 100%;
+    margin-block-end: theme.spacing(32);
 
     &__text {
       display: inline-block;
-      position: relative;
       text-align: center;
-      flex: 2;
-      font-size: 1.5rem;
-      line-height: 2rem;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
       word-break: break-word;
-      text-indent: 0;
     }
 
     span {
@@ -202,11 +209,11 @@ section {
 
     &__image {
       position: absolute;
-      top: -37px;
-      left: -54px;
       z-index: -1;
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
+      top: -37px;
+      left: -30px;
 
       svg {
         width: 100%;
@@ -225,7 +232,7 @@ section {
       align-items: center;
       justify-content: center;
       position: absolute;
-      right: 0;
+      width: 100%;
       font-size: 1rem;
       line-height: 1.5rem;
       color: map.get(theme.$modino-colors, surface, text);
@@ -243,11 +250,12 @@ section {
 
 .m-explanation {
   display: flex;
-  flex-direction: row;
-  gap: theme.spacing(48);
+  flex-direction: column;
+  gap: theme.spacing(16);
   background-color: map.get(theme.$modino-colors, primary, 900);
   border-radius: theme.$border-radius;
-  padding: theme.spacing(16, 32);
+  padding: theme.spacing(16, 12);
+  margin-block-end: theme.spacing(32);
 
   &__image {
     flex: 1;
@@ -271,27 +279,26 @@ section {
   &__title {
     font-family: "Ubuntu";
     font-weight: 700;
-    font-size: 2rem;
-    line-height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     margin: 0;
     margin-block-end: theme.spacing(12);
   }
 
   &__description {
-    font-size: 1.5rem;
-    line-height: 2rem;
     font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     margin: 0;
   }
 }
 
 .m-values {
-  margin-block-end: theme.spacing(40);
+  margin-block-end: theme.spacing(8);
 
   &__list {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
   }
 
   &__item {
@@ -302,181 +309,171 @@ section {
   }
 
   &__item-image {
-    height: 180px;
-    padding-block-start: theme.spacing(16);
-    margin-block-end: theme.spacing(24);
+    height: 100px;
+    margin-block-end: theme.spacing(12);
   }
 
   &__item-title {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     margin: 0;
     margin-block-end: theme.spacing(8);
   }
 
   &__item-description {
     margin: 0;
-    padding-block-end: theme.spacing(16);
+    margin-block-end: theme.spacing(24);
   }
 
   &__item-image,
   &__item-title,
   &__item-description {
     text-align: center;
-    padding-inline-start: theme.spacing(12);
-    padding-inline-end: theme.spacing(12);
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (min-width: 599px) {
   body {
-    padding-block-start: theme.spacing(12);
+    padding-block-start: theme.spacing(24);
   }
 
   main {
-    top: -46px;
+    top: -84px;
   }
 
   section {
-    padding: 0 theme.spacing(12);
+    padding: theme.spacing(0, 32);
   }
 
   .m-header {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin: theme.spacing(16) 0;
+    font-size: 3rem;
+    line-height: 4rem;
+    margin: theme.spacing(24, 0);
   }
 
   .m-menu {
-    margin-block-start: theme.spacing(12);
-
     &__navigation {
-      height: 46px;
-      padding: 0 theme.spacing(12);
-    }
-
-    &__cta-button {
-      display: none;
+      height: 84px;
+      padding: 0 theme.spacing(32);
     }
 
     &__logo {
-      width: 100px;
+      width: 140px;
+    }
+
+    &__cta-button {
+      display: block;
     }
   }
 
   .m-top-hero {
-    text-align: center;
-    margin-block-end: theme.spacing(16);
+    margin-block-end: theme.spacing(40);
 
     &::before {
-      transform: translate(-50%, calc(-50% - 12vw));
-      width: calc(70vh + 70vw);
+      transform: translate(calc(-50vw + 10vw), calc(-50vh - 25vw));
+      width: 130vw;
     }
 
     &__wrapper {
-      position: relative;
-      top: -20vh;
-      width: 100%;
-      align-items: center;
+      text-align: left;
+      top: unset;
+      width: 500px;
+      align-items: left;
     }
 
     &__title {
-      font-size: 2.375rem;
-      line-height: 2.375rem;
+      font-size: 3.5rem;
+      line-height: 4rem;
+      margin-block-end: theme.spacing(8);
     }
 
     &__description {
-      font-size: 1rem;
-      line-height: 1.25rem;
-      max-width: 350px;
-      margin: 0 auto;
-      margin-block-end: theme.spacing(12);
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: unset;
+      max-width: unset;
+      margin-block-end: theme.spacing(24);
     }
   }
 
   .m-mission {
-    padding-block-end: theme.spacing(32);
+    margin-block-end: theme.spacing(48);
 
     .m-quote {
-      flex-direction: column;
-      width: 100%;
+      flex-direction: row;
+      max-width: 680px;
+      margin-block-end: theme.spacing(48);
 
       &__text {
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        max-width: unset;
-        margin-block-end: theme.spacing(32);
+        font-size: 1.5rem;
+        line-height: 2rem;
       }
 
       &__image {
-        width: 80px;
-        height: 80px;
         top: -37px;
-        left: -30px;
+        left: -54px;
+        width: 100px;
+        height: 100px;
       }
 
       &__author {
-        width: 100%;
+        right: 0;
+        width: initial;
       }
     }
   }
 
   .m-explanation {
-    display: flex;
-    flex-direction: column;
-    gap: theme.spacing(16);
-    margin-block-end: theme.spacing(32);
+    flex-direction: row;
+    gap: theme.spacing(48);
+    padding: theme.spacing(16, 32);
+    margin-block-end: theme.spacing(64);
+
+    &__title {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    &__description {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 
   .m-values {
-    margin-block-end: theme.spacing(16);
+    margin-block-end: theme.spacing(64);
 
     &__list {
-      display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
     &__item {
       margin-block-start: theme.spacing(8);
-
-      &:first-of-type {
-        padding-inline-end: 0;
-      }
-
-      &:last-of-type {
-        padding-inline-start: 0;
-      }
-
-      &:not(:last-of-type):not(:first-of-type) {
-        padding: 0;
-      }
-
-      &:not(:last-of-type) {
-        border-right: none;
-      }
     }
 
     &__item-image {
-      height: 100px;
-      padding-block-start: theme.spacing(12);
-      margin-block-end: theme.spacing(12);
+      height: 180px;
+      margin-block-end: theme.spacing(24);
     }
 
     &__item-title {
-      font-size: 1.25rem;
-      line-height: 1.75rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
 
     &__item-description {
-      padding-block-end: theme.spacing(16);
+      margin-block-end: 0;
     }
 
     &__item-image,
     &__item-title,
     &__item-description {
       text-align: center;
-      padding-inline-start: 0;
-      padding-inline-end: 0;
+      padding-inline-start: theme.spacing(12);
+      padding-inline-end: theme.spacing(12);
     }
   }
 }
@@ -494,7 +491,7 @@ section {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1120px) {
+@media (min-width: 1000px) and (max-width: 1440px) {
   .m-top-hero {
     &::before {
       transform: translate(calc(-50% + 25vw), calc(-50% - 10vw));

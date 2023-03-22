@@ -59,12 +59,12 @@ body {
 
 body {
   background-color: #fbfbfb;
-  padding-block-start: 3rem;
+  padding-block-start: 1.5rem;
 }
 
 main {
   position: relative;
-  top: -84px;
+  top: -46px;
   max-width: 1240px;
   margin: 0 auto;
 }
@@ -73,14 +73,14 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0rem 1.5rem;
 }
 
 .m-header {
   font-family: "Ubuntu", sans-serif;
-  font-size: 3rem;
-  line-height: 4rem;
-  margin: 3rem 0rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin: 2rem 0;
 }
 .m-header__highlight {
   color: #004680;
@@ -110,11 +110,14 @@ section {
   align-items: center;
   justify-content: space-between;
   justify-self: center;
-  height: 84px;
+  height: 46px;
   max-width: 1240px;
-  padding: 0 4rem;
+  padding: 0 1.5rem;
   margin: 0 auto;
   flex-grow: 1;
+}
+.m-menu__cta-button {
+  display: none;
 }
 .m-menu_sticky {
   background-color: #fbfbfb;
@@ -125,7 +128,7 @@ section {
   content: url("./../img/MODINO_logo_short.svg");
 }
 .m-menu__logo {
-  width: 140px;
+  width: 100px;
 }
 .m-menu__cta-button {
   --mdc-outlined-button-outline-color: #004680;
@@ -151,7 +154,8 @@ section {
   align-items: flex-start;
   justify-content: center;
   height: 100vh;
-  margin-block-end: 5rem;
+  text-align: center;
+  margin-block-end: 2rem;
 }
 .m-top-hero::before {
   content: "";
@@ -160,8 +164,8 @@ section {
   z-index: -1;
   left: 50%;
   top: 50%;
-  transform: translate(-40vw, calc(-50vh - 25vw));
-  width: 130vw;
+  transform: translate(-50%, calc(-50% - 12vw));
+  width: calc(70vh + 70vw);
   height: 130vh;
   background-image: url("../img/top_hero.svg");
   background-repeat: no-repeat;
@@ -169,18 +173,22 @@ section {
   background-size: contain;
 }
 .m-top-hero__wrapper {
-  width: 500px;
+  position: relative;
+  top: -20vh;
+  width: 100%;
+  align-items: center;
 }
 .m-top-hero__title {
-  font-size: 3.5rem;
-  line-height: 4rem;
-  margin-block-end: 1rem;
+  font-size: 2.375rem;
+  line-height: 2.375rem;
 }
 .m-top-hero__description {
-  font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 400;
-  margin-block-end: 3rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  max-width: 350px;
+  margin: 0 auto;
+  margin-block-end: 1.5rem;
 }
 .m-top-hero__action-button {
   padding: 0.75rem 2rem;
@@ -195,36 +203,33 @@ section {
 }
 
 .m-mission {
-  padding-block-end: 7rem;
+  margin-block-end: 4rem;
 }
 .m-mission .m-quote {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   position: relative;
-  max-width: 680px;
-  margin-block-end: 6rem;
+  width: 100%;
+  margin-block-end: 4rem;
 }
 .m-mission .m-quote__text {
   display: inline-block;
-  position: relative;
   text-align: center;
-  flex: 2;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   word-break: break-word;
-  text-indent: 0;
 }
 .m-mission .m-quote span {
   position: relative;
 }
 .m-mission .m-quote__image {
   position: absolute;
-  top: -37px;
-  left: -54px;
   z-index: -1;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  top: -37px;
+  left: -30px;
 }
 .m-mission .m-quote__image svg {
   width: 100%;
@@ -238,7 +243,7 @@ section {
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 0;
+  width: 100%;
   font-size: 1rem;
   line-height: 1.5rem;
   color: rgba(0, 0, 0, 0.87);
@@ -253,11 +258,12 @@ section {
 
 .m-explanation {
   display: flex;
-  flex-direction: row;
-  gap: 6rem;
+  flex-direction: column;
+  gap: 2rem;
   background-color: #004680;
   border-radius: 6px;
-  padding: 2rem 4rem;
+  padding: 2rem 1.5rem;
+  margin-block-end: 4rem;
 }
 .m-explanation__image {
   flex: 1;
@@ -276,25 +282,24 @@ section {
 .m-explanation__title {
   font-family: "Ubuntu";
   font-weight: 700;
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   margin: 0;
   margin-block-end: 1.5rem;
 }
 .m-explanation__description {
-  font-size: 1.5rem;
-  line-height: 2rem;
   font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   margin: 0;
 }
 
 .m-values {
-  margin-block-end: 5rem;
+  margin-block-end: 1rem;
 }
 .m-values__list {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .m-values__item {
   display: flex;
@@ -303,145 +308,136 @@ section {
   flex: 1;
 }
 .m-values__item-image {
-  height: 180px;
-  padding-block-start: 2rem;
-  margin-block-end: 3rem;
+  height: 100px;
+  margin-block-end: 1.5rem;
 }
 .m-values__item-title {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   margin: 0;
   margin-block-end: 1rem;
 }
 .m-values__item-description {
   margin: 0;
-  padding-block-end: 2rem;
+  margin-block-end: 3rem;
 }
 .m-values__item-image, .m-values__item-title, .m-values__item-description {
   text-align: center;
-  padding-inline-start: 1.5rem;
-  padding-inline-end: 1.5rem;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (min-width: 599px) {
   body {
-    padding-block-start: 1.5rem;
+    padding-block-start: 3rem;
   }
   main {
-    top: -46px;
+    top: -84px;
   }
   section {
-    padding: 0 1.5rem;
+    padding: 0rem 4rem;
   }
   .m-header {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin: 2rem 0;
-  }
-  .m-menu {
-    margin-block-start: 1.5rem;
+    font-size: 3rem;
+    line-height: 4rem;
+    margin: 3rem 0rem;
   }
   .m-menu__navigation {
-    height: 46px;
-    padding: 0 1.5rem;
-  }
-  .m-menu__cta-button {
-    display: none;
+    height: 84px;
+    padding: 0 4rem;
   }
   .m-menu__logo {
-    width: 100px;
+    width: 140px;
+  }
+  .m-menu__cta-button {
+    display: block;
   }
   .m-top-hero {
-    text-align: center;
-    margin-block-end: 2rem;
+    margin-block-end: 5rem;
   }
   .m-top-hero::before {
-    transform: translate(-50%, calc(-50% - 12vw));
-    width: calc(70vh + 70vw);
+    transform: translate(-40vw, calc(-50vh - 25vw));
+    width: 130vw;
   }
   .m-top-hero__wrapper {
-    position: relative;
-    top: -20vh;
-    width: 100%;
-    align-items: center;
+    text-align: left;
+    top: unset;
+    width: 500px;
+    align-items: left;
   }
   .m-top-hero__title {
-    font-size: 2.375rem;
-    line-height: 2.375rem;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    margin-block-end: 1rem;
   }
   .m-top-hero__description {
-    font-size: 1rem;
-    line-height: 1.25rem;
-    max-width: 350px;
-    margin: 0 auto;
-    margin-block-end: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: unset;
+    max-width: unset;
+    margin-block-end: 3rem;
   }
   .m-mission {
-    padding-block-end: 4rem;
+    margin-block-end: 6rem;
   }
   .m-mission .m-quote {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    max-width: 680px;
+    margin-block-end: 6rem;
   }
   .m-mission .m-quote__text {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    max-width: unset;
-    margin-block-end: 4rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   .m-mission .m-quote__image {
-    width: 80px;
-    height: 80px;
     top: -37px;
-    left: -30px;
+    left: -54px;
+    width: 100px;
+    height: 100px;
   }
   .m-mission .m-quote__author {
-    width: 100%;
+    right: 0;
+    width: initial;
   }
   .m-explanation {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-block-end: 4rem;
+    flex-direction: row;
+    gap: 6rem;
+    padding: 2rem 4rem;
+    margin-block-end: 8rem;
+  }
+  .m-explanation__title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .m-explanation__description {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   .m-values {
-    margin-block-end: 2rem;
+    margin-block-end: 8rem;
   }
   .m-values__list {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
   }
   .m-values__item {
     margin-block-start: 1rem;
   }
-  .m-values__item:first-of-type {
-    padding-inline-end: 0;
-  }
-  .m-values__item:last-of-type {
-    padding-inline-start: 0;
-  }
-  .m-values__item:not(:last-of-type):not(:first-of-type) {
-    padding: 0;
-  }
-  .m-values__item:not(:last-of-type) {
-    border-right: none;
-  }
   .m-values__item-image {
-    height: 100px;
-    padding-block-start: 1.5rem;
-    margin-block-end: 1.5rem;
+    height: 180px;
+    margin-block-end: 3rem;
   }
   .m-values__item-title {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   .m-values__item-description {
-    padding-block-end: 2rem;
+    margin-block-end: 0;
   }
   .m-values__item-image, .m-values__item-title, .m-values__item-description {
     text-align: center;
-    padding-inline-start: 0;
-    padding-inline-end: 0;
+    padding-inline-start: 1.5rem;
+    padding-inline-end: 1.5rem;
   }
 }
 @media (min-width: 600px) and (max-width: 999px) {
@@ -453,7 +449,7 @@ section {
     width: 115vh;
   }
 }
-@media (min-width: 1000px) and (max-width: 1120px) {
+@media (min-width: 1000px) and (max-width: 1440px) {
   .m-top-hero::before {
     transform: translate(calc(-50% + 25vw), calc(-50% - 10vw));
     width: 100vw;
