@@ -1,13 +1,26 @@
 @use "styles";
 @use "sass:map";
+@use "theme";
 
 :root {
   --mdc-theme-primary: #004680;
+  --mdc-theme-secondary: #004680;
 }
 
 /* ==========================================================================
 Browser Upgrade Prompt
 ========================================================================== */
+
+body,
+html {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .browserupgrade {
   margin: 0.2em 0;
