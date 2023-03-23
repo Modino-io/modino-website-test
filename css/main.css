@@ -327,7 +327,7 @@ section {
   padding-inline-end: 0;
 }
 
-@media screen and (min-width: 599px) {
+@media screen and (min-width: 600px) {
   body {
     padding-block-start: 3rem;
   }
@@ -445,8 +445,11 @@ section {
     padding: 0 1.5rem;
   }
   .m-top-hero::before {
-    transform: translate(calc(-50% + 25vw), calc(-50% - 5vw));
+    transform: translate(calc(-50% + 25vw), calc(-50% - 3vw));
     width: 115vh;
+  }
+  .m-values__item-image {
+    height: 140px;
   }
 }
 @media (min-width: 1000px) and (max-width: 1440px) {

@@ -334,7 +334,7 @@ section {
   }
 }
 
-@media screen and (min-width: 599px) {
+@media screen and (min-width: 600px) {
   body {
     padding-block-start: theme.spacing(24);
   }
@@ -485,8 +485,16 @@ section {
 
   .m-top-hero {
     &::before {
-      transform: translate(calc(-50% + 25vw), calc(-50% - 5vw));
+      transform: translate(calc(-50% + 25vw), calc(-50% - 3vw));
       width: 115vh;
+    }
+  }
+
+  .m-values {
+    &__item {
+      &-image {
+        height: 140px;
+      }
     }
   }
 }
