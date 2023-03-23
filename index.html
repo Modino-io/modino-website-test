@@ -47,7 +47,7 @@
     <![endif]-->
     <main class="m-main">
       <section class="m-section m-team-section">
-        <h3 class="m-section__header">Meet the team</h3>
+        <h2 class="m-section__header">Meet the team</h2>
         <menu class="m-section__menu">
           <ul class="m-section__list">
             <li class="m-section__item">
@@ -404,7 +404,14 @@
             IoT devices <br />
             <span class="m-header__highlight">in good hands</span>
           </h2>
-          <button>Get in touch</button>
+          <button
+            class="mdc-button mdc-button--unelevated cta-accent-button"
+            onclick="window.location.href='./requestAccess.html'"
+            id="summary-cta-btn"
+          >
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Get in touch</span>
+          </button>
         </div>
         <img
           alt="illustration"
@@ -418,7 +425,12 @@
         <a href="https://www.linkedin.com/company/modino-io">
           <img alt="social" src="./img/linkedin_white.svg" />
         </a>
-        <p>© Modino.io <span id="footer-year"></span>. All rights reserved.</p>
+        <div class="m-footer__copyright">
+          <p>
+            © Modino.io <span id="footer-year"></span>. All rights reserved.
+          </p>
+          <a>Privacy policy</a>
+        </div>
       </div>
     </footer>
 

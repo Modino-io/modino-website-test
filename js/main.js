@@ -2,6 +2,9 @@ let currentTab = "founders";
 const tabs = document.querySelectorAll(".m-section__item");
 const tabButtons = document.querySelectorAll('button[role="tab"]');
 const peopleLists = document.querySelectorAll(".m-people-list");
+const summaryCtaBtn = new mdc.ripple.MDCRipple(
+  document.getElementById("summary-cta-btn")
+);
 
 const openTab = (event) => {
   const arrayOfTabs = Array.from(tabs);
