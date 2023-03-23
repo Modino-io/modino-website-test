@@ -1,8 +1,10 @@
 @use "styles";
 @use "sass:map";
+@use "theme";
 
 :root {
   --mdc-theme-primary: #004680;
+  --mdc-theme-secondary: #004680;
 }
 
 cite {
@@ -14,11 +16,6 @@ blockquote {
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
-}
-
-body,
-html {
-  margin: 0;
 }
 
 /* ==========================================================================
