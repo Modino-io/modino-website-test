@@ -9,6 +9,10 @@ body {
 body {
   background-color: map.get(theme.$modino-colors, surface, background);
   padding-block-start: theme.spacing(12);
+
+  @media screen and (min-width: 600px) {
+    padding-block-start: theme.spacing(24);
+  }
 }
 
 main {
@@ -16,6 +20,10 @@ main {
   top: -46px;
   max-width: 1240px;
   margin: 0 auto;
+
+  @media screen and (min-width: 600px) {
+    top: -84px;
+  }
 }
 
 section {
@@ -23,6 +31,14 @@ section {
   flex-direction: column;
   align-items: center;
   padding: theme.spacing(0, 12);
+
+  @media screen and (min-width: 600px) {
+    padding: theme.spacing(0, 32);
+  }
+
+  @media (min-width: 600px) and (max-width: 999px) {
+    padding: 0 theme.spacing(12);
+  }
 }
 
 .m-header {
@@ -30,6 +46,12 @@ section {
   font-size: 2rem;
   line-height: 2.5rem;
   margin: theme.spacing(16) 0;
+
+  @media screen and (min-width: 600px) {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin: theme.spacing(24, 0);
+  }
 
   &__highlight {
     color: map.get(theme.$modino-colors, primary, 900);
@@ -66,10 +88,19 @@ section {
     padding: 0 theme.spacing(12);
     margin: 0 auto;
     flex-grow: 1;
+
+    @media screen and (min-width: 600px) {
+      height: 84px;
+      padding: 0 theme.spacing(32);
+    }
   }
 
   &__cta-button {
     display: none;
+
+    @media screen and (min-width: 600px) {
+      display: block;
+    }
   }
 
   &_sticky {
@@ -84,6 +115,10 @@ section {
 
   &__logo {
     width: 100px;
+
+    @media screen and (min-width: 600px) {
+      width: 140px;
+    }
   }
 
   &__cta-button {
@@ -131,6 +166,10 @@ section {
   text-align: center;
   margin-block-end: theme.spacing(16);
 
+  @media screen and (min-width: 600px) {
+    margin-block-end: theme.spacing(40);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -138,7 +177,6 @@ section {
     z-index: -1;
     left: 50%;
     top: 50%;
-
     transform: translate(-50%, calc(-50% - 12vw));
     width: calc(70vh + 70vw);
     height: 130vh;
@@ -146,6 +184,27 @@ section {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+
+    @media screen and (min-width: 600px) {
+      transform: translate(calc(-50vw + 10vw), calc(-50vh - 25vw));
+      width: 130vw;
+    }
+
+    @media (min-width: 600px) and (max-width: 999px) {
+      transform: translate(calc(-50% + 25vw), calc(-50% - 3vw));
+      width: 115vh;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1439px) {
+      transform: translate(calc(-50% + 25vw), calc(-50% - 10vw));
+      width: 100vw;
+    }
+
+    @media (min-width: 1441px) {
+      transform: translate(calc(-50vw + 5vw), calc(-50vh - 20vw));
+      width: 130vw;
+      height: 130vh;
+    }
   }
 
   &__wrapper {
@@ -153,11 +212,24 @@ section {
     top: -20vh;
     width: 100%;
     align-items: center;
+
+    @media screen and (min-width: 600px) {
+      text-align: left;
+      top: unset;
+      width: 500px;
+      align-items: left;
+    }
   }
 
   &__title {
     font-size: 2.375rem;
     line-height: 2.375rem;
+
+    @media screen and (min-width: 600px) {
+      font-size: 3.5rem;
+      line-height: 4rem;
+      margin-block-end: theme.spacing(8);
+    }
   }
 
   &__description {
@@ -167,15 +239,19 @@ section {
     max-width: 350px;
     margin: 0 auto;
     margin-block-end: theme.spacing(12);
+
+    @media screen and (min-width: 600px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: unset;
+      max-width: unset;
+      margin-block-end: theme.spacing(24);
+    }
   }
 
   &__action-button {
     padding: theme.spacing(6, 16);
     height: unset;
-
-    .mdc-button__label {
-      display: block;
-    }
   }
 
   .m-header__title {
@@ -187,6 +263,10 @@ section {
 .m-mission {
   margin-block-end: theme.spacing(32);
 
+  @media screen and (min-width: 600px) {
+    margin-block-end: theme.spacing(48);
+  }
+
   .m-quote {
     display: flex;
     flex-direction: column;
@@ -195,12 +275,23 @@ section {
     width: 100%;
     margin-block-end: theme.spacing(32);
 
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      max-width: 680px;
+      margin-block-end: theme.spacing(48);
+    }
+
     &__text {
       display: inline-block;
       text-align: center;
       font-size: 1.25rem;
       line-height: 1.75rem;
       word-break: break-word;
+
+      @media screen and (min-width: 600px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
     }
 
     span {
@@ -214,6 +305,13 @@ section {
       height: 80px;
       top: -37px;
       left: -30px;
+
+      @media screen and (min-width: 600px) {
+        top: -37px;
+        left: -54px;
+        width: 100px;
+        height: 100px;
+      }
 
       svg {
         width: 100%;
@@ -238,6 +336,11 @@ section {
       color: map.get(theme.$modino-colors, surface, text);
       padding-block-start: theme.spacing(16);
 
+      @media screen and (min-width: 600px) {
+        right: 0;
+        width: initial;
+      }
+
       &-image {
         width: $image_size;
         height: $image_size;
@@ -256,6 +359,13 @@ section {
   border-radius: theme.$border-radius;
   padding: theme.spacing(16, 12);
   margin-block-end: theme.spacing(32);
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+    gap: theme.spacing(48);
+    padding: theme.spacing(16, 32);
+    margin-block-end: theme.spacing(64);
+  }
 
   &__image {
     flex: 1;
@@ -283,6 +393,11 @@ section {
     line-height: 2rem;
     margin: 0;
     margin-block-end: theme.spacing(12);
+
+    @media screen and (min-width: 600px) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
   }
 
   &__description {
@@ -290,15 +405,29 @@ section {
     font-size: 1.25rem;
     line-height: 1.75rem;
     margin: 0;
+
+    @media screen and (min-width: 600px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 }
 
 .m-values {
   margin-block-end: theme.spacing(8);
 
+  @media screen and (min-width: 600px) {
+    margin-block-end: theme.spacing(64);
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__item {
@@ -306,11 +435,24 @@ section {
     flex-direction: column;
     align-items: center;
     flex: 1;
+
+    @media screen and (min-width: 600px) {
+      margin-block-start: theme.spacing(8);
+    }
   }
 
   &__item-image {
     height: 100px;
     margin-block-end: theme.spacing(12);
+
+    @media (min-width: 600px) and (max-width: 999px) {
+      height: 140px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      height: 180px;
+      margin-block-end: theme.spacing(24);
+    }
   }
 
   &__item-title {
@@ -318,11 +460,20 @@ section {
     line-height: 1.75rem;
     margin: 0;
     margin-block-end: theme.spacing(8);
+
+    @media screen and (min-width: 600px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
   }
 
   &__item-description {
     margin: 0;
     margin-block-end: theme.spacing(24);
+
+    @media screen and (min-width: 600px) {
+      margin-block-end: 0;
+    }
   }
 
   &__item-image,
@@ -331,189 +482,10 @@ section {
     text-align: center;
     padding-inline-start: 0;
     padding-inline-end: 0;
-  }
-}
 
-@media screen and (min-width: 600px) {
-  body {
-    padding-block-start: theme.spacing(24);
-  }
-
-  main {
-    top: -84px;
-  }
-
-  section {
-    padding: theme.spacing(0, 32);
-  }
-
-  .m-header {
-    font-size: 3rem;
-    line-height: 4rem;
-    margin: theme.spacing(24, 0);
-  }
-
-  .m-menu {
-    &__navigation {
-      height: 84px;
-      padding: 0 theme.spacing(32);
-    }
-
-    &__logo {
-      width: 140px;
-    }
-
-    &__cta-button {
-      display: block;
-    }
-  }
-
-  .m-top-hero {
-    margin-block-end: theme.spacing(40);
-
-    &::before {
-      transform: translate(calc(-50vw + 10vw), calc(-50vh - 25vw));
-      width: 130vw;
-    }
-
-    &__wrapper {
-      text-align: left;
-      top: unset;
-      width: 500px;
-      align-items: left;
-    }
-
-    &__title {
-      font-size: 3.5rem;
-      line-height: 4rem;
-      margin-block-end: theme.spacing(8);
-    }
-
-    &__description {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      margin: unset;
-      max-width: unset;
-      margin-block-end: theme.spacing(24);
-    }
-  }
-
-  .m-mission {
-    margin-block-end: theme.spacing(48);
-
-    .m-quote {
-      flex-direction: row;
-      max-width: 680px;
-      margin-block-end: theme.spacing(48);
-
-      &__text {
-        font-size: 1.5rem;
-        line-height: 2rem;
-      }
-
-      &__image {
-        top: -37px;
-        left: -54px;
-        width: 100px;
-        height: 100px;
-      }
-
-      &__author {
-        right: 0;
-        width: initial;
-      }
-    }
-  }
-
-  .m-explanation {
-    flex-direction: row;
-    gap: theme.spacing(48);
-    padding: theme.spacing(16, 32);
-    margin-block-end: theme.spacing(64);
-
-    &__title {
-      font-size: 2rem;
-      line-height: 2.5rem;
-    }
-
-    &__description {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-  }
-
-  .m-values {
-    margin-block-end: theme.spacing(64);
-
-    &__list {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    &__item {
-      margin-block-start: theme.spacing(8);
-    }
-
-    &__item-image {
-      height: 180px;
-      margin-block-end: theme.spacing(24);
-    }
-
-    &__item-title {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-
-    &__item-description {
-      margin-block-end: 0;
-    }
-
-    &__item-image,
-    &__item-title,
-    &__item-description {
-      text-align: center;
+    @media screen and (min-width: 600px) {
       padding-inline-start: theme.spacing(12);
       padding-inline-end: theme.spacing(12);
-    }
-  }
-}
-
-@media (min-width: 600px) and (max-width: 999px) {
-  section {
-    padding: 0 theme.spacing(12);
-  }
-
-  .m-top-hero {
-    &::before {
-      transform: translate(calc(-50% + 25vw), calc(-50% - 3vw));
-      width: 115vh;
-    }
-  }
-
-  .m-values {
-    &__item {
-      &-image {
-        height: 140px;
-      }
-    }
-  }
-}
-
-@media (min-width: 1000px) and (max-width: 1440px) {
-  .m-top-hero {
-    &::before {
-      transform: translate(calc(-50% + 25vw), calc(-50% - 10vw));
-      width: 100vw;
-    }
-  }
-}
-
-@media (min-width: 1441px) {
-  .m-top-hero {
-    &::before {
-      transform: translate(calc(-50vw + 5vw), calc(-50vh - 20vw));
-      width: 130vw;
-      height: 130vh;
     }
   }
 }
