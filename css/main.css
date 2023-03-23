@@ -335,7 +335,7 @@ a:hover {
   --mdc-checkbox-unchecked-color: #e4e4e4;
 }
 .m-form__checkbox-container .mdc-checkbox.mdc-ripple-upgraded--background-focused .mdc-checkbox__ripple:before {
-  background-color: #fb3a23;
+  background-color: #e4e4e4;
 }
 .m-form__checkbox-container .m-link {
   color: #004680;

@@ -369,7 +369,7 @@ a {
       &.mdc-ripple-upgraded--background-focused {
         .mdc-checkbox__ripple {
           &:before {
-            background-color: map.get(theme.$modino-colors, accent, 500);
+            background-color: map.get(theme.$modino-colors, surface, border);
           }
         }
       }
