@@ -4,6 +4,7 @@
 html,
 body {
   background-color: map.get(theme.$modino-colors, surface, background);
+  height: 100%;
 }
 
 section {
@@ -12,6 +13,280 @@ section {
   align-items: center;
   width: 100%;
   // padding: theme.spacing(16);
+}
+
+.m-section {
+  &.m-team-section {
+    margin-block-end: theme.spacing(32);
+  }
+
+  &__header {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    font-family: "Ubuntu";
+  }
+
+  &__menu {
+    width: 100%;
+    padding-inline-start: unset;
+    margin: 0;
+  }
+
+  &__list {
+    width: 100%;
+    padding-inline-start: unset;
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    margin: 0;
+    gap: theme.spacing(12);
+    height: 40px;
+
+    @media (min-width: 599px) {
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    flex: none;
+    height: 100%;
+    width: 120px;
+
+    button[role="tab"] {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: center;
+      color: map.get(theme.$modino-colors, surface, text);
+      position: relative;
+      font-family: "Nunito";
+
+      &:hover {
+        color: map.get(theme.$modino-colors, secondary-1, 600);
+      }
+    }
+
+    &.active {
+      button[role="tab"] {
+        font-weight: bold;
+        color: map.get(theme.$modino-colors, primary, 900);
+        border-bottom: 2px solid map.get(theme.$modino-colors, primary, 900);
+        z-index: 1;
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    margin: 0;
+    margin-bottom: theme.spacing(32);
+    position: relative;
+    top: -1px;
+    border: none;
+    height: 1px;
+    background-color: map.get(theme.$modino-colors, surface, border);
+  }
+
+  .m-people-list {
+    display: flex;
+    align-items: flex-start;
+    gap: theme.spacing(11);
+    padding-inline: theme.spacing(16);
+
+    &[hidden] {
+      display: none;
+    }
+
+    @media (min-width: 599px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-inline: theme.spacing(32);
+      gap: theme.spacing(32);
+    }
+  }
+
+  .m-person-card {
+    display: flex;
+    min-width: 300px;
+
+    p {
+      margin: 0;
+    }
+
+    &__image {
+      margin-inline-end: theme.spacing(12);
+      border-radius: theme.$border-radius;
+    }
+
+    @media (min-width: 599px) {
+      width: calc(100% / 3 - 64px);
+    }
+  }
+}
+
+.m-team-photo {
+  width: 100%;
+
+  @media (min-width: 1240px) {
+    border-radius: theme.$border-radius;
+  }
+}
+
+.m-summary {
+  width: 100%;
+  height: calc(100vh - 115px);
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: clip;
+
+  &::before {
+    content: "";
+    background-image: url("./../img/Decoration - Full.svg");
+    background-position: center;
+    background-size: 100% 100%;
+    left: -100%;
+    top: 10%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 200%;
+    height: 150%;
+    z-index: -1;
+
+    @media (min-width: 840px) {
+      left: -125%;
+      background-size: 150% 100%;
+      top: 0;
+    }
+  }
+
+  @media (min-width: 840px) {
+    height: calc(100vh - 72px);
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-inline: theme.spacing(32);
+  }
+
+  .m-security-img {
+    width: 75%;
+    margin-block-start: theme.spacing(64);
+
+    @media (min-width: 599px) {
+      max-width: 400px;
+      max-height: 400px;
+      margin-block-start: unset;
+      margin-inline-end: theme.spacing(64);
+    }
+  }
+
+  .m-wrapper {
+    text-align: center;
+
+    @media (min-width: 840px) {
+      text-align: unset;
+      flex-grow: 1;
+    }
+  }
+
+  .m-header {
+    margin-block: theme.spacing(32) theme.spacing(16);
+
+    @media (min-width: 599px) {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+      margin-block-start: 0;
+    }
+  }
+}
+
+.m-footer {
+  background-color: map.get(theme.$modino-colors, surface, text);
+  color: map.get(theme.$modino-colors, surface, background);
+
+  &__content {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: theme.spacing(12);
+
+    @media (min-width: 599px) {
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        margin: theme.spacing(0, 8, 0, 0);
+      }
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 599px) {
+      flex-direction: row;
+      align-items: unset;
+    }
+  }
+}
+
+a {
+  height: 20px;
+  &:hover {
+    opacity: 0.8;
+  }
+  text-decoration: underline;
+}
+
+.mdc-button.cta-accent-button {
+  text-transform: none;
+  font-weight: bold;
+  padding: theme.spacing(6) theme.spacing(16);
+  height: unset;
+
+  --mdc-filled-button-container-color: #{map.get(
+      theme.$modino-colors,
+      accent,
+      600
+    )};
+  --mdc-filled-button-hover-state-layer-color: #{map.get(
+      theme.$modino-colors,
+      accent,
+      400
+    )};
+
+  --mdc-filled-button-hover-state-layer-opacity: 1;
+  --mdc-filled-button-focus-state-layer-opacity: 1;
+  --mdc-filled-button-pressed-state-layer-opacity: 1;
+
+  &.mdc-ripple-upgraded--background-focused {
+    .mdc-button__ripple {
+      &:before {
+        background-color: map.get(theme.$modino-colors, accent, 500);
+      }
+    }
+  }
+
+  .mdc-button__ripple {
+    &:after {
+      background-color: map.get(theme.$modino-colors, accent, 300);
+      z-index: 1;
+    }
+  }
 }
 
 .m-header {
@@ -29,4 +304,135 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 34px;
+  padding: 32px;
+  border: 1px solid map.get(theme.$modino-colors, surface, border);
+  border-radius: theme.$border-radius;
+  background-color: map.get(
+    theme.$modino-colors,
+    surface,
+    background-high-contrast
+  );
+
+  &__title {
+    margin: 0;
+    align-self: flex-start;
+    color: map.get(theme.$modino-colors, surface, text);
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .mdc-text-field,
+  .mdc-select {
+    width: 100%;
+
+    [class^="mdc-notched-outline__"] {
+      border-color: map.get(theme.$modino-colors, surface, border);
+    }
+  }
+
+  .mdc-text-field--focused {
+    .mdc-floating-label {
+      color: map.get(theme.$modino-colors, primary, 900);
+    }
+  }
+  .mdc-text-field--invalid {
+    .mdc-floating-label {
+      color: var(--mdc-theme-error);
+    }
+  }
+
+  .m-select {
+    &.mdc-select--focused {
+      .mdc-floating-label {
+        color: map.get(theme.$modino-colors, primary, 900);
+      }
+    }
+    &.mdc-select--invalid {
+      .mdc-floating-label {
+        color: var(--mdc-theme-error);
+      }
+    }
+  }
+
+  &__checkbox-container {
+    margin-inline-start: -11px;
+    display: flex;
+    flex-direction: column;
+
+    .mdc-checkbox {
+      --mdc-checkbox-unchecked-color: #{map.get(
+          theme.$modino-colors,
+          surface,
+          border
+        )};
+
+      &.mdc-ripple-upgraded--background-focused {
+        .mdc-checkbox__ripple {
+          &:before {
+            background-color: map.get(theme.$modino-colors, accent, 500);
+          }
+        }
+      }
+    }
+
+    .m-link {
+      color: map.get(theme.$modino-colors, primary, 900);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .mdc-button {
+    text-transform: none;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+}
+
+.m-form-section {
+  padding: 32px 24px;
+  justify-content: center;
+  background-color: map.get(theme.$modino-colors, surface, background);
+
+  @media (min-width: 1240px) {
+    padding: 60px 80px;
+  }
+}
+
+.m-image-section {
+  flex-grow: 1;
+  background-color: map.get(theme.$modino-colors, primary, 900);
+  display: flex;
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .m-request-access-img {
+    width: 100%;
+  }
+
+  .m-logo-img {
+    width: 80%;
+  }
+
+  @media (min-width: 840px) {
+    .m-request-access-img {
+      width: 70%;
+    }
+
+    .m-logo-img {
+      width: 30%;
+    }
+  }
+}
+
+.m-request-main {
+  height: 100%;
+  max-width: unset;
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: 1240px) {
+    flex-wrap: nowrap;
+  }
 }
