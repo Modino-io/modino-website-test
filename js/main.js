@@ -1,6 +1,4 @@
-const menu = document.getElementsByClassName("m-menu")[0];
-const menuNav = document.getElementsByClassName("m-menu__navigation")[0];
-const menuCtaButton = menu.getElementsByClassName("m-menu__cta-button")[0];
+const menuCtaButton = document.getElementsByClassName("m-menu__cta-button")[0];
 let currentTab = "founders";
 const tabs = document.querySelectorAll(".m-section__item");
 const tabButtons = document.querySelectorAll('button[role="tab"]');
@@ -16,19 +14,12 @@ const mainCtaButtonRipple = new MDCRipple(
   document.getElementById("main-cta-button")
 );
 const menuCtaButtonRipple = new MDCRipple(
-  menu.getElementsByClassName("m-menu__cta-button")[0]
+  document.getElementsByClassName("m-menu__cta-button")[0]
 );
 
-document.addEventListener("scroll", setMenu);
+document.addEventListener("scroll", checkMenuCtaButton);
 
-function setMenu() {
-  menuNav.getBoundingClientRect().top;
-  if (menuNav.getBoundingClientRect().top < window.scrollY) {
-    menu.classList.add("m-menu_sticky");
-  } else {
-    menu.classList.remove("m-menu_sticky");
-  }
-
+function checkMenuCtaButton() {
   if (
     menuCtaButton &&
     mainCtaButton.getBoundingClientRect().top <= mainCtaButton.clientHeight
@@ -62,7 +53,7 @@ const init = () => {
   const currentYear = new Date().getFullYear();
   document.querySelector("#footer-year").innerHTML = currentYear;
 
-  setMenu();
+  checkMenuCtaButton();
 };
 
 init();
