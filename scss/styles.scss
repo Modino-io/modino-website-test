@@ -769,7 +769,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 34px;
+  gap: theme.spacing(6);
   padding: 32px;
   border: 1px solid map.get(theme.$modino-colors, surface, border);
   border-radius: theme.$border-radius;
@@ -780,7 +780,8 @@ a {
   );
 
   &__title {
-    margin: 0;
+    margin: unset;
+    margin-block-end: theme.spacing(10);
     align-self: flex-start;
     color: map.get(theme.$modino-colors, surface, text);
     font-size: 2rem;
@@ -824,6 +825,7 @@ a {
     margin-inline-start: -11px;
     display: flex;
     flex-direction: column;
+    gap: theme.spacing(5);
 
     .mdc-checkbox {
       --mdc-checkbox-unchecked-color: #{map.get(
@@ -852,6 +854,10 @@ a {
     text-transform: none;
     font-weight: bold;
     align-self: flex-start;
+  }
+
+  &__field-wrapper {
+    width: 100%;
   }
 }
 
