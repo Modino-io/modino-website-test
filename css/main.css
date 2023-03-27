@@ -317,6 +317,12 @@ section {
     margin: 0rem 1rem 0rem 0rem;
   }
 }
+.m-footer__content a,
+.m-footer__content a:visited {
+  height: 20px;
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: underline;
+}
 .m-footer__copyright {
   display: flex;
   flex-direction: column;
@@ -329,10 +335,6 @@ section {
   }
 }
 
-a {
-  height: 20px;
-  text-decoration: underline;
-}
 a:hover {
   opacity: 0.8;
 }
@@ -383,6 +385,10 @@ a:hover {
   padding: 0 1.5rem;
   margin: 0 auto;
   flex-grow: 1;
+}
+.m-menu__navigation a {
+  display: flex;
+  height: auto;
 }
 @media screen and (min-width: 600px) {
   .m-menu__navigation {
@@ -867,6 +873,95 @@ a:hover {
   .m-request-main {
     flex-wrap: nowrap;
   }
+}
+
+.m-privacy-wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.m-privacy-navigation {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  position: sticky;
+  top: 2rem;
+  flex: 2;
+  padding: 4rem 4rem 4rem 2rem;
+}
+@media screen and (min-width: 850px) {
+  .m-privacy-navigation {
+    display: flex;
+  }
+}
+.m-privacy-navigation h2 {
+  margin-block-start: 0;
+}
+.m-privacy-navigation a,
+.m-privacy-navigation a:visited {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.m-privacy-navigation a:hover,
+.m-privacy-navigation a:visited:hover {
+  color: #3191ce;
+}
+.m-privacy-navigation ul {
+  list-style-type: none;
+}
+.m-privacy-navigation li {
+  margin-block-start: 0.5rem;
+}
+.m-privacy-navigation > ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+.m-privacy-navigation > ul > li {
+  margin-block-start: 1.5rem;
+}
+.m-privacy-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 4;
+  padding: 4rem;
+  background-color: #f5f5f5;
+}
+.m-privacy-text__header1, .m-privacy-text__header2, .m-privacy-text__header3, .m-privacy-text__header4 {
+  scroll-margin-top: 86px;
+}
+.m-privacy-text__header1 {
+  font-family: "Ubuntu";
+  font-size: 3.5rem;
+  line-height: 4rem;
+  margin: 0;
+  margin-block-end: 2rem;
+}
+.m-privacy-text__header2 {
+  font-size: 2.125rem;
+  line-height: 2.25rem;
+  margin: 6rem 0rem 0rem 0rem;
+}
+.m-privacy-text__header3 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin: 4rem 0rem 1.5rem 0rem;
+}
+.m-privacy-text__header4 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin: 3rem 0rem 1.5rem 0rem;
+}
+.m-privacy__image {
+  align-self: center;
+  height: 400px;
+  margin-block-start: 6rem;
 }
 
 :root {
