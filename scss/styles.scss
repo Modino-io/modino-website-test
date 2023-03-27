@@ -74,7 +74,7 @@ section {
     gap: theme.spacing(12);
     height: 40px;
 
-    @media (min-width: 599px) {
+    @media (min-width: 840px) {
       justify-content: center;
     }
   }
@@ -123,26 +123,18 @@ section {
   }
 
   .m-people-list {
-    display: flex;
-    align-items: flex-start;
-    gap: theme.spacing(11);
-    padding-inline: theme.spacing(16);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: theme.spacing(12);
 
     &[hidden] {
       display: none;
-    }
-
-    @media (min-width: 599px) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding-inline: theme.spacing(32);
-      gap: theme.spacing(32);
     }
   }
 
   .m-person-card {
     display: flex;
-    min-width: 300px;
 
     p {
       margin: 0;
@@ -153,8 +145,11 @@ section {
       border-radius: theme.$border-radius;
     }
 
-    @media (min-width: 599px) {
-      width: calc(100% / 3 - 64px);
+    &__info {
+      a {
+        display: block;
+        margin-block-start: theme.spacing(4);
+      }
     }
   }
 }
@@ -228,14 +223,14 @@ section {
     height: 150%;
     z-index: -1;
 
-    @media (min-width: 840px) {
+    @media (min-width: 999px) {
       left: -125%;
       background-size: 150% 100%;
       top: 0;
     }
   }
 
-  @media (min-width: 840px) {
+  @media (min-width: 999px) {
     height: calc(100vh - 72px);
     flex-direction: row-reverse;
     justify-content: space-evenly;
@@ -246,9 +241,12 @@ section {
   .m-security-img {
     max-height: 190px;
 
-    @media (min-width: 599px) {
+    @media (min-width: 600px) {
       max-width: 400px;
       max-height: 400px;
+    }
+
+    @media (min-width: 999px) {
       margin-inline-end: theme.spacing(64);
     }
   }
@@ -256,7 +254,7 @@ section {
   .m-wrapper {
     text-align: center;
 
-    @media (min-width: 840px) {
+    @media (min-width: 999px) {
       text-align: unset;
       flex-grow: 1;
     }

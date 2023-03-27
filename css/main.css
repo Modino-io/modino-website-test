@@ -123,7 +123,7 @@ section {
   gap: 1.5rem;
   height: 40px;
 }
-@media (min-width: 599px) {
+@media (min-width: 840px) {
   .m-section__list {
     justify-content: center;
   }
@@ -165,25 +165,16 @@ section {
   background-color: #e4e4e4;
 }
 .m-section .m-people-list {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.375rem;
-  padding-inline: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 .m-section .m-people-list[hidden] {
   display: none;
 }
-@media (min-width: 599px) {
-  .m-section .m-people-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-inline: 4rem;
-    gap: 4rem;
-  }
-}
 .m-section .m-person-card {
   display: flex;
-  min-width: 300px;
 }
 .m-section .m-person-card p {
   margin: 0;
@@ -192,10 +183,9 @@ section {
   margin-inline-end: 1.5rem;
   border-radius: 6px;
 }
-@media (min-width: 599px) {
-  .m-section .m-person-card {
-    width: calc(33.3333333333% - 64px);
-  }
+.m-section .m-person-card__info a {
+  display: block;
+  margin-block-start: 0.5rem;
 }
 
 .m-team-photo {
@@ -248,14 +238,14 @@ section {
   height: 150%;
   z-index: -1;
 }
-@media (min-width: 840px) {
+@media (min-width: 999px) {
   .m-summary::before {
     left: -125%;
     background-size: 150% 100%;
     top: 0;
   }
 }
-@media (min-width: 840px) {
+@media (min-width: 999px) {
   .m-summary {
     height: calc(100vh - 72px);
     flex-direction: row-reverse;
@@ -267,17 +257,21 @@ section {
 .m-summary .m-security-img {
   max-height: 190px;
 }
-@media (min-width: 599px) {
+@media (min-width: 600px) {
   .m-summary .m-security-img {
     max-width: 400px;
     max-height: 400px;
+  }
+}
+@media (min-width: 999px) {
+  .m-summary .m-security-img {
     margin-inline-end: 8rem;
   }
 }
 .m-summary .m-wrapper {
   text-align: center;
 }
-@media (min-width: 840px) {
+@media (min-width: 999px) {
   .m-summary .m-wrapper {
     text-align: unset;
     flex-grow: 1;
