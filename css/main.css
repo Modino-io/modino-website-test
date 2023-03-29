@@ -404,7 +404,7 @@ a:hover {
   transition: all ease 500ms;
 }
 .m-menu_sticky .m-menu__logo {
-  content: url("./../img/MODINO_logo_short.svg");
+  content: url("./../img/MODINO-logo-short.svg");
 }
 .m-menu__logo {
   width: 100px;
