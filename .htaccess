@@ -320,8 +320,6 @@ AddDefaultCharset utf-8
     RewriteCond %{HTTPS} !=on
     RewriteRule ^ - [env=proto:http]
 
-    RewriteRule ^/privacy-policy$ privacy-policy.html [L]
-
 </IfModule>
 
 # ----------------------------------------------------------------------
