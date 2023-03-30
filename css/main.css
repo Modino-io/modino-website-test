@@ -93,7 +93,7 @@ section {
 }
 @media (min-width: 600px) and (max-width: 999px) {
   section {
-    padding: 0 1.5rem;
+    padding: 0rem 1.5rem;
   }
 }
 
@@ -823,13 +823,13 @@ a:hover {
 }
 
 .m-form-section {
-  padding: 32px 24px;
+  padding: 2rem 1.5rem;
   justify-content: center;
   background-color: #fbfbfb;
 }
 @media (min-width: 1240px) {
   .m-form-section {
-    padding: 60px 80px;
+    padding: 3.75rem 5rem;
   }
 }
 
@@ -837,22 +837,22 @@ a:hover {
   flex-grow: 1;
   background-color: #004680;
   display: flex;
-  padding: 42px;
-  display: flex;
+  padding: 2.625rem;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+}
+.m-image-section a {
+  width: 80%;
 }
 .m-image-section .m-request-access-img {
   width: 100%;
-}
-.m-image-section .m-logo-img {
-  width: 80%;
 }
 @media (min-width: 840px) {
   .m-image-section .m-request-access-img {
     width: 70%;
   }
-  .m-image-section .m-logo-img {
+  .m-image-section a {
     width: 30%;
   }
 }

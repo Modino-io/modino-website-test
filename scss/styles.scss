@@ -33,15 +33,15 @@ section {
   flex-direction: column;
   align-items: center;
   padding: theme.spacing(0, 12);
+  width: 100%;
 
   @media screen and (min-width: 600px) {
     padding: theme.spacing(0, 32);
   }
 
   @media (min-width: 600px) and (max-width: 999px) {
-    padding: 0 theme.spacing(12);
+    padding: theme.spacing(0, 12);
   }
-  width: 100%;
 }
 
 .m-section {
@@ -870,12 +870,12 @@ a {
 }
 
 .m-form-section {
-  padding: 32px 24px;
+  padding: theme.spacing(16, 12);
   justify-content: center;
   background-color: map.get(theme.$modino-colors, surface, background);
 
   @media (min-width: 1240px) {
-    padding: 60px 80px;
+    padding: theme.spacing(30, 40);
   }
 }
 
@@ -883,17 +883,17 @@ a {
   flex-grow: 1;
   background-color: map.get(theme.$modino-colors, primary, 900);
   display: flex;
-  padding: 42px;
-  display: flex;
+  padding: theme.spacing(21);
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+
+  a {
+    width: 80%;
+  }
 
   .m-request-access-img {
     width: 100%;
-  }
-
-  .m-logo-img {
-    width: 80%;
   }
 
   @media (min-width: 840px) {
@@ -901,7 +901,7 @@ a {
       width: 70%;
     }
 
-    .m-logo-img {
+    a {
       width: 30%;
     }
   }

@@ -31,355 +31,353 @@
 
       gtag("config", "UA-158512110-1");
     </script>
-    <body class="m-no-padding">
-      <main class="m-request-main">
-        <section class="m-form-section">
-          <form class="m-form" id="request-access-form">
-            <h1 class="m-form__title">Get in touch</h1>
-            <!-- Full name input -->
-            <div class="m-form__field-wrapper">
-              <div class="mdc-text-field mdc-text-field--outlined">
-                <input
-                  class="mdc-text-field__input"
-                  id="fullname-input"
-                  required
-                  name="fullname"
-                  aria-controls="fullname-input-helper-text"
-                  aria-describedby="fullname-input-helper-text"
-                />
-                <div class="mdc-notched-outline">
-                  <div class="mdc-notched-outline__leading"></div>
-                  <div class="mdc-notched-outline__notch">
-                    <label for="fullname-input" class="mdc-floating-label">
-                      Full name
-                    </label>
-                  </div>
-                  <div class="mdc-notched-outline__trailing"></div>
+  </head>
+  <body class="m-no-padding">
+    <main class="m-request-main">
+      <section class="m-form-section">
+        <form class="m-form" id="request-access-form">
+          <h1 class="m-form__title">Get in touch</h1>
+          <!-- Full name input -->
+          <div class="m-form__field-wrapper">
+            <div class="mdc-text-field mdc-text-field--outlined">
+              <input
+                class="mdc-text-field__input"
+                id="fullname-input"
+                required
+                name="fullname"
+                aria-controls="fullname-input-helper-text"
+                aria-describedby="fullname-input-helper-text"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label for="fullname-input" class="mdc-floating-label">
+                    Full name
+                  </label>
                 </div>
-              </div>
-              <div class="mdc-text-field-helper-line">
-                <div
-                  id="fullname-input-helper-text"
-                  class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-                >
-                  Field can't be empty
-                </div>
+                <div class="mdc-notched-outline__trailing"></div>
               </div>
             </div>
-            <!-- E-mail input -->
-            <div class="m-form__field-wrapper">
+            <div class="mdc-text-field-helper-line">
               <div
-                class="mdc-text-field mdc-text-field--outlined"
-                id="email-input-text-field"
-              >
-                <input
-                  class="mdc-text-field__input"
-                  id="email-input"
-                  type="email"
-                  required
-                  name="email"
-                  aria-controls="email-input-helper-text"
-                  aria-describedby="email-input-helper-text"
-                />
-                <div class="mdc-notched-outline">
-                  <div class="mdc-notched-outline__leading"></div>
-                  <div class="mdc-notched-outline__notch">
-                    <label for="email-input" class="mdc-floating-label">
-                      E-mail
-                    </label>
-                  </div>
-                  <div class="mdc-notched-outline__trailing"></div>
-                </div>
-              </div>
-              <div class="mdc-text-field-helper-line">
-                <div
-                  id="email-input-helper-text"
-                  class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-                >
-                  Field can't be empty
-                </div>
-              </div>
-            </div>
-            <!-- Phone input -->
-            <div class="m-form__field-wrapper">
-              <div class="mdc-text-field mdc-text-field--outlined">
-                <input
-                  class="mdc-text-field__input"
-                  id="phone-input"
-                  type="tel"
-                  pattern="[0-9]+"
-                  name="phone"
-                />
-                <div class="mdc-notched-outline">
-                  <div class="mdc-notched-outline__leading"></div>
-                  <div class="mdc-notched-outline__notch">
-                    <label for="phone-input" class="mdc-floating-label">
-                      Phone (optional)
-                    </label>
-                  </div>
-                  <div class="mdc-notched-outline__trailing"></div>
-                </div>
-              </div>
-              <div class="mdc-text-field-helper-line">
-                <div
-                  id="phone-input-helper-text"
-                  class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-                >
-                  Field can't be empty
-                </div>
-              </div>
-            </div>
-            <!-- Role input -->
-            <div class="m-form__field-wrapper">
-              <div
-                class="mdc-select mdc-select--outlined m-select mdc-select--required"
-              >
-                <input type="hidden" name="company_role" />
-                <div
-                  class="mdc-select__anchor"
-                  aria-labelledby="outlined-select-label"
-                  aria-required="true"
-                  aria-controls="company-role-helper-text"
-                  aria-describedby="company-role-helper-text"
-                >
-                  <span class="mdc-notched-outline">
-                    <span class="mdc-notched-outline__leading"></span>
-                    <span class="mdc-notched-outline__notch">
-                      <span
-                        id="outlined-select-label"
-                        class="mdc-floating-label"
-                        >Company role</span
-                      >
-                    </span>
-                    <span class="mdc-notched-outline__trailing"></span>
-                  </span>
-                  <span class="mdc-select__selected-text-container">
-                    <span
-                      id="demo-selected-text"
-                      class="mdc-select__selected-text"
-                    ></span>
-                  </span>
-                  <span class="mdc-select__dropdown-icon">
-                    <svg
-                      class="mdc-select__dropdown-icon-graphic"
-                      viewBox="7 10 10 5"
-                      focusable="false"
-                    >
-                      <polygon
-                        class="mdc-select__dropdown-icon-inactive"
-                        stroke="none"
-                        fill-rule="evenodd"
-                        points="7 10 12 15 17 10"
-                      ></polygon>
-                      <polygon
-                        class="mdc-select__dropdown-icon-active"
-                        stroke="none"
-                        fill-rule="evenodd"
-                        points="7 15 12 10 17 15"
-                      ></polygon>
-                    </svg>
-                  </span>
-                </div>
-                <div
-                  class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
-                >
-                  <ul
-                    class="mdc-deprecated-list"
-                    role="listbox"
-                    aria-label="Food picker listbox"
-                  >
-                    <li
-                      class="mdc-deprecated-list-item mdc-deprecated-list-item--selected"
-                      aria-selected="true"
-                      data-value=""
-                      role="option"
-                      tabindex="0"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="Chief Executive Officer"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Chief Executive Officer
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="Chief Financial Officer"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Chief Financial Officer
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="Chief Technology Officer"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Chief Technology Officer
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="Developer"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Developer
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="DevOps"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        DevOps
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="Product Manager"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Product Manager
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="Product Owner"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Product Owner
-                      </span>
-                    </li>
-                    <li
-                      class="mdc-deprecated-list-item"
-                      aria-selected="false"
-                      data-value="Quality Assurance"
-                      role="option"
-                    >
-                      <span class="mdc-deprecated-list-item__ripple"></span>
-                      <span class="mdc-deprecated-list-item__text">
-                        Quality Assurance
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <p
-                id="company-role-helper-text"
-                class="mdc-select-helper-text mdc-select-helper-text--validation-msg"
+                id="fullname-input-helper-text"
+                class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
               >
                 Field can't be empty
-              </p>
+              </div>
             </div>
-            <!-- Checkbox section -->
-            <div class="m-form__checkbox-container">
-              <div class="mdc-form-field">
-                <div class="mdc-checkbox">
-                  <input
-                    type="checkbox"
-                    class="mdc-checkbox__native-control"
-                    id="checkbox-1"
-                  />
-                  <div class="mdc-checkbox__background">
-                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                      <path
-                        class="mdc-checkbox__checkmark-path"
-                        fill="none"
-                        d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                      />
-                    </svg>
-                    <div class="mdc-checkbox__mixedmark"></div>
-                  </div>
-                  <div class="mdc-checkbox__ripple"></div>
+          </div>
+          <!-- E-mail input -->
+          <div class="m-form__field-wrapper">
+            <div
+              class="mdc-text-field mdc-text-field--outlined"
+              id="email-input-text-field"
+            >
+              <input
+                class="mdc-text-field__input"
+                id="email-input"
+                type="email"
+                required
+                name="email"
+                aria-controls="email-input-helper-text"
+                aria-describedby="email-input-helper-text"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label for="email-input" class="mdc-floating-label">
+                    E-mail
+                  </label>
                 </div>
-                <label for="checkbox-1"
-                  >Let me know about updates (optional)</label
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
+            </div>
+            <div class="mdc-text-field-helper-line">
+              <div
+                id="email-input-helper-text"
+                class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
+              >
+                Field can't be empty
+              </div>
+            </div>
+          </div>
+          <!-- Phone input -->
+          <div class="m-form__field-wrapper">
+            <div class="mdc-text-field mdc-text-field--outlined">
+              <input
+                class="mdc-text-field__input"
+                id="phone-input"
+                type="tel"
+                pattern="[0-9]+"
+                name="phone"
+              />
+              <div class="mdc-notched-outline">
+                <div class="mdc-notched-outline__leading"></div>
+                <div class="mdc-notched-outline__notch">
+                  <label for="phone-input" class="mdc-floating-label">
+                    Phone (optional)
+                  </label>
+                </div>
+                <div class="mdc-notched-outline__trailing"></div>
+              </div>
+            </div>
+            <div class="mdc-text-field-helper-line">
+              <div
+                id="phone-input-helper-text"
+                class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
+              >
+                Field can't be empty
+              </div>
+            </div>
+          </div>
+          <!-- Role input -->
+          <div class="m-form__field-wrapper">
+            <div
+              class="mdc-select mdc-select--outlined m-select mdc-select--required"
+            >
+              <input type="hidden" name="company_role" />
+              <div
+                class="mdc-select__anchor"
+                aria-labelledby="outlined-select-label"
+                aria-required="true"
+                aria-controls="company-role-helper-text"
+                aria-describedby="company-role-helper-text"
+              >
+                <span class="mdc-notched-outline">
+                  <span class="mdc-notched-outline__leading"></span>
+                  <span class="mdc-notched-outline__notch">
+                    <span id="outlined-select-label" class="mdc-floating-label"
+                      >Company role</span
+                    >
+                  </span>
+                  <span class="mdc-notched-outline__trailing"></span>
+                </span>
+                <span class="mdc-select__selected-text-container">
+                  <span
+                    id="demo-selected-text"
+                    class="mdc-select__selected-text"
+                  ></span>
+                </span>
+                <span class="mdc-select__dropdown-icon">
+                  <svg
+                    class="mdc-select__dropdown-icon-graphic"
+                    viewBox="7 10 10 5"
+                    focusable="false"
+                  >
+                    <polygon
+                      class="mdc-select__dropdown-icon-inactive"
+                      stroke="none"
+                      fill-rule="evenodd"
+                      points="7 10 12 15 17 10"
+                    ></polygon>
+                    <polygon
+                      class="mdc-select__dropdown-icon-active"
+                      stroke="none"
+                      fill-rule="evenodd"
+                      points="7 15 12 10 17 15"
+                    ></polygon>
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth"
+              >
+                <ul
+                  class="mdc-deprecated-list"
+                  role="listbox"
+                  aria-label="Food picker listbox"
                 >
-              </div>
-              <div class="mdc-form-field">
-                <div class="mdc-checkbox">
-                  <input
-                    type="checkbox"
-                    class="mdc-checkbox__native-control"
-                    id="checkbox-2"
-                    name="agreements"
-                    required
-                  />
-                  <div class="mdc-checkbox__background">
-                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-                      <path
-                        class="mdc-checkbox__checkmark-path"
-                        fill="none"
-                        d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                      />
-                    </svg>
-                    <div class="mdc-checkbox__mixedmark"></div>
-                  </div>
-                  <div class="mdc-checkbox__ripple"></div>
-                </div>
-                <div>
-                  <label for="checkbox-2">I have read and agree to the</label>
-                  <a class="m-link" href="./privacy-policy">Privacy Policy</a>
-                  and
-                  <a class="m-link">Terms of Service</a>
-                </div>
+                  <li
+                    class="mdc-deprecated-list-item mdc-deprecated-list-item--selected"
+                    aria-selected="true"
+                    data-value=""
+                    role="option"
+                    tabindex="0"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                  </li>
+                  <li
+                    class="mdc-deprecated-list-item"
+                    aria-selected="false"
+                    data-value="Chief Executive Officer"
+                    role="option"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <span class="mdc-deprecated-list-item__text">
+                      Chief Executive Officer
+                    </span>
+                  </li>
+                  <li
+                    class="mdc-deprecated-list-item"
+                    aria-selected="false"
+                    data-value="Chief Financial Officer"
+                    role="option"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <span class="mdc-deprecated-list-item__text">
+                      Chief Financial Officer
+                    </span>
+                  </li>
+                  <li
+                    class="mdc-deprecated-list-item"
+                    aria-selected="false"
+                    data-value="Chief Technology Officer"
+                    role="option"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <span class="mdc-deprecated-list-item__text">
+                      Chief Technology Officer
+                    </span>
+                  </li>
+                  <li
+                    class="mdc-deprecated-list-item"
+                    aria-selected="false"
+                    data-value="Developer"
+                    role="option"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <span class="mdc-deprecated-list-item__text">
+                      Developer
+                    </span>
+                  </li>
+                  <li
+                    class="mdc-deprecated-list-item"
+                    aria-selected="false"
+                    data-value="DevOps"
+                    role="option"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <span class="mdc-deprecated-list-item__text"> DevOps </span>
+                  </li>
+                  <li
+                    class="mdc-deprecated-list-item"
+                    aria-selected="false"
+                    data-value="Product Manager"
+                    role="option"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <span class="mdc-deprecated-list-item__text">
+                      Product Manager
+                    </span>
+                  </li>
+                  <li
+                    class="mdc-deprecated-list-item"
+                    aria-selected="false"
+                    data-value="Product Owner"
+                    role="option"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <span class="mdc-deprecated-list-item__text">
+                      Product Owner
+                    </span>
+                  </li>
+                  <li
+                    class="mdc-deprecated-list-item"
+                    aria-selected="false"
+                    data-value="Quality Assurance"
+                    role="option"
+                  >
+                    <span class="mdc-deprecated-list-item__ripple"></span>
+                    <span class="mdc-deprecated-list-item__text">
+                      Quality Assurance
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
-            <!-- Submit button -->
-            <button class="mdc-button mdc-button--unelevated" type="submit">
-              <span class="mdc-button__ripple"></span> Get in touch
-            </button>
-          </form>
-        </section>
-        <section class="m-image-section">
+            <p
+              id="company-role-helper-text"
+              class="mdc-select-helper-text mdc-select-helper-text--validation-msg"
+            >
+              Field can't be empty
+            </p>
+          </div>
+          <!-- Checkbox section -->
+          <div class="m-form__checkbox-container">
+            <div class="mdc-form-field">
+              <div class="mdc-checkbox">
+                <input
+                  type="checkbox"
+                  class="mdc-checkbox__native-control"
+                  id="checkbox-1"
+                />
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path
+                      class="mdc-checkbox__checkmark-path"
+                      fill="none"
+                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                    />
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+                <div class="mdc-checkbox__ripple"></div>
+              </div>
+              <label for="checkbox-1"
+                >Let me know about updates (optional)</label
+              >
+            </div>
+            <div class="mdc-form-field">
+              <div class="mdc-checkbox">
+                <input
+                  type="checkbox"
+                  class="mdc-checkbox__native-control"
+                  id="checkbox-2"
+                  name="agreements"
+                  required
+                />
+                <div class="mdc-checkbox__background">
+                  <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                    <path
+                      class="mdc-checkbox__checkmark-path"
+                      fill="none"
+                      d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                    />
+                  </svg>
+                  <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+                <div class="mdc-checkbox__ripple"></div>
+              </div>
+              <div>
+                <label for="checkbox-2">I have read and agree to the</label>
+                <a class="m-link" href="./privacy-policy">Privacy Policy</a>
+                and
+                <a class="m-link">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+          <!-- Submit button -->
+          <button class="mdc-button mdc-button--unelevated" type="submit">
+            <span class="mdc-button__ripple"></span> Get in touch
+          </button>
+        </form>
+      </section>
+      <section class="m-image-section">
+        <a href="https://modino.io/">
           <img
             alt="logo"
-            src="./img/MODINO-logo-full.svg"
+            src="./img/MODINO-logo-full-white.svg"
             class="m-logo-img"
             alt="modino logo"
           />
-          <img
-            class="m-request-access-img"
-            src="./img/modino-man-in-envelope.svg"
-            alt="modino man in an envelope"
-          />
-        </section>
-        <aside class="mdc-snackbar mdc-snackbar--leading">
-          <div
-            class="mdc-snackbar__surface"
-            role="status"
-            aria-relevant="additions"
-          >
-            <div class="mdc-snackbar__label" aria-atomic="false"></div>
-          </div>
-        </aside>
-      </main>
-      <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-      <script src="js/requestAccess.js"></script>
-    </body>
-  </head>
+        </a>
+        <img
+          class="m-request-access-img"
+          src="./img/modino-man-in-envelope.svg"
+          alt="modino man in an envelope"
+        />
+      </section>
+      <aside class="mdc-snackbar mdc-snackbar--leading">
+        <div
+          class="mdc-snackbar__surface"
+          role="status"
+          aria-relevant="additions"
+        >
+          <div class="mdc-snackbar__label" aria-atomic="false"></div>
+        </div>
+      </aside>
+    </main>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="js/requestAccess.js"></script>
+  </body>
 </html>
