@@ -1,0 +1,1026 @@
+@use "theme";
+@use "sass:map";
+
+html,
+body {
+  margin: 0;
+  overflow-x: clip;
+}
+
+body {
+  background-color: map.get(theme.$modino-colors, surface, background);
+  height: 100%;
+  padding-block-start: theme.spacing(24);
+
+  @media screen and (min-width: 600px) {
+    padding-block-start: theme.spacing(12);
+  }
+
+  &.m-no-padding {
+    height: 100vh;
+    padding-block-start: 0;
+  }
+}
+
+main {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: theme.spacing(0, 12);
+  width: 100%;
+
+  @media screen and (min-width: 600px) {
+    padding: theme.spacing(0, 32);
+  }
+
+  @media (min-width: 600px) and (max-width: 999px) {
+    padding: theme.spacing(0, 12);
+  }
+}
+
+.m-section {
+  &.m-team-section {
+    margin-block-end: theme.spacing(32);
+  }
+
+  &__header {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    font-family: "Ubuntu";
+  }
+
+  &__menu {
+    width: 100%;
+    padding-inline-start: unset;
+    margin: 0;
+  }
+
+  &__list {
+    width: 100%;
+    padding-inline-start: unset;
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    margin: 0;
+    gap: theme.spacing(12);
+    height: 40px;
+
+    @media (min-width: 840px) {
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    flex: none;
+    height: 100%;
+    width: 120px;
+
+    button[role="tab"] {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: center;
+      color: map.get(theme.$modino-colors, surface, text);
+      position: relative;
+      font-family: "Nunito";
+
+      &:hover {
+        color: map.get(theme.$modino-colors, secondary-1, 600);
+      }
+    }
+
+    &.active {
+      button[role="tab"] {
+        font-weight: bold;
+        color: map.get(theme.$modino-colors, primary, 900);
+        border-bottom: 2px solid map.get(theme.$modino-colors, primary, 900);
+        z-index: 1;
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    margin: 0;
+    margin-bottom: theme.spacing(32);
+    position: relative;
+    top: -1px;
+    border: none;
+    height: 1px;
+    background-color: map.get(theme.$modino-colors, surface, border);
+  }
+
+  .m-people-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: theme.spacing(12);
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .m-person-card {
+    display: flex;
+
+    p {
+      margin: 0;
+    }
+
+    &__image {
+      margin-inline-end: theme.spacing(12);
+      border-radius: theme.$border-radius;
+    }
+
+    &__info {
+      a {
+        display: block;
+        margin-block-start: theme.spacing(4);
+      }
+    }
+  }
+}
+
+.m-team-photo {
+  width: 100%;
+
+  @media (min-width: 1240px) {
+    border-radius: theme.$border-radius;
+  }
+}
+
+.m-summary {
+  width: 100%;
+  height: calc(100vh - 115px);
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow-y: clip;
+
+  .cta-accent-button {
+    text-transform: none;
+    font-weight: bold;
+    padding: theme.spacing(6) theme.spacing(16);
+    height: unset;
+
+    --mdc-filled-button-container-color: #{map.get(
+        theme.$modino-colors,
+        accent,
+        600
+      )};
+    --mdc-filled-button-hover-state-layer-color: #{map.get(
+        theme.$modino-colors,
+        accent,
+        400
+      )};
+
+    --mdc-filled-button-hover-state-layer-opacity: 1;
+    --mdc-filled-button-focus-state-layer-opacity: 1;
+    --mdc-filled-button-pressed-state-layer-opacity: 1;
+
+    &.mdc-ripple-upgraded--background-focused {
+      .mdc-button__ripple {
+        &:before {
+          background-color: map.get(theme.$modino-colors, accent, 500);
+        }
+      }
+    }
+
+    .mdc-button__ripple {
+      &:after {
+        background-color: map.get(theme.$modino-colors, accent, 300);
+        z-index: 1;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    background-image: url("./../img/Decoration - Full.svg");
+    background-position: center;
+    background-size: 100% 100%;
+    left: -100%;
+    top: 10%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 200%;
+    height: 150%;
+    z-index: -1;
+
+    @media (min-width: 999px) {
+      left: -125%;
+      background-size: 150% 100%;
+      top: 0;
+    }
+  }
+
+  @media (min-width: 999px) {
+    height: calc(100vh - 72px);
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-inline: theme.spacing(32);
+  }
+
+  .m-security-img {
+    max-height: 190px;
+
+    @media (min-width: 600px) {
+      max-width: 400px;
+      max-height: 400px;
+    }
+
+    @media (min-width: 999px) {
+      margin-inline-end: theme.spacing(64);
+    }
+  }
+
+  .m-wrapper {
+    text-align: center;
+
+    @media (min-width: 999px) {
+      text-align: unset;
+      flex-grow: 1;
+    }
+  }
+
+  .m-header {
+    margin-block: theme.spacing(32) theme.spacing(16);
+
+    @media (min-width: 599px) {
+      font-size: 3.5rem;
+      line-height: 3.5rem;
+      margin-block-start: 0;
+    }
+  }
+}
+
+.m-footer {
+  background-color: map.get(theme.$modino-colors, surface, text);
+  color: map.get(theme.$modino-colors, surface, background);
+
+  &__content {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: theme.spacing(12);
+
+    @media (min-width: 599px) {
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        margin: theme.spacing(0, 8, 0, 0);
+      }
+    }
+
+    a,
+    a:visited {
+      height: 20px;
+      color: map.get(theme.$modino-colors, surface, text-contrast);
+      text-decoration: underline;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 599px) {
+      flex-direction: row;
+      align-items: unset;
+    }
+  }
+}
+
+a {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.m-header {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin: theme.spacing(16) 0;
+
+  @media screen and (min-width: 600px) {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin: theme.spacing(24, 0);
+  }
+
+  &__highlight {
+    color: map.get(theme.$modino-colors, primary, 900);
+  }
+}
+
+.highlight {
+  color: map.get(theme.$modino-colors, primary, 900);
+  font-weight: 700;
+}
+
+.m-menu {
+  display: flex;
+  position: sticky;
+  top: 0;
+  flex-grow: 1;
+  z-index: 2;
+  transition: all ease 100ms;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: center;
+    height: 46px;
+    max-width: 1240px;
+    padding: 0 theme.spacing(12);
+    margin: 0 auto;
+    flex-grow: 1;
+
+    a {
+      display: flex;
+      height: auto;
+    }
+
+    @media screen and (min-width: 600px) {
+      height: 84px;
+      padding: 0 theme.spacing(32);
+    }
+  }
+
+  &__cta-button {
+    display: none;
+
+    @media screen and (min-width: 600px) {
+      display: block;
+    }
+  }
+
+  &_sticky {
+    background-color: map.get(theme.$modino-colors, surface, background);
+    border-bottom: 1px solid map.get(theme.$modino-colors, surface, border);
+    transition: all ease 500ms;
+
+    .m-menu__logo {
+      content: url("./../img/MODINO-logo-short.svg");
+    }
+  }
+
+  &__logo {
+    width: 100px;
+
+    @media screen and (min-width: 600px) {
+      width: 140px;
+    }
+  }
+
+  &__cta-button {
+    --mdc-outlined-button-outline-color: #{map.get(
+        theme.$modino-colors,
+        primary,
+        900
+      )};
+    --mdc-outlined-button-hover-state-layer-color: #{map.get(
+        theme.$modino-colors,
+        secondary-2,
+        50
+      )};
+    --mdc-outlined-button-focus-state-layer-opacity: 1;
+    --mdc-outlined-button-pressed-state-layer-opacity: 1;
+
+    &:hover {
+      --mdc-outlined-button-hover-state-layer-opacity: 1;
+    }
+
+    &.mdc-ripple-upgraded--background-focused {
+      .mdc-button__ripple {
+        &:before {
+          background-color: map.get(theme.$modino-colors, secondary-2, 100);
+        }
+      }
+    }
+
+    .mdc-button__ripple {
+      &:after {
+        background-color: map.get(theme.$modino-colors, secondary-2, 200);
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.m-top-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  margin-block-end: theme.spacing(16);
+
+  @media screen and (min-width: 600px) {
+    margin-block-end: theme.spacing(40);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, calc(-50% - 12vw));
+    width: calc(70vh + 70vw);
+    height: 130vh;
+    background-image: url("../img/top_hero.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    @media screen and (min-width: 600px) {
+      transform: translate(calc(-50vw + 10vw), calc(-50vh - 25vw));
+      width: 130vw;
+    }
+
+    @media (min-width: 600px) and (max-width: 999px) {
+      transform: translate(calc(-50% + 25vw), calc(-50% - 3vw));
+      width: 115vh;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1439px) {
+      transform: translate(calc(-50% + 25vw), calc(-50% - 10vw));
+      width: 100vw;
+    }
+
+    @media (min-width: 1441px) {
+      transform: translate(calc(-50vw + 5vw), calc(-50vh - 20vw));
+      width: 130vw;
+      height: 130vh;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    top: -20vh;
+    width: 100%;
+    align-items: center;
+
+    @media screen and (min-width: 600px) {
+      text-align: left;
+      top: unset;
+      width: 500px;
+      align-items: left;
+    }
+  }
+
+  &__title {
+    font-size: 2.375rem;
+    line-height: 2.375rem;
+
+    @media screen and (min-width: 600px) {
+      font-size: 3.5rem;
+      line-height: 4rem;
+      margin-block-end: theme.spacing(8);
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 350px;
+    margin: 0 auto;
+    margin-block-end: theme.spacing(12);
+
+    @media screen and (min-width: 600px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: unset;
+      max-width: unset;
+      margin-block-end: theme.spacing(24);
+    }
+  }
+
+  &__action-button {
+    padding: theme.spacing(6, 16);
+    height: unset;
+  }
+
+  .m-header__title {
+    font-size: 3.5rem;
+    line-height: 4rem;
+  }
+}
+
+.m-mission {
+  margin-block-end: theme.spacing(32);
+
+  @media screen and (min-width: 600px) {
+    margin-block-end: theme.spacing(48);
+  }
+
+  .m-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    margin-block-end: theme.spacing(32);
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      max-width: 680px;
+      margin-block-end: theme.spacing(48);
+    }
+
+    &__text {
+      display: inline-block;
+      text-align: center;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+      word-break: break-word;
+
+      @media screen and (min-width: 600px) {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+
+    span {
+      position: relative;
+    }
+
+    &__image {
+      position: absolute;
+      z-index: -1;
+      width: 80px;
+      height: 80px;
+      top: -37px;
+      left: -30px;
+
+      @media screen and (min-width: 600px) {
+        top: -37px;
+        left: -54px;
+        width: 100px;
+        height: 100px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+          fill: map.get(theme.$modino-colors, primary, 50);
+        }
+      }
+    }
+
+    &__author {
+      $image_size: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: map.get(theme.$modino-colors, surface, text);
+      padding-block-start: theme.spacing(16);
+
+      @media screen and (min-width: 600px) {
+        right: 0;
+        width: initial;
+      }
+
+      &-image {
+        width: $image_size;
+        height: $image_size;
+        border-radius: 50%;
+        margin-inline-end: theme.spacing(8);
+      }
+    }
+  }
+}
+
+.m-explanation {
+  display: flex;
+  flex-direction: column;
+  gap: theme.spacing(16);
+  background-color: map.get(theme.$modino-colors, primary, 900);
+  border-radius: theme.$border-radius;
+  padding: theme.spacing(16, 12);
+  margin-block-end: theme.spacing(32);
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+    gap: theme.spacing(48);
+    padding: theme.spacing(16, 32);
+    margin-block-end: theme.spacing(64);
+  }
+
+  &__image {
+    flex: 1;
+    text-align: right;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__text {
+    flex: 1;
+    color: map.get(theme.$modino-colors, surface, text-contrast);
+  }
+
+  &__title,
+  &__description {
+    max-width: 480px;
+  }
+
+  &__title {
+    font-family: "Ubuntu";
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 0;
+    margin-block-end: theme.spacing(12);
+
+    @media screen and (min-width: 600px) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 0;
+
+    @media screen and (min-width: 600px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+.m-values {
+  margin-block-end: theme.spacing(8);
+
+  @media screen and (min-width: 600px) {
+    margin-block-end: theme.spacing(64);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    @media screen and (min-width: 600px) {
+      margin-block-start: theme.spacing(8);
+    }
+  }
+
+  &__item-image {
+    height: 100px;
+    margin-block-end: theme.spacing(12);
+
+    @media (min-width: 600px) and (max-width: 999px) {
+      height: 140px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      height: 180px;
+      margin-block-end: theme.spacing(24);
+    }
+  }
+
+  &__item-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin: 0;
+    margin-block-end: theme.spacing(8);
+
+    @media screen and (min-width: 600px) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  &__item-description {
+    margin: 0;
+    margin-block-end: theme.spacing(24);
+
+    @media screen and (min-width: 600px) {
+      margin-block-end: 0;
+    }
+  }
+
+  &__item-image,
+  &__item-title,
+  &__item-description {
+    text-align: center;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+
+    @media screen and (min-width: 600px) {
+      padding-inline-start: theme.spacing(12);
+      padding-inline-end: theme.spacing(12);
+    }
+  }
+}
+
+.m-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: theme.spacing(6);
+  padding: 32px;
+  border: 1px solid map.get(theme.$modino-colors, surface, border);
+  border-radius: theme.$border-radius;
+  background-color: map.get(
+    theme.$modino-colors,
+    surface,
+    background-high-contrast
+  );
+
+  &__title {
+    margin: unset;
+    margin-block-end: theme.spacing(10);
+    align-self: flex-start;
+    color: map.get(theme.$modino-colors, surface, text);
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .mdc-text-field,
+  .mdc-select {
+    width: 100%;
+
+    [class^="mdc-notched-outline__"] {
+      border-color: map.get(theme.$modino-colors, surface, border);
+    }
+  }
+
+  .mdc-text-field--focused {
+    .mdc-floating-label {
+      color: map.get(theme.$modino-colors, primary, 900);
+    }
+  }
+  .mdc-text-field--invalid {
+    .mdc-floating-label {
+      color: var(--mdc-theme-error);
+    }
+  }
+
+  .m-select {
+    &.mdc-select--focused {
+      .mdc-floating-label {
+        color: map.get(theme.$modino-colors, primary, 900);
+      }
+    }
+    &.mdc-select--invalid {
+      .mdc-floating-label {
+        color: var(--mdc-theme-error);
+      }
+    }
+  }
+
+  &__checkbox-container {
+    margin-inline-start: -11px;
+    display: flex;
+    flex-direction: column;
+    gap: theme.spacing(5);
+
+    .mdc-checkbox {
+      --mdc-checkbox-unchecked-color: #{map.get(
+          theme.$modino-colors,
+          surface,
+          border
+        )};
+
+      &.mdc-ripple-upgraded--background-focused {
+        .mdc-checkbox__ripple {
+          &:before {
+            background-color: map.get(theme.$modino-colors, surface, border);
+          }
+        }
+      }
+    }
+
+    .m-link {
+      color: map.get(theme.$modino-colors, primary, 900);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .mdc-button {
+    text-transform: none;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+
+  &__field-wrapper {
+    width: 100%;
+  }
+}
+
+.m-form-section {
+  padding: theme.spacing(16, 12);
+  justify-content: center;
+  background-color: map.get(theme.$modino-colors, surface, background);
+
+  @media (min-width: 1240px) {
+    padding: theme.spacing(30, 40);
+  }
+}
+
+.m-image-section {
+  flex-grow: 1;
+  background-color: map.get(theme.$modino-colors, primary, 900);
+  display: flex;
+  padding: theme.spacing(21);
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  a {
+    width: 80%;
+  }
+
+  .m-request-access-img {
+    width: 100%;
+  }
+
+  @media (min-width: 840px) {
+    .m-request-access-img {
+      width: 70%;
+    }
+
+    a {
+      width: 30%;
+    }
+  }
+}
+
+.m-request-main {
+  height: 100%;
+  max-width: unset;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: 1000px) {
+    flex-wrap: nowrap;
+  }
+}
+
+.m-privacy {
+  &-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+
+  &-navigation {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    position: sticky;
+    top: 2rem;
+    flex: 2;
+    padding: theme.spacing(32, 32, 32, 16);
+
+    @media screen and (min-width: 850px) {
+      display: flex;
+    }
+
+    h2 {
+      margin-block-start: 0;
+    }
+
+    a,
+    a:visited {
+      color: map.get(theme.$modino-colors, surface, text);
+      text-decoration: none;
+
+      &:hover {
+        color: map.get(theme.$modino-colors, primary, 500);
+      }
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      margin-block-start: theme.spacing(4);
+    }
+
+    > ul {
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      padding-inline-start: 0;
+
+      > li {
+        margin-block-start: theme.spacing(12);
+      }
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 4;
+    padding: theme.spacing(32);
+    background-color: #f5f5f5;
+
+    &__header1,
+    &__header2,
+    &__header3,
+    &__header4 {
+      scroll-margin-top: 86px;
+    }
+
+    &__header1 {
+      font-family: "Ubuntu";
+      font-size: 3.5rem;
+      line-height: 4rem;
+      margin: 0;
+      margin-block-end: theme.spacing(16);
+    }
+
+    &__header2 {
+      font-size: 2.125rem;
+      line-height: 2.25rem;
+      margin: theme.spacing(48, 0, 0, 0);
+    }
+
+    &__header3 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      margin: theme.spacing(32, 0, 12, 0);
+    }
+
+    &__header4 {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      margin: theme.spacing(24, 0, 12, 0);
+    }
+  }
+
+  &__image {
+    align-self: center;
+    height: 400px;
+    margin-block-start: theme.spacing(48);
+  }
+}

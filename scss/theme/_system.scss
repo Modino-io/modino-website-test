@@ -1,0 +1,16 @@
+@use "sass:list";
+@use "sass:map";
+
+$spacing-token: 0.125rem;
+
+@function spacing($args...) {
+  $-values: ();
+  @if length($args) > 0 and length($args) <= 4 {
+    @each $arg in $args {
+      $-values: list.append($-values, $arg * $spacing-token);
+    }
+    @return $-values;
+  } @else {
+    @error "Spacing method takes [1..4] arguments";
+  }
+}
