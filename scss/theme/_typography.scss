@@ -13,15 +13,3 @@
 :root {
   --mdc-typography-font-family: "Nunito", sans-serif;
 }
-
-html {
-  font-size: 16px;
-  color: map.get(palette.$modino-colors, surface, text);
-}
-
-body {
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.25px;
-}

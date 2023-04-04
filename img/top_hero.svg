@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="1131.3488"
-   height="980.43188"
-   viewBox="0 0 1131.3488 980.43188"
+   width="1131"
+   height="980"
+   viewBox="0 0 1131 980"
    fill="none"
    version="1.1"
    id="svg1507"
+   sodipodi:docname="top_hero.svg"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1185"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.63747417"
+     inkscape:cx="405.50663"
+     inkscape:cy="620.4173"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1507" />
   <defs
      id="defs1505">
     <clipPath
@@ -823,60 +849,63 @@
          fill="#e3f1f8"
          id="blob3" />
     </clipPath>
-    <style id="style970">
-    :root {
-      --rotate-time: 720s;
-    }
+    <style
+       id="style970">
+      :root {
+        --rotate-time: 720s;
+      }
 
-    [id*="ring"]:nth-of-type(2n) {
-      transform-box: fill-box;
-      transform-origin: 50% 50%;
-      animation: rotate_clockwise var(--rotate-time, 720s) infinite linear;
-    }
-    [id*="ring"]:nth-of-type(2n) path{
-      transform-box: fill-box;
-      transform-origin: 50% 50%;
-      animation: rotate_c_clockwise var(--rotate-time, 720s) infinite linear;
-    }
+      [id*=&quot;ring&quot;]:nth-of-type(2n) {
+        transform-origin: 490px 678px;
+        animation: rotate_clockwise var(--rotate-time, 720s) infinite linear;
+      }
+      [id*=&quot;ring&quot;]:nth-of-type(2n) path{
+        transform-box: fill-box;
+        transform-origin: 50% 50%;
+        animation: rotate_c_clockwise var(--rotate-time, 720s) infinite linear;
+      }
 
-    [id*="ring"]:nth-of-type(2n+1) {
-      transform-box: fill-box;
-      transform-origin: 50% 50%;
-      animation: rotate_c_clockwise var(--rotate-time, 720s) infinite linear;
-    }
-    [id*="ring"]:nth-of-type(2n+1) path{
-      transform-box: fill-box;
-      transform-origin: 50% 50%;
-      animation: rotate_clockwise var(--rotate-time, 720s) infinite linear;
-    }
+      [id*=&quot;ring&quot;]:nth-of-type(2n+1) {
+        transform-origin: 490px 678px;
+        animation: rotate_c_clockwise var(--rotate-time, 720s) infinite linear;
+      }
+      [id*=&quot;ring&quot;]:nth-of-type(2n+1) path{
+        transform-box: fill-box;
+        transform-origin: 50% 50%;
+        animation: rotate_clockwise var(--rotate-time, 720s) infinite linear;
+      }
 
-    #blob-clip-clockwise {
-      transform-origin: 491.069px 679.1655px;
-      animation: rotate_c_clockwise var(--rotate-time, 720s) infinite linear;
-    }
+      #blob-clip-clockwise {
 
-    #blob-clip-c-clockwise {
-      transform-origin: 491.069px 679.1655px;
-      animation: rotate_clockwise var(--rotate-time, 720s) infinite linear;
-    }
+        transform-origin: 490px 678px;
+        animation: rotate_c_clockwise var(--rotate-time, 720s) infinite linear;
+      }
 
-    @keyframes rotate_clockwise {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    @keyframes rotate_c_clockwise {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(-360deg); }
-    }
+      #blob-clip-c-clockwise {
+
+        transform-origin: 490px 678px;
+        animation: rotate_clockwise var(--rotate-time, 720s) infinite linear;
+      }
+
+      @keyframes rotate_clockwise {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes rotate_c_clockwise {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+      }
     </style>
   </defs>
   <path
-     d="m 965.27862,133.73652 c 134.21498,157.678 228.65498,365.398 116.06498,545.522 -118.98198,154.11 -336.90997,308.87597 -565.90998,300.87597 -237.5,-22 -286.5,-178.65397 -286.5,-300.87597 0,-260.213 -279.001802,-189.125 -220.9983023,-461.624 C 51.038918,15.134309 295.80162,19.404209 507.11262,7.9885894 718.42363,-4.1404911 831.06763,-23.941491 965.27862,133.73652 Z"
+     d="M 964.98111,133.67761 C 1099.1547,291.28616 1193.5656,498.91466 1081.0103,678.95932 962.06501,833.00144 744.20419,987.69923 515.27476,979.70276 277.84796,957.71245 228.86306,801.12748 228.86306,678.95932 228.86306,418.86094 -50.05275,489.91762 7.9328717,217.53866 51.023187,15.127643 295.71045,19.395662 506.95632,7.9850705 718.2022,-4.1386674 830.81149,-23.930945 964.98111,133.67761 Z"
      fill="#e3f1f8"
-     id="path972" />
+     id="path972"
+     style="stroke-width:0.999626" />
   <g
-  clip-path="url(#blob-clip-c-clockwise)"
-     id="ring05">
+     id="ring05"
+     transform="matrix(0.99899999,0,0,0.99940438,-0.57769622,-0.76106897)"
+     clip-path="url(#blob-clip-c-clockwise)">
     <circle
        cx="490.51614"
        cy="680.81018"
@@ -1012,8 +1041,9 @@
        style="opacity:0.5;fill:#badcef;fill-opacity:1;stroke-width:0.821257" />
   </g>
   <g
-  clip-path="url(#blob-clip-clockwise)"
-     id="ring04">
+     id="ring04"
+     transform="matrix(0.99878448,0,0,0.99896266,-0.47183754,-0.4608848)"
+     clip-path="url(#blob-clip-clockwise)">
     <circle
        cx="492.58459"
        cy="678.70886"
@@ -1150,7 +1180,8 @@
   </g>
   <g
      id="ring03"
-     mask="none">
+     clip-path="url(#blob-clip-c-clockwise)"
+     transform="matrix(0.99819711,0,0,0.99822579,-0.18342883,0.03953941)">
     <circle
        cx="492.9166"
        cy="679.79883"
@@ -1286,7 +1317,8 @@
        style="opacity:0.5;fill:#3191ce;fill-opacity:1;stroke-width:0.821257" />
   </g>
   <g
-     id="ring02">
+     id="ring02"
+     transform="matrix(0.99943241,0,0,0.99909246,-0.79005235,-0.5490592)">
     <circle
        cx="493.37265"
        cy="683.06635"
@@ -1357,7 +1389,8 @@
        style="opacity:0.5;fill:#91c6e5;fill-opacity:1;stroke-width:0.821257" />
   </g>
   <g
-     id="ring01">
+     id="ring01"
+     transform="matrix(0.9960155,0,0,0.99607504,0.88788151,1.5002933)">
     <circle
        cx="492.9158"
        cy="681.73792"
@@ -1409,7 +1442,8 @@
   </g>
   <g
      clip-path="url(#blob-clip)"
-     id="modino-man">
+     id="modino-man"
+     transform="matrix(0.99940965,0,0,0.99885041,0.10501705,0.69523186)">
     <path
        d="m 610.103,765.448 c 0,0 0.726,-11.557 -4.871,-14.287 -5.596,-2.729 -27.22,-7.825 -27.22,3.334 0,11.16 13.817,21.646 16.253,23.114 2.435,1.469 13.921,35.656 13.921,35.656 l 25.459,-28.815 z"
        fill="#ffffff"

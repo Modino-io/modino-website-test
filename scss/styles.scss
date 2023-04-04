@@ -1,20 +1,22 @@
 @use "theme";
 @use "sass:map";
 
-html,
-body {
+html {
+  font-size: 16px;
+  color: map.get(theme.$modino-colors, surface, text);
   margin: 0;
   overflow-x: clip;
 }
 
 body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.25px;
   background-color: map.get(theme.$modino-colors, surface, background);
   height: 100%;
-  padding-block-start: theme.spacing(24);
-
-  @media screen and (min-width: 600px) {
-    padding-block-start: theme.spacing(12);
-  }
+  margin: 0;
+  overflow-x: clip;
 
   &.m-no-padding {
     height: 100vh;
@@ -26,6 +28,11 @@ main {
   position: relative;
   max-width: 1240px;
   margin: 0 auto;
+  overflow-y: clip;
+
+  &.m-main {
+    margin-top: -84px;
+  }
 }
 
 section {
@@ -71,8 +78,11 @@ section {
     justify-content: flex-start;
     overflow-x: scroll;
     margin: 0;
-    gap: theme.spacing(12);
     height: 40px;
+
+    &::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
 
     @media (min-width: 840px) {
       justify-content: center;
@@ -82,7 +92,8 @@ section {
   &__item {
     flex: none;
     height: 100%;
-    width: 120px;
+    padding-inline: 20px;
+    border-bottom: 2px solid transparent;
 
     button[role="tab"] {
       width: 100%;
@@ -102,11 +113,11 @@ section {
     }
 
     &.active {
+      border-color: map.get(theme.$modino-colors, primary, 900);
+      z-index: 1;
       button[role="tab"] {
         font-weight: bold;
         color: map.get(theme.$modino-colors, primary, 900);
-        border-bottom: 2px solid map.get(theme.$modino-colors, primary, 900);
-        z-index: 1;
       }
     }
   }
@@ -171,7 +182,6 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  overflow-y: clip;
 
   .cta-accent-button {
     text-transform: none;
@@ -245,10 +255,6 @@ section {
       max-width: 400px;
       max-height: 400px;
     }
-
-    @media (min-width: 999px) {
-      margin-inline-end: theme.spacing(64);
-    }
   }
 
   .m-wrapper {
@@ -256,7 +262,6 @@ section {
 
     @media (min-width: 999px) {
       text-align: unset;
-      flex-grow: 1;
     }
   }
 
@@ -381,30 +386,6 @@ a {
   &__cta-button {
     display: none;
 
-    @media screen and (min-width: 600px) {
-      display: block;
-    }
-  }
-
-  &_sticky {
-    background-color: map.get(theme.$modino-colors, surface, background);
-    border-bottom: 1px solid map.get(theme.$modino-colors, surface, border);
-    transition: all ease 500ms;
-
-    .m-menu__logo {
-      content: url("./../img/MODINO-logo-short.svg");
-    }
-  }
-
-  &__logo {
-    width: 100px;
-
-    @media screen and (min-width: 600px) {
-      width: 140px;
-    }
-  }
-
-  &__cta-button {
     --mdc-outlined-button-outline-color: #{map.get(
         theme.$modino-colors,
         primary,
@@ -435,6 +416,28 @@ a {
         background-color: map.get(theme.$modino-colors, secondary-2, 200);
         z-index: 1;
       }
+    }
+
+    @media screen and (min-width: 600px) {
+      display: block;
+    }
+  }
+
+  &_sticky {
+    background-color: map.get(theme.$modino-colors, surface, background);
+    border-bottom: 1px solid map.get(theme.$modino-colors, surface, border);
+    transition: all ease 500ms;
+
+    .m-menu__logo {
+      content: url("./../img/MODINO-logo-short.svg");
+    }
+  }
+
+  &__logo {
+    width: 100px;
+
+    @media screen and (min-width: 600px) {
+      width: 140px;
     }
   }
 }
@@ -889,6 +892,8 @@ a {
   align-items: center;
 
   a {
+    display: inline-block;
+    text-align: center;
     width: 80%;
   }
 

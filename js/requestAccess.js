@@ -21,17 +21,15 @@ for (const formField of formFields) {
 const selectInput = new mdc.select.MDCSelect(
   document.querySelector(".mdc-select")
 );
-new mdc.menu.MDCMenu(menu);
-const list = new mdc.list.MDCList(
-  document.querySelector(".mdc-deprecated-list")
-);
-list.singleSelection = true;
 new mdc.ripple.MDCRipple(button);
 
 const form = document.getElementById("request-access-form");
+const emailInput = new mdc.textField.MDCTextField(
+  document.getElementById("email-input-text-field")
+);
 
 const validateEmail = (emailAddress) => {
-  var re =
+  const re =
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(emailAddress);
 };
@@ -39,9 +37,6 @@ const validateEmail = (emailAddress) => {
 const handleSubmit = (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
-  const emailInput = new mdc.textField.MDCTextField(
-    document.getElementById("email-input-text-field")
-  );
 
   if (!selectInput.value) {
     selectInput.valid = false;
@@ -78,3 +73,13 @@ const handleSubmit = (e) => {
     .catch((err) => console.log(err));
 };
 form.addEventListener("submit", handleSubmit);
+
+const onBlurEmailInput = (e) => {
+  if (!e.target.validity.valid && e.target.value.length) {
+    emailInput.helperTextContent = "Incorrect e-mail format";
+  }
+};
+
+document
+  .getElementById("email-input")
+  .addEventListener("blur", onBlurEmailInput);
