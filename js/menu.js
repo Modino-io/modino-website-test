@@ -6,7 +6,6 @@ document.addEventListener("scroll", checkMenuCtaButton);
 checkMenuCtaButton();
 
 function checkMenuCtaButton() {
-  menuNav.getBoundingClientRect().top;
   if (menuNav.getBoundingClientRect().top < window.scrollY) {
     menu.classList.add("m-menu_sticky");
   } else {
