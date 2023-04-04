@@ -9,18 +9,6 @@
   --mdc-typography-font-family: "Nunito", sans-serif;
 }
 
-html {
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-body {
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.25px;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -53,11 +41,17 @@ body {
 }
 
 html {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.87);
   margin: 0;
   overflow-x: clip;
 }
 
 body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.25px;
   background-color: #fbfbfb;
   height: 100%;
   margin: 0;
