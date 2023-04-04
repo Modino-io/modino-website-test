@@ -988,6 +988,11 @@ a {
     flex: 4;
     padding: theme.spacing(32);
     background-color: #f5f5f5;
+    padding-block-start: theme.spacing(48);
+
+    @media screen and (min-width: 850px) {
+      padding-block-start: theme.spacing(40);
+    }
 
     &__header1,
     &__header2,
