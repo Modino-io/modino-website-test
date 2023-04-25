@@ -152,6 +152,10 @@ section {
     }
 
     &__image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      object-position: top center;
       margin-inline-end: theme.spacing(12);
       border-radius: theme.$border-radius;
     }
@@ -166,6 +170,9 @@ section {
 }
 
 .m-team-photo {
+  height: 350px;
+  object-fit: cover;
+  object-position: 50% 15%;
   width: 100%;
 
   @media (min-width: 1240px) {
