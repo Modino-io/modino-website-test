@@ -152,6 +152,10 @@ section {
     }
 
     &__image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      object-position: top center;
       margin-inline-end: theme.spacing(12);
       border-radius: theme.$border-radius;
     }
@@ -166,6 +170,9 @@ section {
 }
 
 .m-team-photo {
+  height: 350px;
+  object-fit: cover;
+  object-position: 50% 15%;
   width: 100%;
 
   @media (min-width: 1240px) {
@@ -988,6 +995,11 @@ a {
     flex: 4;
     padding: theme.spacing(32);
     background-color: #f5f5f5;
+    padding-block-start: theme.spacing(48);
+
+    @media screen and (min-width: 850px) {
+      padding-block-start: theme.spacing(40);
+    }
 
     &__header1,
     &__header2,
@@ -1026,6 +1038,7 @@ a {
   &__image {
     align-self: center;
     height: 400px;
+    width: 100%;
     margin-block-start: theme.spacing(48);
   }
 }
