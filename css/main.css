@@ -97,7 +97,7 @@ section {
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 700;
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", sans-serif;
 }
 .m-section__menu {
   width: 100%;
@@ -139,7 +139,7 @@ section {
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
   position: relative;
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
 }
 .m-section__item button[role=tab]:hover {
   color: #497291;
@@ -651,7 +651,7 @@ a:hover {
   max-width: 480px;
 }
 .m-explanation__title {
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -935,7 +935,7 @@ a:hover {
   scroll-margin-top: 86px;
 }
 .m-privacy-text__header1 {
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 3.5rem;
   line-height: 4rem;
   margin: 0;
@@ -959,6 +959,7 @@ a:hover {
 .m-privacy__image {
   align-self: center;
   height: 400px;
+  width: 100%;
   margin-block-start: 6rem;
 }
 
