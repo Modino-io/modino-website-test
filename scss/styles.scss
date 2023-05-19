@@ -24,6 +24,12 @@ body {
   }
 }
 
+a {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 main {
   position: relative;
   max-width: 1240px;
@@ -305,11 +311,17 @@ section {
       }
     }
 
-    a,
-    a:visited {
-      height: 20px;
-      color: map.get(theme.$modino-colors, surface, text-contrast);
-      text-decoration: underline;
+    a {
+      &,
+      &:visited {
+        height: 20px;
+        color: map.get(theme.$modino-colors, surface, text-contrast);
+        text-decoration: underline;
+      }
+
+      &:not(:first-of-type) {
+        margin-inline-start: theme.spacing(4);
+      }
     }
   }
 
@@ -322,12 +334,6 @@ section {
       flex-direction: row;
       align-items: unset;
     }
-  }
-}
-
-a {
-  &:hover {
-    opacity: 0.8;
   }
 }
 
