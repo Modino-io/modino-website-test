@@ -24,6 +24,12 @@ body {
   }
 }
 
+a {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
 main {
   position: relative;
   max-width: 1240px;
@@ -196,8 +202,16 @@ section {
     padding: theme.spacing(6) theme.spacing(16);
     height: unset;
 
-    --mdc-filled-button-container-color: #{map.get(theme.$modino-colors, accent, 600)};
-    --mdc-filled-button-hover-state-layer-color: #{map.get(theme.$modino-colors, accent, 400)};
+    --mdc-filled-button-container-color: #{map.get(
+        theme.$modino-colors,
+        accent,
+        600
+      )};
+    --mdc-filled-button-hover-state-layer-color: #{map.get(
+        theme.$modino-colors,
+        accent,
+        400
+      )};
 
     --mdc-filled-button-hover-state-layer-opacity: 1;
     --mdc-filled-button-focus-state-layer-opacity: 1;
@@ -297,11 +311,17 @@ section {
       }
     }
 
-    a,
-    a:visited {
-      height: 20px;
-      color: map.get(theme.$modino-colors, surface, text-contrast);
-      text-decoration: underline;
+    a {
+      &,
+      &:visited {
+        height: 20px;
+        color: map.get(theme.$modino-colors, surface, text-contrast);
+        text-decoration: underline;
+      }
+
+      &:not(:first-of-type) {
+        margin-inline-start: theme.spacing(4);
+      }
     }
   }
 
@@ -314,12 +334,6 @@ section {
       flex-direction: row;
       align-items: unset;
     }
-  }
-}
-
-a {
-  &:hover {
-    opacity: 0.8;
   }
 }
 
@@ -385,8 +399,16 @@ a {
   &__cta-button {
     display: none;
 
-    --mdc-outlined-button-outline-color: #{map.get(theme.$modino-colors, primary, 900)};
-    --mdc-outlined-button-hover-state-layer-color: #{map.get(theme.$modino-colors, secondary-2, 50)};
+    --mdc-outlined-button-outline-color: #{map.get(
+        theme.$modino-colors,
+        primary,
+        900
+      )};
+    --mdc-outlined-button-hover-state-layer-color: #{map.get(
+        theme.$modino-colors,
+        secondary-2,
+        50
+      )};
     --mdc-outlined-button-focus-state-layer-opacity: 1;
     --mdc-outlined-button-pressed-state-layer-opacity: 1;
 
@@ -775,7 +797,11 @@ a {
   padding: 32px;
   border: 1px solid map.get(theme.$modino-colors, surface, border);
   border-radius: theme.$border-radius;
-  background-color: map.get(theme.$modino-colors, surface, background-high-contrast);
+  background-color: map.get(
+    theme.$modino-colors,
+    surface,
+    background-high-contrast
+  );
 
   &__title {
     margin: unset;
@@ -826,7 +852,11 @@ a {
     gap: theme.spacing(5);
 
     .mdc-checkbox {
-      --mdc-checkbox-unchecked-color: #{map.get(theme.$modino-colors, surface, border)};
+      --mdc-checkbox-unchecked-color: #{map.get(
+          theme.$modino-colors,
+          surface,
+          border
+        )};
 
       &.mdc-ripple-upgraded--background-focused {
         .mdc-checkbox__ripple {
@@ -972,6 +1002,12 @@ a {
     padding: theme.spacing(32);
     background-color: #f5f5f5;
     padding-block-start: theme.spacing(48);
+
+    &--decimal-lists {
+      ul {
+        list-style-type: decimal;
+      }
+    }
 
     @media screen and (min-width: 850px) {
       padding-block-start: theme.spacing(40);

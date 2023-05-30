@@ -62,6 +62,10 @@ body.m-no-padding {
   padding-block-start: 0;
 }
 
+a:hover {
+  opacity: 0.8;
+}
+
 main {
   position: relative;
   max-width: 1240px;
@@ -309,11 +313,13 @@ section {
     margin: 0rem 1rem 0rem 0rem;
   }
 }
-.m-footer__content a,
-.m-footer__content a:visited {
+.m-footer__content a, .m-footer__content a:visited {
   height: 20px;
   color: rgba(255, 255, 255, 0.87);
   text-decoration: underline;
+}
+.m-footer__content a:not(:first-of-type) {
+  margin-inline-start: 0.5rem;
 }
 .m-footer__copyright {
   display: flex;
@@ -325,10 +331,6 @@ section {
     flex-direction: row;
     align-items: unset;
   }
-}
-
-a:hover {
-  opacity: 0.8;
 }
 
 .m-header {
@@ -925,6 +927,9 @@ a:hover {
   padding: 4rem;
   background-color: #f5f5f5;
   padding-block-start: 6rem;
+}
+.m-privacy-text--decimal-lists ul {
+  list-style-type: decimal;
 }
 @media screen and (min-width: 850px) {
   .m-privacy-text {
