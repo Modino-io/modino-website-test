@@ -1,0 +1,49 @@
+name: SonarQube Analysis
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    
+jobs:
+  machine:
+    if: github.event.pull_request.draft == false
+    uses: Modino-io/.github/.github/workflows/runners-availability.yaml@main
+    with:
+      RUNNER_ARCHITECTURE: "self-hosted-amd"
+
+  scan:
+    name: Static code analysis
+    if: github.event.pull_request.draft == false
+    needs: [machine]
+    runs-on: ${{needs.machine.outputs.machine}}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Cache SonarQube packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Download shellcheck
+        shell: bash
+        run: |
+          scversion="stable" # or "v0.4.7", or "latest"
+          wget -qO- "https://github.com/koalaman/shellcheck/releases/download/${scversion?}/shellcheck-${scversion?}.linux.x86_64.tar.xz" | tar -xJv
+          sudo cp "shellcheck-${scversion}/shellcheck" /usr/bin/
+          shellcheck --version
+      - name: SonarQube scan
+        uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      - name: SonarQube quality gate report
+        uses: sonarsource/sonarqube-quality-gate-action@master
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
