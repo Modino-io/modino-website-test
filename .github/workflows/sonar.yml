@@ -9,6 +9,7 @@ on:
     
 jobs:
   machine:
+    name: Runner selection
     if: github.event.pull_request.draft == false
     uses: Modino-io/.github/.github/workflows/runners-availability.yaml@main
     with:
