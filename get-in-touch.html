@@ -140,7 +140,7 @@
             <div
               class="mdc-select mdc-select--outlined m-select mdc-select--required"
             >
-              <input type="hidden" name="company_role" />
+              <input type="hidden" name="company_role" required />
               <div
                 class="mdc-select__anchor"
                 aria-labelledby="outlined-select-label"
@@ -304,7 +304,9 @@
                 <input
                   type="checkbox"
                   class="mdc-checkbox__native-control"
-                  id="checkbox-1"
+                  id="mailing-list-checkbox"
+                  name="mailing_list"
+                  value="true"
                 />
                 <div class="mdc-checkbox__background">
                   <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
@@ -327,8 +329,9 @@
                 <input
                   type="checkbox"
                   class="mdc-checkbox__native-control"
-                  id="checkbox-2"
-                  name="agreements"
+                  id="legal-checkbox"
+                  name="legal"
+                  value="true"
                   required
                 />
                 <div class="mdc-checkbox__background">
@@ -348,6 +351,7 @@
                 <a class="m-link" href="./privacy-policy">Privacy Policy</a>
                 and
                 <a class="m-link" href="./terms-of-service">Terms of Service</a>
+                (required)
               </div>
             </div>
           </div>
