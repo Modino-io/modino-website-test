@@ -62,13 +62,6 @@ body.m-no-padding {
   padding-block-start: 0;
 }
 
-a.big-link {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: #004680;
-}
 a:hover {
   opacity: 0.8;
 }
@@ -708,14 +701,18 @@ section {
   display: flex;
 }
 .m-solution__video iframe {
-  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  border: none;
   margin-block-end: 1rem;
 }
 .m-solution__text {
   font-size: 1.5rem;
   line-height: 2rem;
-  margin-block-end: 4rem;
+  margin-block-end: 2rem;
 }
 @media screen and (min-width: 600px) {
   .m-solution__text {
@@ -741,8 +738,6 @@ section {
 }
 @media screen and (min-width: 600px) {
   .m-values__list {
-    flex-direction: row;
-    justify-content: space-between;
     grid-template-columns: 1fr 1fr;
   }
 }
