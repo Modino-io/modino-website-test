@@ -25,6 +25,13 @@ body {
 }
 
 a {
+  &.big-link {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: map.get(theme.$modino-colors, primary, 900);
+  }
   &:hover {
     opacity: 0.8;
   }
@@ -176,7 +183,7 @@ section {
 }
 
 .m-team-photo {
-  height: 450px;
+  max-height: 478px;
   object-fit: cover;
   object-position: 50% 15%;
   width: 100%;
@@ -712,6 +719,50 @@ section {
   }
 }
 
+.m-solution {
+  margin-block-end: theme.spacing(32);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media screen and (min-width: 840px) {
+      flex-direction: row;
+    }
+  }
+
+  &__video,
+  &__text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__video {
+    display: flex;
+    iframe {
+      border: none;
+      width: 100%;
+      margin-block-end: theme.spacing(8);
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-block-end: theme.spacing(32);
+
+    @media screen and (min-width: 600px) {
+      margin-block-end: 0;
+    }
+
+    p:first-of-type {
+      margin-block-start: 0;
+    }
+  }
+}
+
 .m-values {
   margin-block-end: theme.spacing(8);
 
@@ -720,12 +771,14 @@ section {
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: theme.spacing(25);
 
     @media screen and (min-width: 600px) {
       flex-direction: row;
       justify-content: space-between;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
@@ -733,7 +786,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
+    max-width: 400px;
 
     @media screen and (min-width: 600px) {
       margin-block-start: theme.spacing(8);
