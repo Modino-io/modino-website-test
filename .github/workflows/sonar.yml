@@ -8,7 +8,22 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
+
+  add-copyright:
+    if: github.event.pull_request.draft == false
+    uses: Modino-io/.github/.github/workflows/add-copyright.yaml@ci/712-copyright
+    with:
+      CALLER_REPOSITORY: ${{ github.repository }}
+      CALLER_REPOSITORY_VERSION: ${{ github.head_ref }}
+      RUNS_ON: "ubuntu-latest"
+      ADD_COPYRIGHT_TO: "${{ github.repository }}/scss ${{ github.repository }}/js ${{ github.repository }}/css"
+    secrets:
+      MODINO_CI_GITHUB_TOKEN: ${{ secrets.MODINO_CI_GITHUB_TOKEN }}
+      CI_ROBOT_GPG_PRIVATE_KEY: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY }}
+      CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD }}
+
   scan:
+    needs: [add-copyright]
     name: Static code analysis
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-20.04
