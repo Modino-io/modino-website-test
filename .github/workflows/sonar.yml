@@ -66,6 +66,9 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.scm.revision=${{ github.event.pull_request.head.sha }}
       - name: SonarQube quality gate report
         uses: sonarsource/sonarqube-quality-gate-action@master
         timeout-minutes: 5
