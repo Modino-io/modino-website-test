@@ -9,14 +9,29 @@ on:
 
 jobs:
 
-  add-copyright:
+  add-copyright-private:
     if: github.event.pull_request.draft == false
     uses: Modino-io/.github/.github/workflows/add-copyright.yaml@ci/712-copyright
     with:
       CALLER_REPOSITORY: ${{ github.repository }}
       CALLER_REPOSITORY_VERSION: ${{ github.head_ref }}
       RUNS_ON: "ubuntu-latest"
-      ADD_COPYRIGHT_TO: "${{ github.repository }}/scss ${{ github.repository }}/js ${{ github.repository }}/css"
+      ADD_COPYRIGHT_TO: "${{ github.repository }}/scss"
+      LICENSE_FILE_TYPE: "private"
+    secrets:
+      MODINO_CI_GITHUB_TOKEN: ${{ secrets.MODINO_CI_GITHUB_TOKEN }}
+      CI_ROBOT_GPG_PRIVATE_KEY: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY }}
+      CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD }}
+
+  add-copyright-public:
+    if: github.event.pull_request.draft == false
+    uses: Modino-io/.github/.github/workflows/add-copyright.yaml@ci/712-copyright
+    with:
+      CALLER_REPOSITORY: ${{ github.repository }}
+      CALLER_REPOSITORY_VERSION: ${{ github.head_ref }}
+      RUNS_ON: "ubuntu-latest"
+      ADD_COPYRIGHT_TO: "${{ github.repository }}/js ${{ github.repository }}/css"
+      LICENSE_FILE_TYPE: "public"
     secrets:
       MODINO_CI_GITHUB_TOKEN: ${{ secrets.MODINO_CI_GITHUB_TOKEN }}
       CI_ROBOT_GPG_PRIVATE_KEY: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY }}
