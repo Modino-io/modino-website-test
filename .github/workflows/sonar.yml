@@ -11,7 +11,7 @@ jobs:
 
   add-copyright-private:
     if: github.event.pull_request.draft == false
-    uses: Modino-io/.github/.github/workflows/add-copyright.yaml@ci/712-copyright
+    uses: Modino-io/.github/.github/workflows/add-copyright.yaml@main
     with:
       CALLER_REPOSITORY: ${{ github.repository }}
       CALLER_REPOSITORY_VERSION: ${{ github.head_ref }}
@@ -25,7 +25,7 @@ jobs:
 
   add-copyright-public:
     if: github.event.pull_request.draft == false
-    uses: Modino-io/.github/.github/workflows/add-copyright.yaml@ci/712-copyright
+    uses: Modino-io/.github/.github/workflows/add-copyright.yaml@main
     with:
       CALLER_REPOSITORY: ${{ github.repository }}
       CALLER_REPOSITORY_VERSION: ${{ github.head_ref }}
