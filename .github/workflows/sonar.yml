@@ -24,6 +24,7 @@ jobs:
       CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD }}
 
   add-copyright-public:
+    needs: [add-copyright-private]
     if: github.event.pull_request.draft == false
     uses: Modino-io/.github/.github/workflows/add-copyright.yaml@main
     with:
@@ -38,7 +39,7 @@ jobs:
       CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD }}
 
   scan:
-    needs: [add-copyright]
+    needs: [add-copyright-private, add-copyright-public]
     name: Static code analysis
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-20.04
