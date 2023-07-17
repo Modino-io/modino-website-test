@@ -8,7 +8,38 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
 
 jobs:
+
+  add-copyright-private:
+    if: github.event.pull_request.draft == false
+    uses: Modino-io/.github/.github/workflows/add-copyright.yaml@main
+    with:
+      CALLER_REPOSITORY: ${{ github.repository }}
+      CALLER_REPOSITORY_VERSION: ${{ github.head_ref }}
+      RUNS_ON: "ubuntu-latest"
+      ADD_COPYRIGHT_TO: "${{ github.repository }}/scss"
+      LICENSE_FILE_TYPE: "private"
+    secrets:
+      MODINO_CI_GITHUB_TOKEN: ${{ secrets.MODINO_CI_GITHUB_TOKEN }}
+      CI_ROBOT_GPG_PRIVATE_KEY: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY }}
+      CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD }}
+
+  add-copyright-public:
+    needs: [add-copyright-private]
+    if: github.event.pull_request.draft == false
+    uses: Modino-io/.github/.github/workflows/add-copyright.yaml@main
+    with:
+      CALLER_REPOSITORY: ${{ github.repository }}
+      CALLER_REPOSITORY_VERSION: ${{ github.head_ref }}
+      RUNS_ON: "ubuntu-latest"
+      ADD_COPYRIGHT_TO: "${{ github.repository }}/js ${{ github.repository }}/css"
+      LICENSE_FILE_TYPE: "public"
+    secrets:
+      MODINO_CI_GITHUB_TOKEN: ${{ secrets.MODINO_CI_GITHUB_TOKEN }}
+      CI_ROBOT_GPG_PRIVATE_KEY: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY }}
+      CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD: ${{ secrets.CI_ROBOT_GPG_PRIVATE_KEY_PASSWORD }}
+
   scan:
+    needs: [add-copyright-private, add-copyright-public]
     name: Static code analysis
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-20.04
@@ -35,6 +66,9 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.scm.revision=${{ github.event.pull_request.head.sha }}
       - name: SonarQube quality gate report
         uses: sonarsource/sonarqube-quality-gate-action@master
         timeout-minutes: 5

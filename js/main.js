@@ -1,3 +1,9 @@
+/*
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ */
+
 const menuCtaButton = document.getElementsByClassName("m-menu__cta-button")[0];
 let currentTab = "founders";
 const tabs = document.querySelectorAll(".m-section__item");
