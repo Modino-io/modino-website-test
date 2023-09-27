@@ -1,11 +1,57 @@
 /*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
  * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
  *
  * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
  */
-
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu");
@@ -15,6 +61,19 @@
   --mdc-typography-font-family: "Nunito", sans-serif;
 }
 
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 * {
   box-sizing: border-box;
 }
@@ -46,6 +105,19 @@
   text-transform: none;
 }
 
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 html {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.87);
@@ -57,6 +129,7 @@ body {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
+  font-weight: 400;
   letter-spacing: 0.25px;
   background-color: #fbfbfb;
   height: 100%;
@@ -82,32 +155,36 @@ main.m-main {
   margin-top: -84px;
 }
 
-section {
+.m-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0rem 1.5rem;
   width: 100%;
+  padding: 0rem 1.5rem;
 }
 @media screen and (min-width: 600px) {
-  section {
+  .m-section {
     padding: 0rem 4rem;
   }
 }
 @media (min-width: 600px) and (max-width: 999px) {
-  section {
+  .m-section {
     padding: 0rem 1.5rem;
   }
 }
-
-.m-section.m-team-section {
-  margin-block-end: 4rem;
-}
 .m-section__header {
-  font-size: 2rem;
-  line-height: 2rem;
-  font-weight: 700;
   font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+@media (min-width: 600px) {
+  .m-section__header {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: 700;
+  }
 }
 .m-section__menu {
   width: 100%;
@@ -200,6 +277,10 @@ section {
   margin-block-start: 0.5rem;
 }
 
+.m-team {
+  margin-block-end: 4rem;
+}
+
 .m-team-photo {
   max-height: 478px;
   object-fit: cover;
@@ -286,12 +367,18 @@ section {
   }
 }
 .m-summary .m-header {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.375rem;
+  line-height: 3rem;
+  font-weight: 700;
   margin-block: 4rem 2rem;
 }
-@media (min-width: 599px) {
+@media (min-width: 600px) {
   .m-summary .m-header {
+    font-family: "Ubuntu", sans-serif;
     font-size: 3.5rem;
-    line-height: 3.5rem;
+    line-height: 4rem;
+    font-weight: 700;
     margin-block-start: 0;
   }
 }
@@ -337,23 +424,6 @@ section {
     flex-direction: row;
     align-items: unset;
   }
-}
-
-.m-header {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 2rem;
-  line-height: 2.5rem;
-  margin: 2rem 0;
-}
-@media screen and (min-width: 600px) {
-  .m-header {
-    font-size: 3rem;
-    line-height: 4rem;
-    margin: 3rem 0rem;
-  }
-}
-.m-header__highlight {
-  color: #004680;
 }
 
 .highlight {
@@ -505,28 +575,34 @@ section {
   }
 }
 .m-top-hero__title {
+  font-family: "Ubuntu", sans-serif;
   font-size: 2.375rem;
-  line-height: 2.375rem;
+  line-height: 3rem;
+  font-weight: 700;
 }
 @media screen and (min-width: 600px) {
   .m-top-hero__title {
+    font-family: "Ubuntu", sans-serif;
     font-size: 3.5rem;
     line-height: 4rem;
+    font-weight: 700;
     margin-block-end: 1rem;
   }
 }
+.m-top-hero__title-highlight {
+  color: #004680;
+}
 .m-top-hero__description {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25rem;
   max-width: 350px;
   margin: 0 auto;
   margin-block-end: 1.5rem;
 }
 @media screen and (min-width: 600px) {
   .m-top-hero__description {
-    font-size: 1.5rem;
-    line-height: 2rem;
     margin: unset;
     max-width: unset;
     margin-block-end: 3rem;
@@ -537,8 +613,10 @@ section {
   height: unset;
 }
 .m-top-hero .m-header__title {
+  font-family: "Ubuntu", sans-serif;
   font-size: 3.5rem;
   line-height: 4rem;
+  font-weight: 700;
 }
 
 .m-mission {
@@ -565,16 +643,21 @@ section {
   }
 }
 .m-mission .m-quote__text {
-  display: inline-block;
-  text-align: center;
+  font-family: "Nunito", sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  font-weight: 400;
+  display: inline-block;
+  text-align: center;
+  font-style: italic;
   word-break: break-word;
 }
 @media screen and (min-width: 600px) {
   .m-mission .m-quote__text {
+    font-family: "Nunito", sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
+    font-weight: 400;
   }
 }
 .m-mission .m-quote span {
@@ -604,13 +687,15 @@ section {
   fill: #e3f1f8;
 }
 .m-mission .m-quote__author {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   width: 100%;
-  font-size: 1rem;
-  line-height: 1.5rem;
   color: rgba(0, 0, 0, 0.87);
   padding-block-start: 2rem;
 }
@@ -660,28 +745,33 @@ section {
 }
 .m-explanation__title {
   font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
+  font-weight: 700;
   margin: 0;
   margin-block-end: 1.5rem;
 }
 @media screen and (min-width: 600px) {
   .m-explanation__title {
+    font-family: "Ubuntu", sans-serif;
     font-size: 2rem;
     line-height: 2.5rem;
+    font-weight: 700;
   }
 }
 .m-explanation__description {
-  font-weight: 400;
+  font-family: "Nunito", sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  font-weight: 400;
   margin: 0;
 }
 @media screen and (min-width: 600px) {
   .m-explanation__description {
+    font-family: "Nunito", sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
+    font-weight: 400;
   }
 }
 
@@ -722,8 +812,10 @@ section {
   border: none;
 }
 .m-solution__text {
+  font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
+  font-weight: 400;
   margin-block-end: 2rem;
 }
 @media screen and (min-width: 600px) {
@@ -733,6 +825,9 @@ section {
 }
 .m-solution__text p:first-of-type {
   margin-block-start: 0;
+}
+.m-solution__text .highlight {
+  font-style: italic;
 }
 
 .m-key-aspects {
@@ -781,16 +876,13 @@ section {
   }
 }
 .m-key-aspects__item-title {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+  font-weight: 700;
   margin: 0;
   margin-block-end: 1rem;
-}
-@media screen and (min-width: 600px) {
-  .m-key-aspects__item-title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 .m-key-aspects__item-description {
   margin: 0;
@@ -858,16 +950,13 @@ section {
   }
 }
 .m-values__item-title {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+  font-weight: 700;
   margin: 0;
   margin-block-end: 1rem;
-}
-@media screen and (min-width: 600px) {
-  .m-values__item-title {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 .m-values__item-description {
   margin: 0;
@@ -901,12 +990,15 @@ section {
   background-color: #fff;
 }
 .m-form__title {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
   margin: unset;
   margin-block-end: 1.25rem;
   align-self: flex-start;
   color: rgba(0, 0, 0, 0.87);
-  font-size: 2rem;
-  line-height: 2rem;
 }
 .m-form .mdc-text-field,
 .m-form .mdc-select {
@@ -1077,21 +1169,29 @@ section {
   font-family: "Ubuntu", sans-serif;
   font-size: 3.5rem;
   line-height: 4rem;
+  font-weight: 700;
   margin: 0;
   margin-block-end: 2rem;
 }
 .m-privacy-text__header2 {
+  font-family: "Nunito", sans-serif;
   font-size: 2.125rem;
   line-height: 2.25rem;
+  font-weight: 700;
   margin: 6rem 0rem 0rem 0rem;
 }
 .m-privacy-text__header3 {
+  font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
   line-height: 1.5rem;
+  font-weight: 400;
   margin: 4rem 0rem 1.5rem 0rem;
 }
 .m-privacy-text__header4 {
+  font-family: "Nunito", sans-serif;
   font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
   line-height: 1.5rem;
   margin: 3rem 0rem 1.5rem 0rem;
 }
@@ -1102,6 +1202,19 @@ section {
   margin-block-start: 6rem;
 }
 
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 :root {
   --mdc-theme-primary: #004680;
   --mdc-theme-secondary: #004680;

@@ -23,9 +23,8 @@ html {
 }
 
 body {
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  @include theme.m-font("body-3");
+
   letter-spacing: 0.25px;
   background-color: map.get(theme.$modino-colors, surface, background);
   height: 100%;
@@ -55,12 +54,12 @@ main {
   }
 }
 
-section {
+.m-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: theme.spacing(0, 12);
   width: 100%;
+  padding: theme.spacing(0, 12);
 
   @media screen and (min-width: 600px) {
     padding: theme.spacing(0, 32);
@@ -69,18 +68,13 @@ section {
   @media (min-width: 600px) and (max-width: 999px) {
     padding: theme.spacing(0, 12);
   }
-}
-
-.m-section {
-  &.m-team-section {
-    margin-block-end: theme.spacing(32);
-  }
 
   &__header {
-    font-size: 2rem;
-    line-height: 2rem;
-    font-weight: 700;
-    font-family: "Ubuntu", sans-serif;
+    @include theme.m-font("heading-4");
+
+    @media (min-width: 600px) {
+      @include theme.m-font("heading-2");
+    }
   }
 
   &__menu {
@@ -189,6 +183,10 @@ section {
   }
 }
 
+.m-team {
+  margin-block-end: theme.spacing(32);
+}
+
 .m-team-photo {
   max-height: 478px;
   object-fit: cover;
@@ -293,11 +291,13 @@ section {
   }
 
   .m-header {
+    @include theme.m-font("heading-1-mobile");
+
     margin-block: theme.spacing(32) theme.spacing(16);
 
-    @media (min-width: 599px) {
-      font-size: 3.5rem;
-      line-height: 3.5rem;
+    @media (min-width: 600px) {
+      @include theme.m-font("heading-1");
+
       margin-block-start: 0;
     }
   }
@@ -348,23 +348,6 @@ section {
       flex-direction: row;
       align-items: unset;
     }
-  }
-}
-
-.m-header {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 2rem;
-  line-height: 2.5rem;
-  margin: theme.spacing(16) 0;
-
-  @media screen and (min-width: 600px) {
-    font-size: 3rem;
-    line-height: 4rem;
-    margin: theme.spacing(24, 0);
-  }
-
-  &__highlight {
-    color: map.get(theme.$modino-colors, primary, 900);
   }
 }
 
@@ -535,27 +518,27 @@ section {
   }
 
   &__title {
-    font-size: 2.375rem;
-    line-height: 2.375rem;
+    @include theme.m-font("heading-1-mobile");
 
     @media screen and (min-width: 600px) {
-      font-size: 3.5rem;
-      line-height: 4rem;
+      @include theme.m-font("heading-1");
+
       margin-block-end: theme.spacing(8);
+    }
+
+    &-highlight {
+      color: map.get(theme.$modino-colors, primary, 900);
     }
   }
 
   &__description {
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.25rem;
+    @include theme.m-font("body-1");
+
     max-width: 350px;
     margin: 0 auto;
     margin-block-end: theme.spacing(12);
 
     @media screen and (min-width: 600px) {
-      font-size: 1.5rem;
-      line-height: 2rem;
       margin: unset;
       max-width: unset;
       margin-block-end: theme.spacing(24);
@@ -568,8 +551,7 @@ section {
   }
 
   .m-header__title {
-    font-size: 3.5rem;
-    line-height: 4rem;
+    @include theme.m-font("heading-1");
   }
 }
 
@@ -595,15 +577,15 @@ section {
     }
 
     &__text {
+      @include theme.m-font("body-1-mobile");
+
       display: inline-block;
       text-align: center;
-      font-size: 1.25rem;
-      line-height: 1.75rem;
+      font-style: italic;
       word-break: break-word;
 
       @media screen and (min-width: 600px) {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        @include theme.m-font("body-1");
       }
     }
 
@@ -639,13 +621,13 @@ section {
     &__author {
       $image_size: 40px;
 
+      @include theme.m-font("body-3");
+
       display: flex;
       align-items: center;
       justify-content: center;
       position: absolute;
       width: 100%;
-      font-size: 1rem;
-      line-height: 1.5rem;
       color: map.get(theme.$modino-colors, surface, text);
       padding-block-start: theme.spacing(16);
 
@@ -700,28 +682,23 @@ section {
   }
 
   &__title {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    @include theme.m-font("heading-4-mobile");
+
     margin: 0;
     margin-block-end: theme.spacing(12);
 
     @media screen and (min-width: 600px) {
-      font-size: 2rem;
-      line-height: 2.5rem;
+      @include theme.m-font("heading-4");
     }
   }
 
   &__description {
-    font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    @include theme.m-font("body-1-mobile");
+
     margin: 0;
 
     @media screen and (min-width: 600px) {
-      font-size: 1.5rem;
-      line-height: 2rem;
+      @include theme.m-font("body-1");
     }
   }
 }
@@ -765,8 +742,8 @@ section {
   }
 
   &__text {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    @include theme.m-font("body-1");
+
     margin-block-end: theme.spacing(16);
 
     @media screen and (min-width: 600px) {
@@ -775,6 +752,10 @@ section {
 
     p:first-of-type {
       margin-block-start: 0;
+    }
+
+    .highlight {
+      font-style: italic;
     }
   }
 }
@@ -823,15 +804,11 @@ section {
   }
 
   &__item-title {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    @include theme.m-font("body-1");
+
+    font-weight: 700;
     margin: 0;
     margin-block-end: theme.spacing(8);
-
-    @media screen and (min-width: 600px) {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
   }
 
   &__item-description {
@@ -900,15 +877,11 @@ section {
   }
 
   &__item-title {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    @include theme.m-font("body-1");
+
+    font-weight: 700;
     margin: 0;
     margin-block-end: theme.spacing(8);
-
-    @media screen and (min-width: 600px) {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
   }
 
   &__item-description {
@@ -949,12 +922,13 @@ section {
   );
 
   &__title {
+    @include theme.m-font("subheading-2");
+
+    font-size: 2rem;
     margin: unset;
     margin-block-end: theme.spacing(10);
     align-self: flex-start;
     color: map.get(theme.$modino-colors, surface, text);
-    font-size: 2rem;
-    line-height: 2rem;
   }
 
   .mdc-text-field,
@@ -1166,27 +1140,27 @@ section {
     }
 
     &__header1 {
-      font-family: "Ubuntu", sans-serif;
-      font-size: 3.5rem;
-      line-height: 4rem;
+      @include theme.m-font("heading-1");
+
       margin: 0;
       margin-block-end: theme.spacing(16);
     }
 
     &__header2 {
-      font-size: 2.125rem;
-      line-height: 2.25rem;
+      @include theme.m-font("subheading-1");
+
       margin: theme.spacing(48, 0, 0, 0);
     }
 
     &__header3 {
-      font-size: 1.5rem;
-      line-height: 1.5rem;
+      @include theme.m-font("body-2");
+
       margin: theme.spacing(32, 0, 12, 0);
     }
 
     &__header4 {
-      font-size: 1.25rem;
+      @include theme.m-font("body-1-mobile");
+
       line-height: 1.5rem;
       margin: theme.spacing(24, 0, 12, 0);
     }
