@@ -18,3 +18,8 @@ function checkMenuCtaButton() {
     menu.classList.remove("m-menu_sticky");
   }
 }
+
+const currentYear = new Date().getFullYear();
+console.log(document.querySelector("#footer-year"));
+console.log(currentYear);
+document.querySelector("#footer-year").innerHTML = currentYear;
