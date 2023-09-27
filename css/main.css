@@ -335,7 +335,7 @@ main.m-main {
 }
 @media (min-width: 999px) {
   .m-summary::before {
-    left: -125%;
+    left: -90%;
     background-size: 150% 100%;
     top: 0;
   }
