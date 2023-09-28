@@ -15,6 +15,8 @@
 @use "theme";
 @use "sass:map";
 
+@import "menu";
+
 html {
   font-size: 16px;
   color: map.get(theme.$modino-colors, surface, text);
@@ -432,102 +434,6 @@ main {
   font-weight: 700;
 }
 
-.m-menu {
-  display: flex;
-  position: sticky;
-  top: 0;
-  flex-grow: 1;
-  z-index: 2;
-  transition: all ease 100ms;
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-  }
-
-  &__navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    justify-self: center;
-    height: 46px;
-    max-width: 1240px;
-    padding: 0 theme.spacing(12);
-    margin: 0 auto;
-    flex-grow: 1;
-
-    a {
-      display: flex;
-      height: auto;
-    }
-
-    @media screen and (min-width: 600px) {
-      height: 84px;
-      padding: 0 theme.spacing(32);
-    }
-  }
-
-  &__cta-button {
-    display: none;
-
-    --mdc-outlined-button-outline-color: #{map.get(
-        theme.$modino-colors,
-        primary,
-        900
-      )};
-    --mdc-outlined-button-hover-state-layer-color: #{map.get(
-        theme.$modino-colors,
-        secondary-2,
-        50
-      )};
-    --mdc-outlined-button-focus-state-layer-opacity: 1;
-    --mdc-outlined-button-pressed-state-layer-opacity: 1;
-
-    &:hover {
-      --mdc-outlined-button-hover-state-layer-opacity: 1;
-    }
-
-    &.mdc-ripple-upgraded--background-focused {
-      .mdc-button__ripple {
-        &:before {
-          background-color: map.get(theme.$modino-colors, secondary-2, 100);
-        }
-      }
-    }
-
-    .mdc-button__ripple {
-      &:after {
-        background-color: map.get(theme.$modino-colors, secondary-2, 200);
-        z-index: 1;
-      }
-    }
-
-    @media screen and (min-width: 600px) {
-      display: block;
-    }
-  }
-
-  &_sticky {
-    background-color: map.get(theme.$modino-colors, surface, background);
-    border-bottom: 1px solid map.get(theme.$modino-colors, surface, border);
-    transition: all ease 500ms;
-
-    .m-menu__logo {
-      content: url("./../img/MODINO-logo-short.svg");
-    }
-  }
-
-  &__logo {
-    width: 100px;
-
-    @media screen and (min-width: 600px) {
-      width: 140px;
-    }
-  }
-}
-
 .m-top-hero {
   position: relative;
   display: flex;
@@ -536,11 +442,6 @@ main {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  margin-block-end: theme.spacing(16);
-
-  @media screen and (min-width: 600px) {
-    margin-block-end: theme.spacing(40);
-  }
 
   &::before {
     content: "";
@@ -581,7 +482,6 @@ main {
 
   &__wrapper {
     position: relative;
-    top: -20vh;
     width: 100%;
     align-items: center;
 

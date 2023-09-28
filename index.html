@@ -1,592 +1,863 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Modino.io - Safe and secure updates for IoT devices</title>
+    <meta
+      name="description"
+      content="Modino.io will help you keep your IoT devices up and running with safe and secure over-the-air updates."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafafa" />
+    <meta name="robots" content="index,follow" />
 
-<head>
-  <meta charset="utf-8" />
-  <title>Modino.io - Safe and secure updates for IoT devices</title>
-  <meta name="description"
-    content="Modino.io will help you keep your IoT devices up and running with safe and secure over-the-air updates." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#fafafa" />
-  <meta name="robots" content="index,follow" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="icon" href="https://modino.io/favicon.ico" />
+    <link href="https://modino.io/" rel="canonical" />
 
-  <link rel="apple-touch-icon" href="icon.png" />
-  <link rel="icon" href="https://modino.io/favicon.ico" />
-  <link href="https://modino.io/" rel="canonical" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css"
+      integrity="sha384-Dv/31bNdy5iSIdT3DbFwGhN3LnetXu2VyL8xFYMqdHvfA1BFqWmoIHum+ocjdjtu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
 
-  <link rel="stylesheet" href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css"
-    integrity="sha384-Dv/31bNdy5iSIdT3DbFwGhN3LnetXu2VyL8xFYMqdHvfA1BFqWmoIHum+ocjdjtu" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      src="https://www.googletagmanager.com/gtag/js?id=G-56L4FRC93H"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <!-- Google tag (gtag.js) -->
-  <script src="https://www.googletagmanager.com/gtag/js?id=G-56L4FRC93H" crossorigin="anonymous"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+      gtag("config", "G-56L4FRC93H");
+    </script>
 
-    gtag("config", "G-56L4FRC93H");
-  </script>
+    <!-- Hotjar Tracking Code for https://modino.io/ -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3626118, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
 
-  <!-- Hotjar Tracking Code for https://modino.io/ -->
-  <script>
-    (function (h, o, t, j, a, r) {
-      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-      h._hjSettings = { hjid: 3626118, hjsv: 6 };
-      a = o.getElementsByTagName('head')[0];
-      r = o.createElement('script'); r.async = 1;
-      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-      a.appendChild(r);
-    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-  </script>
-</head>
+  <body>
+    <div class="m-menu">
+      <header class="m-menu__wrapper">
+        <nav class="m-menu__navigation">
+          <a class="m-menu__logo-link" href="https://modino.io/">
+            <img
+              class="m-menu__logo"
+              src="./img/MODINO-logo-full.svg"
+              alt="modino logo"
+            />
+          </a>
+          <div class="m-menu__actions">
+            <a href="https://modino.io/" class="m-menu__actions-link m-menu__actions-link--active">
+              Home
+            </a>
+            <a href="" class="m-menu__actions-link">Solution</a>
+            <a href="" class="m-menu__actions-link">Articles</a>
+            <a href="" class="m-menu__actions-link">Meet the team</a>
+            <a href="" class="m-menu__actions-link">Partner Program</a>
+            <a href="" class="m-menu__actions-link">Jobs</a>
+            <button
+              class="mdc-button mdc-button--outlined m-menu__cta-button"
+              onclick="window.location.href='./get-in-touch'"
+            >
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__focus-ring"></span>
+              <span class="mdc-button__label">Get in touch</span>
+            </button>
+            <button
+              class="mdc-button m-menu__hamburger-button"
+              onclick="toggleHamburgerMenu()"
+            >
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">
+                <img src="img/hamburger-menu.svg" alt="hamburger menu" />
+              </span>
+            </button>
+          </div>
+        </nav>
+      </header>
+    </div>
 
-<body>
-  <div class="m-menu">
-    <header class="m-menu__wrapper">
-      <nav class="m-menu__navigation">
-        <a href="https://modino.io/">
-          <img class="m-menu__logo" src="./img/MODINO-logo-full.svg" alt="modino logo" />
-        </a>
-        <div class="m-menu__actions">
-          <button class="mdc-button mdc-button--outlined m-menu__cta-button"
-            onclick="window.location.href='./get-in-touch'">
-            <span class="mdc-button__ripple"></span>
-            <span class="mdc-button__focus-ring"></span>
-            <span class="mdc-button__label">Get in touch</span>
-          </button>
-        </div>
-      </nav>
-    </header>
-  </div>
-  <main class="m-main">
-    <section class="m-section m-top-hero">
-      <div class="m-top-hero__wrapper">
-        <h1 class="m-header m-top-hero__title">
-          Keep your
-          <br />
-          IoT devices
-          <br />
-          <span class="m-top-hero__title-highlight"> out of harm’s way </span>
-        </h1>
-        <p class="m-top-hero__description">
-          Deliver new software and configuration settings securely, remotely,
-          and risk-free
-        </p>
-        <button id="main-cta-button"
-          class="m-top-hero__action-button mdc-button mdc-button--unelevated cta-accent-button"
-          onclick="window.location.href='./get-in-touch'">
+    <aside class="m-mobile-menu m-menu">
+      <div class="m-mobile-menu__header">
+        <a class="m-mobile-menu__logo-link" href="https://modino.io/">
+          <img
+            class="m-menu__logo"
+            src="./img/MODINO-logo-short.svg"
+            alt="modino logo"
+        /></a>
+
+        <button
+          class="mdc-button m-mobile-menu__hamburger-button"
+          onclick="toggleHamburgerMenu()"
+        >
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">
+            <img src="img/hamburger-menu.svg" alt="hamburger menu" />
+          </span>
+        </button>
+      </div>
+      <div class="m-mobile-menu__actions">
+        <a
+          href=""
+          class="m-mobile-menu__actions-link m-menu__actions-link--active"
+          >Home</a
+        >
+        <a href="" class="m-mobile-menu__actions-link">Solution</a>
+        <a href="" class="m-mobile-menu__actions-link">Articles</a>
+        <a href="" class="m-mobile-menu__actions-link">Meet the team</a>
+        <a href="" class="m-mobile-menu__actions-link">Partner Program</a>
+        <a href="" class="m-mobile-menu__actions-link">Jobs</a>
+        <button
+          class="mdc-button mdc-button--outlined m-mobile-menu__cta-button"
+          onclick="window.location.href='./get-in-touch'"
+        >
           <span class="mdc-button__ripple"></span>
           <span class="mdc-button__focus-ring"></span>
           <span class="mdc-button__label">Get in touch</span>
         </button>
       </div>
-    </section>
-    <section class="m-section m-mission">
-      <h2 class="m-section-header">Our mission</h2>
-      <div class="m-quote">
-        <blockquote class="m-quote__text">
-          <span class="highlight">Modino-io
-            <div class="m-quote__image">
-              <svg width="12.7mm" height="12.7mm" viewBox="0 0 12.7 12.7" version="1.1" id="svg5480"
-                xmlns="http://www.w3.org/2000/svg">
-                <defs id="defs5477" />
-                <g id="layer1" transform="translate(-262.61319,-107.698)">
-                  <path
-                    d="m 271.83393,116.95842 q -0.33073,0 -0.49609,-0.2712 -0.16537,-0.2712 -0.0199,-0.56224 l 0.635,-1.28323 h -1.66687 q -0.33073,0 -0.56224,-0.23151 -0.23151,-0.23151 -0.23151,-0.56224 v -2.11667 q 0,-0.33073 0.23151,-0.56224 0.23151,-0.23151 0.56224,-0.23151 h 2.11666 q 0.33073,0 0.56224,0.23151 0.23151,0.23151 0.23151,0.56224 v 2.83105 q 0,0.0926 -0.0198,0.1852 -0.0198,0.0926 -0.0595,0.17198 l -0.76729,1.52136 q -0.0661,0.14552 -0.20506,0.23151 -0.1389,0.086 -0.31088,0.086 z m -4.7625,0 q -0.33073,0 -0.49609,-0.2712 -0.16537,-0.2712 -0.0198,-0.56224 l 0.635,-1.28323 h -1.66687 q -0.33073,0 -0.56224,-0.23151 -0.23151,-0.23151 -0.23151,-0.56224 v -2.11667 q 0,-0.33073 0.23151,-0.56224 0.23151,-0.23151 0.56224,-0.23151 h 2.11666 q 0.33073,0 0.56224,0.23151 0.23151,0.23151 0.23151,0.56224 v 2.83105 q 0,0.0926 -0.0198,0.1852 -0.0198,0.0926 -0.0595,0.17198 l -0.76729,1.52136 q -0.0661,0.14552 -0.20506,0.23151 -0.1389,0.086 -0.31088,0.086 z"
-                    id="path4683" style="stroke-width: 0.264583" />
-                </g>
-              </svg>
+    </aside>
+
+    <main class="m-main">
+      <section class="m-section m-top-hero">
+        <div class="m-top-hero__wrapper">
+          <h1 class="m-header m-top-hero__title">
+            Keep your
+            <br />
+            IoT devices
+            <br />
+            <span class="m-top-hero__title-highlight"> out of harm’s way </span>
+          </h1>
+          <p class="m-top-hero__description">
+            Deliver new software and configuration settings securely, remotely,
+            and risk-free
+          </p>
+          <button
+            id="main-cta-button"
+            class="m-top-hero__action-button mdc-button mdc-button--unelevated cta-accent-button"
+            onclick="window.location.href='./get-in-touch'"
+          >
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__focus-ring"></span>
+            <span class="mdc-button__label">Get in touch</span>
+          </button>
+        </div>
+      </section>
+      <section class="m-section m-mission">
+        <h2 class="m-section-header">Our mission</h2>
+        <div class="m-quote">
+          <blockquote class="m-quote__text">
+            <span class="highlight"
+              >Modino-io
+              <div class="m-quote__image">
+                <svg
+                  width="12.7mm"
+                  height="12.7mm"
+                  viewBox="0 0 12.7 12.7"
+                  version="1.1"
+                  id="svg5480"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs id="defs5477" />
+                  <g id="layer1" transform="translate(-262.61319,-107.698)">
+                    <path
+                      d="m 271.83393,116.95842 q -0.33073,0 -0.49609,-0.2712 -0.16537,-0.2712 -0.0199,-0.56224 l 0.635,-1.28323 h -1.66687 q -0.33073,0 -0.56224,-0.23151 -0.23151,-0.23151 -0.23151,-0.56224 v -2.11667 q 0,-0.33073 0.23151,-0.56224 0.23151,-0.23151 0.56224,-0.23151 h 2.11666 q 0.33073,0 0.56224,0.23151 0.23151,0.23151 0.23151,0.56224 v 2.83105 q 0,0.0926 -0.0198,0.1852 -0.0198,0.0926 -0.0595,0.17198 l -0.76729,1.52136 q -0.0661,0.14552 -0.20506,0.23151 -0.1389,0.086 -0.31088,0.086 z m -4.7625,0 q -0.33073,0 -0.49609,-0.2712 -0.16537,-0.2712 -0.0198,-0.56224 l 0.635,-1.28323 h -1.66687 q -0.33073,0 -0.56224,-0.23151 -0.23151,-0.23151 -0.23151,-0.56224 v -2.11667 q 0,-0.33073 0.23151,-0.56224 0.23151,-0.23151 0.56224,-0.23151 h 2.11666 q 0.33073,0 0.56224,0.23151 0.23151,0.23151 0.23151,0.56224 v 2.83105 q 0,0.0926 -0.0198,0.1852 -0.0198,0.0926 -0.0595,0.17198 l -0.76729,1.52136 q -0.0661,0.14552 -0.20506,0.23151 -0.1389,0.086 -0.31088,0.086 z"
+                      id="path4683"
+                      style="stroke-width: 0.264583"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </span>
+            is a platform for IoT vulnerability management and over-the-air
+            update orchestration at scale. A platform that is both safe and
+            secure.
+            <br /><br />
+            Our mission is to keep our clients' IoT devices secure and online by
+            providing stressless over-the-air update experience.
+
+            <cite class="m-quote__author">
+              <img
+                class="m-quote__author-image"
+                src="img/people/Blazej.png"
+                alt="Błażej Pawlak - Modino CEO profile image"
+              />
+              Błażej Pawlak, CEO & Co-Founder
+            </cite>
+          </blockquote>
+        </div>
+      </section>
+      <section class="m-section m-explanation">
+        <div class="m-explanation__image">
+          <img src="./img/modino-man.svg" alt="modino man" />
+        </div>
+        <div class="m-explanation__text">
+          <p class="m-explanation__title">/moˈdiːno/</p>
+          <p class="m-explanation__description">
+            “Modino” is an Italian word used for misbehaving children, which
+            roughly translates to “behave yourself”.
+            <br /><br />
+            We imagine our system as a guardian for various small IoT devices
+            that keeps them in check and makes sure that they all behave as they
+            should.
+          </p>
+        </div>
+      </section>
+      <section class="m-section m-solution">
+        <h2 class="m-section__header">Solution</h2>
+        <div class="m-solution__container">
+          <div class="m-solution__text">
+            <p>
+              <span class="highlight">Modino.io</span> creates holistic
+              deployable packages with your software and provides its safe and
+              secure delivery to your IoT devices – in both private SaaS and
+              On-premise models.
+            </p>
+            <p>
+              Stay in control by monitoring update deployment status and
+              automatic vulnerability detection.
+            </p>
+            <p>
+              Trust Modino.io to keep your devices up-to-date and protected.
+            </p>
+          </div>
+          <div class="m-solution__video">
+            <div style="padding: 56.25% 0 0 0; position: relative">
+              <iframe
+                title="Modino.io demo video"
+                src="https://player.vimeo.com/video/510677701?h=f87b25b0fa"
+                allow="autoplay; fullscreen; picture-in-picture"
+              ></iframe>
             </div>
-          </span>
-          is a platform for IoT vulnerability management and over-the-air
-          update orchestration at scale. A platform that is both safe and
-          secure.
-          <br /><br />
-          Our mission is to keep our clients' IoT devices secure and online by
-          providing stressless over-the-air update experience.
-
-          <cite class="m-quote__author">
-            <img class="m-quote__author-image" src="img/people/Blazej.png"
-              alt="Błażej Pawlak - Modino CEO profile image" />
-            Błażej Pawlak, CEO & Co-Founder
-          </cite>
-        </blockquote>
-      </div>
-    </section>
-    <section class="m-section m-explanation">
-      <div class="m-explanation__image">
-        <img src="./img/modino-man.svg" alt="modino man" />
-      </div>
-      <div class="m-explanation__text">
-        <p class="m-explanation__title">/moˈdiːno/</p>
-        <p class="m-explanation__description">
-          “Modino” is an Italian word used for misbehaving children, which
-          roughly translates to “behave yourself”.
-          <br /><br />
-          We imagine our system as a guardian for various small IoT devices
-          that keeps them in check and makes sure that they all behave as they
-          should.
-        </p>
-      </div>
-    </section>
-    <section class="m-section m-solution">
-      <h2 class="m-section__header">Solution</h2>
-      <div class="m-solution__container">
-        <div class="m-solution__text">
-          <p>
-            <span class="highlight">Modino.io</span> creates holistic
-            deployable packages with your software and provides its safe and
-            secure delivery to your IoT devices – in both private SaaS and
-            On-premise models.
-          </p>
-          <p>
-            Stay in control by monitoring update deployment status and
-            automatic vulnerability detection.
-          </p>
-          <p>
-            Trust Modino.io to keep your devices up-to-date and protected.
-          </p>
-        </div>
-        <div class="m-solution__video">
-          <div style="padding: 56.25% 0 0 0; position: relative">
-            <iframe title="Modino.io demo video" src="https://player.vimeo.com/video/510677701?h=f87b25b0fa"
-              allow="autoplay; fullscreen; picture-in-picture"></iframe>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="m-section m-key-aspects">
-      <h2 class="m-section__header">Key aspects</h2>
-      <div class="m-key-aspects__list">
-        <div class="m-key-aspects__item">
-          <img src="./img/key-aspect-illustration-1.svg" alt="Modino values illustration - universal solution"
-            class="m-key-aspects__item-image" />
-          <h3 class="m-key-aspects__item-title">Universal solution</h3>
-          <p class="m-key-aspects__item-description">
-            Whether you want to update software on machines, sensors, robots,
-            smart grid or information systems, measuring stations, IP cameras,
-            medical devices, servers, edge cloud infrastructure, or even toys,
-            Modino.io is able to handle it all.
-          </p>
-        </div>
-        <div class="m-key-aspects__item">
-          <img src="./img/key-aspect-illustration-2.svg" alt="Modino values illustration - not hardware bound"
-            class="m-key-aspects__item-image" />
-          <h3 class="m-key-aspects__item-title">Not hardware bound</h3>
-          <p class="m-key-aspects__item-description">
-            Software delivery is hardware-independent. Modino.io containers
-            adapt to the target hardware on IoT devices, enabling updates
-            regardless of the specific hardware architecture and
-            configuration. As long as it runs on a Linux operating system,
-            Modino.io can update it.
-          </p>
-        </div>
-        <div class="m-key-aspects__item">
-          <img src="./img/key-aspect-illustration-3.svg" alt="Modino values illustration - safe software delivery"
-            class="m-key-aspects__item-image" />
-          <h3 class="m-key-aspects__item-title">Safe software delivery</h3>
-          <p class="m-key-aspects__item-description">
-            Atomic updates even in low network throughput environments.
-            Whether you need to update a remote EV charging station or an ATM
-            located in the countryside, Modio.io is able to deliver reliable
-            updates even with limited network throughput.
-          </p>
-        </div>
-        <div class="m-key-aspects__item">
-          <img src="./img/key-aspect-illustration-4.svg" alt="Modino values illustration - ensured software application"
-            class="m-key-aspects__item-image" />
-          <h3 class="m-key-aspects__item-title">
-            Ensured software application
-          </h3>
-          <p class="m-key-aspects__item-description">
-            With our automatic rollback procedure, your devices will never go
-            offline, even if something goes wrong during the update process.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="m-section m-team">
-      <h2 class="m-section__header">Meet the team</h2>
-      <menu class="m-section__menu">
-        <ul class="m-section__list" role="tablist">
-          <li class="m-section__item">
-            <button role="tab" id="founders">Founders</button>
-          </li>
-          <li class="m-section__item">
-            <button role="tab" id="management">Management</button>
-          </li>
-          <li class="m-section__item">
-            <button role="tab" id="design">Design</button>
-          </li>
-          <li class="m-section__item">
-            <button role="tab" id="backend">Back-end</button>
-          </li>
-          <li class="m-section__item">
-            <button role="tab" id="frontend">Front-end</button>
-          </li>
-          <li class="m-section__item">
-            <button role="tab" id="devops">DevOps</button>
-          </li>
-        </ul>
-        <hr />
-      </menu>
-      <div class="m-people-list" id="founders-section" hidden>
-        <div class="m-person-card">
-          <img src="./img/people/Kuba.png" alt="Jakub Jelonek Modino - CTO profile image"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Jakub Jelonek</strong></p>
-            <p>CTO, Co-Founder</p>
-            <a href="https://www.linkedin.com/in/jjelonek" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
+      </section>
+      <section class="m-section m-key-aspects">
+        <h2 class="m-section__header">Key aspects</h2>
+        <div class="m-key-aspects__list">
+          <div class="m-key-aspects__item">
+            <img
+              src="./img/key-aspect-illustration-1.svg"
+              alt="Modino values illustration - universal solution"
+              class="m-key-aspects__item-image"
+            />
+            <h3 class="m-key-aspects__item-title">Universal solution</h3>
+            <p class="m-key-aspects__item-description">
+              Whether you want to update software on machines, sensors, robots,
+              smart grid or information systems, measuring stations, IP cameras,
+              medical devices, servers, edge cloud infrastructure, or even toys,
+              Modino.io is able to handle it all.
+            </p>
+          </div>
+          <div class="m-key-aspects__item">
+            <img
+              src="./img/key-aspect-illustration-2.svg"
+              alt="Modino values illustration - not hardware bound"
+              class="m-key-aspects__item-image"
+            />
+            <h3 class="m-key-aspects__item-title">Not hardware bound</h3>
+            <p class="m-key-aspects__item-description">
+              Software delivery is hardware-independent. Modino.io containers
+              adapt to the target hardware on IoT devices, enabling updates
+              regardless of the specific hardware architecture and
+              configuration. As long as it runs on a Linux operating system,
+              Modino.io can update it.
+            </p>
+          </div>
+          <div class="m-key-aspects__item">
+            <img
+              src="./img/key-aspect-illustration-3.svg"
+              alt="Modino values illustration - safe software delivery"
+              class="m-key-aspects__item-image"
+            />
+            <h3 class="m-key-aspects__item-title">Safe software delivery</h3>
+            <p class="m-key-aspects__item-description">
+              Atomic updates even in low network throughput environments.
+              Whether you need to update a remote EV charging station or an ATM
+              located in the countryside, Modio.io is able to deliver reliable
+              updates even with limited network throughput.
+            </p>
+          </div>
+          <div class="m-key-aspects__item">
+            <img
+              src="./img/key-aspect-illustration-4.svg"
+              alt="Modino values illustration - ensured software application"
+              class="m-key-aspects__item-image"
+            />
+            <h3 class="m-key-aspects__item-title">
+              Ensured software application
+            </h3>
+            <p class="m-key-aspects__item-description">
+              With our automatic rollback procedure, your devices will never go
+              offline, even if something goes wrong during the update process.
+            </p>
           </div>
         </div>
-        <div class="m-person-card">
-          <img alt="Błażej Pawlak Modino - CEO profile image" src="./img/people/Blazej.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Błażej Pawlak</strong></p>
-            <p>CEO, Co-Founder</p>
-            <a href="https://www.linkedin.com/in/bpawlak" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Radek Ratajczak - Modino CDO profile image" src="./img/people/Radek.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Radek Ratajczak</strong></p>
-            <p>CDO, Co-Founder</p>
-            <a href="https://www.linkedin.com/in/radek-ratajczak" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="m-people-list" id="management-section" hidden>
-        <div class="m-person-card">
-          <img alt="Michał Pawlak - Modino Scrum Master profile image" src="./img/people/Michal.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Michał Pawlak</strong></p>
-            <p>Scrum Master</p>
-            <a href="https://www.linkedin.com/in/micha%C5%82-pawlak-17376689" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Paweł Żebrowski - Modino Business Strategist profile image" src="./img/people/Pawel-Z.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Paweł Żebrowski</strong></p>
-            <p>Business Strategist</p>
-            <a href="https://www.linkedin.com/in/pzebrowski" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="m-people-list" id="design-section" hidden>
-        <div class="m-person-card">
-          <img alt="Radosław Ratajczak - Modino CDO profile image" src="./img/people/Radek.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Radosław Ratajczak</strong></p>
-            <p>CDO, Co-Founder</p>
-            <a href="https://www.linkedin.com/in/radek-ratajczak" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Katarzyna Chmielewska - Modino Design Lead profile image" src="./img/people/Kasia.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Katarzyna Chmielewska</strong></p>
-            <p>Design Lead</p>
-            <a href="https://www.linkedin.com/in/kasia-chmielewska" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Weronika Ciesielska - Modino UX/UI Designer profile image" src="./img/people/Weronika.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Weronika Ciesielska</strong></p>
-            <p>UX / UI Designer</p>
-            <a href="https://www.linkedin.com/in/weronika-ciesielska-734934218" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Karolina Szpera - Modino UX/UI Designer profile image" src="./img/people/Karolina.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Karolina Szpera</strong></p>
-            <p>UX / UI Designer</p>
-            <a href="https://www.linkedin.com/in/karolinaszpera" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="m-people-list" id="backend-section" hidden>
-        <div class="m-person-card">
-          <img alt="Jakub Jelonek - Modino CTO profile image" src="./img/people/Kuba.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Jakub Jelonek</strong></p>
-            <p>CTO, Co-Founder, Principal Software Engineer</p>
-            <a href="https://www.linkedin.com/in/jjelonek" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Artur Pałka profile image" src="./img/people/Artur.png" class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Artur Pałka</strong></p>
-            <p>Software Engineer, Architect</p>
-            <a href="https://www.linkedin.com/in/artur-pa%C5%82ka-665993121" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Wojtek Henszke - Modino Software Engineer profile image" src="./img/people/Wojtek.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Wojtek Henszke</strong></p>
-            <p>Software Engineer</p>
-            <a href="https://www.linkedin.com/in/henszkew" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Krzysztof Klarkowski - Modino Software Engineer profile image" src="./img/people/Krzysztof.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Krzysztof Klarkowski</strong></p>
-            <p>Software Engineer</p>
-            <a href="https://www.linkedin.com/in/krzysztof-klarkowski" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Filip Gorczyca - Modino Software Engineer profile image" src="./img/people/Filip.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Filip Gorczyca</strong></p>
-            <p>Software Engineer</p>
-            <a href="https://www.linkedin.com/in/filip-gorczyca-a773901b4/" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="m-people-list" id="frontend-section" hidden>
-        <div class="m-person-card">
-          <img alt="Błażej Pawlak - Modino CEO profile image" src="./img/people/Blazej.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Błażej Pawlak</strong></p>
-            <p>CEO, Co-Founder, Principal Software Engineer</p>
-            <a href="https://www.linkedin.com/in/bpawlak" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Paweł Sobkowski - Modino Software Engineer profile image" src="./img/people/Pawel-S.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Paweł Sobkowski</strong></p>
-            <p>Software Engineer</p>
-            <a href="https://www.linkedin.com/in/pawe%C5%82-sobkowski" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Kacper Kaźmierkiewicz - Modino Software Engineer profile image" src="./img/people/Kacper.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Kacper Kaźmierkiewicz</strong></p>
-            <p>Software Engineer</p>
-            <a href="https://www.linkedin.com/in/kacper-kaz" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="m-people-list" id="devops-section" hidden>
-        <div class="m-person-card">
-          <img alt="Stanisław Cabała - Modino DevOps Engineer profile image" src="./img/people/Staszek.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Stanisław Cabała</strong></p>
-            <p>DevOps Engineer</p>
-            <a href="https://www.linkedin.com/in/stanislaw-cabala" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Patryk Janas - Modino DevOps Engineer profile image" src="./img/people/Patryk.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Patryk Janas</strong></p>
-            <p>DevOps Engineer</p>
-            <a href="https://www.linkedin.com/in/patryk-janas" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-        <div class="m-person-card">
-          <img alt="Jan Kwarciński - Modino DevOps Engineer profile image" src="./img/people/Jan.png"
-            class="m-person-card__image" />
-          <div class="m-person-card__info">
-            <p><strong>Jan Kwarciński</strong></p>
-            <p>DevOps Engineer</p>
-            <a href="https://www.linkedin.com/in/jan-kwarci%C5%84ski" target="_blank" rel="noopener">
-              <img alt="linkedIn icon" src="./img/linkedin.svg" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <img alt="Modino team photo" src="./img/people/team-photo.png" class="m-team-photo" />
-    <section class="m-section m-values">
-      <h2 class="m-section__header">Values we live by</h2>
-      <div class="m-values__list">
-        <div class="m-values__item">
-          <img src="./img/values-illustration-1.svg" alt="Modino values illustration - there is always a way"
-            class="m-values__item-image" />
-          <h3 class="m-values__item-title">There is always a way</h3>
-          <p class="m-values__item-description">
-            For us, nothing is impossible - even if it seems that way. We
-            encourage our team to think outside the box and to find creative
-            solutions to challenges that arise.
-          </p>
-        </div>
-        <div class="m-values__item">
-          <img src="./img/values-illustration-2.svg" alt="Modino values illustration - dream big"
-            class="m-values__item-image" />
-          <h3 class="m-values__item-title">Dream big</h3>
-          <p class="m-values__item-description">
-            We believe that setting ambitious goals and pursuing them with
-            passion is the key to driving innovation.
-          </p>
-        </div>
-        <div class="m-values__item">
-          <img src="./img/values-illustration-3.svg" alt="Modino values illustration - less is more"
-            class="m-values__item-image" />
-          <h3 class="m-values__item-title">Less is more</h3>
-          <p class="m-values__item-description">
-            We believe that technology should be intuitive, easy to use, and
-            seamlessly integrated into our lives. This is why we’re designing
-            our platform with simplicity in mind.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="m-section m-summary">
-      <div class="m-wrapper">
-        <h2 class="m-header">
-          Put your <br />
-          IoT devices <br />
-          <span class="highlight">in good hands</span>
-        </h2>
-        <button class="mdc-button mdc-button--unelevated cta-accent-button"
-          onclick="window.location.href='./get-in-touch'" id="summary-cta-btn">
-          <span class="mdc-button__ripple"></span>
-          <span class="mdc-button__label">Get in touch</span>
-        </button>
-      </div>
-      <img alt="Modino update guard illustration" src="./img/Illustration.svg" class="m-security-img" />
-    </section>
-  </main>
-  <footer class="m-footer">
-    <div class="m-footer__content">
-      <div class="m-footer__menu">
-        <div class="m-footer__menu-section m-footer__company-info">
-          <p class="m-footer__menu-section-title">
-            Company
-          </p>
-          <p>
-            Modino.io Sp. z.o.o <br>
-            EU VAT no.: PL7393955632 <br>
-            E-mail: hello@modino.io
-          </p>
-        </div>
-        <div class="m-footer__menu-section">
-          <p class="m-footer__menu-section-title">
-            Explore
-          </p>
-          <ul class="m-footer__menu-section-list">
-            <li>
-              <a href="">Home</a>
+      </section>
+      <section class="m-section m-team">
+        <h2 class="m-section__header">Meet the team</h2>
+        <menu class="m-section__menu">
+          <ul class="m-section__list" role="tablist">
+            <li class="m-section__item">
+              <button role="tab" id="founders">Founders</button>
             </li>
-            <li>
-              <a href="">Solution</a>
+            <li class="m-section__item">
+              <button role="tab" id="management">Management</button>
             </li>
-            <li>
-              <a href="">Articles</a>
+            <li class="m-section__item">
+              <button role="tab" id="design">Design</button>
+            </li>
+            <li class="m-section__item">
+              <button role="tab" id="backend">Back-end</button>
+            </li>
+            <li class="m-section__item">
+              <button role="tab" id="frontend">Front-end</button>
+            </li>
+            <li class="m-section__item">
+              <button role="tab" id="devops">DevOps</button>
             </li>
           </ul>
+          <hr />
+        </menu>
+        <div class="m-people-list" id="founders-section" hidden>
+          <div class="m-person-card">
+            <img
+              src="./img/people/Kuba.png"
+              alt="Jakub Jelonek Modino - CTO profile image"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Jakub Jelonek</strong></p>
+              <p>CTO, Co-Founder</p>
+              <a
+                href="https://www.linkedin.com/in/jjelonek"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Błażej Pawlak Modino - CEO profile image"
+              src="./img/people/Blazej.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Błażej Pawlak</strong></p>
+              <p>CEO, Co-Founder</p>
+              <a
+                href="https://www.linkedin.com/in/bpawlak"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Radek Ratajczak - Modino CDO profile image"
+              src="./img/people/Radek.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Radek Ratajczak</strong></p>
+              <p>CDO, Co-Founder</p>
+              <a
+                href="https://www.linkedin.com/in/radek-ratajczak"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="m-footer__menu-section">
-          <p class="m-footer__menu-section-title">
-            Connect
-          </p>
-          <ul class="m-footer__menu-section-list">
-            <li>
-              <a href="">Meet the team</a>
-            </li>
-            <li>
-              <a href="">Partner Program</a>
-            </li>
-            <li>
-              <a href="">Jobs</a>
-            </li>
-          </ul>
+        <div class="m-people-list" id="management-section" hidden>
+          <div class="m-person-card">
+            <img
+              alt="Michał Pawlak - Modino Scrum Master profile image"
+              src="./img/people/Michal.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Michał Pawlak</strong></p>
+              <p>Scrum Master</p>
+              <a
+                href="https://www.linkedin.com/in/micha%C5%82-pawlak-17376689"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Paweł Żebrowski - Modino Business Strategist profile image"
+              src="./img/people/Pawel-Z.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Paweł Żebrowski</strong></p>
+              <p>Business Strategist</p>
+              <a
+                href="https://www.linkedin.com/in/pzebrowski"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="m-people-list" id="design-section" hidden>
+          <div class="m-person-card">
+            <img
+              alt="Radosław Ratajczak - Modino CDO profile image"
+              src="./img/people/Radek.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Radosław Ratajczak</strong></p>
+              <p>CDO, Co-Founder</p>
+              <a
+                href="https://www.linkedin.com/in/radek-ratajczak"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Katarzyna Chmielewska - Modino Design Lead profile image"
+              src="./img/people/Kasia.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Katarzyna Chmielewska</strong></p>
+              <p>Design Lead</p>
+              <a
+                href="https://www.linkedin.com/in/kasia-chmielewska"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Weronika Ciesielska - Modino UX/UI Designer profile image"
+              src="./img/people/Weronika.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Weronika Ciesielska</strong></p>
+              <p>UX / UI Designer</p>
+              <a
+                href="https://www.linkedin.com/in/weronika-ciesielska-734934218"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Karolina Szpera - Modino UX/UI Designer profile image"
+              src="./img/people/Karolina.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Karolina Szpera</strong></p>
+              <p>UX / UI Designer</p>
+              <a
+                href="https://www.linkedin.com/in/karolinaszpera"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="m-people-list" id="backend-section" hidden>
+          <div class="m-person-card">
+            <img
+              alt="Jakub Jelonek - Modino CTO profile image"
+              src="./img/people/Kuba.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Jakub Jelonek</strong></p>
+              <p>CTO, Co-Founder, Principal Software Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/jjelonek"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Artur Pałka profile image"
+              src="./img/people/Artur.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Artur Pałka</strong></p>
+              <p>Software Engineer, Architect</p>
+              <a
+                href="https://www.linkedin.com/in/artur-pa%C5%82ka-665993121"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Wojtek Henszke - Modino Software Engineer profile image"
+              src="./img/people/Wojtek.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Wojtek Henszke</strong></p>
+              <p>Software Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/henszkew"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Krzysztof Klarkowski - Modino Software Engineer profile image"
+              src="./img/people/Krzysztof.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Krzysztof Klarkowski</strong></p>
+              <p>Software Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/krzysztof-klarkowski"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Filip Gorczyca - Modino Software Engineer profile image"
+              src="./img/people/Filip.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Filip Gorczyca</strong></p>
+              <p>Software Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/filip-gorczyca-a773901b4/"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="m-people-list" id="frontend-section" hidden>
+          <div class="m-person-card">
+            <img
+              alt="Błażej Pawlak - Modino CEO profile image"
+              src="./img/people/Blazej.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Błażej Pawlak</strong></p>
+              <p>CEO, Co-Founder, Principal Software Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/bpawlak"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Paweł Sobkowski - Modino Software Engineer profile image"
+              src="./img/people/Pawel-S.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Paweł Sobkowski</strong></p>
+              <p>Software Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/pawe%C5%82-sobkowski"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Kacper Kaźmierkiewicz - Modino Software Engineer profile image"
+              src="./img/people/Kacper.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Kacper Kaźmierkiewicz</strong></p>
+              <p>Software Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/kacper-kaz"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="m-people-list" id="devops-section" hidden>
+          <div class="m-person-card">
+            <img
+              alt="Stanisław Cabała - Modino DevOps Engineer profile image"
+              src="./img/people/Staszek.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Stanisław Cabała</strong></p>
+              <p>DevOps Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/stanislaw-cabala"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Patryk Janas - Modino DevOps Engineer profile image"
+              src="./img/people/Patryk.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Patryk Janas</strong></p>
+              <p>DevOps Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/patryk-janas"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              alt="Jan Kwarciński - Modino DevOps Engineer profile image"
+              src="./img/people/Jan.png"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Jan Kwarciński</strong></p>
+              <p>DevOps Engineer</p>
+              <a
+                href="https://www.linkedin.com/in/jan-kwarci%C5%84ski"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <img
+        alt="Modino team photo"
+        src="./img/people/team-photo.png"
+        class="m-team-photo"
+      />
+      <section class="m-section m-values">
+        <h2 class="m-section__header">Values we live by</h2>
+        <div class="m-values__list">
+          <div class="m-values__item">
+            <img
+              src="./img/values-illustration-1.svg"
+              alt="Modino values illustration - there is always a way"
+              class="m-values__item-image"
+            />
+            <h3 class="m-values__item-title">There is always a way</h3>
+            <p class="m-values__item-description">
+              For us, nothing is impossible - even if it seems that way. We
+              encourage our team to think outside the box and to find creative
+              solutions to challenges that arise.
+            </p>
+          </div>
+          <div class="m-values__item">
+            <img
+              src="./img/values-illustration-2.svg"
+              alt="Modino values illustration - dream big"
+              class="m-values__item-image"
+            />
+            <h3 class="m-values__item-title">Dream big</h3>
+            <p class="m-values__item-description">
+              We believe that setting ambitious goals and pursuing them with
+              passion is the key to driving innovation.
+            </p>
+          </div>
+          <div class="m-values__item">
+            <img
+              src="./img/values-illustration-3.svg"
+              alt="Modino values illustration - less is more"
+              class="m-values__item-image"
+            />
+            <h3 class="m-values__item-title">Less is more</h3>
+            <p class="m-values__item-description">
+              We believe that technology should be intuitive, easy to use, and
+              seamlessly integrated into our lives. This is why we’re designing
+              our platform with simplicity in mind.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-summary">
+        <div class="m-wrapper">
+          <h2 class="m-header">
+            Put your <br />
+            IoT devices <br />
+            <span class="highlight">in good hands</span>
+          </h2>
+          <button
+            class="mdc-button mdc-button--unelevated cta-accent-button"
+            onclick="window.location.href='./get-in-touch'"
+            id="summary-cta-btn"
+          >
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__label">Get in touch</span>
+          </button>
+        </div>
+        <img
+          alt="Modino update guard illustration"
+          src="./img/Illustration.svg"
+          class="m-security-img"
+        />
+      </section>
+    </main>
+    <footer class="m-footer">
+      <div class="m-footer__content">
+        <div class="m-footer__menu">
+          <div class="m-footer__menu-section m-footer__company-info">
+            <p class="m-footer__menu-section-title">Company</p>
+            <p>
+              Modino.io Sp. z.o.o <br />
+              EU VAT no.: PL7393955632 <br />
+              E-mail: hello@modino.io
+            </p>
+          </div>
+          <div class="m-footer__menu-section">
+            <p class="m-footer__menu-section-title">Explore</p>
+            <ul class="m-footer__menu-section-list">
+              <li>
+                <a href="">Home</a>
+              </li>
+              <li>
+                <a href="">Solution</a>
+              </li>
+              <li>
+                <a href="">Articles</a>
+              </li>
+            </ul>
+          </div>
+          <div class="m-footer__menu-section">
+            <p class="m-footer__menu-section-title">Connect</p>
+            <ul class="m-footer__menu-section-list">
+              <li>
+                <a href="">Meet the team</a>
+              </li>
+              <li>
+                <a href="">Partner Program</a>
+              </li>
+              <li>
+                <a href="">Jobs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="m-footer__links">
+          <a
+            class="m-footer__social-link"
+            href="https://www.linkedin.com/company/modino-io"
+            target="_blank"
+            rel="noopener"
+          >
+            <img alt="linkedIn icon" src="./img/linkedin_white.svg" />
+          </a>
+          <div class="m-footer__copyright">
+            <p>
+              &#169; Modino.io <span id="footer-year"></span>. All rights
+              reserved.
+            </p>
+            <div class="m-footer__copyright-links">
+              <a href="./privacy-policy">Privacy policy</a>
+              <a href="./terms-of-service">Terms of service</a>
+            </div>
+          </div>
         </div>
       </div>
-     <div class="m-footer__links">
-      <a class="m-footer__social-link"href="https://www.linkedin.com/company/modino-io" target="_blank" rel="noopener">
-        <img alt="linkedIn icon" src="./img/linkedin_white.svg" />
-      </a>
-      <div class="m-footer__copyright">
-        <p>
-          &#169; Modino.io <span id="footer-year"></span>. All rights
-          reserved.
-        </p>
-        <div class="m-footer__copyright-links">
-          <a href="./privacy-policy">Privacy policy</a>
-          <a href="./terms-of-service">Terms of service</a>
-        </div>
-     </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Scripts -->
-  <script src="https://unpkg.com/material-components-web%40latest/dist/material-components-web.min.js"
-    integrity="sha384-NQs9Lm2CZqPDbiQog4Tl9+s+LYnPbrwOF7kGY1ks7rl5A7rJypS6Cuqt6HFYtPC+"
-    crossorigin="anonymous"></script>
-  <script src="https://player.vimeo.com/api/player.js" crossorigin="anonymous"
-    integrity="sha384-7jbsaqerzkBrZqKrTmiQePY1zMFEh6YeTJWXf6nfTZywUVfD8K6li3ns+IuKN5sT"></script>
-  <script src="js/menu.js"></script>
-  <script src="js/main.js"></script>
-</body>
-
+    </footer>
+    <!-- Scripts -->
+    <script
+      src="https://unpkg.com/material-components-web%40latest/dist/material-components-web.min.js"
+      integrity="sha384-NQs9Lm2CZqPDbiQog4Tl9+s+LYnPbrwOF7kGY1ks7rl5A7rJypS6Cuqt6HFYtPC+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://player.vimeo.com/api/player.js"
+      crossorigin="anonymous"
+      integrity="sha384-7jbsaqerzkBrZqKrTmiQePY1zMFEh6YeTJWXf6nfTZywUVfD8K6li3ns+IuKN5sT"
+    ></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

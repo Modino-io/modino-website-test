@@ -1,0 +1,253 @@
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+
+.m-menu,
+.m-mobile-menu {
+  &__hamburger-button {
+    @media (min-width: 800px) {
+      display: none;
+    }
+
+    &.mdc-button {
+      $width: 42px;
+
+      margin-left: auto;
+      justify-content: center;
+      align-items: center;
+      height: $width;
+      width: $width;
+      min-width: unset;
+      padding: 0;
+
+      .mdc-button {
+        &__label {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__actions-link {
+    @include theme.m-font("body-4");
+
+    text-decoration: none;
+    color: map.get(theme.$modino-colors, surface, text);
+
+    &--active {
+      font-weight: 700;
+      color: map.get(theme.$modino-colors, primary, 900);
+      text-decoration: underline;
+      text-underline-offset: theme.spacing(3);
+    }
+  }
+
+  &__cta-button {
+    --mdc-outlined-button-outline-color: #{map.get(
+        theme.$modino-colors,
+        primary,
+        900
+      )};
+    --mdc-outlined-button-hover-state-layer-color: #{map.get(
+        theme.$modino-colors,
+        secondary-2,
+        50
+      )};
+    --mdc-outlined-button-focus-state-layer-opacity: 1;
+    --mdc-outlined-button-pressed-state-layer-opacity: 1;
+
+    &:hover {
+      --mdc-outlined-button-hover-state-layer-opacity: 1;
+    }
+
+    &.mdc-ripple-upgraded--background-focused {
+      .mdc-button__ripple {
+        &:before {
+          background-color: map.get(theme.$modino-colors, secondary-2, 100);
+        }
+      }
+    }
+
+    .mdc-button__ripple {
+      &:after {
+        background-color: map.get(theme.$modino-colors, secondary-2, 200);
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.m-menu {
+  display: flex;
+  position: sticky;
+  top: 0;
+  flex-grow: 1;
+  z-index: 2;
+  transition: all ease 100ms;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: center;
+    height: 56px;
+    max-width: 1240px;
+    padding: 0 theme.spacing(16);
+    margin: 0 auto;
+    flex-grow: 1;
+
+    @media screen and (min-width: 600px) {
+      height: 84px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      padding: 0 theme.spacing(32);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+
+    .mdc-button:only-child {
+      margin-left: auto;
+    }
+  }
+
+  &__actions-link {
+    display: none;
+
+    @media (min-width: 800px) {
+      display: inline;
+    }
+
+    &--active {
+      font-weight: 700;
+      color: map.get(theme.$modino-colors, primary, 900);
+      text-decoration: underline;
+      text-underline-offset: theme.spacing(3);
+    }
+  }
+
+  &__cta-button {
+    &.mdc-button {
+      display: none;
+
+      @media (min-width: 800px) {
+        display: inline-flex;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      display: block;
+    }
+  }
+
+  &_sticky {
+    background-color: map.get(theme.$modino-colors, surface, background);
+    border-bottom: 1px solid map.get(theme.$modino-colors, surface, border);
+    transition: all ease 500ms;
+
+    .m-menu__logo {
+      content: url("./../img/MODINO-logo-short.svg");
+    }
+  }
+
+  &__logo-link {
+    margin-inline-end: theme.spacing(16);
+
+    @media (min-width: 1000px) {
+      margin-inline-end: theme.spacing(32);
+    }
+  }
+
+  &__logo {
+    width: 100px;
+
+    @media screen and (min-width: 600px) {
+      width: 140px;
+    }
+  }
+}
+
+.m-mobile-menu {
+  position: fixed;
+  transform: translateX(100%);
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background-color: map.get(theme.$modino-colors, surface, background);
+  z-index: 2;
+  padding-inline: theme.spacing(16);
+
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+
+  &__header {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 84px;
+  }
+
+  &--expanded {
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+
+    @keyframes slidein {
+      0% {
+        left: -100vw;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &__actions-link {
+    @include theme.m-font("body-2");
+
+    margin-block-end: theme.spacing(16);
+
+    &:last-of-type {
+      margin-block-end: theme.spacing(32);
+    }
+
+    &--active {
+      text-decoration: none;
+    }
+  }
+}
