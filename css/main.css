@@ -427,16 +427,15 @@ main.m-main {
 }
 .m-footer__menu-section {
   margin-inline-end: 4rem;
-  order: 2;
 }
-.m-footer__menu-section:last-of-type {
-  order: 1;
+.m-footer__menu-section:first-of-type {
   flex-basis: 100%;
   margin-inline-end: 0;
   margin-block-end: 2rem;
 }
 @media (min-width: 600px) {
-  .m-footer__menu-section:last-of-type {
+  .m-footer__menu-section:first-of-type {
+    order: 2;
     margin-left: auto;
     flex-basis: auto;
     margin-block-end: 0;

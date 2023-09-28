@@ -349,15 +349,14 @@ main {
 
     &-section {
       margin-inline-end: theme.spacing(32);
-      order: 2;
 
-      &:last-of-type {
-        order: 1;
+      &:first-of-type {
         flex-basis: 100%;
         margin-inline-end: 0;
         margin-block-end: theme.spacing(16);
 
         @media (min-width: 600px) {
+          order: 2;
           margin-left: auto;
           flex-basis: auto;
           margin-block-end: 0;
