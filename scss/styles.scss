@@ -75,6 +75,8 @@ main {
   &__header {
     @include theme.m-font("heading-4");
 
+    text-align: center;
+
     @media (min-width: 600px) {
       @include theme.m-font("heading-2");
     }
