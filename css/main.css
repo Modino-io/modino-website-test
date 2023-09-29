@@ -316,11 +316,6 @@
 .m-mobile-menu--expanded {
   transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
 }
-@keyframes slidein {
-  0% {
-    left: -100vw;
-  }
-}
 .m-mobile-menu__actions {
   display: flex;
   flex-direction: column;
@@ -339,6 +334,7 @@
 }
 .m-mobile-menu__actions-link--active {
   text-decoration: none;
+  font-weight: 700;
 }
 
 /*

@@ -14,16 +14,16 @@ const hamburgerMenuButton = document.getElementsByClassName(
  */
 const mobileMenu = document.getElementsByClassName("m-mobile-menu")[0];
 
-document.addEventListener("scroll", checkMenuCtaButton);
+document.addEventListener("scroll", checkMenuCtaButtons);
 
 if (hamburgerMenuButton) {
   const hamburgerMenuRipple = new mdc.ripple.MDCRipple(hamburgerMenuButton);
   window.addEventListener("resize", hamburgerMenuHandle);
 }
 
-checkMenuCtaButton();
+checkMenuCtaButtons();
 
-function checkMenuCtaButton() {
+function checkMenuCtaButtons() {
   if (menuNav.getBoundingClientRect().top < window.scrollY) {
     menu.classList.add("m-menu_sticky");
   } else {
