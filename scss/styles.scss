@@ -385,13 +385,15 @@ main {
   }
 
   &__description {
-    @include theme.m-font("body-1");
+    @include theme.m-font("body-3");
 
     max-width: 350px;
     margin: 0 auto;
     margin-block-end: theme.spacing(12);
 
     @media screen and (min-width: 600px) {
+      @include theme.m-font("body-1");
+
       margin: unset;
       max-width: unset;
       margin-block-end: theme.spacing(24);
@@ -536,12 +538,15 @@ main {
 
   &__title {
     @include theme.m-font("heading-4-mobile");
+    text-align: center;
 
     margin: 0;
     margin-block-end: theme.spacing(12);
 
     @media screen and (min-width: 600px) {
       @include theme.m-font("heading-4");
+
+      text-align: justify;
     }
   }
 
@@ -565,7 +570,6 @@ main {
   &__container {
     display: flex;
     flex-direction: column;
-    gap: theme.spacing(32);
 
     @media screen and (min-width: 840px) {
       flex-direction: row;
@@ -594,13 +598,33 @@ main {
     }
   }
 
+  &__solution-link {
+    @include theme.m-font("body-1");
+
+    display: inline-flex;
+    align-items: center;
+    color: map.get(theme.$modino-colors, primary, 500);
+
+    svg {
+      margin-inline-start: theme.spacing(4);
+
+      path {
+        fill: map.get(theme.$modino-colors, primary, 500);
+      }
+    }
+  }
+
   &__text {
     @include theme.m-font("body-1");
 
     margin-block-end: theme.spacing(16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media screen and (min-width: 600px) {
       margin-block-end: 0;
+      align-items: flex-start;
     }
 
     p:first-of-type {
@@ -609,6 +633,40 @@ main {
 
     .highlight {
       font-style: italic;
+    }
+  }
+}
+
+.m-awards {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: theme.spacing(16);
+    padding-inline: theme.spacing(12);
+
+    @media (min-width: 600px) {
+      padding-inline: theme.spacing(32);
+    }
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
+  }
+
+  &__cybersecurity-banner {
+    flex: 1;
+
+    img {
+      max-width: 530px;
+      width: 100%;
+    }
+  }
+  &__cybersecurity-made {
+    flex: 1;
+
+    img {
+      max-width: 530px;
+      width: 100%;
     }
   }
 }

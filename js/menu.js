@@ -14,16 +14,15 @@ const hamburgerMenuButton = document.getElementsByClassName(
  */
 const mobileMenu = document.getElementsByClassName("m-mobile-menu")[0];
 
-document.addEventListener("scroll", checkMenuCtaButtons);
+document.addEventListener("scroll", checkMenuCtaButton);
 
 if (hamburgerMenuButton) {
   const hamburgerMenuRipple = new mdc.ripple.MDCRipple(hamburgerMenuButton);
-  window.addEventListener("resize", hamburgerMenuHandle);
 }
 
-checkMenuCtaButtons();
+checkMenuCtaButton();
 
-function checkMenuCtaButtons() {
+function checkMenuCtaButton() {
   if (menuNav.getBoundingClientRect().top < window.scrollY) {
     menu.classList.add("m-menu_sticky");
   } else {
@@ -45,14 +44,6 @@ function toggleHamburgerMenu() {
       mobileMenu.style.display = "none";
     }, 300);
   }
-}
-
-/**
- *
- * @param {UIEvent} event
- */
-function hamburgerMenuHandle(event) {
-  console.log(event.target.innerWidth);
 }
 
 const currentYear = new Date().getFullYear();
