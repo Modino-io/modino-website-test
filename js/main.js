@@ -56,9 +56,6 @@ const init = () => {
   document.getElementById(`${currentTab}-section`).hidden = false;
   tabButtons.forEach((button) => button.addEventListener("click", openTab));
 
-  const currentYear = new Date().getFullYear();
-  document.querySelector("#footer-year").innerHTML = currentYear;
-
   checkMenuCtaButton();
 };
 

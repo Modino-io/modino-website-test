@@ -15,6 +15,9 @@
 @use "theme";
 @use "sass:map";
 
+@import "menu";
+@import "footer";
+
 html {
   font-size: 16px;
   color: map.get(theme.$modino-colors, surface, text);
@@ -71,6 +74,8 @@ main {
 
   &__header {
     @include theme.m-font("heading-4");
+
+    text-align: center;
 
     @media (min-width: 600px) {
       @include theme.m-font("heading-2");
@@ -303,153 +308,9 @@ main {
   }
 }
 
-.m-footer {
-  background-color: map.get(theme.$modino-colors, surface, text);
-  color: map.get(theme.$modino-colors, surface, background);
-
-  &__content {
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: theme.spacing(12);
-
-    @media (min-width: 599px) {
-      flex-direction: row-reverse;
-      align-items: center;
-      justify-content: space-between;
-      p {
-        margin: theme.spacing(0, 8, 0, 0);
-      }
-    }
-
-    a {
-      &,
-      &:visited {
-        height: 20px;
-        color: map.get(theme.$modino-colors, surface, text-contrast);
-        text-decoration: underline;
-      }
-
-      &:not(:first-of-type) {
-        margin-inline-start: theme.spacing(4);
-      }
-    }
-  }
-
-  &__copyright {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @media (min-width: 599px) {
-      flex-direction: row;
-      align-items: unset;
-    }
-  }
-}
-
 .highlight {
   color: map.get(theme.$modino-colors, primary, 900);
   font-weight: 700;
-}
-
-.m-menu {
-  display: flex;
-  position: sticky;
-  top: 0;
-  flex-grow: 1;
-  z-index: 2;
-  transition: all ease 100ms;
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-  }
-
-  &__navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    justify-self: center;
-    height: 46px;
-    max-width: 1240px;
-    padding: 0 theme.spacing(12);
-    margin: 0 auto;
-    flex-grow: 1;
-
-    a {
-      display: flex;
-      height: auto;
-    }
-
-    @media screen and (min-width: 600px) {
-      height: 84px;
-      padding: 0 theme.spacing(32);
-    }
-  }
-
-  &__cta-button {
-    display: none;
-
-    --mdc-outlined-button-outline-color: #{map.get(
-        theme.$modino-colors,
-        primary,
-        900
-      )};
-    --mdc-outlined-button-hover-state-layer-color: #{map.get(
-        theme.$modino-colors,
-        secondary-2,
-        50
-      )};
-    --mdc-outlined-button-focus-state-layer-opacity: 1;
-    --mdc-outlined-button-pressed-state-layer-opacity: 1;
-
-    &:hover {
-      --mdc-outlined-button-hover-state-layer-opacity: 1;
-    }
-
-    &.mdc-ripple-upgraded--background-focused {
-      .mdc-button__ripple {
-        &:before {
-          background-color: map.get(theme.$modino-colors, secondary-2, 100);
-        }
-      }
-    }
-
-    .mdc-button__ripple {
-      &:after {
-        background-color: map.get(theme.$modino-colors, secondary-2, 200);
-        z-index: 1;
-      }
-    }
-
-    @media screen and (min-width: 600px) {
-      display: block;
-    }
-  }
-
-  &_sticky {
-    background-color: map.get(theme.$modino-colors, surface, background);
-    border-bottom: 1px solid map.get(theme.$modino-colors, surface, border);
-    transition: all ease 500ms;
-
-    .m-menu__logo {
-      content: url("./../img/MODINO-logo-short.svg");
-    }
-  }
-
-  &__logo {
-    width: 100px;
-
-    @media screen and (min-width: 600px) {
-      width: 140px;
-    }
-  }
 }
 
 .m-top-hero {
@@ -460,11 +321,6 @@ main {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  margin-block-end: theme.spacing(16);
-
-  @media screen and (min-width: 600px) {
-    margin-block-end: theme.spacing(40);
-  }
 
   &::before {
     content: "";
@@ -505,7 +361,6 @@ main {
 
   &__wrapper {
     position: relative;
-    top: -20vh;
     width: 100%;
     align-items: center;
 
@@ -532,13 +387,15 @@ main {
   }
 
   &__description {
-    @include theme.m-font("body-1");
+    @include theme.m-font("body-3");
 
     max-width: 350px;
     margin: 0 auto;
     margin-block-end: theme.spacing(12);
 
     @media screen and (min-width: 600px) {
+      @include theme.m-font("body-1");
+
       margin: unset;
       max-width: unset;
       margin-block-end: theme.spacing(24);
@@ -683,12 +540,15 @@ main {
 
   &__title {
     @include theme.m-font("heading-4-mobile");
+    text-align: center;
 
     margin: 0;
     margin-block-end: theme.spacing(12);
 
     @media screen and (min-width: 600px) {
       @include theme.m-font("heading-4");
+
+      text-align: justify;
     }
   }
 
@@ -712,7 +572,6 @@ main {
   &__container {
     display: flex;
     flex-direction: column;
-    gap: theme.spacing(32);
 
     @media screen and (min-width: 840px) {
       flex-direction: row;
@@ -741,13 +600,33 @@ main {
     }
   }
 
+  &__solution-link {
+    @include theme.m-font("body-1");
+
+    display: inline-flex;
+    align-items: center;
+    color: map.get(theme.$modino-colors, primary, 500);
+
+    svg {
+      margin-inline-start: theme.spacing(4);
+
+      path {
+        fill: map.get(theme.$modino-colors, primary, 500);
+      }
+    }
+  }
+
   &__text {
     @include theme.m-font("body-1");
 
     margin-block-end: theme.spacing(16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media screen and (min-width: 600px) {
       margin-block-end: 0;
+      align-items: flex-start;
     }
 
     p:first-of-type {
@@ -756,6 +635,40 @@ main {
 
     .highlight {
       font-style: italic;
+    }
+  }
+}
+
+.m-awards {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: theme.spacing(16);
+    padding-inline: theme.spacing(12);
+
+    @media (min-width: 600px) {
+      padding-inline: theme.spacing(32);
+    }
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
+  }
+
+  &__cybersecurity-banner {
+    flex: 1;
+
+    img {
+      max-width: 530px;
+      width: 100%;
+    }
+  }
+  &__cybersecurity-made {
+    flex: 1;
+
+    img {
+      max-width: 530px;
+      width: 100%;
     }
   }
 }

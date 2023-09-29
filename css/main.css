@@ -118,6 +118,351 @@
  * divested of its trade secrets, irrespective of what has
  * been deposited with any of the Copyright Offices.
  */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+@media (min-width: 800px) {
+  .m-menu__hamburger-button,
+  .m-mobile-menu__hamburger-button {
+    display: none;
+  }
+}
+.m-menu__hamburger-button.mdc-button,
+.m-mobile-menu__hamburger-button.mdc-button {
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 42px;
+  min-width: unset;
+  padding: 0;
+}
+.m-menu__hamburger-button.mdc-button .mdc-button__label,
+.m-mobile-menu__hamburger-button.mdc-button .mdc-button__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.m-menu__hamburger-button.mdc-button .mdc-button__label img,
+.m-mobile-menu__hamburger-button.mdc-button .mdc-button__label img {
+  height: 100%;
+}
+.m-menu__actions-link,
+.m-mobile-menu__actions-link {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.87);
+}
+.m-menu__actions-link--active,
+.m-mobile-menu__actions-link--active {
+  font-weight: 700;
+  color: #004680;
+  text-decoration: underline;
+  text-underline-offset: 0.375rem;
+}
+.m-menu__cta-button,
+.m-mobile-menu__cta-button {
+  --mdc-outlined-button-outline-color: #004680;
+  --mdc-outlined-button-hover-state-layer-color: #e4e9ed;
+  --mdc-outlined-button-focus-state-layer-opacity: 1;
+  --mdc-outlined-button-pressed-state-layer-opacity: 1;
+}
+.m-menu__cta-button:hover,
+.m-mobile-menu__cta-button:hover {
+  --mdc-outlined-button-hover-state-layer-opacity: 1;
+}
+.m-menu__cta-button.mdc-ripple-upgraded--background-focused .mdc-button__ripple:before,
+.m-mobile-menu__cta-button.mdc-ripple-upgraded--background-focused .mdc-button__ripple:before {
+  background-color: #bac7d4;
+}
+.m-menu__cta-button .mdc-button__ripple:after,
+.m-mobile-menu__cta-button .mdc-button__ripple:after {
+  background-color: #8ea3b7;
+  z-index: 1;
+}
+
+.m-menu {
+  display: flex;
+  position: sticky;
+  top: 0;
+  flex-grow: 1;
+  z-index: 2;
+  transition: all ease 100ms;
+}
+.m-menu__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+.m-menu__navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-self: center;
+  height: 56px;
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: 0 auto;
+  flex-grow: 1;
+}
+@media screen and (min-width: 600px) {
+  .m-menu__navigation {
+    height: 84px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .m-menu__navigation {
+    padding: 0 4rem;
+  }
+}
+.m-menu__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+}
+.m-menu__actions .mdc-button:only-child {
+  margin-left: auto;
+}
+.m-menu__actions-link {
+  display: none;
+}
+@media (min-width: 800px) {
+  .m-menu__actions-link {
+    display: inline;
+  }
+}
+.m-menu__actions-link--active {
+  font-weight: 700;
+  color: #004680;
+  text-decoration: underline;
+  text-underline-offset: 0.375rem;
+}
+.m-menu__cta-button.mdc-button {
+  display: none;
+}
+@media (min-width: 800px) {
+  .m-menu__cta-button.mdc-button {
+    display: inline-flex;
+  }
+}
+@media screen and (min-width: 600px) {
+  .m-menu__cta-button {
+    display: block;
+  }
+}
+.m-menu_sticky {
+  background-color: #fbfbfb;
+  border-bottom: 1px solid #e4e4e4;
+  transition: all ease 500ms;
+}
+.m-menu_sticky .m-menu__logo {
+  content: url("./../img/MODINO-logo-short.svg");
+}
+.m-menu__logo-link {
+  margin-inline-end: 2rem;
+}
+@media (min-width: 1000px) {
+  .m-menu__logo-link {
+    margin-inline-end: 4rem;
+  }
+}
+.m-menu__logo {
+  width: 100px;
+}
+@media screen and (min-width: 600px) {
+  .m-menu__logo {
+    width: 140px;
+  }
+}
+
+.m-mobile-menu {
+  position: fixed;
+  transform: translateX(100%);
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background-color: #fbfbfb;
+  z-index: 2;
+  padding-inline: 2rem;
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+}
+.m-mobile-menu__header {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 84px;
+}
+.m-mobile-menu--expanded {
+  transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+}
+.m-mobile-menu__actions {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.m-mobile-menu__actions-link {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  margin-block-end: 2rem;
+}
+.m-mobile-menu__actions-link:last-of-type {
+  margin-block-end: 4rem;
+}
+.m-mobile-menu__actions-link--active {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+.m-footer {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.87);
+  color: rgba(255, 255, 255, 0.87);
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 600px) {
+  .m-footer {
+    padding-inline: 4rem;
+  }
+}
+.m-footer__content {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.m-footer__content a, .m-footer__content a:visited {
+  height: 20px;
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: underline;
+}
+.m-footer__content a:not(:first-of-type) {
+  margin-inline-start: 0.5rem;
+}
+.m-footer__menu {
+  display: flex;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1724);
+  padding-block-end: 2rem;
+  margin-block-end: 2rem;
+  flex-wrap: wrap;
+}
+@media (min-width: 600px) {
+  .m-footer__menu {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+.m-footer__menu-section {
+  margin-inline-end: 4rem;
+}
+.m-footer__menu-section:first-of-type {
+  flex-basis: 100%;
+  margin-inline-end: 0;
+  margin-block-end: 2rem;
+}
+@media (min-width: 600px) {
+  .m-footer__menu-section:first-of-type {
+    order: 2;
+    margin-left: auto;
+    flex-basis: auto;
+    margin-block-end: 0;
+  }
+}
+@media (min-width: 600px) {
+  .m-footer__menu-section {
+    order: inherit;
+  }
+}
+.m-footer__menu-section-title {
+  margin: 0;
+  margin-block-end: 0.5rem;
+  font-weight: 700;
+}
+.m-footer__menu-section-list {
+  list-style-type: none;
+  padding: 0;
+  margin-block: 0;
+}
+.m-footer__menu-section-list > li {
+  margin-block-end: 0.5rem;
+}
+.m-footer__menu-section.m-footer__company-info p:not(.m-footer__menu-section-title) {
+  margin: 0;
+}
+.m-footer__links {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+.m-footer__links .m-footer__social-link {
+  margin: auto;
+  align-self: flex-end;
+}
+@media (min-width: 600px) {
+  .m-footer__links {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  .m-footer__links p {
+    margin: 0rem 1rem 0rem 0rem;
+  }
+  .m-footer__links .m-footer__social-link {
+    margin: 0;
+  }
+}
+.m-footer__copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 599px) {
+  .m-footer__copyright {
+    flex-direction: row;
+    align-items: unset;
+  }
+}
+
 html {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.87);
@@ -177,6 +522,7 @@ main.m-main {
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: 700;
+  text-align: center;
 }
 @media (min-width: 600px) {
   .m-section__header {
@@ -383,126 +729,9 @@ main.m-main {
   }
 }
 
-.m-footer {
-  background-color: rgba(0, 0, 0, 0.87);
-  color: #fbfbfb;
-}
-.m-footer__content {
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  padding: 1.5rem;
-}
-@media (min-width: 599px) {
-  .m-footer__content {
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .m-footer__content p {
-    margin: 0rem 1rem 0rem 0rem;
-  }
-}
-.m-footer__content a, .m-footer__content a:visited {
-  height: 20px;
-  color: rgba(255, 255, 255, 0.87);
-  text-decoration: underline;
-}
-.m-footer__content a:not(:first-of-type) {
-  margin-inline-start: 0.5rem;
-}
-.m-footer__copyright {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media (min-width: 599px) {
-  .m-footer__copyright {
-    flex-direction: row;
-    align-items: unset;
-  }
-}
-
 .highlight {
   color: #004680;
   font-weight: 700;
-}
-
-.m-menu {
-  display: flex;
-  position: sticky;
-  top: 0;
-  flex-grow: 1;
-  z-index: 2;
-  transition: all ease 100ms;
-}
-.m-menu__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-}
-.m-menu__navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  justify-self: center;
-  height: 46px;
-  max-width: 1240px;
-  padding: 0 1.5rem;
-  margin: 0 auto;
-  flex-grow: 1;
-}
-.m-menu__navigation a {
-  display: flex;
-  height: auto;
-}
-@media screen and (min-width: 600px) {
-  .m-menu__navigation {
-    height: 84px;
-    padding: 0 4rem;
-  }
-}
-.m-menu__cta-button {
-  display: none;
-  --mdc-outlined-button-outline-color: #004680;
-  --mdc-outlined-button-hover-state-layer-color: #e4e9ed;
-  --mdc-outlined-button-focus-state-layer-opacity: 1;
-  --mdc-outlined-button-pressed-state-layer-opacity: 1;
-}
-.m-menu__cta-button:hover {
-  --mdc-outlined-button-hover-state-layer-opacity: 1;
-}
-.m-menu__cta-button.mdc-ripple-upgraded--background-focused .mdc-button__ripple:before {
-  background-color: #bac7d4;
-}
-.m-menu__cta-button .mdc-button__ripple:after {
-  background-color: #8ea3b7;
-  z-index: 1;
-}
-@media screen and (min-width: 600px) {
-  .m-menu__cta-button {
-    display: block;
-  }
-}
-.m-menu_sticky {
-  background-color: #fbfbfb;
-  border-bottom: 1px solid #e4e4e4;
-  transition: all ease 500ms;
-}
-.m-menu_sticky .m-menu__logo {
-  content: url("./../img/MODINO-logo-short.svg");
-}
-.m-menu__logo {
-  width: 100px;
-}
-@media screen and (min-width: 600px) {
-  .m-menu__logo {
-    width: 140px;
-  }
 }
 
 .m-top-hero {
@@ -513,12 +742,6 @@ main.m-main {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  margin-block-end: 2rem;
-}
-@media screen and (min-width: 600px) {
-  .m-top-hero {
-    margin-block-end: 5rem;
-  }
 }
 .m-top-hero::before {
   content: "";
@@ -562,7 +785,6 @@ main.m-main {
 }
 .m-top-hero__wrapper {
   position: relative;
-  top: -20vh;
   width: 100%;
   align-items: center;
 }
@@ -594,8 +816,8 @@ main.m-main {
 }
 .m-top-hero__description {
   font-family: "Nunito", sans-serif;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 400;
   max-width: 350px;
   margin: 0 auto;
@@ -603,6 +825,10 @@ main.m-main {
 }
 @media screen and (min-width: 600px) {
   .m-top-hero__description {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
     margin: unset;
     max-width: unset;
     margin-block-end: 3rem;
@@ -748,6 +974,7 @@ main.m-main {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+  text-align: center;
   margin: 0;
   margin-block-end: 1.5rem;
 }
@@ -757,6 +984,7 @@ main.m-main {
     font-size: 2rem;
     line-height: 2.5rem;
     font-weight: 700;
+    text-align: justify;
   }
 }
 .m-explanation__description {
@@ -786,7 +1014,6 @@ main.m-main {
 .m-solution__container {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
 }
 @media screen and (min-width: 840px) {
   .m-solution__container {
@@ -811,16 +1038,35 @@ main.m-main {
   height: 100%;
   border: none;
 }
+.m-solution__solution-link {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  color: #3191ce;
+}
+.m-solution__solution-link svg {
+  margin-inline-start: 0.5rem;
+}
+.m-solution__solution-link svg path {
+  fill: #3191ce;
+}
 .m-solution__text {
   font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 400;
   margin-block-end: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 @media screen and (min-width: 600px) {
   .m-solution__text {
     margin-block-end: 0;
+    align-items: flex-start;
   }
 }
 .m-solution__text p:first-of-type {
@@ -828,6 +1074,38 @@ main.m-main {
 }
 .m-solution__text .highlight {
   font-style: italic;
+}
+
+.m-awards__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 600px) {
+  .m-awards__content {
+    padding-inline: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .m-awards__content {
+    flex-direction: row;
+  }
+}
+.m-awards__cybersecurity-banner {
+  flex: 1;
+}
+.m-awards__cybersecurity-banner img {
+  max-width: 530px;
+  width: 100%;
+}
+.m-awards__cybersecurity-made {
+  flex: 1;
+}
+.m-awards__cybersecurity-made img {
+  max-width: 530px;
+  width: 100%;
 }
 
 .m-key-aspects {
