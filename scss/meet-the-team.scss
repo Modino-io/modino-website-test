@@ -37,12 +37,13 @@
     list-style-type: none;
     display: flex;
     align-items: flex-start;
-    max-width: 1000px;
     justify-content: center;
+    max-width: 1200px;
     flex-wrap: wrap;
     gap: theme.spacing(4);
     padding-inline-start: 0;
-    margin-inline: auto;
+    margin-inline: theme.spacing(12);
+    margin-block-start: 0;
     margin-block-end: theme.spacing(16);
 
     @media (min-width: 800px) {
@@ -190,7 +191,7 @@
 
     &__info {
       a {
-        display: block;
+        display: inline-flex;
         margin-block-start: theme.spacing(4);
       }
     }
@@ -202,11 +203,15 @@
   object-fit: cover;
   object-position: 50% 15%;
   width: 100%;
-  margin-block-end: theme.spacing(24);
+  margin-block-end: theme.spacing(32);
   margin-inline: -#{theme.spacing(16)};
 
   @media (min-width: 1240px) {
     border-radius: theme.$border-radius;
+  }
+
+  @media (min-width: 800px) {
+    margin-block-end: theme.spacing(24);
   }
 }
 
