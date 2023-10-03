@@ -77,7 +77,7 @@
               >Meet the team</a
             >
             <a href="" class="m-menu__actions-link">Partner Program</a>
-            <a href="" class="m-menu__actions-link">Jobs</a>
+            <a href="/jobs" class="m-menu__actions-link">Jobs</a>
             <button
               class="mdc-button mdc-button--outlined m-menu__cta-button"
               onclick="window.location.href='./get-in-touch'"
@@ -129,7 +129,7 @@
           >Meet the team</a
         >
         <a href="" class="m-mobile-menu__actions-link">Partner Program</a>
-        <a href="" class="m-mobile-menu__actions-link">Jobs</a>
+        <a href="/jobs" class="m-mobile-menu__actions-link">Jobs</a>
         <button
           class="mdc-button mdc-button--unelevated cta-accent-button m-mobile-menu__cta-button"
           onclick="window.location.href='./get-in-touch'"
@@ -144,25 +144,66 @@
     <main class="m-main">
       <section class="m-section m-team">
         <h2 class="m-section__header">Meet the team</h2>
-        <menu class="m-section__menu">
-          <ul class="m-section__list" role="tablist">
-            <li class="m-section__item">
-              <button role="tab" id="founders">Founders</button>
+        <img
+          alt="Modino team photo"
+          src="./img/people/team-photo.webp"
+          class="m-team-photo"
+        />
+        <menu class="m-team__menu">
+          <ul class="m-team__list" role="tablist">
+            <li class="m-team__list-item">
+              <button
+                class="mdc-button mdc-button--outlined"
+                role="tab"
+                id="founders"
+              >
+                Founders
+              </button>
             </li>
-            <li class="m-section__item">
-              <button role="tab" id="management">Management</button>
+            <li class="m-team__list-item">
+              <button
+                class="mdc-button mdc-button--outlined"
+                role="tab"
+                id="management"
+              >
+                Management
+              </button>
             </li>
-            <li class="m-section__item">
-              <button role="tab" id="design">Design</button>
+            <li class="m-team__list-item">
+              <button
+                class="mdc-button mdc-button--outlined"
+                role="tab"
+                id="design"
+              >
+                Design
+              </button>
             </li>
-            <li class="m-section__item">
-              <button role="tab" id="backend">Back-end</button>
+            <li class="m-team__list-item">
+              <button
+                class="mdc-button mdc-button--outlined"
+                role="tab"
+                id="backend"
+              >
+                Back-end
+              </button>
             </li>
-            <li class="m-section__item">
-              <button role="tab" id="frontend">Front-end</button>
+            <li class="m-team__list-item">
+              <button
+                class="mdc-button mdc-button--outlined"
+                role="tab"
+                id="frontend"
+              >
+                Front-end
+              </button>
             </li>
-            <li class="m-section__item">
-              <button role="tab" id="devops">DevOps</button>
+            <li class="m-team__list-item">
+              <button
+                class="mdc-button mdc-button--outlined"
+                role="tab"
+                id="devops"
+              >
+                DevOps
+              </button>
             </li>
           </ul>
           <hr />
@@ -170,7 +211,25 @@
         <div class="m-people-list" id="founders-section" hidden>
           <div class="m-person-card">
             <img
-              src="./img/people/Kuba.png"
+              alt="Błażej Pawlak Modino - CEO profile image"
+              src="./img/people/Blazej.webp"
+              class="m-person-card__image"
+            />
+            <div class="m-person-card__info">
+              <p><strong>Błażej Pawlak</strong></p>
+              <p>CEO, Co-Founder</p>
+              <a
+                href="https://www.linkedin.com/in/bpawlak"
+                target="_blank"
+                rel="noopener"
+              >
+                <img alt="linkedIn icon" src="./img/linkedin.svg" />
+              </a>
+            </div>
+          </div>
+          <div class="m-person-card">
+            <img
+              src="./img/people/Kuba.webp"
               alt="Jakub Jelonek Modino - CTO profile image"
               class="m-person-card__image"
             />
@@ -188,26 +247,8 @@
           </div>
           <div class="m-person-card">
             <img
-              alt="Błażej Pawlak Modino - CEO profile image"
-              src="./img/people/Blazej.png"
-              class="m-person-card__image"
-            />
-            <div class="m-person-card__info">
-              <p><strong>Błażej Pawlak</strong></p>
-              <p>CEO, Co-Founder</p>
-              <a
-                href="https://www.linkedin.com/in/bpawlak"
-                target="_blank"
-                rel="noopener"
-              >
-                <img alt="linkedIn icon" src="./img/linkedin.svg" />
-              </a>
-            </div>
-          </div>
-          <div class="m-person-card">
-            <img
               alt="Radek Ratajczak - Modino CDO profile image"
-              src="./img/people/Radek.png"
+              src="./img/people/Radek.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -227,7 +268,7 @@
           <div class="m-person-card">
             <img
               alt="Michał Pawlak - Modino Scrum Master profile image"
-              src="./img/people/Michal.png"
+              src="./img/people/Michal.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -245,7 +286,7 @@
           <div class="m-person-card">
             <img
               alt="Paweł Żebrowski - Modino Business Strategist profile image"
-              src="./img/people/Pawel-Z.png"
+              src="./img/people/Pawel-Z.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -265,7 +306,7 @@
           <div class="m-person-card">
             <img
               alt="Radosław Ratajczak - Modino CDO profile image"
-              src="./img/people/Radek.png"
+              src="./img/people/Radek.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -283,7 +324,7 @@
           <div class="m-person-card">
             <img
               alt="Katarzyna Chmielewska - Modino Design Lead profile image"
-              src="./img/people/Kasia.png"
+              src="./img/people/Kasia.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -301,7 +342,7 @@
           <div class="m-person-card">
             <img
               alt="Weronika Ciesielska - Modino UX/UI Designer profile image"
-              src="./img/people/Weronika.png"
+              src="./img/people/Weronika.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -319,7 +360,7 @@
           <div class="m-person-card">
             <img
               alt="Karolina Szpera - Modino UX/UI Designer profile image"
-              src="./img/people/Karolina.png"
+              src="./img/people/Karolina.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -339,7 +380,7 @@
           <div class="m-person-card">
             <img
               alt="Jakub Jelonek - Modino CTO profile image"
-              src="./img/people/Kuba.png"
+              src="./img/people/Kuba.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -357,7 +398,7 @@
           <div class="m-person-card">
             <img
               alt="Artur Pałka profile image"
-              src="./img/people/Artur.png"
+              src="./img/people/Artur.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -375,7 +416,7 @@
           <div class="m-person-card">
             <img
               alt="Wojtek Henszke - Modino Software Engineer profile image"
-              src="./img/people/Wojtek.png"
+              src="./img/people/Wojtek.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -393,7 +434,7 @@
           <div class="m-person-card">
             <img
               alt="Krzysztof Klarkowski - Modino Software Engineer profile image"
-              src="./img/people/Krzysztof.png"
+              src="./img/people/Krzysztof.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -411,7 +452,7 @@
           <div class="m-person-card">
             <img
               alt="Filip Gorczyca - Modino Software Engineer profile image"
-              src="./img/people/Filip.png"
+              src="./img/people/Filip.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -431,7 +472,7 @@
           <div class="m-person-card">
             <img
               alt="Błażej Pawlak - Modino CEO profile image"
-              src="./img/people/Blazej.png"
+              src="./img/people/Blazej.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -449,7 +490,7 @@
           <div class="m-person-card">
             <img
               alt="Paweł Sobkowski - Modino Software Engineer profile image"
-              src="./img/people/Pawel-S.png"
+              src="./img/people/Pawel-S.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -467,7 +508,7 @@
           <div class="m-person-card">
             <img
               alt="Kacper Kaźmierkiewicz - Modino Software Engineer profile image"
-              src="./img/people/Kacper.png"
+              src="./img/people/Kacper.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -487,7 +528,7 @@
           <div class="m-person-card">
             <img
               alt="Stanisław Cabała - Modino DevOps Engineer profile image"
-              src="./img/people/Staszek.png"
+              src="./img/people/Staszek.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -505,7 +546,7 @@
           <div class="m-person-card">
             <img
               alt="Patryk Janas - Modino DevOps Engineer profile image"
-              src="./img/people/Patryk.png"
+              src="./img/people/Patryk.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -523,7 +564,7 @@
           <div class="m-person-card">
             <img
               alt="Jan Kwarciński - Modino DevOps Engineer profile image"
-              src="./img/people/Jan.png"
+              src="./img/people/Jan.webp"
               class="m-person-card__image"
             />
             <div class="m-person-card__info">
@@ -540,11 +581,6 @@
           </div>
         </div>
       </section>
-      <img
-        alt="Modino team photo"
-        src="./img/people/team-photo.png"
-        class="m-team-photo"
-      />
       <section class="m-section m-values">
         <h2 class="m-section__header">Values we live by</h2>
         <div class="m-values__list">
@@ -587,6 +623,26 @@
             </p>
           </div>
         </div>
+      </section>
+      <section class="m-section m-ready-to-join">
+        <h2 class="m-section__header">Ready to Join Our Team?</h2>
+        <p class="m-ready-to-join__text">
+          Explore our job opportunities and take the first step to join us on
+          this exciting journey.
+        </p>
+        <a href="/jobs" class="m-ready-to-join__link">
+          View job openings
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path
+              d="M646-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h446L532-634q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T589-691l183 183q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L589-269q-12 12-28.5 11.5T532-270q-11-12-11.5-28t11.5-28l114-114Z"
+            />
+          </svg>
+        </a>
       </section>
     </main>
     <footer class="m-footer">
