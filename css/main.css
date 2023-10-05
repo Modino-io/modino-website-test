@@ -596,17 +596,17 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  margin-block: 4rem;
+  margin-block-end: 4rem;
 }
 .m-shape-future::before {
   content: "";
   position: absolute;
   box-sizing: border-box;
   z-index: -1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, calc(-50% - 12vw));
-  width: calc(70vh + 70vw);
+  left: 35%;
+  top: 100%;
+  transform: translate(-60%, calc(-50% - 12vw));
+  width: calc(80vh + 80vw);
   height: 130vh;
   background-image: url("../img/decoration-shape-the-future.svg");
   background-repeat: no-repeat;
@@ -619,21 +619,21 @@
     width: 130vw;
   }
 }
-@media (min-width: 600px) and (max-width: 999px) {
+@media (min-width: 600px) and (max-width: 799px) {
   .m-shape-future::before {
-    transform: translate(calc(-50% + 25vw), calc(-50% - 3vw));
-    width: 115vh;
+    transform: translate(-50%, calc(-50% - 25vw));
+    width: 120vh;
   }
 }
-@media (min-width: 1000px) and (max-width: 1439px) {
+@media (min-width: 800px) and (max-width: 1439px) {
   .m-shape-future::before {
-    transform: translate(calc(-50% + 25vw), calc(-50% - 10vw));
-    width: 100vw;
+    transform: translate(-65%, -65%);
+    width: 150vh;
   }
 }
 @media (min-width: 1441px) {
   .m-shape-future::before {
-    transform: translate(-45vw, calc(-50vh - 20vw));
+    transform: translate(-60%, -70%);
     width: 130vw;
     height: 130vh;
   }
@@ -646,7 +646,7 @@
   margin-block-start: 0;
   margin-block-end: 2rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .m-shape-future .m-section__header {
     font-family: "Ubuntu", sans-serif;
     font-size: 3.5rem;
@@ -662,7 +662,7 @@
   justify-content: center;
   align-items: center;
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .m-shape-future__content {
     flex-direction: row-reverse;
     gap: 10%;
@@ -674,7 +674,7 @@
 .m-shape-future p {
   text-align: center;
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .m-shape-future p {
     font-family: "Nunito", sans-serif;
     font-size: 1.5rem;
@@ -1473,6 +1473,7 @@ main.m-main {
   align-items: center;
   width: 100%;
   padding-inline: 1.5rem;
+  border-radius: 0.25rem;
 }
 @media screen and (min-width: 600px) {
   .m-section {

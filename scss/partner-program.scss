@@ -23,17 +23,17 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  margin-block: spacing(32);
+  margin-block-end: spacing(32);
 
   &::before {
     content: "";
     position: absolute;
     box-sizing: border-box;
     z-index: -1;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, calc(-50% - 12vw));
-    width: calc(70vh + 70vw);
+    left: 35%;
+    top: 100%;
+    transform: translate(-60%, calc(-50% - 12vw));
+    width: calc(80vh + 80vw);
     height: 130vh;
     background-image: url("../img/decoration-shape-the-future.svg");
     background-repeat: no-repeat;
@@ -45,18 +45,18 @@
       width: 130vw;
     }
 
-    @media (min-width: 600px) and (max-width: 999px) {
-      transform: translate(calc(-50% + 25vw), calc(-50% - 3vw));
-      width: 115vh;
+    @media (min-width: 600px) and (max-width: 799px) {
+      transform: translate(-50%, calc(-50% - 25vw));
+      width: 120vh;
     }
 
-    @media (min-width: 1000px) and (max-width: 1439px) {
-      transform: translate(calc(-50% + 25vw), calc(-50% - 10vw));
-      width: 100vw;
+    @media (min-width: 800px) and (max-width: 1439px) {
+      transform: translate(-65%, -65%);
+      width: 150vh;
     }
 
     @media (min-width: 1441px) {
-      transform: translate(calc(-50vw + 5vw), calc(-50vh - 20vw));
+      transform: translate(-60%, -70%);
       width: 130vw;
       height: 130vh;
     }
@@ -67,7 +67,7 @@
     margin-block-start: 0;
     margin-block-end: spacing(16);
 
-    @media (min-width: 600px) {
+    @media (min-width: 800px) {
       @include m-font("heading-1");
 
       text-align: start;
@@ -81,7 +81,7 @@
     justify-content: center;
     align-items: center;
 
-    @media (min-width: 600px) {
+    @media (min-width: 800px) {
       flex-direction: row-reverse;
       gap: 10%;
     }
@@ -94,7 +94,7 @@
   p {
     text-align: center;
 
-    @media (min-width: 600px) {
+    @media (min-width: 800px) {
       @include m-font("body-1");
 
       text-align: left;

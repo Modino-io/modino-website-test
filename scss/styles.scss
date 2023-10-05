@@ -65,6 +65,7 @@ main {
   align-items: center;
   width: 100%;
   padding-inline: theme.spacing(12);
+  border-radius: theme.spacing(2);
 
   @media screen and (min-width: 600px) {
     padding-inline: theme.spacing(32);
