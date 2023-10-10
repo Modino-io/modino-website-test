@@ -882,6 +882,7 @@
  * been deposited with any of the Copyright Offices.
  */
 .m-key-aspects {
+  width: 100%;
   margin-block-end: 1rem;
 }
 @media screen and (min-width: 600px) {
@@ -891,13 +892,11 @@
 }
 .m-key-aspects__list {
   display: grid;
-  width: 100%;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-column-gap: 6rem;
 }
 @media screen and (min-width: 600px) {
   .m-key-aspects__list {
-    grid-template-columns: 1fr 1fr;
     grid-row-gap: 3rem;
   }
 }
@@ -963,21 +962,25 @@
 .m-solution-hero__video-container {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .m-solution-hero__video-container::before {
   content: "";
   position: absolute;
+  box-sizing: border-box;
   z-index: -1;
-  width: 200vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200%;
   height: 200%;
-  transform: translate(-28%);
   background-image: url("../img/decoration_blob.svg");
   background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: 150vw;
+  background-position: center center;
+  background-size: contain;
 }
 .m-solution-hero__video-container iframe {
-  margin-block-start: 2rem;
+  margin-block-start: 4rem;
   width: 100%;
   border: none;
 }
@@ -992,11 +995,18 @@
   flex-direction: column;
   background-color: #004680;
   color: rgba(255, 255, 255, 0.87);
-  padding-block: 4rem;
-  gap: 48px;
+  gap: 2rem;
+}
+@media screen and (min-width: 800px) {
+  .m-manifesto {
+    gap: 3rem;
+  }
 }
 .m-manifesto p {
   margin: 0;
+}
+.m-manifesto .m-section__header {
+  margin-block-end: 0;
 }
 .m-manifesto .m-section__content {
   font-family: "Nunito", sans-serif;
@@ -1012,6 +1022,7 @@
 .m-manifesto .m-security-wrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 @media screen and (min-width: 800px) {
   .m-manifesto .m-security-wrapper {
@@ -1061,7 +1072,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
+}
+@media screen and (min-width: 800px) {
+  .m-manifesto .tiles-container .m-tile {
+    gap: 1rem;
+  }
 }
 .m-manifesto .tiles-container .m-tile__icon {
   display: flex;
@@ -1119,6 +1135,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem 0.75rem;
+  width: 100%;
 }
 .m-advantages .cards-container .m-card__icon {
   display: flex;
@@ -1181,7 +1198,12 @@ main {
   overflow-y: clip;
 }
 main.m-main {
-  margin-top: -84px;
+  margin-top: -56px;
+}
+@media screen and (min-width: 600px) {
+  main.m-main {
+    margin-top: -84px;
+  }
 }
 
 .m-section {
@@ -1190,6 +1212,7 @@ main.m-main {
   align-items: center;
   width: 100%;
   padding-inline: 1.5rem;
+  padding-block: 4rem;
 }
 @media screen and (min-width: 600px) {
   .m-section {
@@ -1201,6 +1224,7 @@ main.m-main {
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: 700;
+  margin-block: 0 2rem;
   text-align: center;
 }
 @media (min-width: 600px) {
@@ -1313,7 +1337,7 @@ main.m-main {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
 }
 .m-top-hero__wrapper {
