@@ -69,15 +69,17 @@
           </a>
           <div class="m-menu__actions">
             <a href="https://modino.io/" class="m-menu__actions-link"> Home </a>
-            <a href="" class="m-menu__actions-link">Solution</a>
-            <a href="" class="m-menu__actions-link">Articles</a>
-            <a href="" class="m-menu__actions-link">Meet the team</a>
-            <a href="" class="m-menu__actions-link">Partner Program</a>
+            <a href="./solution" class="m-menu__actions-link">Solution</a>
             <a
-              href="/jobs"
+              href="./articles"
               class="m-menu__actions-link m-menu__actions-link--active"
-              >Jobs</a
+              >Articles</a
             >
+            <a href="./meet-the-team" class="m-menu__actions-link"
+              >Meet the team</a
+            >
+            <a href="" class="m-menu__actions-link">Partner Program</a>
+            <a href="./jobs" class="m-menu__actions-link">Jobs</a>
             <button
               class="mdc-button mdc-button--outlined m-menu__cta-button"
               onclick="window.location.href='./get-in-touch'"
@@ -120,16 +122,20 @@
         </button>
       </div>
       <div class="m-mobile-menu__actions">
-        <a href="" class="m-mobile-menu__actions-link">Home</a>
-        <a href="" class="m-mobile-menu__actions-link">Solution</a>
-        <a href="" class="m-mobile-menu__actions-link">Articles</a>
-        <a href="" class="m-mobile-menu__actions-link">Meet the team</a>
-        <a href="" class="m-mobile-menu__actions-link">Partner Program</a>
+        <a href="/" class="m-mobile-menu__actions-link">Home</a>
+        <a href="./solution" class="m-mobile-menu__actions-link">Solution</a>
         <a
-          href="/jobs"
+          href="./articles"
           class="m-mobile-menu__actions-link m-mobile-menu__actions-link--active"
-          >Jobs</a
+          >Articles</a
         >
+        <a href="./meet-the-team" class="m-mobile-menu__actions-link"
+          >Meet the team</a
+        >
+        <a href="./partner-program" class="m-mobile-menu__actions-link"
+          >Partner Program</a
+        >
+        <a href="./jobs" class="m-mobile-menu__actions-link">Jobs</a>
         <button
           class="mdc-button mdc-button--unelevated cta-accent-button m-mobile-menu__cta-button"
           onclick="window.location.href='./get-in-touch'"
@@ -142,39 +148,42 @@
     </aside>
 
     <main class="m-main">
-      <section class="m-section m-jobs">
-        <div class="m-jobs__content">
-          <h1 class="m-section__header m-jobs__header">
-            Jobs at <span class="highlight">Modino.io</span>
-          </h1>
-          <div class="m-jobs__text">
-            Current openings:
-            <ul>
-              <li>
-                <a href="/jobs/senior-java-developer">Senior Java Developer</a>
-              </li>
-              <li>
-                <a href="/jobs/senior-front-end-developer"
-                  >Senior Front-end Developer</a
-                >
-              </li>
-              <li>
-                <a href="/jobs/senior-devops-engineer"
-                  >Senior Devops Engineer
-                </a>
-              </li>
-              <li><a href="/jobs/qa-engineer">QA Engineer</a></li>
-              <li><a href="/jobs/ui-ux-designer">UI / UX Designer</a></li>
-              <li>
-                <a href="/jobs/internship-program">Internship program</a>
-              </li>
-            </ul>
-          </div>
-          <img
-            class="m-jobs__image"
-            src="./img/jobs.svg"
-            alt="jobs hero image"
-          />
+      <section class="m-section m-articles">
+        <h1 class="m-section__header">Articles</h1>
+        <div class="m-articles__filters"></div>
+        <div class="m-articles__list">
+          <a
+            href="./articles/modino-cybersecurity-award"
+            class="m-article-tile"
+          >
+            <img
+              src="/img/articles/image2.jpg"
+              alt=""
+              class="m-article-tile__image"
+            />
+            <div class="m-article-tile__content">
+              <div class="m-article-tile__chips">
+                <div class="m-article-tile__chip m-article-tile__chip--red">
+                  Press
+                </div>
+              </div>
+              <h3 class="m-article-tile__title">
+                Modino.io won the prestigious European Cybersecurity STARtup
+                Award at 2023 Cyber Investor Days
+              </h3>
+              <i class="m-article-tile__date"> September 30, 2023 </i>
+              <p class="m-article-tile__description">
+                The second Polish edition of Cyber Investor Days was organized
+                by European Cyber Security Organisation (ECSO),
+                #CyberMadeInPoland Cluster and Women4Cyber, and took place on
+                the 21-22 June in Katowice, Poland. During the first day,
+                Modino.io, represented by Business Development Manager Pawel
+                Zebrowski presented his innovative idea to the public and jury
+                and together with company CyCommSec won the content for the best
+                startup during Cyber Investor Days.
+              </p>
+            </div>
+          </a>
         </div>
       </section>
     </main>

@@ -74,13 +74,15 @@
             >
               Home
             </a>
-            <a href="/solution" class="m-menu__actions-link">Solution</a>
-            <a href="" class="m-menu__actions-link">Articles</a>
-            <a href="/meet-the-team" class="m-menu__actions-link"
+            <a href="./solution" class="m-menu__actions-link">Solution</a>
+            <a href="./articles" class="m-menu__actions-link">Articles</a>
+            <a href="./meet-the-team" class="m-menu__actions-link"
               >Meet the team</a
             >
-            <a href="" class="m-menu__actions-link">Partner Program</a>
-            <a href="" class="m-menu__actions-link">Jobs</a>
+            <a href="./partner-program" class="m-menu__actions-link"
+              >Partner Program</a
+            >
+            <a href="./jobs" class="m-menu__actions-link">Jobs</a>
             <button
               class="mdc-button mdc-button--outlined m-menu__cta-button"
               onclick="window.location.href='./get-in-touch'"
@@ -134,7 +136,7 @@
           >Meet the team</a
         >
         <a href="" class="m-mobile-menu__actions-link">Partner Program</a>
-        <a href="" class="m-mobile-menu__actions-link">Jobs</a>
+        <a href="./jobs" class="m-mobile-menu__actions-link">Jobs</a>
         <button
           class="mdc-button mdc-button--unelevated cta-accent-button m-mobile-menu__cta-button"
           onclick="window.location.href='./get-in-touch'"
@@ -147,7 +149,7 @@
     </aside>
 
     <main class="m-main">
-      <section class="m-section m-top-hero">
+      <section class="m-section m-top-hero m-home-hero">
         <div class="m-top-hero__wrapper">
           <h1 class="m-header m-top-hero__title">
             Keep your
@@ -281,6 +283,102 @@
           </div>
           <div class="m-awards__cybersecurity-made">
             <img src="img/cybersecurity-made-in-europe.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-articles-teaser">
+        <h2 class="m-section__header">Latest insights</h2>
+        <div class="m-articles-teaser__content">
+          <a href="./articles" class="m-articles-teaser__see-all">
+            See all articles
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              viewBox="0 -960 960 960"
+              width="24"
+            >
+              <path
+                d="M646-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h446L532-634q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T589-691l183 183q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L589-269q-12 12-28.5 11.5T532-270q-11-12-11.5-28t11.5-28l114-114Z"
+              />
+            </svg>
+          </a>
+          <div class="m-articles-teaser__carousel">
+            <div
+              class="m-articles-teaser__carousel-content m-articles-teaser__carousel-content--scrolled-to-0"
+            >
+              <a
+                href="./articles/modino-cybersecurity-award"
+                class="m-article-tile"
+              >
+                <img
+                  src="img/articles/image2.jpg"
+                  alt=""
+                  class="m-article-tile__image"
+                />
+                <div class="m-article-tile__content">
+                  <div class="m-article-tile__chips">
+                    <div class="m-article-tile__chip m-article-tile__chip--red">
+                      Press
+                    </div>
+                  </div>
+                  <h3 class="m-article-tile__title">
+                    Modino.io won the prestigious European Cybersecurity STARtup
+                    Award at 2023 Cyber Investor Days
+                  </h3>
+                  <i class="m-article-tile__date"> September 30, 2023 </i>
+                </div>
+              </a>
+            </div>
+            <div class="m-articles-teaser__carousel-controls">
+              <button
+                class="m-articles-teaser__carousel-button-prev mdc-button mdc-button--outlined"
+                onclick="displayPreviousCarouselItem()"
+              >
+                <div class="mdc-button__ripple"></div>
+                <div class="mdc-button__label">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="m432-480 156 156q11 11 11 28t-11 28q-11 11-28 11t-28-11L348-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 28-11t28 11q11 11 11 28t-11 28L432-480Z"
+                    />
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="m-articles-teaser__carousel-page-button"
+                onclick="displayNthCarouselItem(0)"
+              ></button>
+              <button
+                class="m-articles-teaser__carousel-page-button m-articles-teaser__carousel-page-button--active"
+                onclick="displayNthCarouselItem(1)"
+              ></button>
+              <button
+                class="m-articles-teaser__carousel-page-button"
+                onclick="displayNthCarouselItem(2)"
+              ></button>
+              <button
+                class="m-articles-teaser__carousel-button-next mdc-button mdc-button--outlined"
+                onclick="displayNextCarouselItem()"
+              >
+                <div class="mdc-button__ripple"></div>
+                <div class="mdc-button__label">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24"
+                    viewBox="0 -960 960 960"
+                    width="24"
+                  >
+                    <path
+                      d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z"
+                    />
+                  </svg>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -487,5 +585,6 @@
     ></script>
     <script src="js/menu.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
   </body>
 </html>
