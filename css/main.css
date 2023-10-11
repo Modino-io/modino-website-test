@@ -982,9 +982,19 @@
   flex-direction: column;
   align-items: center;
 }
+.m-join-grow__join-form .mdc-text-field--focused:not(.mdc-text-field--invalid) .mdc-floating-label {
+  color: #004680;
+}
 .m-join-grow__join-form p {
   margin-block: 2.5rem;
   text-align: center;
+}
+.m-join-grow__join-form-checkbox label {
+  padding-top: 20px;
+  text-align: left;
+}
+.m-join-grow__join-form-field-wrapper:last-of-type {
+  padding-bottom: 1.75rem;
 }
 .m-join-grow__join-form form {
   text-align: center;
@@ -1014,6 +1024,7 @@
   background-color: #ed6f6a;
   z-index: 1;
 }
+
 .m-program-presentation {
   display: flex;
   flex-direction: column;

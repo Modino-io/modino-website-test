@@ -68,14 +68,18 @@
             />
           </a>
           <div class="m-menu__actions">
-            <a href="https://modino.io/" class="m-menu__actions-link"> Home </a>
-            <a href="" class="m-menu__actions-link">Solution</a>
-            <a href="" class="m-menu__actions-link">Articles</a>
-            <a href="" class="m-menu__actions-link">Meet the team</a>
-            <a href="" class="m-menu__actions-link m-menu__actions-link--active"
+            <a href="/" class="m-menu__actions-link"> Home </a>
+            <a href="./solution" class="m-menu__actions-link">Solution</a>
+            <a href="./articles" class="m-menu__actions-link">Articles</a>
+            <a href="./meet-the-team" class="m-menu__actions-link"
+              >Meet the team</a
+            >
+            <a
+              href="./partner-program"
+              class="m-menu__actions-link m-menu__actions-link--active"
               >Partner Program</a
             >
-            <a href="" class="m-menu__actions-link">Jobs</a>
+            <a href="./jobs" class="m-menu__actions-link">Jobs</a>
             <button
               class="mdc-button mdc-button--outlined m-menu__cta-button"
               onclick="window.location.href='./get-in-touch'"
@@ -118,16 +122,18 @@
         </button>
       </div>
       <div class="m-mobile-menu__actions">
-        <a href="" class="m-mobile-menu__actions-link">Home</a>
-        <a href="" class="m-mobile-menu__actions-link">Solution</a>
-        <a href="" class="m-mobile-menu__actions-link">Articles</a>
-        <a href="" class="m-mobile-menu__actions-link">Meet the team</a>
+        <a href="/" class="m-mobile-menu__actions-link">Home</a>
+        <a href="./solution" class="m-mobile-menu__actions-link">Solution</a>
+        <a href="./articles" class="m-mobile-menu__actions-link">Articles</a>
+        <a href="./meet-the-team" class="m-mobile-menu__actions-link"
+          >Meet the team</a
+        >
         <a
-          href=""
+          href="./partner-program"
           class="m-mobile-menu__actions-link m-mobile-menu__actions-link--active"
           >Partner Program</a
         >
-        <a href="" class="m-mobile-menu__actions-link">Jobs</a>
+        <a href="./jobs" class="m-mobile-menu__actions-link">Jobs</a>
         <button
           class="mdc-button mdc-button--unelevated cta-accent-button m-mobile-menu__cta-button"
           onclick="window.location.href='./get-in-touch'"
@@ -324,7 +330,7 @@
               Enter your email below to receive an exclusive invitation to our
               partner program.
             </p>
-            <form>
+            <form id="partner-program-form">
               <div class="m-join-grow__join-form-field-wrapper">
                 <div
                   class="mdc-text-field mdc-text-field--outlined"
@@ -359,8 +365,47 @@
                   </div>
                 </div>
               </div>
+              <div class="m-join-grow__join-form-field-wrapper">
+                <div class="mdc-form-field m-join-grow__join-form-checkbox">
+                  <div class="mdc-checkbox">
+                    <input
+                      id="checkbox-2"
+                      type="checkbox"
+                      class="mdc-checkbox__native-control"
+                      id="legal-checkbox"
+                      name="legal"
+                      value="true"
+                      required
+                    />
+                    <div class="mdc-checkbox__background">
+                      <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path
+                          class="mdc-checkbox__checkmark-path"
+                          fill="none"
+                          d="M1.73,12.91 8.1,19.28 22.79,4.59"
+                        />
+                      </svg>
+                      <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                    <div class="mdc-checkbox__ripple"></div>
+                  </div>
+                  <label for="checkbox-2">
+                    I have read and agree to the
+                    <a class="m-link" href="./privacy-policy">
+                      Privacy Policy
+                    </a>
+                    and
+                    <a class="m-link" href="./terms-of-service">
+                      Terms of Service
+                    </a>
+                    (required)
+                  </label>
+                </div>
+              </div>
 
-              <button class="mdc-button mdc-button--unelevated">
+              <button
+                class="mdc-button mdc-button--unelevated m-join-grow__join-form-confirm-button"
+              >
                 <div class="mdc-button__ripple"></div>
                 <div class="mdc-button__label">Apply</div>
               </button>
@@ -379,6 +424,15 @@
         </a>
       </section>
     </main>
+    <aside class="mdc-snackbar mdc-snackbar--leading">
+      <div
+        class="mdc-snackbar__surface"
+        role="status"
+        aria-relevant="additions"
+      >
+        <div class="mdc-snackbar__label" aria-atomic="false"></div>
+      </div>
+    </aside>
 
     <footer class="m-footer">
       <div class="m-footer__content">
@@ -454,6 +508,7 @@
       integrity="sha384-7jbsaqerzkBrZqKrTmiQePY1zMFEh6YeTJWXf6nfTZywUVfD8K6li3ns+IuKN5sT"
     ></script>
     <script src="js/menu.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
+    <script src="js/partner-program.js"></script>
   </body>
 </html>

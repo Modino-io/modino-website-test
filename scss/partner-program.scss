@@ -419,9 +419,26 @@
     flex-direction: column;
     align-items: center;
 
+    .mdc-text-field--focused:not(.mdc-text-field--invalid) {
+      .mdc-floating-label {
+        color: map.get($modino-colors, primary, 900);
+      }
+    }
+
     p {
       margin-block: spacing(20);
       text-align: center;
+    }
+
+    &-checkbox {
+      label {
+        padding-top: 20px;
+        text-align: left;
+      }
+    }
+
+    &-field-wrapper:last-of-type {
+      padding-bottom: spacing(14);
     }
 
     form {
@@ -468,9 +485,6 @@
           }
         }
       }
-    }
-
-    &-field-wrapper {
     }
   }
 }
