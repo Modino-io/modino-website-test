@@ -81,10 +81,14 @@
             <a href="" class="m-menu__actions-link m-menu__actions-link--active"
               >Solution</a
             >
-            <a href="" class="m-menu__actions-link">Articles</a>
-            <a href="" class="m-menu__actions-link">Meet the team</a>
-            <a href="" class="m-menu__actions-link">Partner Program</a>
-            <a href="" class="m-menu__actions-link">Jobs</a>
+            <a href="./articles" class="m-menu__actions-link">Articles</a>
+            <a href="./meet-the-team" class="m-menu__actions-link"
+              >Meet the team</a
+            >
+            <a href="./partner-program" class="m-menu__actions-link"
+              >Partner Program</a
+            >
+            <a href="./jobs" class="m-menu__actions-link">Jobs</a>
             <button
               class="mdc-button mdc-button--outlined m-menu__cta-button"
               onclick="window.location.href='./get-in-touch'"
@@ -127,16 +131,20 @@
         </button>
       </div>
       <div class="m-mobile-menu__actions">
-        <a href="" class="m-mobile-menu__actions-link">Home</a>
+        <a href="/" class="m-mobile-menu__actions-link">Home</a>
         <a
-          href=""
+          href="./solution"
           class="m-mobile-menu__actions-link m-mobile-menu__actions-link--active"
           >Solution</a
         >
-        <a href="" class="m-mobile-menu__actions-link">Articles</a>
-        <a href="" class="m-mobile-menu__actions-link">Meet the team</a>
-        <a href="" class="m-mobile-menu__actions-link">Partner Program</a>
-        <a href="" class="m-mobile-menu__actions-link">Jobs</a>
+        <a href="./articles" class="m-mobile-menu__actions-link">Articles</a>
+        <a href="./meet-the-team" class="m-mobile-menu__actions-link"
+          >Meet the team</a
+        >
+        <a href="./partner-program" class="m-mobile-menu__actions-link"
+          >Partner Program</a
+        >
+        <a href="./jobs" class="m-mobile-menu__actions-link">Jobs</a>
         <button
           class="mdc-button mdc-button--unelevated cta-accent-button m-mobile-menu__cta-button"
           onclick="window.location.href='./get-in-touch'"
@@ -149,6 +157,39 @@
     </aside>
 
     <main class="m-main">
+      <section class="m-section m-top-hero m-solution-hero">
+        <div class="m-top-hero__wrapper">
+          <h1 class="m-header m-top-hero__title">
+            Discover Safe and Secure
+            <br />
+            Updates with
+            <span class="m-top-hero__title-highlight"> Modino.io </span>
+          </h1>
+          <p class="m-top-hero__description">
+            Modino is on-prem & private cloud solution which main goal is to
+            provide software updates for IoT devices in a “safe” and “secure”
+            way.
+          </p>
+          <button
+            id="main-cta-button"
+            class="m-top-hero__action-button mdc-button mdc-button--unelevated cta-accent-button"
+            onclick="window.location.href='./get-in-touch'"
+          >
+            <span class="mdc-button__ripple"></span>
+            <span class="mdc-button__focus-ring"></span>
+            <span class="mdc-button__label">Get in touch</span>
+          </button>
+          <div class="m-solution-hero__video-container">
+            <iframe
+              src="https://drive.google.com/file/d/1LX6aUjYMPFSh70V5xUAew0XW9NPJE03Z/preview"
+              width="640"
+              height="480"
+              allow="autoplay"
+              title="pitch-video"
+            ></iframe>
+          </div>
+        </div>
+      </section>
       <section class="m-section m-key-aspects">
         <h2 class="m-section__header">Key aspects</h2>
         <div class="m-key-aspects__list">
@@ -207,6 +248,153 @@
             <p class="m-key-aspects__item-description">
               With our automatic rollback procedure, your devices will never go
               offline, even if something goes wrong during the update process.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-manifesto">
+        <h2 class="m-section__header">Security and quality manifesto</h2>
+        <p class="m-section__content">Modino.io means “safe”</p>
+        <div class="tiles-container">
+          <div class="m-tile">
+            <div class="m-tile__icon">
+              <img src="./img/icons/atom-icon.svg" />
+            </div>
+            <p class="m-tile__content">
+              Modino.io platform ensures safe software delivery – data to be
+              delivered are created as atomic updates which makes them possible
+              to be send and receive even with low network throughput
+            </p>
+          </div>
+          <div class="m-tile">
+            <div class="m-tile__icon">
+              <img src="./img/icons/cloud_sync-icon.svg" />
+            </div>
+            <p class="m-tile__content">
+              Never be offline again - if the update fails, an automatic
+              rollback procedure starts. The device restores to the previous,
+              stable software version, and is still operational.
+            </p>
+          </div>
+          <div class="m-tile">
+            <div class="m-tile__icon">
+              <img src="./img/icons/update-icon.svg" />
+            </div>
+            <p class="m-tile__content">
+              With a purchased annual license, each client gets regular updates
+              including security, performance patches, and new releases of the
+              Modino.io system.
+            </p>
+          </div>
+        </div>
+        <img src="./img/demo-screenshot.png" class="m-demo-screenshot" />
+        <hr class="m-manifesto__divider" />
+        <p class="m-section__content">
+          Security is our second name.
+          <br />
+          Or, actually, the first
+        </p>
+        <div class="m-security-wrapper">
+          <div class="tiles-container m-security">
+            <div class="m-tile">
+              <div class="m-tile__icon">
+                <img src="./img/icons/lan.svg" />
+              </div>
+              <p class="m-tile__content">
+                Modino.io is delivered as a set of interconnected OCI containers
+                running in non-privileged mode or when needed with a
+                specifically created security profile. Internally all
+                communication is done via TLS v1.3.
+              </p>
+            </div>
+            <div class="m-tile">
+              <div class="m-tile__icon">
+                <img src="./img/icons/encrypted.svg" />
+              </div>
+              <p class="m-tile__content">
+                Users are authenticated and authorized like any other system
+                actor with a "zero-trust" policy in mind. User accounts are
+                manageable with a deployed instance of an OpenID Connect service
+                that can be connected with the organization’s user database
+                (e.g. LDAP).
+              </p>
+            </div>
+            <div class="m-tile">
+              <div class="m-tile__icon">
+                <img src="./img/icons/support_agent.svg" />
+              </div>
+              <p class="m-tile__content">
+                Modino.io Agent installed on endpoint devices does not require
+                administrator privileges to run, and leverages TLS mutual
+                authentication to communicate with Modino.io services.
+              </p>
+            </div>
+            <div class="m-tile">
+              <div class="m-tile__icon">
+                <img src="./img/icons/key.svg" />
+              </div>
+              <p class="m-tile__content">
+                Container images with software updates are encrypted and signed
+                with user keys that Modino.io does not have access to. No
+                personally identifiable information (PII) is stored.
+              </p>
+            </div>
+          </div>
+          <img src="./img/Graph.svg" class="m-security-graph" />
+        </div>
+      </section>
+      <section class="m-section m-awards">
+        <h2 class="m-section__header">Awards & Recognitions</h2>
+        <div class="m-awards__content">
+          <div class="m-awards__cybersecurity-banner">
+            <img src="img/cybersecurity-award-banner.jpeg" alt="" />
+          </div>
+          <div class="m-awards__cybersecurity-made">
+            <img src="img/cybersecurity-made-in-europe.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-advantages">
+        <h2 class="m-section__header">Advantages</h2>
+        <div class="cards-container">
+          <div class="m-card">
+            <div class="m-card__icon">
+              <img src="./img/icons/work.svg" alt="" />
+            </div>
+            <p class="m-card__title">Experience</p>
+            <p class="m-card__content">
+              Our team has more than 15+ years of practical experience in
+              cryptography, encryption and software delivery.
+            </p>
+          </div>
+          <div class="m-card">
+            <div class="m-card__icon">
+              <img src="./img/icons/alt_route.svg" alt="" />
+            </div>
+            <p class="m-card__title">Flexibility</p>
+            <p class="m-card__content">
+              Even if your IoT devices are not natively designed to be updated,
+              Modino.io can do it to keep your business safe.
+            </p>
+          </div>
+          <div class="m-card">
+            <div class="m-card__icon">
+              <img src="./img/icons/visibility.svg" alt="" />
+            </div>
+            <p class="m-card__title">Monitoring and detection</p>
+            <p class="m-card__content">
+              Modino.io monitors malicious behaviour and provides an active
+              mitigation.
+            </p>
+          </div>
+          <div class="m-card">
+            <div class="m-card__icon">
+              <img src="./img/icons/volunteer.svg" alt="" />
+            </div>
+            <p class="m-card__title">Trust</p>
+            <p class="m-card__content">
+              Your data is yours, Modino.io can't access it since data is
+              encrypted by your keys.
             </p>
           </div>
         </div>

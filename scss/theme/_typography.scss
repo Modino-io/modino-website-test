@@ -127,6 +127,12 @@ $font-map: (
     line-height: 1.5rem,
     font-weight: 400,
   ),
+  body-5: (
+    font-family: "Nunito",
+    font-size: 0.75rem,
+    line-height: 1rem,
+    font-weight: 400,
+  ),
 );
 
 @mixin m-font($type-name) {
