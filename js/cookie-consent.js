@@ -4,24 +4,8 @@ var cc = initCookieConsent();
 // run plugin with your configuration
 cc.run({
   current_lang: "en",
-  autoclear_cookies: true, // default: false
-  page_scripts: true, // default: false
-
-  // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
-  // delay: 0,                               // default: 0
-  // auto_language: null                     // default: null; could also be 'browser' or 'document'
-  // autorun: true,                          // default: true
-  // force_consent: false,                   // default: false
-  // hide_from_bots: true,                   // default: true
-  // remove_cookie_tables: false             // default: false
-  // cookie_name: 'cc_cookie',               // default: 'cc_cookie'
-  // cookie_expiration: 182,                 // default: 182 (days)
-  // cookie_necessary_only_expiration: 182   // default: disabled
-  // cookie_domain: location.hostname,       // default: current domain
-  // cookie_path: '/',                       // default: root
-  // cookie_same_site: 'Lax',                // default: 'Lax'
-  // use_rfc_cookie: false,                  // default: false
-  // revision: 0,                            // default: 0
+  autoclear_cookies: true,
+  page_scripts: true,
 
   onFirstAction: function (user_preferences, cookie) {
     // callback triggered only once
@@ -33,6 +17,7 @@ cc.run({
 
   onChange: function (cookie, changed_preferences) {
     // ...
+    console.log(cookie, changed_preferences);
   },
 
   languages: {
@@ -66,7 +51,7 @@ cc.run({
           {
             title: "Cookie usage 📢",
             description:
-              'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="/privacy-policy" class="cc-link">privacy policy</a>.',
+              'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="/privacy-policy" class="cc-link">privacy policy</a>.',
           },
           {
             title: "Strictly necessary cookies",
@@ -117,7 +102,7 @@ cc.run({
           {
             title: "More information",
             description:
-              'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="#yourcontactpage">contact us</a>.',
+              'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="mailto:hello@modino.io">contact us</a>.',
           },
         ],
       },
