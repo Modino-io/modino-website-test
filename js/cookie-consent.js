@@ -20,6 +20,15 @@ cc.run({
     console.log(cookie, changed_preferences);
   },
 
+  gui_options: {
+    consent_modal: {
+      layout: "cloud",
+      position: "bottom center",
+      transition: "slide",
+      swap_buttons: false,
+    },
+  },
+
   languages: {
     en: {
       consent_modal: {
@@ -60,44 +69,73 @@ cc.run({
             toggle: {
               value: "necessary",
               enabled: true,
-              readonly: true, // cookie categories with readonly=true are all treated as "necessary cookies"
+              readonly: true,
             },
+            cookie_table: [
+              {
+                col1: "cc_cookie",
+                col2: "modino.io",
+                col3: "5.5 months",
+                col4: "Used by us to store user's cookie preferences",
+              },
+            ],
           },
           {
             title: "Performance and Analytics cookies",
             description:
               "These cookies allow the website to remember the choices you have made in the past",
             toggle: {
-              value: "analytics", // your cookie category
+              value: "analytics",
               enabled: false,
               readonly: false,
             },
             cookie_table: [
-              // list of all expected cookies
               {
-                col1: "^_ga", // match all cookies starting with "_ga"
+                col1: "^_ga",
                 col2: "google.com",
                 col3: "2 years",
-                col4: "description ...",
+                col4: "Main cookie used by Google Analytics, enables a service to distinguish one visitor from another",
                 is_regex: true,
               },
               {
-                col1: "_gid",
-                col2: "google.com",
-                col3: "1 day",
-                col4: "description ...",
+                col1: "^_hj",
+                col2: "modino.io",
+                col3: "",
+                col4: 'Cookies used by <a href="https://help.hotjar.com/hc/en-us/articles/115009334567-What-is-Hotjar-">Hotjar</a> analytics tool',
+              },
+              {
+                col1: "^_hjSessionUser_",
+                col2: "modino.io",
+                col3: "365 days",
+                col4: "Set when a user first lands on a page. Persists the Hotjar User ID which is unique to that site. Hotjar does not track users across different sites.",
+                is_regex: true,
+              },
+              {
+                col1: "_hjFirstSeen",
+                col2: "modino.io",
+                col3: "30 minutes, extended on user activity",
+                col4: "Identifies a new user’s first session.",
+              },
+              {
+                col1: "^_hjSession_",
+                col2: "modino.io",
+                col3: "30 minutes, extended on user activity",
+                col4: "Holds current session data. Ensures subsequent requests in the session window are attributed to the same session.",
+              },
+              {
+                col1: "_hjAbsoluteSessionInProgress",
+                col2: "modino.io",
+                col3: "30 minutes, extended on user activity",
+                col4: "Used to detect the first pageview session of a user.",
+              },
+              {
+                col1: "^_hjIncludedInSessionSample_",
+                col2: "modino.io",
+                col3: "2 minutes, extended every 30 seconds",
+                col4: "Set to determine if a user is included in the data sampling defined by your site's daily session limit.",
+                is_regex: true,
               },
             ],
-          },
-          {
-            title: "Advertisement and Targeting cookies",
-            description:
-              "These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you",
-            toggle: {
-              value: "targeting",
-              enabled: false,
-              readonly: false,
-            },
           },
           {
             title: "More information",
