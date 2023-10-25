@@ -135,6 +135,11 @@
 }
 
 .m-articles {
+  margin-block-start: spacing(48);
+
+  @media (min-width: 800px) {
+    margin-block-start: spacing(32);
+  }
   padding-block: spacing(16);
   @media (min-width: 600px) {
     padding-block: spacing(32);

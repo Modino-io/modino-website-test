@@ -17,7 +17,6 @@
 
 .m-team {
   margin-block-start: theme.spacing(48);
-  margin-block-end: theme.spacing(32);
 
   @media (min-width: 800px) {
     margin-block-start: theme.spacing(32);
@@ -49,7 +48,7 @@
     @media (min-width: 800px) {
       flex-wrap: nowrap;
       justify-content: space-around;
-      width: 100%;
+
       padding-inline-start: unset;
       overflow-x: scroll;
       height: 40px;
@@ -216,12 +215,6 @@
 }
 
 .m-values {
-  margin-block-end: theme.spacing(8);
-
-  @media screen and (min-width: 600px) {
-    margin-block-end: theme.spacing(64);
-  }
-
   &__list {
     display: flex;
     flex-direction: column;
