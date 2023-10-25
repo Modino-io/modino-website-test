@@ -267,6 +267,10 @@ main {
 .m-home-hero {
   justify-content: flex-start;
 
+  @media (min-width: 600px) {
+    justify-content: center;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -656,6 +660,8 @@ main {
 }
 
 .m-form-section {
+  display: flex;
+  align-items: center;
   padding: theme.spacing(16, 12);
   justify-content: center;
   background-color: map.get(theme.$modino-colors, surface, background);
@@ -699,6 +705,7 @@ main {
   height: 100%;
   max-width: unset;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 
   @media (min-width: 1000px) {
