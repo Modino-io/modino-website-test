@@ -101,7 +101,7 @@ cc.run({
                 col1: "^_hj",
                 col2: "modino.io",
                 col3: "",
-                col4: 'Cookies used by <a href="https://help.hotjar.com/hc/en-us/articles/115009334567-What-is-Hotjar-">Hotjar</a> analytics tool',
+                col4: 'Cookies used by <a href="https://help.hotjar.com/hc/en-us/articles/115009334567-What-is-Hotjar-" target="_blank" rel="noopener">Hotjar</a> analytics tool',
               },
               {
                 col1: "^_hjSessionUser_",
