@@ -265,6 +265,8 @@ main {
 }
 
 .m-home-hero {
+  justify-content: flex-start;
+
   &::before {
     content: "";
     position: absolute;
@@ -304,12 +306,6 @@ main {
 }
 
 .m-mission {
-  margin-block-end: theme.spacing(32);
-
-  @media screen and (min-width: 600px) {
-    margin-block-end: theme.spacing(48);
-  }
-
   .m-quote {
     display: flex;
     flex-direction: column;
@@ -400,8 +396,6 @@ main {
   gap: theme.spacing(16);
   background-color: map.get(theme.$modino-colors, primary, 900);
   border-radius: theme.$border-radius;
-  padding: theme.spacing(16, 12);
-  margin-block-end: theme.spacing(32);
 
   @media screen and (min-width: 600px) {
     flex-direction: row;
@@ -416,6 +410,11 @@ main {
 
     img {
       max-width: 100%;
+      max-height: 300px;
+
+      @media (min-width: 600px) {
+        max-height: unset;
+      }
     }
   }
 
@@ -455,11 +454,6 @@ main {
 }
 
 .m-solution {
-  margin-block-end: theme.spacing(16);
-  @media screen and (min-width: 600px) {
-    margin-block-end: theme.spacing(40);
-  }
-
   &__container {
     display: flex;
     flex-direction: column;

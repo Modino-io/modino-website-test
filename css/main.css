@@ -11,8 +11,6 @@
  * divested of its trade secrets, irrespective of what has
  * been deposited with any of the Copyright Offices.
  */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 /*
  * Modino.io Confidential
  *
@@ -39,6 +37,34 @@
  * divested of its trade secrets, irrespective of what has
  * been deposited with any of the Copyright Offices.
  */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
@@ -47,6 +73,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 /*
  * Modino.io Confidential
  *
@@ -523,6 +564,32 @@
  * divested of its trade secrets, irrespective of what has
  * been deposited with any of the Copyright Offices.
  */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu");
@@ -593,6 +660,7 @@
  * been deposited with any of the Copyright Offices.
  */
 .m-shape-future {
+  margin-block-start: 4rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -601,6 +669,11 @@
   height: 100vh;
   text-align: center;
   margin-block-end: 4rem;
+}
+@media (min-width: 800px) {
+  .m-shape-future {
+    margin-block-start: 4rem;
+  }
 }
 .m-shape-future::before {
   content: "";
@@ -701,7 +774,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-block-end: 4rem;
 }
 @media (min-width: 800px) {
   .m-partner-program__content {
@@ -989,6 +1061,9 @@
   margin-block: 2.5rem;
   text-align: center;
 }
+.m-join-grow__join-form-checkbox .mdc-checkbox {
+  --mdc-checkbox-unchecked-color: #ccc;
+}
 .m-join-grow__join-form-checkbox label {
   padding-top: 20px;
   text-align: left;
@@ -1032,6 +1107,14 @@
   color: rgba(255, 255, 255, 0.87);
   padding-block: 4rem;
 }
+.m-program-presentation.m-section {
+  align-items: flex-start;
+}
+@media (min-width: 600px) {
+  .m-program-presentation.m-section {
+    align-items: center;
+  }
+}
 .m-program-presentation__text {
   margin-block-end: 1rem;
 }
@@ -1042,6 +1125,32 @@
   color: #91c6e5;
 }
 
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 /*
  * Modino.io Confidential
  *
@@ -1165,7 +1274,6 @@
  */
 .m-team {
   margin-block-start: 6rem;
-  margin-block-end: 4rem;
 }
 @media (min-width: 800px) {
   .m-team {
@@ -1197,7 +1305,6 @@
   .m-team__list {
     flex-wrap: nowrap;
     justify-content: space-around;
-    width: 100%;
     padding-inline-start: unset;
     overflow-x: scroll;
     height: 40px;
@@ -1332,14 +1439,6 @@
   }
 }
 
-.m-values {
-  margin-block-end: 1rem;
-}
-@media screen and (min-width: 600px) {
-  .m-values {
-    margin-block-end: 8rem;
-  }
-}
 .m-values__list {
   display: flex;
   flex-direction: column;
@@ -1460,12 +1559,6 @@
  */
 .m-key-aspects {
   width: 100%;
-  margin-block-end: 1rem;
-}
-@media screen and (min-width: 600px) {
-  .m-key-aspects {
-    margin-block-end: 8rem;
-  }
 }
 .m-key-aspects__list {
   display: grid;
@@ -1486,6 +1579,9 @@
   .m-key-aspects__item {
     margin-block-start: 1rem;
   }
+}
+.m-key-aspects__item:last-of-type .m-key-aspects__item-description {
+  margin-block-end: 0;
 }
 .m-key-aspects__item-image {
   height: 100px;
@@ -1793,6 +1889,32 @@
  * divested of its trade secrets, irrespective of what has
  * been deposited with any of the Copyright Offices.
  */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu");
@@ -1963,7 +2085,13 @@
 }
 
 .m-articles {
+  margin-block-start: 6rem;
   padding-block: 2rem;
+}
+@media (min-width: 800px) {
+  .m-articles {
+    margin-block-start: 4rem;
+  }
 }
 @media (min-width: 600px) {
   .m-articles {
@@ -2260,6 +2388,32 @@
  * divested of its trade secrets, irrespective of what has
  * been deposited with any of the Copyright Offices.
  */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 @font-face {
   font-family: "Ubuntu";
   src: local("Ubuntu");
@@ -2478,6 +2632,32 @@
   fill: #3191ce;
 }
 
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
 /*
  * Modino.io Confidential
  *
@@ -2838,6 +3018,9 @@ main.m-main {
   font-weight: 700;
 }
 
+.m-home-hero {
+  justify-content: flex-start;
+}
 .m-home-hero::before {
   content: "";
   position: absolute;
@@ -2879,14 +3062,6 @@ main.m-main {
   }
 }
 
-.m-mission {
-  margin-block-end: 4rem;
-}
-@media screen and (min-width: 600px) {
-  .m-mission {
-    margin-block-end: 6rem;
-  }
-}
 .m-mission .m-quote {
   display: flex;
   flex-direction: column;
@@ -2978,8 +3153,6 @@ main.m-main {
   gap: 2rem;
   background-color: #004680;
   border-radius: 6px;
-  padding: 2rem 1.5rem;
-  margin-block-end: 4rem;
 }
 @media screen and (min-width: 600px) {
   .m-explanation {
@@ -2995,6 +3168,12 @@ main.m-main {
 }
 .m-explanation__image img {
   max-width: 100%;
+  max-height: 300px;
+}
+@media (min-width: 600px) {
+  .m-explanation__image img {
+    max-height: unset;
+  }
 }
 .m-explanation__text {
   flex: 1;
@@ -3037,14 +3216,6 @@ main.m-main {
   }
 }
 
-.m-solution {
-  margin-block-end: 2rem;
-}
-@media screen and (min-width: 600px) {
-  .m-solution {
-    margin-block-end: 5rem;
-  }
-}
 .m-solution__container {
   display: flex;
   flex-direction: column;
@@ -3395,19 +3566,6 @@ main.m-main {
   border: 1px solid #e4e4e4;
 }
 
-/*
- * Modino.io Confidential
- *
- * Object code only source materials
- *
- * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
- *
- * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
- *
- * The source code for this program is not published or otherwise
- * divested of its trade secrets, irrespective of what has
- * been deposited with any of the Copyright Offices.
- */
 :root {
   --mdc-theme-primary: #004680;
   --mdc-theme-secondary: #004680;
