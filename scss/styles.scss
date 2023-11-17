@@ -49,16 +49,12 @@ a {
 
 main {
   position: relative;
-  max-width: 1240px;
   margin: 0 auto;
   overflow-y: clip;
+  margin-top: -56px;
 
-  &.m-main {
-    margin-top: -56px;
-
-    @media screen and (min-width: 600px) {
-      margin-top: -84px;
-    }
+  @media screen and (min-width: 600px) {
+    margin-top: -84px;
   }
 }
 
@@ -67,18 +63,12 @@ main {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-inline: theme.spacing(12);
-  border-radius: theme.spacing(2);
   padding-block: theme.spacing(32);
-
-  @media screen and (min-width: 600px) {
-    padding-inline: theme.spacing(32);
-  }
 
   &__header {
     @include theme.m-font("heading-4");
-    margin-block: 0 theme.spacing(16);
 
+    margin-block: 0 theme.spacing(16);
     text-align: center;
 
     @media (min-width: 600px) {
@@ -87,17 +77,65 @@ main {
       margin-block: 0 theme.spacing(24);
     }
   }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1240px;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: theme.spacing(12);
+
+    @media screen and (min-width: 600px) {
+      padding-inline: theme.spacing(32);
+    }
+  }
 }
 
 .m-summary {
   width: 100%;
-  height: calc(100vh - 115px);
   position: relative;
   z-index: 1;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  @media (min-width: 999px) {
+    height: calc(100vh - 72px);
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-inline: theme.spacing(32);
+  }
+
+  &::before {
+    content: "";
+    background-image: url("./../img/Decoration - Full.svg");
+    background-position: center;
+    background-size: 100% 100%;
+    left: -100%;
+    top: 10%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 200%;
+    height: 150%;
+    z-index: -1;
+
+    @media (min-width: 999px) {
+      left: -90%;
+      background-size: 150% 100%;
+      top: 0;
+    }
+  }
+
+  &__content {
+    @media (min-width: 800px) {
+      flex-direction: row-reverse;
+      justify-content: center;
+      gap: theme.spacing(32);
+    }
+  }
 
   .cta-accent-button {
     text-transform: none;
@@ -136,34 +174,6 @@ main {
     }
   }
 
-  &::before {
-    content: "";
-    background-image: url("./../img/Decoration - Full.svg");
-    background-position: center;
-    background-size: 100% 100%;
-    left: -100%;
-    top: 10%;
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 200%;
-    height: 150%;
-    z-index: -1;
-
-    @media (min-width: 999px) {
-      left: -90%;
-      background-size: 150% 100%;
-      top: 0;
-    }
-  }
-
-  @media (min-width: 999px) {
-    height: calc(100vh - 72px);
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-inline: theme.spacing(32);
-  }
-
   .m-security-img {
     max-height: 190px;
 
@@ -175,20 +185,22 @@ main {
 
   .m-wrapper {
     text-align: center;
+    margin-block-end: theme.spacing(16);
 
-    @media (min-width: 999px) {
-      text-align: unset;
+    @media (min-width: 800px) {
+      text-align: left;
     }
   }
 
-  .m-header {
+  .m-section__header {
     @include theme.m-font("heading-1-mobile");
 
-    margin-block: theme.spacing(32) theme.spacing(16);
+    margin-block-end: theme.spacing(16);
 
-    @media (min-width: 600px) {
+    @media (min-width: 800px) {
       @include theme.m-font("heading-1");
 
+      text-align: left;
       margin-block-start: 0;
     }
   }
@@ -206,23 +218,35 @@ main {
   align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
+  padding-block-start: 0;
+
+  .m-section__content {
+    justify-content: flex-start;
+    align-items: center;
+
+    @media (min-width: 600px) {
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
 
   &__wrapper {
     position: relative;
     width: 100%;
     align-items: center;
+    text-align: center;
 
     @media screen and (min-width: 600px) {
       text-align: left;
       top: unset;
       width: 500px;
-      align-items: left;
     }
   }
 
   &__title {
     @include theme.m-font("heading-1-mobile");
+
+    margin-block-start: theme.spacing(48);
 
     @media screen and (min-width: 600px) {
       @include theme.m-font("heading-1");
@@ -396,13 +420,18 @@ main {
   flex-direction: column;
   gap: theme.spacing(16);
   background-color: map.get(theme.$modino-colors, primary, 900);
-  border-radius: theme.$border-radius;
 
   @media screen and (min-width: 600px) {
     flex-direction: row;
     gap: theme.spacing(48);
-    padding: theme.spacing(16, 32);
-    margin-block-end: theme.spacing(64);
+  }
+
+  &__content {
+    @media (min-width: 600px) {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: theme.spacing(48);
+    }
   }
 
   &__image {
@@ -434,9 +463,10 @@ main {
     text-align: center;
 
     margin: 0;
-    margin-block-end: theme.spacing(12);
+    margin-block: theme.spacing(16);
 
     @media screen and (min-width: 600px) {
+      margin-block: 0 theme.spacing(12);
       @include theme.m-font("heading-4");
 
       text-align: justify;

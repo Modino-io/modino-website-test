@@ -1014,23 +1014,22 @@
 .m-join-grow__description {
   margin-block-end: 2rem;
 }
-.m-join-grow__text ul {
-  list-style-type: numeric;
+.m-join-grow__text ol {
   margin-block: 0;
   padding-inline-start: 1rem;
 }
-.m-join-grow__text ul li {
+.m-join-grow__text ol li {
   font-family: "Nunito", sans-serif;
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 400;
   font-weight: 700;
 }
-.m-join-grow__text ul li::marker {
+.m-join-grow__text ol li::marker {
   color: #fb3a23;
 }
 @media (min-width: 600px) {
-  .m-join-grow__text ul li:last-of-type p {
+  .m-join-grow__text ol li:last-of-type p {
     margin-block-end: 0;
   }
 }
@@ -1630,10 +1629,19 @@
   width: 100%;
   text-align: center;
 }
+@media (min-width: 600px) {
+  .m-solution-hero .m-top-hero__wrapper {
+    margin-block-start: 4rem;
+  }
+}
+.m-solution-hero .m-top-hero__title {
+  margin-block-start: 8rem;
+}
 .m-solution-hero__video-container {
   display: flex;
   align-items: center;
   position: relative;
+  margin-inline: auto;
 }
 .m-solution-hero__video-container::before {
   content: "";
@@ -1652,7 +1660,7 @@
 }
 .m-solution-hero__video-container iframe {
   margin-block-start: 4rem;
-  width: 100%;
+  margin-inline: auto;
   border: none;
 }
 @media screen and (max-width: 800px) {
@@ -1666,7 +1674,6 @@
   flex-direction: column;
   background-color: #004680;
   color: rgba(255, 255, 255, 0.87);
-  gap: 2rem;
 }
 @media screen and (min-width: 800px) {
   .m-manifesto {
@@ -1676,19 +1683,19 @@
 .m-manifesto p {
   margin: 0;
 }
-.m-manifesto .m-section__header {
-  margin-block-end: 0;
-}
-.m-manifesto .m-section__content {
+.m-manifesto-section__content {
   font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
 }
 @media screen and (min-width: 800px) {
-  .m-manifesto .m-section__content {
+  .m-manifesto-section__content {
     align-self: flex-start;
   }
+}
+.m-manifesto .m-section__header {
+  margin-block-end: 0;
 }
 .m-manifesto .m-security__text {
   grid-area: text;
@@ -1734,10 +1741,12 @@
 .m-manifesto .tiles-container {
   display: flex;
   gap: 32px;
+  margin-block-end: 2rem;
 }
 @media screen and (max-width: 800px) {
   .m-manifesto .tiles-container {
     flex-direction: column;
+    margin-block-end: 3rem;
   }
 }
 @media screen and (min-width: 800px) {
@@ -1799,7 +1808,7 @@
   height: 1px;
   border: none;
   background-color: rgba(255, 255, 255, 0.1724);
-  margin-block: 0;
+  margin-block: 3rem;
 }
 
 .m-advantages {
@@ -2617,7 +2626,7 @@
   margin-block: 4rem;
   margin-block-start: 8rem;
 }
-.m-job.m-section {
+.m-job .m-section__content {
   align-items: flex-start;
 }
 .m-job__header.m-section__header {
@@ -2846,15 +2855,12 @@ a:hover {
 
 main {
   position: relative;
-  max-width: 1240px;
   margin: 0 auto;
   overflow-y: clip;
-}
-main.m-main {
   margin-top: -56px;
 }
 @media screen and (min-width: 600px) {
-  main.m-main {
+  main {
     margin-top: -84px;
   }
 }
@@ -2864,14 +2870,7 @@ main.m-main {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-inline: 1.5rem;
-  border-radius: 0.25rem;
   padding-block: 4rem;
-}
-@media screen and (min-width: 600px) {
-  .m-section {
-    padding-inline: 4rem;
-  }
 }
 .m-section__header {
   font-family: "Ubuntu", sans-serif;
@@ -2890,33 +2889,37 @@ main.m-main {
     margin-block: 0 3rem;
   }
 }
+.m-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1240px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@media screen and (min-width: 600px) {
+  .m-section__content {
+    padding-inline: 4rem;
+  }
+}
 
 .m-summary {
   width: 100%;
-  height: calc(100vh - 115px);
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.m-summary .cta-accent-button {
-  text-transform: none;
-  font-weight: bold;
-  padding: 0.75rem 2rem;
-  height: unset;
-  --mdc-filled-button-container-color: #ed2d24;
-  --mdc-filled-button-hover-state-layer-color: #f74c43;
-  --mdc-filled-button-hover-state-layer-opacity: 1;
-  --mdc-filled-button-focus-state-layer-opacity: 1;
-  --mdc-filled-button-pressed-state-layer-opacity: 1;
-}
-.m-summary .cta-accent-button.mdc-ripple-upgraded--background-focused .mdc-button__ripple:before {
-  background-color: #fb3a23;
-}
-.m-summary .cta-accent-button .mdc-button__ripple:after {
-  background-color: #ed6f6a;
-  z-index: 1;
+@media (min-width: 999px) {
+  .m-summary {
+    height: calc(100vh - 72px);
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-inline: 4rem;
+  }
 }
 .m-summary::before {
   content: "";
@@ -2938,14 +2941,30 @@ main.m-main {
     top: 0;
   }
 }
-@media (min-width: 999px) {
-  .m-summary {
-    height: calc(100vh - 72px);
+@media (min-width: 800px) {
+  .m-summary__content {
     flex-direction: row-reverse;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-inline: 4rem;
+    justify-content: center;
+    gap: 4rem;
   }
+}
+.m-summary .cta-accent-button {
+  text-transform: none;
+  font-weight: bold;
+  padding: 0.75rem 2rem;
+  height: unset;
+  --mdc-filled-button-container-color: #ed2d24;
+  --mdc-filled-button-hover-state-layer-color: #f74c43;
+  --mdc-filled-button-hover-state-layer-opacity: 1;
+  --mdc-filled-button-focus-state-layer-opacity: 1;
+  --mdc-filled-button-pressed-state-layer-opacity: 1;
+}
+.m-summary .cta-accent-button.mdc-ripple-upgraded--background-focused .mdc-button__ripple:before {
+  background-color: #fb3a23;
+}
+.m-summary .cta-accent-button .mdc-button__ripple:after {
+  background-color: #ed6f6a;
+  z-index: 1;
 }
 .m-summary .m-security-img {
   max-height: 190px;
@@ -2958,25 +2977,27 @@ main.m-main {
 }
 .m-summary .m-wrapper {
   text-align: center;
+  margin-block-end: 2rem;
 }
-@media (min-width: 999px) {
+@media (min-width: 800px) {
   .m-summary .m-wrapper {
-    text-align: unset;
+    text-align: left;
   }
 }
-.m-summary .m-header {
+.m-summary .m-section__header {
   font-family: "Ubuntu", sans-serif;
   font-size: 2.375rem;
   line-height: 3rem;
   font-weight: 700;
-  margin-block: 4rem 2rem;
+  margin-block-end: 2rem;
 }
-@media (min-width: 600px) {
-  .m-summary .m-header {
+@media (min-width: 800px) {
+  .m-summary .m-section__header {
     font-family: "Ubuntu", sans-serif;
     font-size: 3.5rem;
     line-height: 4rem;
     font-weight: 700;
+    text-align: left;
     margin-block-start: 0;
   }
 }
@@ -2993,19 +3014,29 @@ main.m-main {
   align-items: flex-start;
   justify-content: center;
   min-height: 100vh;
-  text-align: center;
+  padding-block-start: 0;
+}
+.m-top-hero .m-section__content {
+  justify-content: flex-start;
+  align-items: center;
+}
+@media (min-width: 600px) {
+  .m-top-hero .m-section__content {
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
 .m-top-hero__wrapper {
   position: relative;
   width: 100%;
   align-items: center;
+  text-align: center;
 }
 @media screen and (min-width: 600px) {
   .m-top-hero__wrapper {
     text-align: left;
     top: unset;
     width: 500px;
-    align-items: left;
   }
 }
 .m-top-hero__title {
@@ -3013,6 +3044,7 @@ main.m-main {
   font-size: 2.375rem;
   line-height: 3rem;
   font-weight: 700;
+  margin-block-start: 6rem;
 }
 @media screen and (min-width: 600px) {
   .m-top-hero__title {
@@ -3196,14 +3228,18 @@ main.m-main {
   flex-direction: column;
   gap: 2rem;
   background-color: #004680;
-  border-radius: 6px;
 }
 @media screen and (min-width: 600px) {
   .m-explanation {
     flex-direction: row;
     gap: 6rem;
-    padding: 2rem 4rem;
-    margin-block-end: 8rem;
+  }
+}
+@media (min-width: 600px) {
+  .m-explanation__content {
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 6rem;
   }
 }
 .m-explanation__image {
@@ -3233,10 +3269,11 @@ main.m-main {
   font-weight: 700;
   text-align: center;
   margin: 0;
-  margin-block-end: 1.5rem;
+  margin-block: 2rem;
 }
 @media screen and (min-width: 600px) {
   .m-explanation__title {
+    margin-block: 0 1.5rem;
     font-family: "Ubuntu", sans-serif;
     font-size: 2rem;
     line-height: 2.5rem;
