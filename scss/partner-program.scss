@@ -29,7 +29,6 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  margin-block-end: spacing(32);
 
   &::before {
     content: "";
@@ -110,7 +109,6 @@
   img {
     min-width: 0;
     max-width: 80%;
-    max-height: auto;
   }
 }
 
@@ -266,11 +264,6 @@
   color: map.get($modino-colors, surface, text-contrast);
   padding-block: spacing(32);
 
-  .m-section__header {
-    margin-block-start: 0;
-    margin-block-end: spacing(16);
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
@@ -279,10 +272,11 @@
   }
 
   &__text {
+    margin-block-start: 0;
     margin-block-end: spacing(16);
 
     @media (min-width: 800px) {
-      margin-block-end: spacing(32);
+      margin-block-end: spacing(24);
     }
   }
 
@@ -353,7 +347,7 @@
     }
 
     @media (min-width: 800px) and (max-width: 1439px) {
-      transform: translate(-75%, calc(-50% - -20vw));
+      transform: translate(-70%, calc(-50% - -20vw));
       width: 150vh;
     }
 
@@ -449,8 +443,14 @@
       }
     }
 
-    &-field-wrapper:last-of-type {
-      padding-bottom: spacing(14);
+    &-field-wrapper {
+      .mdc-floating-label--required::after {
+        content: "";
+      }
+
+      &:last-of-type {
+        padding-bottom: spacing(14);
+      }
     }
 
     form {

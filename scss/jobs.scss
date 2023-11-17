@@ -69,6 +69,14 @@
   }
 
   &__header {
+    &.m-section__header {
+      @include m-font("heading-1-mobile");
+
+      @media (min-width: 600px) {
+        @include m-font("heading-2");
+      }
+    }
+
     grid-area: header;
 
     &.m-section__header {

@@ -253,12 +253,12 @@
   &__item-title {
     @include theme.m-font("subheading-3");
 
-    font-weight: 700;
     margin: 0;
     margin-block-end: theme.spacing(8);
 
     @media (min-width: 600px) {
       @include theme.m-font("body-1");
+      font-weight: 700;
     }
   }
 
