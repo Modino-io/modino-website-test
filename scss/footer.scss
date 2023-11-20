@@ -24,6 +24,10 @@
     padding-inline: theme.spacing(32);
   }
 
+  @media (min-height: 800px) {
+    min-height: 25vh;
+  }
+
   &__content {
     max-width: 1200px;
     display: flex;

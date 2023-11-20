@@ -414,6 +414,11 @@
     padding-inline: 4rem;
   }
 }
+@media (min-height: 800px) {
+  .m-footer {
+    min-height: 25vh;
+  }
+}
 .m-footer__content {
   max-width: 1200px;
   display: flex;
@@ -965,8 +970,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-60%, calc(-50% - 12vw));
-  width: calc(80vh + 80vw);
-  height: 130vh;
+  width: 1220px;
+  height: 1220px;
   background-image: url("../img/join_engage_grow-blob.svg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -980,19 +985,17 @@
 }
 @media (min-width: 600px) and (max-width: 799px) {
   .m-join-grow::before {
-    transform: translate(-60%, calc(-50% - 3vw));
-    width: 120vh;
+    transform: translate(-60%, -55%);
   }
 }
 @media (min-width: 800px) and (max-width: 1439px) {
   .m-join-grow::before {
-    transform: translate(-70%, calc(-50% + 20vw));
-    width: 150vh;
+    transform: translate(-75%, calc(-40% + 15vw));
   }
 }
 @media (min-width: 1441px) {
   .m-join-grow::before {
-    transform: translate(-74%, -30%);
+    transform: translate(-65%, -25%);
     width: 130vw;
     height: 130vh;
   }
@@ -1013,6 +1016,7 @@
   }
 }
 .m-join-grow__description {
+  text-align: center;
   margin-block-end: 2rem;
 }
 .m-join-grow__text ol {
@@ -2540,6 +2544,11 @@
   justify-content: center;
   min-height: 100vh;
 }
+@media (min-height: 1000px) {
+  .m-jobs {
+    min-height: 75vh;
+  }
+}
 .m-jobs::before {
   content: "";
   position: absolute;
@@ -2572,13 +2581,14 @@
 }
 .m-jobs__content {
   display: grid;
-  column-gap: 4rem;
+  column-gap: 8rem;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "header header" "text text" "image image";
 }
 @media (min-width: 800px) {
   .m-jobs__content {
+    column-gap: 4rem;
     grid-template-areas: "image header" "image text" "image text";
   }
 }
@@ -2590,6 +2600,7 @@
   font-size: 2.375rem;
   line-height: 3rem;
   font-weight: 700;
+  margin-block-end: 2rem;
 }
 @media (min-width: 600px) {
   .m-jobs__header.m-section__header {
@@ -2608,6 +2619,14 @@
   grid-area: text;
   margin-block-end: 3.125rem;
 }
+@media (min-width: 600px) {
+  .m-jobs__text {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+  }
+}
 @media (min-width: 800px) {
   .m-jobs__text {
     margin-block-end: 2rem;
@@ -2623,7 +2642,12 @@
     margin-block-start: 2rem;
   }
 }
+.m-jobs__text ul li {
+  margin-block-end: 0.25rem;
+}
 .m-jobs__text ul li a {
+  text-decoration-thickness: 1px;
+  text-decoration-skip: none;
   color: rgba(0, 0, 0, 0.87);
 }
 .m-jobs__image {
@@ -2939,17 +2963,17 @@ main {
   background-image: url("./../img/Decoration - Full.svg");
   background-position: center;
   background-size: 100% 100%;
-  left: -100%;
-  top: 10%;
+  left: calc(-85% - 5vw);
+  top: 30%;
   background-repeat: no-repeat;
   position: absolute;
   width: 200%;
   height: 150%;
   z-index: -1;
 }
-@media (min-width: 999px) {
+@media (min-width: 800px) {
   .m-summary::before {
-    left: -90%;
+    left: -80%;
     background-size: 150% 100%;
     top: 0;
   }
@@ -3002,7 +3026,7 @@ main {
   font-size: 2.375rem;
   line-height: 3rem;
   font-weight: 700;
-  margin-block-end: 2rem;
+  margin-block: 4rem 2rem;
 }
 @media (min-width: 800px) {
   .m-summary .m-section__header {

@@ -330,8 +330,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-60%, calc(-50% - 12vw));
-    width: calc(80vh + 80vw);
-    height: 130vh;
+    width: 1220px;
+    height: 1220px;
     background-image: url("../img/join_engage_grow-blob.svg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -343,17 +343,15 @@
     }
 
     @media (min-width: 600px) and (max-width: 799px) {
-      transform: translate(-60%, calc(-50% - 3vw));
-      width: 120vh;
+      transform: translate(-60%, -55%);
     }
 
     @media (min-width: 800px) and (max-width: 1439px) {
-      transform: translate(-70%, calc(-50% - -20vw));
-      width: 150vh;
+      transform: translate(-75%, calc(-40% + 15vw));
     }
 
     @media (min-width: 1441px) {
-      transform: translate(-74%, -30%);
+      transform: translate(-65%, -25%);
       width: 130vw;
       height: 130vh;
     }
@@ -376,6 +374,7 @@
   }
 
   &__description {
+    text-align: center;
     margin-block-end: spacing(16);
   }
 
