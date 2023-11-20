@@ -1041,6 +1041,9 @@
 .m-join-grow__text:last-of-type {
   background-color: red;
 }
+.m-join-grow__image {
+  width: 100%;
+}
 .m-join-grow__point-text {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
@@ -1275,8 +1278,12 @@
  * been deposited with any of the Copyright Offices.
  */
 .m-team-header {
-  margin-block-start: 6rem;
-  padding-block-end: 3rem;
+  margin-block-start: 4rem;
+}
+@media (min-width: 600px) {
+  .m-team-header.m-section {
+    padding-block-end: 3rem;
+  }
 }
 @media (min-width: 800px) {
   .m-team-header {
@@ -1315,7 +1322,6 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   padding-inline-start: 0;
-  margin-inline: 1.5rem;
   margin-block-start: 0;
   margin-block-end: 2rem;
 }
@@ -1413,7 +1419,7 @@
 }
 @media (min-width: 800px) {
   .m-team .m-people-list {
-    padding-inline: 4rem;
+    padding-inline: 0;
   }
 }
 .m-team .m-people-list[hidden] {

@@ -5,12 +5,8 @@
  */
 
 const menuCtaButton = document.getElementsByClassName("m-menu__cta-button")[0];
-let currentTab = "founders";
 const summaryCtaBtn = document.getElementById("summary-cta-btn");
 const mainCtaButton = document.getElementById("main-cta-button");
-const tabs = document.querySelectorAll(".m-team__list-item");
-const tabButtons = document.querySelectorAll('button[role="tab"]');
-const peopleLists = document.querySelectorAll(".m-people-list");
 
 if (summaryCtaBtn) {
   const summaryCtaBtnRipple = new mdc.ripple.MDCRipple(summaryCtaBtn);
@@ -28,6 +24,7 @@ document.addEventListener("scroll", checkMenuCtaButton);
 
 function checkMenuCtaButton() {
   if (menuCtaButton && mainCtaButton) {
+    console.log("yes");
     if (
       mainCtaButton.getBoundingClientRect().top <= mainCtaButton.clientHeight
     ) {
@@ -42,30 +39,7 @@ function checkMenuCtaButton() {
   }
 }
 
-const openTab = (event) => {
-  const arrayOfTabs = Array.from(tabs);
-  arrayOfTabs.forEach((tab) => {
-    tab.classList.remove("active");
-    tab
-      .querySelectorAll('button[role="tab"]')[0]
-      .classList.remove("mdc-button--raised");
-  });
-
-  event.currentTarget.parentElement.classList.add("active");
-  event.currentTarget.classList.add("mdc-button--raised");
-
-  document.getElementById(`${currentTab}-section`).hidden = true;
-
-  currentTab = event.currentTarget.id;
-  document.getElementById(`${currentTab}-section`).hidden = false;
-};
-
 const init = () => {
-  document.getElementById(currentTab).parentElement.classList.add("active");
-  document.getElementById(currentTab).classList.add("mdc-button--raised");
-  document.getElementById(`${currentTab}-section`).hidden = false;
-  tabButtons.forEach((button) => button.addEventListener("click", openTab));
-
   checkMenuCtaButton();
 };
 
