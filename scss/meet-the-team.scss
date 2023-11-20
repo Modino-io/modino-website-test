@@ -15,11 +15,30 @@
 @use "theme";
 @use "sass:map";
 
-.m-team {
+.m-team-header {
   margin-block-start: theme.spacing(48);
+  padding-block-end: theme.spacing(24);
 
   @media (min-width: 800px) {
     margin-block-start: theme.spacing(32);
+  }
+
+  .m-team-photo {
+    width: 100%;
+
+    @media (min-width: 1240px) {
+      border-radius: theme.$border-radius;
+    }
+  }
+
+  .m-section__content {
+    padding-inline: 0;
+  }
+}
+
+.m-team {
+  &.m-section {
+    padding-block-start: 0;
   }
 
   &.m-section {
@@ -194,23 +213,6 @@
         margin-block-start: theme.spacing(4);
       }
     }
-  }
-}
-
-.m-team-photo {
-  max-height: 478px;
-  object-fit: cover;
-  object-position: 50% 15%;
-  width: 100%;
-  margin-block-end: theme.spacing(32);
-  margin-inline: -#{theme.spacing(16)};
-
-  @media (min-width: 1240px) {
-    border-radius: theme.$border-radius;
-  }
-
-  @media (min-width: 800px) {
-    margin-block-end: theme.spacing(24);
   }
 }
 

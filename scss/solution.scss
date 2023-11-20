@@ -123,15 +123,22 @@
       box-sizing: border-box;
       z-index: -1;
       left: 50%;
-      top: 50%;
+      top: 20%;
+      width: 1300px;
+      height: 885px;
       transform: translate(-50%, -50%);
-      width: 200%;
-      height: 200%;
 
       background-image: url("../img/decoration_blob.svg");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
+
+      @media (min-width: 600px) {
+        left: 50%;
+        top: 25%;
+        width: 2780px;
+        height: 1185px;
+      }
     }
     iframe {
       margin-inline: auto;
