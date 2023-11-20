@@ -245,6 +245,10 @@
 
   &.m-section {
     align-items: flex-start;
+
+    .m-section__content {
+      align-items: flex-start;
+    }
   }
 
   &__header {

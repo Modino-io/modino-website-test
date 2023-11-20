@@ -2242,6 +2242,9 @@
 .m-article.m-section {
   align-items: flex-start;
 }
+.m-article.m-section .m-section__content {
+  align-items: flex-start;
+}
 .m-article__header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
