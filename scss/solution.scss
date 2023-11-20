@@ -97,7 +97,18 @@
   }
 
   .m-top-hero__title {
-    margin-block-start: theme.spacing(64);
+    margin-block-start: theme.spacing(32);
+    @media (min-width: 600px) {
+      margin-block-start: theme.spacing(48);
+    }
+  }
+
+  .m-top-hero__action-button {
+    margin-block-end: theme.spacing(16);
+
+    @media (min-width: 600px) {
+      margin-block-end: theme.spacing(32);
+    }
   }
 
   &__video-container {
@@ -123,7 +134,6 @@
       background-size: contain;
     }
     iframe {
-      margin-block-start: theme.spacing(32);
       margin-inline: auto;
 
       border: none;
@@ -141,17 +151,17 @@
   background-color: map.get(theme.$modino-colors, primary, 900);
   color: map.get(theme.$modino-colors, surface, text-contrast);
 
-  @media screen and (min-width: 800px) {
-    gap: theme.spacing(24);
-  }
-
-  p {
-    margin: 0;
-  }
-
   &-section {
     &__content {
       @include theme.m-font("subheading-2");
+      margin: 0;
+    }
+
+    &__subtitle {
+      @include theme.m-font("subheading-2");
+
+      margin-block: theme.spacing(16);
+
       @media screen and (min-width: 800px) {
         align-self: flex-start;
       }

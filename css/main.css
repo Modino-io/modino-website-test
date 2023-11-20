@@ -947,6 +947,7 @@
 }
 .m-how-works__step p {
   width: 160px;
+  margin-block-start: 0.5rem;
 }
 .m-how-works__step img {
   max-width: 100%;
@@ -1635,7 +1636,20 @@
   }
 }
 .m-solution-hero .m-top-hero__title {
-  margin-block-start: 8rem;
+  margin-block-start: 4rem;
+}
+@media (min-width: 600px) {
+  .m-solution-hero .m-top-hero__title {
+    margin-block-start: 6rem;
+  }
+}
+.m-solution-hero .m-top-hero__action-button {
+  margin-block-end: 2rem;
+}
+@media (min-width: 600px) {
+  .m-solution-hero .m-top-hero__action-button {
+    margin-block-end: 4rem;
+  }
 }
 .m-solution-hero__video-container {
   display: flex;
@@ -1659,7 +1673,6 @@
   background-size: contain;
 }
 .m-solution-hero__video-container iframe {
-  margin-block-start: 4rem;
   margin-inline: auto;
   border: none;
 }
@@ -1675,22 +1688,22 @@
   background-color: #004680;
   color: rgba(255, 255, 255, 0.87);
 }
-@media screen and (min-width: 800px) {
-  .m-manifesto {
-    gap: 3rem;
-  }
-}
-.m-manifesto p {
-  margin: 0;
-}
 .m-manifesto-section__content {
   font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
+  margin: 0;
+}
+.m-manifesto-section__subtitle {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  margin-block: 2rem;
 }
 @media screen and (min-width: 800px) {
-  .m-manifesto-section__content {
+  .m-manifesto-section__subtitle {
     align-self: flex-start;
   }
 }
