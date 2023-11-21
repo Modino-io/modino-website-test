@@ -24,7 +24,6 @@ document.addEventListener("scroll", checkMenuCtaButton);
 
 function checkMenuCtaButton() {
   if (menuCtaButton && mainCtaButton) {
-    console.log("yes");
     if (
       mainCtaButton.getBoundingClientRect().top <= mainCtaButton.clientHeight
     ) {

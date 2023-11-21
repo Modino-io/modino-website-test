@@ -57,6 +57,7 @@
   &__content {
     display: grid;
     column-gap: spacing(64);
+
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     grid-template-areas:
@@ -65,7 +66,6 @@
       "image image";
 
     @media (min-width: 800px) {
-      column-gap: spacing(32);
       grid-template-areas:
         "image header"
         "image text"
@@ -115,7 +115,7 @@
       }
 
       li {
-        margin-block-end: spacing(2);
+        margin-block-end: spacing(4);
         a {
           text-decoration-thickness: 1px;
           text-decoration-skip: none;

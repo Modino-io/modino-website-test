@@ -87,6 +87,14 @@
 }
 
 .m-solution-hero {
+  &.m-section {
+    padding-block-end: 0;
+  }
+
+  &.m-top-hero {
+    min-height: unset;
+  }
+
   .m-top-hero__wrapper {
     width: 100%;
     text-align: center;
@@ -110,39 +118,67 @@
       margin-block-end: theme.spacing(32);
     }
   }
+}
+
+.m-solution-video {
+  &::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    background-image: url("../img/decoration_blob.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 6.8%;
+    width: 100vw;
+    height: 650px;
+
+    @media (min-width: 600px) and (max-width: 799px) {
+      top: calc(10% - 2vw);
+      height: 750px;
+    }
+    @media (min-width: 800px) and (max-width: 1239px) {
+      top: 11%;
+      height: 950px;
+    }
+
+    @media (min-width: 1240px) {
+      top: 12%;
+
+      height: 1100px;
+    }
+  }
+
+  &.m-section {
+    padding-block-start: 0;
+
+    @media (min-width: 600px) {
+      padding-block-end: theme.spacing(64);
+    }
+  }
 
   &__video-container {
     display: flex;
     align-items: center;
     position: relative;
     margin-inline: auto;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
 
-    &::before {
-      content: "";
-      position: absolute;
-      box-sizing: border-box;
-      z-index: -1;
-      left: 50%;
-      top: 20%;
-      width: 1300px;
-      height: 885px;
-      transform: translate(-50%, -50%);
-
-      background-image: url("../img/decoration_blob.svg");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: contain;
-
-      @media (min-width: 600px) {
-        left: 50%;
-        top: 25%;
-        width: 2780px;
-        height: 1185px;
-      }
-    }
     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
       margin-inline: auto;
-
       border: none;
 
       @media screen and (max-width: 800px) {

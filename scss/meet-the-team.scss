@@ -299,17 +299,20 @@
   .m-section__header {
     @include theme.m-font("heading-4");
 
-    margin-block-start: 0;
+    @media (min-width: 600px) {
+      margin-block-end: theme.spacing(16);
+    }
   }
 
   &__text {
+    margin-block-start: 0;
     text-align: center;
   }
 
   &__link {
     $text-color: map.get(theme.$modino-colors, primary, 200);
 
-    @include theme.m-font("body-1");
+    @include theme.m-font("body-3");
 
     display: inline-flex;
     align-items: center;
