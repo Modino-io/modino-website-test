@@ -1,3 +1,9 @@
+/*
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ */
+
 const carouselItems = document.querySelectorAll(".m-article-tile");
 const carouselItemsContainer = document.querySelectorAll(
   ".m-articles-teaser__carousel-content"

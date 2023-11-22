@@ -1,3 +1,9 @@
+/*
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ */
+
 const textFields = document.querySelectorAll(".mdc-text-field");
 const checkboxes = document.querySelectorAll(".mdc-checkbox");
 const button = document.querySelector(".m-join-grow__join-form-confirm-button");
