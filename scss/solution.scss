@@ -1,0 +1,400 @@
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+
+.m-key-aspects {
+  width: 100%;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-column-gap: theme.spacing(48);
+
+    @media screen and (min-width: 600px) {
+      grid-row-gap: theme.spacing(24);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: 600px) {
+      margin-block-start: theme.spacing(8);
+    }
+
+    &:last-of-type {
+      .m-key-aspects__item-description {
+        margin-block-end: 0;
+      }
+    }
+  }
+
+  &__item-image {
+    height: 100px;
+    margin-block-end: theme.spacing(12);
+
+    @media (min-width: 600px) and (max-width: 999px) {
+      height: 140px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      height: 180px;
+      margin-block-end: theme.spacing(24);
+    }
+  }
+
+  &__item-title {
+    @include theme.m-font("body-1");
+
+    font-weight: 700;
+    margin: 0;
+    margin-block-end: theme.spacing(8);
+  }
+
+  &__item-description {
+    margin: 0;
+    margin-block-end: theme.spacing(24);
+
+    @media screen and (min-width: 600px) {
+      margin-block-end: 0;
+    }
+  }
+
+  &__item-image,
+  &__item-title,
+  &__item-description {
+    text-align: center;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+
+    @media screen and (min-width: 600px) {
+      padding-inline-start: theme.spacing(12);
+      padding-inline-end: theme.spacing(12);
+    }
+  }
+}
+
+.m-solution-hero {
+  &.m-section {
+    padding-block-end: 0;
+  }
+
+  &.m-top-hero {
+    min-height: unset;
+  }
+
+  .m-top-hero__wrapper {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 600px) {
+      margin-block-start: theme.spacing(32);
+    }
+  }
+
+  .m-top-hero__title {
+    margin-block-start: theme.spacing(32);
+    @media (min-width: 600px) {
+      margin-block-start: theme.spacing(48);
+    }
+  }
+
+  .m-top-hero__action-button {
+    margin-block-end: theme.spacing(16);
+
+    @media (min-width: 600px) {
+      margin-block-end: theme.spacing(32);
+    }
+  }
+}
+
+.m-solution-video {
+  &::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    background-image: url("../img/decoration_blob.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 6.8%;
+    width: 100vw;
+    height: 650px;
+
+    @media (min-width: 600px) and (max-width: 799px) {
+      top: calc(10% - 2vw);
+      height: 750px;
+    }
+    @media (min-width: 800px) and (max-width: 1239px) {
+      top: 11%;
+      height: 950px;
+    }
+
+    @media (min-width: 1240px) {
+      top: 12%;
+
+      height: 1100px;
+    }
+  }
+
+  &.m-section {
+    padding-block-start: 0;
+
+    @media (min-width: 600px) {
+      padding-block-end: theme.spacing(64);
+    }
+  }
+
+  &__video-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-inline: auto;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      margin-inline: auto;
+      border: none;
+
+      @media screen and (max-width: 800px) {
+        height: 50vw;
+      }
+    }
+  }
+}
+
+.m-manifesto {
+  display: flex;
+  flex-direction: column;
+  background-color: map.get(theme.$modino-colors, primary, 900);
+  color: map.get(theme.$modino-colors, surface, text-contrast);
+
+  &-section {
+    &__content {
+      @include theme.m-font("subheading-2");
+      margin: 0;
+    }
+
+    &__subtitle {
+      @include theme.m-font("subheading-2");
+
+      margin-block: theme.spacing(16);
+
+      @media screen and (min-width: 800px) {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  & .m-section {
+    &__header {
+      margin-block-end: 0;
+    }
+  }
+
+  .m-security {
+    &__text {
+      grid-area: text;
+      flex-direction: column;
+      margin-block-end: theme.spacing(16);
+      @media (min-width: 800px) {
+        margin-block-end: 0;
+      }
+    }
+    &__title {
+      grid-area: title;
+      margin-block-end: theme.spacing(16);
+
+      @media (min-width: 800px) {
+        margin-block-end: theme.spacing(20);
+      }
+    }
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: theme.spacing(24);
+      grid-template-areas:
+        "title title"
+        "text text"
+        "graph graph";
+      max-width: 100%;
+
+      @media screen and (min-width: 800px) {
+        grid-template-areas:
+          "title graph"
+          "text graph"
+          "text graph";
+      }
+    }
+
+    &__graph {
+      grid-area: graph;
+      width: 100%;
+      @media screen and (min-width: 800px) {
+        flex-grow: 2;
+        margin-block-start: 0;
+      }
+    }
+  }
+
+  .tiles-container {
+    display: flex;
+    gap: 32px;
+    margin-block-end: theme.spacing(16);
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      margin-block-end: theme.spacing(24);
+    }
+
+    &.m-security__text {
+      @media screen and (min-width: 800px) {
+        flex-direction: column;
+      }
+
+      .m-tile {
+        @media screen and (min-width: 800px) {
+          flex-direction: row;
+          gap: 16px;
+        }
+
+        &__icon {
+          @media screen and (min-width: 800px) {
+            align-self: flex-start;
+          }
+        }
+
+        &__content {
+          text-align: start;
+        }
+      }
+    }
+
+    .m-tile {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: theme.spacing(4);
+
+      @media screen and (min-width: 800px) {
+        gap: theme.spacing(8);
+      }
+
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: map.get(theme.$modino-colors, secondary-1, 200);
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        flex-shrink: 0;
+
+        img {
+          width: 48px;
+        }
+      }
+
+      &__content {
+        @include theme.m-font("body-3");
+        text-align: center;
+      }
+    }
+  }
+
+  .m-demo-screenshot {
+    width: 100%;
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: rgb(255 255 255 / 0.1724);
+    margin-block: theme.spacing(24);
+  }
+}
+
+.m-advantages {
+  padding-block: theme.spacing(32);
+
+  .cards-container {
+    display: flex;
+    width: 100%;
+    gap: theme.spacing(16);
+    flex-direction: column;
+
+    @media screen and (min-width: 1200px) {
+      flex-direction: row;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .m-card {
+      background-color: map.get(
+        theme.$modino-colors,
+        surface,
+        background-high-contrast
+      );
+      border: 1px solid map.get(theme.$modino-colors, surface, border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: theme.spacing(8);
+      padding: theme.spacing(12) theme.spacing(6);
+      width: 100%;
+
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: map.get(theme.$modino-colors, secondary-1, 200);
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+
+        img {
+          width: 32px;
+        }
+      }
+
+      &__title {
+        @include theme.m-font("subheading-2");
+        text-align: center;
+      }
+
+      &__content {
+        @include theme.m-font("body-3");
+        text-align: center;
+      }
+    }
+  }
+}

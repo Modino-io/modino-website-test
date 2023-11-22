@@ -1,0 +1,202 @@
+/*
+ * Modino.io Confidential
+ *
+ * Object code only source materials
+ *
+ * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
+ *
+ * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
+ *
+ * The source code for this program is not published or otherwise
+ * divested of its trade secrets, irrespective of what has
+ * been deposited with any of the Copyright Offices.
+ */
+
+@use "theme" as *;
+@use "sass:map";
+
+.m-jobs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+
+  @media (min-height: 1000px) {
+    min-height: 75vh;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    z-index: -1;
+    transform: translate(20%, 45%);
+    height: 1100px;
+    width: 1100px;
+    background-image: url("../img/jobs-blob.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    @media screen and (min-width: 600px) {
+      transform: translate(20%, 45%);
+    }
+
+    @media (min-width: 600px) and (max-width: 999px) {
+      transform: translate(-10%, 35%);
+      width: 1500px;
+    }
+
+    @media (min-width: 1000px) {
+      transform: translate(-13%, 30%);
+      width: 1500px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    column-gap: spacing(64);
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "header header"
+      "text text"
+      "image image";
+
+    @media (min-width: 800px) {
+      grid-template-areas:
+        "image header"
+        "image text"
+        "image text";
+    }
+  }
+
+  &__header {
+    &.m-section__header {
+      @include m-font("heading-1-mobile");
+
+      margin-block-end: spacing(16);
+
+      @media (min-width: 600px) {
+        @include m-font("heading-2");
+      }
+    }
+
+    grid-area: header;
+
+    &.m-section__header {
+      @media (min-width: 800px) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__text {
+    @media (min-width: 600px) {
+      @include m-font("body-2");
+    }
+
+    grid-area: text;
+    margin-block-end: spacing(25);
+
+    @media (min-width: 800px) {
+      margin-block-end: spacing(16);
+    }
+
+    ul {
+      margin-block-end: 0;
+      padding-inline-start: spacing(8);
+      margin-block-start: spacing(8);
+
+      @media (min-width: 800px) {
+        margin-block-start: spacing(16);
+      }
+
+      li {
+        margin-block-end: spacing(4);
+        a {
+          text-decoration-thickness: 1px;
+          text-decoration-skip: none;
+          color: map.get($modino-colors, surface, text);
+        }
+      }
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    justify-self: center;
+    align-self: center;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.m-job {
+  margin-block: spacing(32);
+  margin-block-start: spacing(64);
+
+  .m-section__content {
+    align-items: flex-start;
+  }
+
+  &__header.m-section__header {
+    @include m-font("body-2");
+
+    align-self: flex-start;
+    text-align: left;
+    margin-block: spacing(16);
+
+    @media (min-width: 600px) {
+      margin-block: spacing(8, 16);
+      @include m-font("heading-3");
+    }
+  }
+
+  &__breadcrumbs {
+    display: flex;
+    color: map.get($modino-colors, surface, text-disabled);
+    text-align: left;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    > .m-job__breadcrumb {
+      margin-inline: spacing(8);
+
+      &:first-child {
+        margin-inline-start: 0;
+      }
+
+      &:last-child {
+        font-weight: 700;
+        margin-inline-end: 0;
+        color: map.get($modino-colors, surface, text);
+      }
+    }
+  }
+
+  &__content {
+    text-align: justify;
+  }
+
+  &__back-link {
+    display: flex;
+    justify-content: flex-start;
+    $color: #{map.get($modino-colors, primary, 500)};
+    margin-block-start: spacing(32);
+
+    color: $color;
+
+    svg {
+      margin-inline-end: spacing(4);
+      path {
+        fill: $color;
+      }
+    }
+  }
+}

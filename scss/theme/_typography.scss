@@ -27,3 +27,117 @@
 :root {
   --mdc-typography-font-family: "Nunito", sans-serif;
 }
+
+$font-map: (
+  heading-1: (
+    font-family: "Ubuntu",
+    font-size: 3.5rem,
+    line-height: 4rem,
+    font-weight: 700,
+  ),
+  heading-1-mobile: (
+    font-family: "Ubuntu",
+    font-size: 2.375rem,
+    line-height: 3rem,
+    font-weight: 700,
+  ),
+  heading-2: (
+    font-family: "Ubuntu",
+    font-size: 3rem,
+    line-height: 4rem,
+    font-weight: 700,
+  ),
+  heading-3: (
+    font-family: "Nunito",
+    font-size: 3rem,
+    line-height: 3.5rem,
+    font-weight: 400,
+  ),
+  heading-4: (
+    font-family: "Ubuntu",
+    font-size: 2rem,
+    line-height: 2.5rem,
+    font-weight: 700,
+  ),
+  heading-4-mobile: (
+    font-family: "Ubuntu",
+    font-size: 1.5rem,
+    line-height: 2rem,
+    font-weight: 700,
+  ),
+
+  subheading-1: (
+    font-family: "Nunito",
+    font-size: 2.125rem,
+    line-height: 2.25rem,
+    font-weight: 700,
+  ),
+  subheading-2: (
+    font-family: "Nunito",
+    font-size: 1.5rem,
+    line-height: 2rem,
+    font-weight: 700,
+  ),
+  subheading-3: (
+    font-family: "Nunito",
+    font-size: 1.25rem,
+    line-height: 1.5rem,
+    font-weight: 700,
+  ),
+  subheading-4: (
+    font-family: "Nunito",
+    font-size: 1rem,
+    line-height: 1.5rem,
+    font-weight: 700,
+  ),
+  subheading-5: (
+    font-family: "Nunito",
+    font-size: 0.875rem,
+    line-height: 1.5rem,
+    font-weight: 700,
+  ),
+
+  body-1: (
+    font-family: "Nunito",
+    font-size: 1.5rem,
+    line-height: 2rem,
+    font-weight: 400,
+  ),
+  body-1-mobile: (
+    font-family: "Nunito",
+    font-size: 1.25rem,
+    line-height: 1.75rem,
+    font-weight: 400,
+  ),
+  body-2: (
+    font-family: "Nunito",
+    font-size: 1.5rem,
+    line-height: 1.5rem,
+    font-weight: 400,
+  ),
+  body-3: (
+    font-family: "Nunito",
+    font-size: 1rem,
+    line-height: 1.5rem,
+    font-weight: 400,
+  ),
+  body-4: (
+    font-family: "Nunito",
+    font-size: 0.875rem,
+    line-height: 1.5rem,
+    font-weight: 400,
+  ),
+  body-5: (
+    font-family: "Nunito",
+    font-size: 0.75rem,
+    line-height: 1rem,
+    font-weight: 400,
+  ),
+);
+
+@mixin m-font($type-name) {
+  font-family: map.get($font-map, $type-name, font-family), sans-serif;
+  font-size: map.get($font-map, $type-name, font-size);
+  line-height: map.get($font-map, $type-name, line-height);
+  font-weight: map.get($font-map, $type-name, font-weight);
+}

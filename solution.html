@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Modino.io - Safe and secure updates for IoT devices</title>
+    <meta
+      name="description"
+      content="Modino.io will help you keep your IoT devices up and running with safe and secure over-the-air updates."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafafa" />
+    <meta name="robots" content="index,follow" />
+
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="icon" href="https://modino.io/favicon.ico" />
+    <link href="https://modino.io/" rel="canonical" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@14.0.0/dist/material-components-web.min.css"
+      integrity="sha384-Dv/31bNdy5iSIdT3DbFwGhN3LnetXu2VyL8xFYMqdHvfA1BFqWmoIHum+ocjdjtu"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.2/dist/cookieconsent.css"
+      integrity="sha384-HQHMzoWP+kltAJMEUJFZfYQfSPkWSgSMmlXrRJa/Qw5uy+4tRsNV8etmYHEtqDdK"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      type="text/plain"
+      src="https://www.googletagmanager.com/gtag/js?id=G-56L4FRC93H"
+      crossorigin="anonymous"
+      data-cookiecategory="analytics"
+    ></script>
+    <script type="text/plain" data-cookiecategory="analytics">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-56L4FRC93H");
+    </script>
+
+    <!-- Hotjar Tracking Code for https://modino.io/ -->
+    <script type="text/plain" data-cookiecategory="targeting">
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3626118, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
+
+  <body>
+    <div class="m-menu">
+      <header class="m-menu__wrapper">
+        <nav class="m-menu__navigation">
+          <a class="m-menu__logo-link" href="./">
+            <img
+              class="m-menu__logo"
+              src="./img/MODINO-logo-full.svg"
+              alt="modino logo"
+            />
+          </a>
+          <div class="m-menu__actions">
+            <a href="./" class="m-menu__actions-link"> Home </a>
+            <a
+              href="./solution"
+              class="m-menu__actions-link m-menu__actions-link--active"
+              >Solution</a
+            >
+            <a href="./articles" class="m-menu__actions-link">Articles</a>
+            <a href="./meet-the-team" class="m-menu__actions-link"
+              >Meet the team</a
+            >
+            <a href="./partner-program" class="m-menu__actions-link"
+              >Partner Program</a
+            >
+            <a href="./jobs" class="m-menu__actions-link">Jobs</a>
+            <button
+              class="mdc-button mdc-button--outlined m-menu__cta-button cta-accent-button"
+              onclick="window.location.href='./get-in-touch'"
+            >
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__focus-ring"></span>
+              <span class="mdc-button__label">Get in touch</span>
+            </button>
+            <button
+              class="mdc-button m-menu__hamburger-button"
+              onclick="toggleHamburgerMenu()"
+            >
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__label">
+                <img src="img/hamburger-menu.svg" alt="hamburger menu" />
+              </span>
+            </button>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <aside class="m-mobile-menu m-menu">
+      <div class="m-mobile-menu__header">
+        <a class="m-mobile-menu__logo-link" href="./">
+          <img
+            class="m-menu__logo"
+            src="./img/MODINO-logo-short.svg"
+            alt="modino logo"
+        /></a>
+
+        <button
+          class="mdc-button m-mobile-menu__hamburger-button"
+          onclick="toggleHamburgerMenu()"
+        >
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__label">
+            <img src="img/hamburger-menu.svg" alt="hamburger menu" />
+          </span>
+        </button>
+      </div>
+      <div class="m-mobile-menu__actions">
+        <a href="./" class="m-mobile-menu__actions-link">Home</a>
+        <a
+          href="./solution"
+          class="m-mobile-menu__actions-link m-mobile-menu__actions-link--active"
+          >Solution</a
+        >
+        <a href="./articles" class="m-mobile-menu__actions-link">Articles</a>
+        <a href="./meet-the-team" class="m-mobile-menu__actions-link"
+          >Meet the team</a
+        >
+        <a href="./partner-program" class="m-mobile-menu__actions-link"
+          >Partner Program</a
+        >
+        <a href="./jobs" class="m-mobile-menu__actions-link">Jobs</a>
+        <button
+          class="mdc-button mdc-button--unelevated cta-accent-button m-mobile-menu__cta-button"
+          onclick="window.location.href='./get-in-touch'"
+        >
+          <span class="mdc-button__ripple"></span>
+          <span class="mdc-button__focus-ring"></span>
+          <span class="mdc-button__label">Get in touch</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="m-main">
+      <section class="m-section m-top-hero m-solution-hero">
+        <div class="m-section__content">
+          <div class="m-top-hero__wrapper">
+            <h1 class="m-header m-top-hero__title">
+              Discover Safe and Secure
+              <br />
+              Updates with
+              <span class="m-top-hero__title-highlight"> Modino.io </span>
+            </h1>
+            <p class="m-top-hero__description">
+              Modino is on-prem & private cloud solution which main goal is to
+              provide software updates for IoT devices in a safe and secure way.
+            </p>
+            <button
+              id="main-cta-button"
+              class="m-top-hero__action-button mdc-button mdc-button--unelevated cta-accent-button"
+              onclick="window.location.href='./get-in-touch'"
+            >
+              <span class="mdc-button__ripple"></span>
+              <span class="mdc-button__focus-ring"></span>
+              <span class="mdc-button__label">Get in touch</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-solution-video">
+        <div class="m-section__content">
+          <div class="m-solution-video__video-container">
+            <iframe
+              src="https://drive.google.com/file/d/1LX6aUjYMPFSh70V5xUAew0XW9NPJE03Z/preview"
+              allow="autoplay"
+              title="pitch-video"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-key-aspects">
+        <h2 class="m-section__header">Key aspects</h2>
+        <div class="m-section__content">
+          <div class="m-key-aspects__list">
+            <div class="m-key-aspects__item">
+              <img
+                src="./img/key-aspect-illustration-1.svg"
+                alt="Modino values illustration - universal solution"
+                class="m-key-aspects__item-image"
+              />
+              <h3 class="m-key-aspects__item-title">Universal solution</h3>
+              <p class="m-key-aspects__item-description">
+                Whether you want to update software on machines, sensors,
+                robots, smart grid or information systems, measuring stations,
+                IP cameras, medical devices, servers, edge cloud infrastructure,
+                or even toys, Modino.io is able to handle it all.
+              </p>
+            </div>
+            <div class="m-key-aspects__item">
+              <img
+                src="./img/key-aspect-illustration-2.svg"
+                alt="Modino values illustration - not hardware bound"
+                class="m-key-aspects__item-image"
+              />
+              <h3 class="m-key-aspects__item-title">Not hardware bound</h3>
+              <p class="m-key-aspects__item-description">
+                Software delivery is hardware-independent. Modino.io containers
+                adapt to the target hardware on IoT devices, enabling updates
+                regardless of the specific hardware architecture and
+                configuration. As long as it runs on a Linux operating system,
+                Modino.io can update it.
+              </p>
+            </div>
+            <div class="m-key-aspects__item">
+              <img
+                src="./img/key-aspect-illustration-3.svg"
+                alt="Modino values illustration - safe software delivery"
+                class="m-key-aspects__item-image"
+              />
+              <h3 class="m-key-aspects__item-title">Safe software delivery</h3>
+              <p class="m-key-aspects__item-description">
+                Atomic updates even in low network throughput environments.
+                Whether you need to update a remote EV charging station or an
+                ATM located in the countryside, Modino.io is able to deliver
+                reliable updates even with limited network throughput.
+              </p>
+            </div>
+            <div class="m-key-aspects__item">
+              <img
+                src="./img/key-aspect-illustration-4.svg"
+                alt="Modino values illustration - ensured software application"
+                class="m-key-aspects__item-image"
+              />
+              <h3 class="m-key-aspects__item-title">
+                Ensured software application
+              </h3>
+              <p class="m-key-aspects__item-description">
+                With our automatic rollback procedure, your devices will never
+                go offline, even if something goes wrong during the update
+                process.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-manifesto">
+        <h2 class="m-section__header">Security and quality manifesto</h2>
+        <div class="m-section__content">
+          <p class="m-manifesto-section__subtitle">Modino.io means safe</p>
+          <div class="tiles-container">
+            <div class="m-tile">
+              <div class="m-tile__icon">
+                <img src="./img/icons/atom-icon.svg" />
+              </div>
+              <p class="m-tile__content">
+                Modino.io platform ensures safe software delivery – data to be
+                delivered are created as atomic updates which makes them
+                possible to be send and receive even with low network throughput
+              </p>
+            </div>
+            <div class="m-tile">
+              <div class="m-tile__icon">
+                <img src="./img/icons/cloud_sync-icon.svg" />
+              </div>
+              <p class="m-tile__content">
+                Never be offline again - if the update fails, an automatic
+                rollback procedure starts. The device restores to the previous,
+                stable software version, and is still operational.
+              </p>
+            </div>
+            <div class="m-tile">
+              <div class="m-tile__icon">
+                <img src="./img/icons/update-icon.svg" />
+              </div>
+              <p class="m-tile__content">
+                With a purchased annual license, each client gets regular
+                updates including security, performance patches, and new
+                releases of the Modino.io system.
+              </p>
+            </div>
+          </div>
+          <img src="./img/demo-screenshot.png" class="m-demo-screenshot" />
+          <hr class="m-manifesto__divider" />
+
+          <div class="m-security__wrapper">
+            <p class="m-manifesto-section__content m-security__title">
+              Security is our second name.
+              <br />
+              Or, actually, the first
+            </p>
+            <div class="tiles-container m-security__text">
+              <div class="m-tile">
+                <div class="m-tile__icon">
+                  <img src="./img/icons/lan.svg" />
+                </div>
+                <p class="m-tile__content">
+                  Modino.io is delivered as a set of interconnected OCI
+                  containers running in non-privileged mode or when needed with
+                  a specifically created security profile. Internally all
+                  communication is done via TLS v1.3.
+                </p>
+              </div>
+              <div class="m-tile">
+                <div class="m-tile__icon">
+                  <img src="./img/icons/encrypted.svg" />
+                </div>
+                <p class="m-tile__content">
+                  Users are authenticated and authorized like any other system
+                  actor with a "zero-trust" policy in mind. User accounts are
+                  manageable with a deployed instance of an OpenID Connect
+                  service that can be connected with the organization’s user
+                  database (e.g. LDAP).
+                </p>
+              </div>
+              <div class="m-tile">
+                <div class="m-tile__icon">
+                  <img src="./img/icons/support_agent.svg" />
+                </div>
+                <p class="m-tile__content">
+                  Modino.io Agent installed on endpoint devices does not require
+                  administrator privileges to run, and leverages TLS mutual
+                  authentication to communicate with Modino.io services.
+                </p>
+              </div>
+              <div class="m-tile">
+                <div class="m-tile__icon">
+                  <img src="./img/icons/key.svg" />
+                </div>
+                <p class="m-tile__content">
+                  Container images with software updates are encrypted and
+                  signed with user keys that Modino.io does not have access to.
+                  No personally identifiable information (PII) is stored.
+                </p>
+              </div>
+            </div>
+            <img
+              src="./img/Graph.svg"
+              class="m-security__graph"
+              alt="modino graph"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-awards">
+        <h2 class="m-section__header">Awards & Recognitions</h2>
+        <div class="m-awards__content">
+          <div class="m-awards__cybersecurity-banner">
+            <a
+              href="https://ecs-org.eu/return-of-ecsos-polish-edition-of-cyber-investor-days-in-katowice/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="img/cybersecurity-award-banner.jpeg"
+                alt="European Cybersecurity STARTup Award for Modino.io"
+              />
+            </a>
+          </div>
+          <div class="m-awards__cybersecurity-made">
+            <a
+              href="https://www.cybersecurity-label.eu/labelled-companies/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="img/cybersecurity-made-in-europe.png"
+                alt="cybersecurity made in Europe badge"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="m-section m-advantages">
+        <h2 class="m-section__header">Advantages</h2>
+        <div class="m-section__content">
+          <div class="cards-container">
+            <div class="m-card">
+              <div class="m-card__icon">
+                <img src="./img/icons/work.svg" alt="" />
+              </div>
+              <p class="m-card__title">Experience</p>
+              <p class="m-card__content">
+                Our team has more than 15+ years of practical experience in
+                cryptography, encryption and software delivery.
+              </p>
+            </div>
+            <div class="m-card">
+              <div class="m-card__icon">
+                <img src="./img/icons/alt_route.svg" alt="" />
+              </div>
+              <p class="m-card__title">Flexibility</p>
+              <p class="m-card__content">
+                Even if your IoT devices are not natively designed to be
+                updated, Modino.io can do it to keep your business safe.
+              </p>
+            </div>
+            <div class="m-card">
+              <div class="m-card__icon">
+                <img src="./img/icons/visibility.svg" alt="" />
+              </div>
+              <p class="m-card__title">Monitoring and detection</p>
+              <p class="m-card__content">
+                Modino.io monitors malicious behaviour and provides an active
+                mitigation.
+              </p>
+            </div>
+            <div class="m-card">
+              <div class="m-card__icon">
+                <img src="./img/icons/volunteer.svg" alt="" />
+              </div>
+              <p class="m-card__title">Trust</p>
+              <p class="m-card__content">
+                Your data is yours, Modino.io can't access it since data is
+                encrypted by your keys.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="m-footer">
+      <div class="m-footer__content">
+        <div class="m-footer__menu">
+          <div class="m-footer__menu-section m-footer__company-info">
+            <p class="m-footer__menu-section-title">Company</p>
+            <p>
+              Modino.io Sp. z.o.o <br />
+              EU VAT no.: PL7393955632 <br />
+              E-mail: hello@modino.io
+            </p>
+          </div>
+          <div class="m-footer__menu-section">
+            <p class="m-footer__menu-section-title">Explore</p>
+            <ul class="m-footer__menu-section-list">
+              <li>
+                <a href="./">Home</a>
+              </li>
+              <li>
+                <a href="./solution">Solution</a>
+              </li>
+              <li>
+                <a href="./articles">Articles</a>
+              </li>
+            </ul>
+          </div>
+          <div class="m-footer__menu-section">
+            <p class="m-footer__menu-section-title">Connect</p>
+            <ul class="m-footer__menu-section-list">
+              <li>
+                <a href="./meet-the-team">Meet the team</a>
+              </li>
+              <li>
+                <a href="./partner-program">Partner Program</a>
+              </li>
+              <li>
+                <a href="./jobs">Jobs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="m-footer__links">
+          <a
+            class="m-footer__social-link"
+            href="https://www.linkedin.com/company/modino-io"
+            target="_blank"
+            rel="noopener"
+          >
+            <img alt="linkedIn icon" src="./img/linkedin_white.svg" />
+          </a>
+          <div class="m-footer__copyright">
+            <p>
+              &#169; Modino.io <span id="footer-year"></span>. All rights
+              reserved.
+            </p>
+            <div class="m-footer__copyright-links">
+              <a href="./privacy-policy">Privacy policy</a>
+              <a href="./terms-of-service">Terms of service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Scripts -->
+    <script
+      src="https://unpkg.com/material-components-web%40latest/dist/material-components-web.min.js"
+      integrity="sha384-NQs9Lm2CZqPDbiQog4Tl9+s+LYnPbrwOF7kGY1ks7rl5A7rJypS6Cuqt6HFYtPC+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.2/dist/cookieconsent.js"
+      crossorigin="anonymous"
+      integrity="sha384-cGQtK+3XfWd72gOmFhEwkKb/u1Z0m9OumW0IZ3wZMK76CFFrnXjDf+fB+jIVmmv8"
+    ></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+  </body>
+</html>
