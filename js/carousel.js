@@ -11,7 +11,7 @@ const carouselItemsContainer = document.querySelectorAll(
 const carouselPageButtons = document.querySelectorAll(
   ".m-articles-teaser__carousel-page-button"
 );
-let currentCarouselItemIndex = 1;
+let currentCarouselItemIndex = 0;
 const prevButton = document.querySelector(
   ".m-articles-teaser__carousel-button-prev"
 );
