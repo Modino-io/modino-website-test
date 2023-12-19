@@ -93,7 +93,7 @@
   }
 
   &__carousel-controls {
-    display: none;
+    display: flex;
     align-items: center;
     gap: spacing(12);
 
@@ -284,6 +284,14 @@
     row-gap: spacing(8);
     align-items: center;
     justify-content: center;
+
+    &.m-section__header {
+      padding-inline: 0;
+
+      @media (min-width: 600px) {
+        padding-inline: 0;
+      }
+    }
 
     @media (min-width: 800px) {
       grid-template-areas:
