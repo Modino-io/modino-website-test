@@ -150,6 +150,7 @@
     align-self: flex-start;
     text-align: left;
     margin-block: spacing(16);
+    padding-inline: 0;
 
     @media (min-width: 600px) {
       margin-block: spacing(8, 16);
@@ -183,6 +184,10 @@
 
   &__content {
     text-align: justify;
+
+    p:first-of-type {
+      margin-block-start: 0;
+    }
   }
 
   &__back-link {
