@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./menu.components.scss";
 import { Link } from "gatsby";
 
 const Menu: React.FC<any> = () => {
-  const menu = document.getElementsByClassName("m-menu")[0];
-  const menuNav = document.getElementsByClassName("m-menu__navigation")[0];
-  const hamburgerMenuButton = document.getElementsByClassName(
-    "m-menu__hamburger-button"
-  )[0];
+  let menu;
+  let menuNav;
+  let hamburgerMenuButton;
+  let mobileMenu;
+  useEffect(() => {
+    menu = document.getElementsByClassName("m-menu")[0];
+    menuNav = document.getElementsByClassName("m-menu__navigation")[0];
+    hamburgerMenuButton = document.getElementsByClassName(
+      "m-menu__hamburger-button"
+    )[0];
 
-  const mobileMenu = document.getElementsByClassName(
-    "m-mobile-menu"
-  )[0] as HTMLElement;
+    mobileMenu = document.getElementsByClassName(
+      "m-mobile-menu"
+    )[0] as HTMLElement;
+    document.addEventListener("scroll", checkMenuCtaButton);
+  }, []);
+
+  const checkMenuCtaButton = () => {
+    if (menuNav.getBoundingClientRect().top < window.scrollY) {
+      menu.classList.add("m-menu_sticky");
+    } else {
+      menu.classList.remove("m-menu_sticky");
+    }
+  };
 
   const toggleHamburgerMenu = () => {
     mobileMenu.classList.toggle("m-mobile-menu--expanded");
