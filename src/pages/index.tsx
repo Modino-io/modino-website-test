@@ -1,10 +1,11 @@
 import * as React from "react";
 import { Link, HeadFC, PageProps, graphql } from "gatsby";
 import SEO from "../components/seo.component";
+import Layout from "../components/layout/layout.component";
 
 const IndexPage: React.FC<PageProps> = ({ data }) => {
   return (
-    <main>
+    <Layout>
       Index page
       <br />
       <Link to="/articles">Go to Articles</Link>
@@ -18,7 +19,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
           <br />
         </React.Fragment>
       ))}
-    </main>
+    </Layout>
   );
 };
 export const query = graphql`

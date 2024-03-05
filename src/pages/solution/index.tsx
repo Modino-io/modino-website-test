@@ -1,9 +1,10 @@
 import * as React from "react";
 import { HeadFC, PageProps } from "gatsby";
 import SEO from "../../components/seo.component";
+import Layout from "../../components/layout/layout.component";
 
 const Solution: React.FC<PageProps> = ({ data }) => {
-  return <main>Solution</main>;
+  return <Layout>Solution</Layout>;
 };
 
 export default Solution;

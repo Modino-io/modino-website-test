@@ -1,9 +1,10 @@
 import * as React from "react";
 import { HeadFC, PageProps } from "gatsby";
 import SEO from "../../components/seo.component";
+import Layout from "../../components/layout/layout.component";
 
 const PartnerProgram: React.FC<PageProps> = ({ data }) => {
-  return <main>Partner Program</main>;
+  return <Layout>Partner Program</Layout>;
 };
 
 export default PartnerProgram;

@@ -1,10 +1,11 @@
 import React from "react";
 import { HeadFC, Link, PageProps, graphql } from "gatsby";
 import SEO from "../../components/seo.component";
+import Layout from "../../components/layout/layout.component";
 
 const ArticlesPage: React.FC<PageProps> = ({ data }) => {
   return (
-    <React.Fragment>
+    <Layout>
       <main>Articles page</main>
       {data.allMdx.nodes.map((node) => (
         <React.Fragment key={node.frontmatter.slug}>
@@ -14,7 +15,7 @@ const ArticlesPage: React.FC<PageProps> = ({ data }) => {
           <br />
         </React.Fragment>
       ))}
-    </React.Fragment>
+    </Layout>
   );
 };
 
