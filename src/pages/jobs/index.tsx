@@ -9,7 +9,7 @@ const JobsPage: React.FC<PageProps> = ({ data }) => {
       <main>Jobs page</main>
       {data.allMdx.nodes.map((node) => (
         <React.Fragment key={node.frontmatter.slug}>
-          <Link to={`/articles/${node.frontmatter.slug}`}>
+          <Link to={`/jobs/${node.frontmatter.slug}`}>
             {node.frontmatter.title}
           </Link>
           <br />
