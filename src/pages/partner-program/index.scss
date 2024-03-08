@@ -1,18 +1,4 @@
-/*
- * Modino.io Confidential
- *
- * Object code only source materials
- *
- * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
- *
- * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
- *
- * The source code for this program is not published or otherwise
- * divested of its trade secrets, irrespective of what has
- * been deposited with any of the Copyright Offices.
- */
-
-@use "theme" as *;
+@use "../../scss/theme" as *;
 @use "sass:map";
 
 .m-shape-future {
@@ -40,7 +26,7 @@
     transform: translate(-60%, calc(-50% - 12vw));
     width: calc(80vh + 80vw);
     height: 130vh;
-    background-image: url("../img/decoration-shape-the-future.svg");
+    background-image: url("/img/decoration-shape-the-future.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -337,7 +323,7 @@
     transform: translate(-60%, calc(-50% - 12vw));
     width: 1220px;
     height: 1220px;
-    background-image: url("../img/join_engage_grow-blob.svg");
+    background-image: url("/img/join_engage_grow-blob.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;

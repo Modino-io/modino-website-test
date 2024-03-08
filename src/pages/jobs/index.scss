@@ -1,18 +1,4 @@
-/*
- * Modino.io Confidential
- *
- * Object code only source materials
- *
- * Modino.io - Safe and Secure updates - Platform for safe and secure software delivery
- *
- * (C) Copyright Modino.io Sp. z o.o. <copyright@modino.io> 2020-2023. All Rights Reserved.
- *
- * The source code for this program is not published or otherwise
- * divested of its trade secrets, irrespective of what has
- * been deposited with any of the Copyright Offices.
- */
-
-@use "theme" as *;
+@use "../../scss/theme" as *;
 @use "sass:map";
 
 .m-jobs {
@@ -34,7 +20,7 @@
     transform: translate(20%, 45%);
     height: 1100px;
     width: 1100px;
-    background-image: url("../img/jobs-blob.svg");
+    background-image: url("/img/jobs-blob.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -133,76 +119,5 @@
     min-width: 0;
     max-width: 100%;
     height: auto;
-  }
-}
-
-.m-job {
-  margin-block: spacing(32);
-  margin-block-start: spacing(64);
-
-  .m-section__content {
-    align-items: flex-start;
-  }
-
-  &__header.m-section__header {
-    @include m-font("body-2");
-
-    align-self: flex-start;
-    text-align: left;
-    margin-block: spacing(16);
-    padding-inline: 0;
-
-    @media (min-width: 600px) {
-      margin-block: spacing(8, 16);
-      @include m-font("heading-3");
-    }
-  }
-
-  &__breadcrumbs {
-    display: flex;
-    color: map.get($modino-colors, surface, text-disabled);
-    text-align: left;
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    > .m-job__breadcrumb {
-      margin-inline: spacing(8);
-
-      &:first-child {
-        margin-inline-start: 0;
-      }
-
-      &:last-child {
-        font-weight: 700;
-        margin-inline-end: 0;
-        color: map.get($modino-colors, surface, text);
-      }
-    }
-  }
-
-  &__content {
-    text-align: justify;
-
-    p:first-of-type {
-      margin-block-start: 0;
-    }
-  }
-
-  &__back-link {
-    display: flex;
-    justify-content: flex-start;
-    $color: #{map.get($modino-colors, primary, 500)};
-    margin-block-start: spacing(32);
-
-    color: $color;
-
-    svg {
-      margin-inline-end: spacing(4);
-      path {
-        fill: $color;
-      }
-    }
   }
 }
