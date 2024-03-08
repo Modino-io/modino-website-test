@@ -1,1 +1,430 @@
+@use "../scss/theme";
+@use "sass:map";
 
+cite {
+  font-style: normal;
+}
+
+blockquote {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.m-home-hero {
+  justify-content: flex-start;
+
+  @media (min-width: 600px) {
+    justify-content: center;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, calc(-50% - 12vw));
+    width: calc(70vh + 70vw);
+    height: 130vh;
+    background-image: url("/img/top_hero.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    @media screen and (min-width: 600px) {
+      transform: translate(calc(-50vw + 10vw), calc(-50vh - 25vw));
+      width: 130vw;
+    }
+
+    @media (min-width: 600px) and (max-width: 999px) {
+      transform: translate(calc(-50% + 25vw), calc(-50% - 3vw));
+      width: 115vh;
+    }
+
+    @media (min-width: 1000px) and (max-width: 1439px) {
+      transform: translate(calc(-50% + 25vw), calc(-50% - 10vw));
+      width: 100vw;
+    }
+
+    @media (min-width: 1441px) {
+      transform: translate(calc(-50vw + 5vw), calc(-50vh - 20vw));
+      width: 130vw;
+      height: 130vh;
+    }
+  }
+}
+
+.m-summary {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  @media (min-width: 999px) {
+    height: calc(100vh - 72px);
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-inline: theme.spacing(32);
+  }
+
+  &::before {
+    content: "";
+    background-image: url("/img/Decoration - Full.svg");
+    background-position: center;
+    background-size: 100% 100%;
+    left: calc(-85% - 5vw);
+    top: 30%;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 200%;
+    height: 150%;
+    z-index: -1;
+
+    @media (min-width: 800px) {
+      left: -80%;
+      background-size: 150% 100%;
+      top: 0;
+    }
+  }
+
+  &__content {
+    @media (min-width: 800px) {
+      flex-direction: row-reverse;
+      justify-content: center;
+      gap: theme.spacing(32);
+    }
+  }
+
+  .cta-accent-button {
+    text-transform: none;
+    font-weight: bold;
+    padding: theme.spacing(6) theme.spacing(16);
+    height: unset;
+
+    --mdc-filled-button-container-color: #{map.get(
+        theme.$modino-colors,
+        accent,
+        600
+      )};
+    --mdc-filled-button-hover-state-layer-color: #{map.get(
+        theme.$modino-colors,
+        accent,
+        400
+      )};
+
+    --mdc-filled-button-hover-state-layer-opacity: 1;
+    --mdc-filled-button-focus-state-layer-opacity: 1;
+    --mdc-filled-button-pressed-state-layer-opacity: 1;
+
+    &.mdc-ripple-upgraded--background-focused {
+      .mdc-button__ripple {
+        &:before {
+          background-color: map.get(theme.$modino-colors, accent, 500);
+        }
+      }
+    }
+
+    .mdc-button__ripple {
+      &:after {
+        background-color: map.get(theme.$modino-colors, accent, 300);
+        z-index: 1;
+      }
+    }
+  }
+
+  .m-security-img {
+    max-height: 190px;
+
+    @media (min-width: 600px) {
+      max-width: 400px;
+      max-height: 400px;
+    }
+  }
+
+  .m-wrapper {
+    text-align: center;
+    margin-block-end: theme.spacing(16);
+
+    @media (min-width: 800px) {
+      text-align: left;
+    }
+  }
+
+  .m-section__header {
+    @include theme.m-font("heading-1-mobile");
+
+    margin-block: theme.spacing(32, 16);
+
+    @media (min-width: 800px) {
+      @include theme.m-font("heading-1");
+
+      text-align: left;
+      margin-block-start: 0;
+    }
+  }
+}
+
+.m-mission {
+  .m-quote {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    margin-block-end: theme.spacing(32);
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      max-width: 680px;
+      margin-block-end: theme.spacing(48);
+    }
+
+    &__text {
+      @include theme.m-font("body-1-mobile");
+
+      display: inline-block;
+      text-align: center;
+      font-style: italic;
+      word-break: break-word;
+
+      @media screen and (min-width: 600px) {
+        @include theme.m-font("body-1");
+      }
+    }
+
+    span {
+      position: relative;
+    }
+
+    &__image {
+      position: absolute;
+      z-index: -1;
+      width: 80px;
+      height: 80px;
+      top: -37px;
+      left: -30px;
+
+      @media screen and (min-width: 600px) {
+        top: -37px;
+        left: -54px;
+        width: 100px;
+        height: 100px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+          fill: map.get(theme.$modino-colors, primary, 50);
+        }
+      }
+    }
+
+    &__author {
+      $image_size: 40px;
+
+      @include theme.m-font("body-3");
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      color: map.get(theme.$modino-colors, surface, text);
+      padding-block-start: theme.spacing(16);
+
+      @media screen and (min-width: 600px) {
+        right: 0;
+        width: initial;
+      }
+
+      &-image {
+        width: $image_size;
+        height: $image_size;
+        border-radius: 50%;
+        margin-inline-end: theme.spacing(8);
+      }
+    }
+  }
+}
+
+.m-explanation {
+  display: flex;
+  flex-direction: column;
+  gap: theme.spacing(16);
+  background-color: map.get(theme.$modino-colors, primary, 900);
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+    gap: theme.spacing(48);
+  }
+
+  &__content {
+    @media (min-width: 600px) {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: theme.spacing(48);
+    }
+  }
+
+  &__image {
+    flex: 1;
+    text-align: right;
+
+    img {
+      max-width: 100%;
+      max-height: 300px;
+
+      @media (min-width: 600px) {
+        max-height: unset;
+      }
+    }
+  }
+
+  &__text {
+    flex: 1;
+    color: map.get(theme.$modino-colors, surface, text-contrast);
+  }
+
+  &__title,
+  &__description {
+    max-width: 480px;
+  }
+
+  &__title {
+    @include theme.m-font("heading-4-mobile");
+    text-align: center;
+
+    margin: 0;
+    margin-block: theme.spacing(16);
+
+    @media screen and (min-width: 600px) {
+      margin-block: 0 theme.spacing(12);
+      @include theme.m-font("heading-4");
+
+      text-align: justify;
+    }
+  }
+
+  &__description {
+    @include theme.m-font("body-1-mobile");
+
+    margin: 0;
+
+    @media screen and (min-width: 600px) {
+      @include theme.m-font("body-1");
+    }
+  }
+}
+
+.m-solution {
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 840px) {
+      flex-direction: row;
+      gap: theme.spacing(24);
+    }
+  }
+
+  &__video,
+  &__text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__video {
+    display: flex;
+    justify-content: center;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
+  &__solution-link {
+    @include theme.m-font("body-1");
+
+    display: inline-flex;
+    align-items: center;
+    color: map.get(theme.$modino-colors, primary, 500);
+
+    svg {
+      margin-inline-start: theme.spacing(4);
+
+      path {
+        fill: map.get(theme.$modino-colors, primary, 500);
+      }
+    }
+  }
+
+  &__text {
+    @include theme.m-font("body-1");
+
+    margin-block-end: theme.spacing(16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: 600px) {
+      margin-block-end: 0;
+      align-items: flex-start;
+    }
+
+    p:first-of-type {
+      margin-block-start: 0;
+    }
+
+    .highlight {
+      font-style: italic;
+    }
+  }
+}
+
+.m-awards {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: theme.spacing(16);
+    padding-inline: theme.spacing(12);
+
+    @media (min-width: 600px) {
+      padding-inline: theme.spacing(32);
+    }
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
+  }
+
+  &__cybersecurity-banner {
+    flex: 1;
+
+    img {
+      max-width: 530px;
+      width: 100%;
+    }
+  }
+  &__cybersecurity-made {
+    flex: 1;
+
+    img {
+      max-width: 530px;
+      width: 100%;
+    }
+  }
+}

@@ -3,13 +3,15 @@ import "./menu.components.scss";
 import { Link } from "gatsby";
 
 const Menu: React.FC<any> = () => {
-  let menu;
-  let menuNav;
+  let menu: HTMLElement;
+  let menuNav: HTMLElement;
   let hamburgerMenuButton;
-  let mobileMenu;
+  let mobileMenu: HTMLElement;
   useEffect(() => {
-    menu = document.getElementsByClassName("m-menu")[0];
-    menuNav = document.getElementsByClassName("m-menu__navigation")[0];
+    menu = document.getElementsByClassName("m-menu")[0] as HTMLElement;
+    menuNav = document.getElementsByClassName(
+      "m-menu__navigation"
+    )[0] as HTMLElement;
     hamburgerMenuButton = document.getElementsByClassName(
       "m-menu__hamburger-button"
     )[0];
@@ -101,7 +103,7 @@ const Menu: React.FC<any> = () => {
               </Link>
               <button
                 className="mdc-button mdc-button--outlined m-menu__cta-button"
-                onClick={() => (window.location.href = "./get-in-touch")}
+                onClick={() => (window.location.href = "/get-in-touch")}
               >
                 <span className="mdc-button__ripple"></span>
                 <span className="mdc-button__focus-ring"></span>
@@ -186,7 +188,7 @@ const Menu: React.FC<any> = () => {
           </Link>
           <button
             className="mdc-button mdc-button--unelevated cta-accent-button m-mobile-menu__cta-button"
-            onClick={() => (window.location.href = "./get-in-touch")}
+            onClick={() => (window.location.href = "/get-in-touch")}
           >
             <span className="mdc-button__ripple"></span>
             <span className="mdc-button__focus-ring"></span>

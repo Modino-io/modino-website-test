@@ -1,8 +1,10 @@
 import * as React from "react";
-import { Link, HeadFC, PageProps, graphql } from "gatsby";
+import { HeadFC, PageProps, graphql } from "gatsby";
 import Seo from "../components/seo.component";
 import Layout from "../components/layout/layout.component";
 import CarouselComponent from "../components/carousel/carousel.component";
+
+import "./index.scss";
 
 const IndexPage: React.FC<PageProps> = ({ data }) => {
   const getArticlesFromProps = (
@@ -99,7 +101,7 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
                     className="m-quote__author-image"
                     src="img/people/Blazej.webp"
                     alt="Błażej Pawlak - Modino CEO profile image"
-                  />
+                  />{" "}
                   Błażej Pawlak, CEO & Co-Founder
                 </cite>
               </blockquote>

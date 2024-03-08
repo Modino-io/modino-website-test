@@ -1,0 +1,31 @@
+@use "../../scss/theme" as *;
+
+.m-articles {
+  margin-block-start: spacing(48);
+  padding-block: spacing(16);
+
+  @media (min-width: 600px) {
+    padding-block: spacing(32);
+  }
+
+  @media (min-width: 800px) {
+    margin-block-start: spacing(32);
+  }
+
+  @media (min-height: 1000px) {
+    min-height: 75vh;
+  }
+
+  .m-section__header {
+    margin-block-start: 0;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 320px);
+    width: 100%;
+    justify-content: center;
+
+    gap: spacing(16);
+  }
+}

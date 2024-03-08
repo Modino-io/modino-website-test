@@ -1,0 +1,159 @@
+@use "../../scss/theme";
+@use "sass:map";
+
+.m-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: theme.spacing(6);
+  padding: 32px;
+  border: 1px solid map.get(theme.$modino-colors, surface, border);
+  border-radius: theme.$border-radius;
+  background-color: map.get(
+    theme.$modino-colors,
+    surface,
+    background-high-contrast
+  );
+
+  &__title {
+    @include theme.m-font("subheading-2");
+
+    font-size: 2rem;
+    margin: unset;
+    margin-block-end: theme.spacing(10);
+    align-self: flex-start;
+    color: map.get(theme.$modino-colors, surface, text);
+  }
+
+  .mdc-text-field,
+  .mdc-select {
+    width: 100%;
+
+    [class^="mdc-notched-outline__"] {
+      border-color: map.get(theme.$modino-colors, surface, border);
+    }
+
+    .mdc-floating-label--required::after {
+      content: "";
+    }
+  }
+
+  .mdc-text-field--focused {
+    .mdc-floating-label {
+      color: map.get(theme.$modino-colors, primary, 900);
+    }
+  }
+  .mdc-text-field--invalid {
+    .mdc-floating-label {
+      color: var(--mdc-theme-error);
+    }
+  }
+
+  .m-select {
+    &.mdc-select--focused {
+      .mdc-floating-label {
+        color: map.get(theme.$modino-colors, primary, 900);
+      }
+    }
+    &.mdc-select--invalid {
+      .mdc-floating-label {
+        color: var(--mdc-theme-error);
+      }
+    }
+  }
+
+  &__checkbox-container {
+    margin-inline-start: -11px;
+    margin-block-end: theme.spacing(16);
+    display: flex;
+    flex-direction: column;
+    gap: theme.spacing(5);
+
+    .mdc-checkbox {
+      --mdc-checkbox-unchecked-color: #{map.get(
+          theme.$modino-colors,
+          surface,
+          border
+        )};
+
+      &.mdc-ripple-upgraded--background-focused {
+        .mdc-checkbox__ripple {
+          &:before {
+            background-color: map.get(theme.$modino-colors, surface, border);
+          }
+        }
+      }
+    }
+
+    .m-link {
+      color: map.get(theme.$modino-colors, primary, 900);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .mdc-button {
+    text-transform: none;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+
+  &__field-wrapper {
+    width: 100%;
+  }
+}
+
+.m-form-section {
+  display: flex;
+  align-items: center;
+  padding: theme.spacing(16, 12);
+  justify-content: center;
+  background-color: map.get(theme.$modino-colors, surface, background);
+  height: 100vh;
+
+  @media (min-width: 1240px) {
+    padding: theme.spacing(30, 40);
+  }
+}
+
+.m-image-section {
+  flex-grow: 1;
+  background-color: map.get(theme.$modino-colors, primary, 900);
+  display: flex;
+  padding: theme.spacing(45, 40);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    display: inline-block;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .m-logo-img {
+    margin-block-end: theme.spacing(20);
+  }
+
+  .m-request-access-img {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.m-request-main {
+  height: 100%;
+  max-width: unset;
+  display: grid;
+  grid-template-rows: 100vh 100vh;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 600px) {
+    margin-top: 0;
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}

@@ -1,0 +1,185 @@
+@use "../../scss/theme" as *;
+@use "sass:map";
+
+.m-article {
+  margin-block-start: spacing(32);
+
+  &.m-section {
+    align-items: flex-start;
+
+    .m-section__content {
+      align-items: flex-start;
+    }
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "image image"
+      "chips chips"
+      "title title"
+      "date date";
+    column-gap: spacing(24);
+    row-gap: spacing(8);
+    align-items: center;
+    justify-content: center;
+
+    &.m-section__header {
+      padding-inline: 0;
+
+      @media (min-width: 600px) {
+        padding-inline: 0;
+      }
+    }
+
+    @media (min-width: 800px) {
+      grid-template-areas:
+        "image chips"
+        "image title"
+        "image title"
+        "image date";
+    }
+
+    &-image {
+      grid-area: image;
+      min-width: 0;
+      max-width: 100%;
+      height: auto;
+    }
+
+    &-text {
+      @include m-font("body-2");
+      font-weight: 700;
+      margin-block: 0;
+      grid-area: title;
+
+      @media (min-width: 800px) {
+        @include m-font("heading-3");
+        font-weight: 400;
+      }
+    }
+
+    &-date {
+      @include m-font("body-3");
+
+      display: inline-flex;
+      align-items: flex-end;
+
+      grid-area: date;
+    }
+
+    &.m-section__header {
+      @include m-font("body-2");
+
+      align-self: flex-start;
+      text-align: left;
+      margin-block: spacing(16);
+
+      @media (min-width: 600px) {
+        margin-block: spacing(8, 16);
+        @include m-font("heading-3");
+      }
+    }
+  }
+
+  &__chips {
+    display: flex;
+    grid-area: chips;
+  }
+
+  &__chip {
+    @include m-font("body-5");
+
+    padding: spacing(3, 6);
+    border: 1px solid;
+    border-radius: 15px;
+    height: 30px;
+
+    &--blue {
+      color: #2824ed;
+      border-color: #2824ed;
+      background-color: rgba(40, 36, 237, 0.15);
+    }
+
+    &--red {
+      color: map.get($modino-colors, accent, 600);
+      border-color: map.get($modino-colors, accent, 600);
+      background-color: rgba(237, 45, 36, 0.15);
+    }
+
+    &--green {
+      color: #00a511;
+      border-color: #00a511;
+      background-color: rgba(0, 199, 20, 0.15);
+    }
+  }
+
+  &__breadcrumbs {
+    display: inline-flex;
+    color: map.get($modino-colors, surface, text-disabled);
+    text-align: left;
+    max-width: 100%;
+
+    &-container {
+      display: flex;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    > .m-article__breadcrumb {
+      margin-inline: spacing(8);
+
+      &:first-child {
+        margin-inline-start: 0;
+      }
+
+      &:last-child {
+        font-weight: 700;
+        margin-inline-end: 0;
+        color: map.get($modino-colors, surface, text);
+        max-width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+      }
+    }
+  }
+
+  &__content {
+    text-align: justify;
+
+    img {
+      display: block;
+      min-width: 0;
+      max-width: 70%;
+      height: auto;
+      margin-inline: auto;
+    }
+
+    h2 {
+      @include m-font("subheading-4");
+    }
+  }
+
+  &__back-link {
+    display: flex;
+    justify-content: flex-start;
+    $color: #{map.get($modino-colors, primary, 500)};
+    margin-block-start: spacing(32);
+
+    color: $color;
+
+    svg {
+      margin-inline-end: spacing(4);
+      path {
+        fill: $color;
+      }
+    }
+  }
+}

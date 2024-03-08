@@ -2,19 +2,50 @@ import React from "react";
 import { HeadFC, Link, PageProps, graphql } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
+import ArticleTileComponent from "../../components/article-tile/article-tile.component";
+
+import "./index.scss";
 
 const ArticlesPage: React.FC<PageProps> = ({ data }) => {
+  const getArticlesFromProps = (
+    propsArticles: Array<{
+      frontmatter: {
+        date: string;
+        tile_title: string;
+        slug: string;
+        summary: string;
+        thumbnail: string;
+        category: unknown;
+      };
+    }>
+  ) => {
+    return propsArticles.map((propArticle) => ({
+      title: propArticle.frontmatter.tile_title,
+      date: propArticle.frontmatter.date,
+      slug: propArticle.frontmatter.slug,
+      thumbnailPhotoUrl: propArticle.frontmatter.thumbnail,
+      summary: propArticle.frontmatter.summary,
+      categories: Array.isArray(propArticle.frontmatter.category)
+        ? propArticle.frontmatter.category
+        : [propArticle.frontmatter.category],
+    }));
+  };
+
   return (
     <Layout>
-      <main>Articles page</main>
-      {data.allMdx.nodes.map((node) => (
-        <React.Fragment key={node.frontmatter.slug}>
-          <Link to={`/articles/${node.frontmatter.slug}`}>
-            {node.frontmatter.title}
-          </Link>
-          <br />
-        </React.Fragment>
-      ))}
+      <main className="m-main">
+        <section className="m-section m-articles">
+          <h1 className="m-section__header">Articles</h1>
+          <div className="m-section__content">
+            <div className="m-articles__filters"></div>
+            <div className="m-articles__list">
+              {getArticlesFromProps(data.allMdx.nodes).map((article, index) => (
+                <ArticleTileComponent key={index} {...article} />
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
     </Layout>
   );
 };
@@ -27,9 +58,12 @@ export const query = graphql`
     ) {
       nodes {
         frontmatter {
+          tile_title
           date(formatString: "MMMM D, YYYY")
-          title
           slug
+          summary
+          thumbnail
+          category
         }
       }
     }
