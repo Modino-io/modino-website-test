@@ -1,6 +1,6 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
-const SEO: React.FC<{
+const Seo: React.FC<{
   pageTitle: string;
   description: string;
   link: string;
@@ -19,4 +19,4 @@ const SEO: React.FC<{
   );
 };
 
-export default SEO;
+export default Seo;

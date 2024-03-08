@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, HeadFC, PageProps, graphql } from "gatsby";
-import SEO from "../components/seo.component";
+import Seo from "../components/seo.component";
 import Layout from "../components/layout/layout.component";
 import CarouselComponent from "../components/carousel/carousel.component";
 
@@ -254,7 +254,7 @@ export const query = graphql`
 export default IndexPage;
 
 export const Head: HeadFC = () => (
-  <SEO
+  <Seo
     pageTitle="Modino.io - Safe and secure updates for IoT devices"
     description="Modino.io will help you keep your IoT devices up and running with safe and secure over-the-air updates."
     link="https://modino.io/"

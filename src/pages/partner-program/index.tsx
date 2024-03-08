@@ -1,6 +1,6 @@
 import * as React from "react";
 import { HeadFC, PageProps } from "gatsby";
-import SEO from "../../components/seo.component";
+import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
 const PartnerProgram: React.FC<PageProps> = ({ data }) => {
@@ -10,7 +10,7 @@ const PartnerProgram: React.FC<PageProps> = ({ data }) => {
 export default PartnerProgram;
 
 export const Head: HeadFC = () => (
-  <SEO
+  <Seo
     pageTitle="Modino.io - shaping cybersecurity with a partner program"
     description="Become part of the Modino Partner Program. Learn more about how we can collaborate and shape the future of cybersecurity."
     link="https://modino.io/partner-program"

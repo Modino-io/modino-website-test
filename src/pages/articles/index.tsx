@@ -1,6 +1,6 @@
 import React from "react";
 import { HeadFC, Link, PageProps, graphql } from "gatsby";
-import SEO from "../../components/seo.component";
+import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
 const ArticlesPage: React.FC<PageProps> = ({ data }) => {
@@ -39,7 +39,7 @@ export const query = graphql`
 export default ArticlesPage;
 
 export const Head: HeadFC = () => (
-  <SEO
+  <Seo
     pageTitle="Modino.io - news and articles about cybersecurity"
     description="Stay updated with the latest Modino.io news. Read articles and learn from case studies about cybersecurity."
     link="https://modino.io/articles"

@@ -9,7 +9,7 @@ const TermsOfService: React.FC<PageProps> = ({ data }) => {
 export default TermsOfService;
 
 export const Head: HeadFC = () => (
-  <SEO
+  <Seo
     pageTitle="Modino.io - Updates Newsletter terms of service"
     description="Learn about Modino.io's Updates Newsletter terms of service"
     link="https://modino.io/terms-of-service"
