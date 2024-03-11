@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "gatsby";
 import "./footer.component.scss";
 
-const Footer = () => {
+const FooterComponent = () => {
   return (
     <footer className="m-footer">
       <div className="m-footer__content">
@@ -55,8 +55,9 @@ const Footer = () => {
           </a>
           <div className="m-footer__copyright">
             <p>
-              &#169; Modino.io <span id="footer-year"></span>. All rights
-              reserved.
+              &#169; Modino.io{" "}
+              <span id="footer-year">{new Date().getFullYear()}</span>. All
+              rights reserved.
             </p>
             <div className="m-footer__copyright-links">
               <Link to="/privacy-policy">Privacy policy</Link>
@@ -69,4 +70,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterComponent;
