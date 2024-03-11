@@ -13,7 +13,6 @@ const Seo: React.FC<{
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#fafafa" />
       <meta name="robots" content="index,follow" />
-
       <link href={link} rel="canonical" />
     </React.Fragment>
   );
