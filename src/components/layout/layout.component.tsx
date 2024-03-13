@@ -4,14 +4,23 @@ import FooterComponent from "../footer/footer.component";
 
 import "./layout.component.scss";
 
-const Layout = ({ children }: React.PropsWithChildren) => {
+const defaultProps = {
+  isMenuButtonAMainCtaButton: true,
+};
+
+const Layout = ({
+  isMenuButtonAMainCtaButton,
+  children,
+}: React.PropsWithChildren<{ isMenuButtonAMainCtaButton: boolean }>) => {
   return (
     <React.Fragment>
-      <Menu />
+      <Menu isCtaButtonPrimary={isMenuButtonAMainCtaButton} />
       {children}
       <FooterComponent />
     </React.Fragment>
   );
 };
+
+Layout.defaultProps = defaultProps;
 
 export default Layout;

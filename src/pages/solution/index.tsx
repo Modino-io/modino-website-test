@@ -1,13 +1,28 @@
-import * as React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { HeadFC, PageProps } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
+import { Button } from "@rmwc/button";
 
 import "./index.scss";
 
-const Solution: React.FC<PageProps> = ({ data }) => {
+const Solution = ({ data }: PageProps) => {
+  const mainCtaButton = useRef(null);
+  const [isMainCtaButtonVisible, setIsMainCtaButtonVisible] = useState(true);
+
+  const checkMenuCtaButton = () => {
+    setIsMainCtaButtonVisible(
+      (mainCtaButton.current as unknown as HTMLElement)?.getBoundingClientRect()
+        .y > (mainCtaButton.current as unknown as HTMLElement)?.clientHeight
+    );
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", checkMenuCtaButton);
+  }, []);
+
   return (
-    <Layout>
+    <Layout isMenuButtonAMainCtaButton={!isMainCtaButtonVisible}>
       <main className="m-main">
         <section className="m-section m-top-hero m-solution-hero">
           <div className="m-section__content">
@@ -23,15 +38,14 @@ const Solution: React.FC<PageProps> = ({ data }) => {
                 provide software updates for IoT devices in a safe and secure
                 way.
               </p>
-              <button
+              <Button
                 id="main-cta-button"
+                ref={mainCtaButton}
                 className="m-top-hero__action-button mdc-button mdc-button--unelevated cta-accent-button"
                 onClick={() => (window.location.href = "./get-in-touch")}
               >
-                <span className="mdc-button__ripple"></span>
-                <span className="mdc-button__focus-ring"></span>
-                <span className="mdc-button__label">Get in touch</span>
-              </button>
+                Get in touch
+              </Button>
             </div>
           </div>
         </section>

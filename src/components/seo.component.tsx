@@ -14,6 +14,10 @@ const Seo: React.FC<{
       <meta name="theme-color" content="#fafafa" />
       <meta name="robots" content="index,follow" />
       <link href={link} rel="canonical" />
+      <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      />
     </React.Fragment>
   );
 };

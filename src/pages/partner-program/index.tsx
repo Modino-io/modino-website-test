@@ -1,11 +1,63 @@
-import * as React from "react";
+import React, { FormEvent, useRef, useState } from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
 import "./index.scss";
+import { Button } from "@rmwc/button";
+import { Checkbox } from "@rmwc/checkbox";
+import { TextField } from "@rmwc/textfield";
+import { Snackbar } from "@rmwc/snackbar";
 
-const PartnerProgram: React.FC<PageProps> = ({ data }) => {
+const PartnerProgram = ({ data }: PageProps) => {
+  const [email, setEmail] = useState("");
+  const [isEmailInputValid, setIsEmailInputValid] = useState(true);
+  const [emailValidationMessage, setEmailValidationMessage] = useState(
+    "Field can't be empty"
+  );
+  const [isSubmitButtonDisabled, setIsSubmitButtonDisabled] = useState(false);
+  const [isSnackbarOpened, setIsSnackbarOpened] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState(
+    "The request has been sent"
+  );
+
+  const validateEmail = (emailAddress: string) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(emailAddress);
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setEmailValidationMessage("Incorrect email format");
+      setIsEmailInputValid(false);
+      return;
+    } else {
+      setIsEmailInputValid(true);
+    }
+
+    setIsSubmitButtonDisabled(true);
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwdQy0uzWFohLgBtHwjY9kL7uhGlgmvx8VTzyQPha6lnTPrcCVVjxEHlTmtGUkEpCTglw/exec",
+      {
+        method: "POST",
+        body: new FormData(e.target as HTMLFormElement),
+      }
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          setSnackbarMessage("Unable to send the request. Try again.");
+        }
+
+        setIsSnackbarOpened(true);
+        setIsSubmitButtonDisabled(false);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <Layout>
       <main className="m-main">
@@ -212,71 +264,33 @@ const PartnerProgram: React.FC<PageProps> = ({ data }) => {
                   Enter your email below to receive an exclusive invitation to
                   our partner program.
                 </p>
-                <form id="partner-program-form">
+                <form
+                  id="partner-program-form"
+                  onSubmit={(e) => {
+                    handleSubmit(e);
+                  }}
+                >
                   <div className="m-join-grow__join-form-field-wrapper">
-                    <div
-                      className="mdc-text-field mdc-text-field--outlined"
-                      id="email-input-text-field"
-                    >
-                      <input
-                        className="mdc-text-field__input"
-                        id="email-input"
-                        type="email"
-                        required
-                        name="email"
-                        aria-controls="email-input-helper-text"
-                        aria-describedby="email-input-helper-text"
-                        autoComplete="off"
-                      />
-                      <div className="mdc-notched-outline">
-                        <div className="mdc-notched-outline__leading"></div>
-                        <div className="mdc-notched-outline__notch">
-                          <label
-                            htmlFor="email-input"
-                            className="mdc-floating-label"
-                          >
-                            E-mail
-                          </label>
-                        </div>
-                        <div className="mdc-notched-outline__trailing"></div>
-                      </div>
-                    </div>
-                    <div className="mdc-text-field-helper-line">
-                      <div
-                        id="email-input-helper-text"
-                        className="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-                      >
-                        Field can't be empty
-                      </div>
-                    </div>
+                    <TextField
+                      outlined
+                      label="Email"
+                      required
+                      autoComplete="off"
+                      onChange={(e: any) =>
+                        setEmail(e.nativeEvent.target.value)
+                      }
+                      helpText={{
+                        validationMsg: true,
+                        children: emailValidationMessage,
+                      }}
+                      value={email}
+                      invalid={!isEmailInputValid}
+                      name="email"
+                    />
                   </div>
                   <div className="m-join-grow__join-form-field-wrapper">
-                    <div className="mdc-form-field m-join-grow__join-form-checkbox">
-                      <div className="mdc-checkbox">
-                        <input
-                          id="legal-checkbox"
-                          type="checkbox"
-                          className="mdc-checkbox__native-control"
-                          name="legal"
-                          value="false"
-                          required
-                        />
-                        <div className="mdc-checkbox__background">
-                          <svg
-                            className="mdc-checkbox__checkmark"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              className="mdc-checkbox__checkmark-path"
-                              fill="none"
-                              d="M1.73,12.91 8.1,19.28 22.79,4.59"
-                            />
-                          </svg>
-                          <div className="mdc-checkbox__mixedmark"></div>
-                        </div>
-                        <div className="mdc-checkbox__ripple"></div>
-                      </div>
-                      <label htmlFor="checkbox-2">
+                    <div className=" m-join-grow__join-form-checkbox">
+                      <Checkbox required>
                         I have read and agree to the{" "}
                         <Link className="m-link" to="/privacy-policy">
                           Privacy Policy
@@ -285,14 +299,18 @@ const PartnerProgram: React.FC<PageProps> = ({ data }) => {
                         <Link className="m-link" to="/terms-of-service">
                           Terms of Service
                         </Link>
-                      </label>
+                      </Checkbox>
                     </div>
                   </div>
 
-                  <button className="mdc-button mdc-button--unelevated m-join-grow__join-form-confirm-button">
-                    <div className="mdc-button__ripple"></div>
-                    <div className="mdc-button__label">Apply</div>
-                  </button>
+                  <Button
+                    unelevated
+                    type="submit"
+                    className="m-join-grow__join-form-confirm-button"
+                    disabled={isSubmitButtonDisabled}
+                  >
+                    Apply
+                  </Button>
                 </form>
               </div>
             </div>
@@ -316,6 +334,14 @@ const PartnerProgram: React.FC<PageProps> = ({ data }) => {
             </a>
           </div>
         </section>
+        <Snackbar
+          open={isSnackbarOpened}
+          message={snackbarMessage}
+          timeout={5000}
+          onClose={() => {
+            setIsSnackbarOpened(false);
+          }}
+        ></Snackbar>
       </main>
     </Layout>
   );

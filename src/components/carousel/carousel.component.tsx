@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./carousel.component.scss";
 import ArticleTileComponent from "../article-tile/article-tile.component";
 import { Link } from "gatsby";
+import { Button } from "@rmwc/button";
 
 const CarouselComponent: React.FC<{
   articles: Array<{
@@ -79,22 +80,20 @@ const CarouselComponent: React.FC<{
             })}
           </div>
           <div className="m-articles-teaser__carousel-controls">
-            <button
-              className="m-articles-teaser__carousel-button-prev mdc-button mdc-button--outlined"
+            <Button
+              dense
+              className="m-articles-teaser__carousel-button-prev"
               onClick={() => displayPreviousCarouselItem()}
             >
-              <div className="mdc-button__ripple"></div>
-              <div className="mdc-button__label">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 -960 960 960"
-                  width="24"
-                >
-                  <path d="m432-480 156 156q11 11 11 28t-11 28q-11 11-28 11t-28-11L348-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 28-11t28 11q11 11 11 28t-11 28L432-480Z" />
-                </svg>
-              </div>
-            </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+              >
+                <path d="m432-480 156 156q11 11 11 28t-11 28q-11 11-28 11t-28-11L348-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 28-11t28 11q11 11 11 28t-11 28L432-480Z" />
+              </svg>
+            </Button>
             {articles.map((article, index) => (
               <button
                 className={`m-articles-teaser__carousel-page-button ${
@@ -106,22 +105,20 @@ const CarouselComponent: React.FC<{
                 key={index}
               ></button>
             ))}
-            <button
-              className="m-articles-teaser__carousel-button-next mdc-button mdc-button--outlined"
+            <Button
+              dense
+              className="m-articles-teaser__carousel-button-next"
               onClick={() => displayNextCarouselItem()}
             >
-              <div className="mdc-button__ripple"></div>
-              <div className="mdc-button__label">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 -960 960 960"
-                  width="24"
-                >
-                  <path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z" />
-                </svg>
-              </div>
-            </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+              >
+                <path d="M504-480 348-636q-11-11-11-28t11-28q11-11 28-11t28 11l184 184q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L404-268q-11 11-28 11t-28-11q-11-11-11-28t11-28l156-156Z" />
+              </svg>
+            </Button>
           </div>
         </div>
       </div>

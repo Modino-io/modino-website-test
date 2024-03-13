@@ -1,12 +1,16 @@
 import React, { useEffect } from "react";
 import "./menu.components.scss";
 import { Link } from "gatsby";
+import { Button } from "@rmwc/button";
 
-const Menu: React.FC<any> = () => {
+const Menu: React.FC<{ isCtaButtonPrimary: boolean }> = ({
+  isCtaButtonPrimary,
+}) => {
   let menu: HTMLElement;
   let menuNav: HTMLElement;
   let hamburgerMenuButton;
   let mobileMenu: HTMLElement;
+
   useEffect(() => {
     menu = document.getElementsByClassName("m-menu")[0] as HTMLElement;
     menuNav = document.getElementsByClassName(
@@ -101,23 +105,22 @@ const Menu: React.FC<any> = () => {
               >
                 Jobs
               </Link>
-              <button
-                className="mdc-button mdc-button--outlined m-menu__cta-button"
+              <Button
+                outlined={!isCtaButtonPrimary}
+                unelevated={isCtaButtonPrimary}
+                className={`m-menu__cta-button ${
+                  isCtaButtonPrimary ? "cta-accent-button" : ""
+                }`}
                 onClick={() => (window.location.href = "/get-in-touch")}
               >
-                <span className="mdc-button__ripple"></span>
-                <span className="mdc-button__focus-ring"></span>
-                <span className="mdc-button__label">Get in touch</span>
-              </button>
-              <button
-                className="mdc-button m-menu__hamburger-button"
+                Get in touch
+              </Button>
+              <Button
+                className=" m-menu__hamburger-button"
                 onClick={toggleHamburgerMenu}
               >
-                <span className="mdc-button__ripple"></span>
-                <span className="mdc-button__label">
-                  <img src="/img/hamburger-menu.svg" alt="hamburger menu" />
-                </span>
-              </button>
+                <img src="/img/hamburger-menu.svg" alt="hamburger menu" />
+              </Button>
             </div>
           </nav>
         </header>
@@ -133,15 +136,12 @@ const Menu: React.FC<any> = () => {
             />
           </Link>
 
-          <button
-            className="mdc-button m-mobile-menu__hamburger-button"
+          <Button
+            className="m-mobile-menu__hamburger-button"
             onClick={toggleHamburgerMenu}
           >
-            <span className="mdc-button__ripple"></span>
-            <span className="mdc-button__label">
-              <img src="/img/hamburger-menu.svg" alt="hamburger menu" />
-            </span>
-          </button>
+            <img src="/img/hamburger-menu.svg" alt="hamburger menu" />
+          </Button>
         </div>
         <div className="m-mobile-menu__actions">
           <Link
@@ -186,14 +186,12 @@ const Menu: React.FC<any> = () => {
           >
             Jobs
           </Link>
-          <button
-            className="mdc-button mdc-button--unelevated cta-accent-button m-mobile-menu__cta-button"
+          <Button
+            className="cta-accent-button m-mobile-menu__cta-button"
             onClick={() => (window.location.href = "/get-in-touch")}
           >
-            <span className="mdc-button__ripple"></span>
-            <span className="mdc-button__focus-ring"></span>
-            <span className="mdc-button__label">Get in touch</span>
-          </button>
+            Get in touch
+          </Button>
         </div>
       </aside>
     </React.Fragment>

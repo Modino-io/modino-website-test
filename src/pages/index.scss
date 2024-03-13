@@ -101,43 +101,6 @@ blockquote {
     }
   }
 
-  .cta-accent-button {
-    text-transform: none;
-    font-weight: bold;
-    padding: theme.spacing(6) theme.spacing(16);
-    height: unset;
-
-    --mdc-filled-button-container-color: #{map.get(
-        theme.$modino-colors,
-        accent,
-        600
-      )};
-    --mdc-filled-button-hover-state-layer-color: #{map.get(
-        theme.$modino-colors,
-        accent,
-        400
-      )};
-
-    --mdc-filled-button-hover-state-layer-opacity: 1;
-    --mdc-filled-button-focus-state-layer-opacity: 1;
-    --mdc-filled-button-pressed-state-layer-opacity: 1;
-
-    &.mdc-ripple-upgraded--background-focused {
-      .mdc-button__ripple {
-        &:before {
-          background-color: map.get(theme.$modino-colors, accent, 500);
-        }
-      }
-    }
-
-    .mdc-button__ripple {
-      &:after {
-        background-color: map.get(theme.$modino-colors, accent, 300);
-        z-index: 1;
-      }
-    }
-  }
-
   .m-security-img {
     max-height: 190px;
 

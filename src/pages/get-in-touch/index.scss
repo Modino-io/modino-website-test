@@ -1,6 +1,19 @@
 @use "../../scss/theme";
 @use "sass:map";
 
+@import "@rmwc/select/select.css";
+@import "@material/select/dist/mdc.select.css";
+@import "@material/floating-label/dist/mdc.floating-label.css";
+@import "@material/notched-outline/dist/mdc.notched-outline.css";
+@import "@material/line-ripple/dist/mdc.line-ripple.css";
+@import "@material/list/dist/mdc.list.css";
+@import "@material/menu/dist/mdc.menu.css";
+@import "@material/menu-surface/dist/mdc.menu-surface.css";
+@import "@material/ripple/dist/mdc.ripple.css";
+
+@import "@material/snackbar/dist/mdc.snackbar.css";
+@import "@material/button/dist/mdc.button.css";
+
 .m-form {
   display: flex;
   flex-direction: column;
@@ -39,6 +52,11 @@
   }
 
   .mdc-text-field--focused {
+    &:not(.mdc-text-field--invalid) {
+      .mdc-floating-label {
+        color: map.get(theme.$modino-colors, primary, 900);
+      }
+    }
     .mdc-floating-label {
       color: map.get(theme.$modino-colors, primary, 900);
     }
@@ -50,6 +68,13 @@
   }
 
   .m-select {
+    .mdc-select:not(.mdc-select--disabled) {
+      &.mdc-select--focused {
+        .mdc-floating-label {
+          color: map.get(theme.$modino-colors, primary, 900);
+        }
+      }
+    }
     &.mdc-select--focused {
       .mdc-floating-label {
         color: map.get(theme.$modino-colors, primary, 900);

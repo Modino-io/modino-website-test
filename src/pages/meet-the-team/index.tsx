@@ -4,6 +4,7 @@ import Layout from "../../components/layout/layout.component";
 
 import "./index.scss";
 import Seo from "../../components/seo.component";
+import { Button } from "@rmwc/button";
 
 const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
   const tabLabels = [
@@ -40,16 +41,15 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     }`}
                     key={index}
                   >
-                    <button
-                      className={`mdc-button mdc-button--outlined ${
-                        currentTabIndex === index ? "mdc-button--raised" : ""
-                      }`}
+                    <Button
+                      raised={currentTabIndex === index}
+                      outlined={currentTabIndex !== index}
                       role="tab"
                       key={index}
                       onClick={() => setCurrentTabIndex(index)}
                     >
                       {label}
-                    </button>
+                    </Button>
                   </li>
                 ))}
               </ul>

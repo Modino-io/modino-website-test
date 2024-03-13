@@ -1,12 +1,16 @@
-import * as React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { HeadFC, PageProps, graphql } from "gatsby";
 import Seo from "../components/seo.component";
 import Layout from "../components/layout/layout.component";
 import CarouselComponent from "../components/carousel/carousel.component";
+import { Button } from "@rmwc/button";
 
 import "./index.scss";
 
-const IndexPage: React.FC<PageProps> = ({ data }) => {
+const IndexPage = ({ data }: PageProps) => {
+  const mainCtaButton = useRef(null);
+  const [isMainCtaButtonVisible, setIsMainCtaButtonVisible] = useState(true);
+
   const getArticlesFromProps = (
     propsArticles: Array<{
       frontmatter: {
@@ -31,8 +35,19 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
     }));
   };
 
+  const checkMenuCtaButton = () => {
+    setIsMainCtaButtonVisible(
+      (mainCtaButton.current as unknown as HTMLElement)?.getBoundingClientRect()
+        .y > (mainCtaButton.current as unknown as HTMLElement)?.clientHeight
+    );
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", checkMenuCtaButton);
+  }, []);
+
   return (
-    <Layout>
+    <Layout isMenuButtonAMainCtaButton={!isMainCtaButtonVisible}>
       <main className="m-main">
         <section className="m-section m-top-hero m-home-hero">
           <div className="m-section__content">
@@ -50,15 +65,15 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
                 Deliver new software and configuration settings securely,
                 remotely, and risk-free
               </p>
-              <button
+              <Button
                 id="main-cta-button"
+                unelevated
+                ref={mainCtaButton}
                 className="m-top-hero__action-button mdc-button mdc-button--unelevated cta-accent-button"
                 onClick={() => (window.location.href = "./get-in-touch")}
               >
-                <span className="mdc-button__ripple"></span>
-                <span className="mdc-button__focus-ring"></span>
-                <span className="mdc-button__label">Get in touch</span>
-              </button>
+                Get in touch
+              </Button>
             </div>
           </div>
         </section>
@@ -212,14 +227,14 @@ const IndexPage: React.FC<PageProps> = ({ data }) => {
                 IoT devices <br />
                 <span className="highlight">in good hands</span>
               </h2>
-              <button
-                className="mdc-button mdc-button--unelevated cta-accent-button"
+              <Button
+                unelevated
+                className="cta-accent-button"
                 onClick={() => (window.location.href = "./get-in-touch")}
                 id="summary-cta-btn"
               >
-                <span className="mdc-button__ripple"></span>
-                <span className="mdc-button__label">Get in touch</span>
-              </button>
+                Get in touch
+              </Button>
             </div>
             <img
               alt="Modino update guard illustration"
