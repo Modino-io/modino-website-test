@@ -1,10 +1,10 @@
 import React from "react";
-import { HeadFC, Link, PageProps, graphql } from "gatsby";
+import { HeadFC, PageProps, graphql } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 import ArticleTileComponent from "../../components/article-tile/article-tile.component";
 
-import "./index.scss";
+import * as styles from "./index.module.scss";
 
 const ArticlesPage: React.FC<PageProps> = ({ data }) => {
   const getArticlesFromProps = (
@@ -34,11 +34,10 @@ const ArticlesPage: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
       <main className="m-main">
-        <section className="m-section m-articles">
+        <section className={`m-section ${styles.mArticles}`}>
           <h1 className="m-section__header">Articles</h1>
           <div className="m-section__content">
-            <div className="m-articles__filters"></div>
-            <div className="m-articles__list">
+            <div className={styles.mArticlesList}>
               {getArticlesFromProps(data.allMdx.nodes).map((article, index) => (
                 <ArticleTileComponent key={index} {...article} />
               ))}

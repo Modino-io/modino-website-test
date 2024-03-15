@@ -6,15 +6,23 @@ import "./layout.component.scss";
 
 const defaultProps = {
   isMenuButtonAMainCtaButton: true,
+  shouldMenuBeDisplayed: true,
 };
 
 const Layout = ({
   isMenuButtonAMainCtaButton,
+  shouldMenuBeDisplayed,
   children,
-}: React.PropsWithChildren<{ isMenuButtonAMainCtaButton: boolean }>) => {
+}: React.PropsWithChildren<{
+  isMenuButtonAMainCtaButton: boolean;
+  shouldMenuBeDisplayed: boolean;
+}>) => {
   return (
     <React.Fragment>
-      <Menu isCtaButtonPrimary={isMenuButtonAMainCtaButton} />
+      <Menu
+        isCtaButtonPrimary={isMenuButtonAMainCtaButton}
+        displayMenu={shouldMenuBeDisplayed}
+      />
       {children}
       <FooterComponent />
     </React.Fragment>

@@ -1,9 +1,9 @@
 import * as React from "react";
-
-import "./article.scss";
 import Layout from "../../components/layout/layout.component";
 import { HeadFC, Link, graphql } from "gatsby";
 import Seo from "../../components/seo.component";
+
+import * as styles from "./article.module.scss";
 
 const BlogPost = ({
   data,
@@ -12,43 +12,45 @@ const BlogPost = ({
   return (
     <Layout>
       <main className="m-main">
-        <section className="m-section m-article">
-          <div className="m-section__content">
-            <div className="m-article__breadcrumbs">
-              <Link to="/" className="m-article__breadcrumb">
+        <section className={`m-section ${styles.mArticle}`}>
+          <div className="m-section-content">
+            <div className={styles.mArticleBreadcrumbs}>
+              <Link to="/" className={styles.mArticleBreadcrumb}>
                 Home
               </Link>{" "}
               |
-              <Link to="../" className="m-article__breadcrumb">
+              <Link to="../" className={styles.mArticleBreadcrumb}>
                 Articles
               </Link>{" "}
               |
-              <div className="m-article__breadcrumb">
+              <div className={styles.mArticleBreadcrumb}>
                 {data.mdx.frontmatter.tile_title}
               </div>
             </div>
-            <div className="m-section__header m-article__header">
+            <div className={`m-section__header ${styles.mArticleHeader}`}>
               <img
-                className="m-article__header-image"
+                className={styles.mArticleHeaderImage}
                 src={data.mdx.frontmatter.thumbnail}
                 alt=""
               />
-              <h1 className="m-article__header-text">
+              <h1 className={styles.mArticleHeaderText}>
                 {data.mdx.frontmatter.tile_title}
               </h1>
-              <div className="m-article__chips">
-                <div className="m-article__chip m-article__chip--red">
+              <div className={styles.mArticleChips}>
+                <div
+                  className={`${styles.mArticleChip} ${styles.mArticleChipRed}`}
+                >
                   Press
                 </div>
               </div>
-              <i className="m-article__header-date">
+              <i className={styles.mArticleHeaderDate}>
                 {data.mdx.frontmatter.date}
               </i>
             </div>
-            <div className="m-article__content">
+            <div className={styles.mArticleContent}>
               {children}
 
-              <Link to="../" className="m-article__back-link">
+              <Link to="../" className={styles.mArticleBackLink}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"

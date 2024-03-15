@@ -12,7 +12,7 @@ blockquote {
   margin-inline-end: 0;
 }
 
-.m-home-hero {
+.mHomeHero {
   justify-content: flex-start;
 
   @media (min-width: 600px) {
@@ -57,7 +57,7 @@ blockquote {
   }
 }
 
-.m-summary {
+.mSummary {
   width: 100%;
   position: relative;
   z-index: 1;
@@ -93,15 +93,29 @@ blockquote {
     }
   }
 
-  &__content {
+  &Content {
     @media (min-width: 800px) {
       flex-direction: row-reverse;
       justify-content: center;
       gap: theme.spacing(32);
     }
+
+    :global .m-section__header {
+      @include theme.m-font("heading-1-mobile");
+
+      margin-block: theme.spacing(32, 16);
+
+      @media (min-width: 800px) {
+        @include theme.m-font("heading-1");
+
+        text-align: left;
+        margin-block-start: 0;
+        padding-inline-start: 0;
+      }
+    }
   }
 
-  .m-security-img {
+  & .mSecurityImg {
     max-height: 190px;
 
     @media (min-width: 600px) {
@@ -110,7 +124,7 @@ blockquote {
     }
   }
 
-  .m-wrapper {
+  & .mWrapper {
     text-align: center;
     margin-block-end: theme.spacing(16);
 
@@ -118,23 +132,10 @@ blockquote {
       text-align: left;
     }
   }
-
-  .m-section__header {
-    @include theme.m-font("heading-1-mobile");
-
-    margin-block: theme.spacing(32, 16);
-
-    @media (min-width: 800px) {
-      @include theme.m-font("heading-1");
-
-      text-align: left;
-      margin-block-start: 0;
-    }
-  }
 }
 
-.m-mission {
-  .m-quote {
+.mMission {
+  .mQuote {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -148,7 +149,7 @@ blockquote {
       margin-block-end: theme.spacing(48);
     }
 
-    &__text {
+    &Text {
       @include theme.m-font("body-1-mobile");
 
       display: inline-block;
@@ -165,7 +166,7 @@ blockquote {
       position: relative;
     }
 
-    &__image {
+    &Image {
       position: absolute;
       z-index: -1;
       width: 80px;
@@ -190,7 +191,7 @@ blockquote {
       }
     }
 
-    &__author {
+    &Author {
       $image_size: 40px;
 
       @include theme.m-font("body-3");
@@ -208,7 +209,7 @@ blockquote {
         width: initial;
       }
 
-      &-image {
+      &Image {
         width: $image_size;
         height: $image_size;
         border-radius: 50%;
@@ -218,7 +219,7 @@ blockquote {
   }
 }
 
-.m-explanation {
+.mExplanation {
   display: flex;
   flex-direction: column;
   gap: theme.spacing(16);
@@ -229,7 +230,7 @@ blockquote {
     gap: theme.spacing(48);
   }
 
-  &__content {
+  &Content {
     @media (min-width: 600px) {
       justify-content: space-between;
       flex-direction: row;
@@ -237,7 +238,7 @@ blockquote {
     }
   }
 
-  &__image {
+  &Image {
     flex: 1;
     text-align: right;
 
@@ -251,17 +252,17 @@ blockquote {
     }
   }
 
-  &__text {
+  &Text {
     flex: 1;
     color: map.get(theme.$modino-colors, surface, text-contrast);
   }
 
-  &__title,
-  &__description {
+  &Title,
+  &Description {
     max-width: 480px;
   }
 
-  &__title {
+  &Title {
     @include theme.m-font("heading-4-mobile");
     text-align: center;
 
@@ -276,7 +277,7 @@ blockquote {
     }
   }
 
-  &__description {
+  &Description {
     @include theme.m-font("body-1-mobile");
 
     margin: 0;
@@ -287,8 +288,8 @@ blockquote {
   }
 }
 
-.m-solution {
-  &__container {
+.mSolution {
+  &Container {
     display: flex;
     flex-direction: column;
 
@@ -298,14 +299,14 @@ blockquote {
     }
   }
 
-  &__video,
-  &__text {
+  &Video,
+  &Text {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
 
-  &__video {
+  &Video {
     display: flex;
     justify-content: center;
 
@@ -319,7 +320,7 @@ blockquote {
     }
   }
 
-  &__solution-link {
+  &SolutionLink {
     @include theme.m-font("body-1");
 
     display: inline-flex;
@@ -335,7 +336,7 @@ blockquote {
     }
   }
 
-  &__text {
+  &Text {
     @include theme.m-font("body-1");
 
     margin-block-end: theme.spacing(16);
@@ -358,8 +359,8 @@ blockquote {
   }
 }
 
-.m-awards {
-  &__content {
+.mAwards {
+  &Content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -374,7 +375,7 @@ blockquote {
     }
   }
 
-  &__cybersecurity-banner {
+  &CybersecurityBanner {
     flex: 1;
 
     img {
@@ -382,12 +383,45 @@ blockquote {
       width: 100%;
     }
   }
-  &__cybersecurity-made {
+  &CybersecurityMade {
     flex: 1;
 
     img {
       max-width: 530px;
       width: 100%;
+    }
+  }
+}
+
+.mArticlesTeaser {
+  :global .m-section__header {
+    margin-block-start: 0;
+    margin-block-end: spacing(16);
+
+    @media (min-width: 800px) {
+      margin-block-end: spacing(24);
+    }
+  }
+
+  &SeeAll {
+    $color: #{map.get(theme.$modino-colors, primary, 700)};
+    @include theme.m-font("body-1");
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color;
+    margin-block-end: theme.spacing(16);
+
+    @media (min-width: 600px) {
+      margin-block-end: spacing(24);
+    }
+
+    svg {
+      margin-inline-start: spacing(4);
+      path {
+        fill: $color;
+      }
     }
   }
 }

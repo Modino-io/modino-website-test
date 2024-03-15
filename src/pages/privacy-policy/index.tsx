@@ -3,17 +3,16 @@ import { HeadFC, Link, PageProps } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
-import "./index.scss";
-import "../../scss/legal.scss";
+import * as styles from "./index.module.scss";
 
 const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
   return (
-    <Layout>
-      <main className="m-main m-privacy">
-        <div className="m-privacy-wrapper">
-          <nav className="m-privacy-navigation">
+    <Layout shouldMenuBeDisplayed={false}>
+      <main className="m-main">
+        <div className={styles.mLegalWrapper}>
+          <nav className={styles.mLegalNavigation}>
             <h2>Table of contents</h2>
-            <ul className="m-privacy-navigation--menu">
+            <ul role="menu">
               <li>
                 <Link to="#h-processing">Processing personal data</Link>
                 <ul>
@@ -63,8 +62,8 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               </li>
             </ul>
           </nav>
-          <section className="m-privacy-text">
-            <h1 id="h-privacy" className="m-privacy-text__header1">
+          <section className={styles.mLegalText}>
+            <h1 id="h-privacy" className={styles.mLegalTextHeader1}>
               Privacy policy
             </h1>
             <p>
@@ -78,10 +77,10 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               understanding and clarity on how personal data is processed at
               Modino.io.
             </p>
-            <h2 id="h-processing" className="m-privacy-text__header2">
+            <h2 id="h-processing" className={styles.mLegalTextHeader2}>
               Processing personal data
             </h2>
-            <h3 id="h-controller" className="m-privacy-text__header3">
+            <h3 id="h-controller" className={styles.mLegalTextHeader3}>
               The Controller
             </h3>
             <p>
@@ -92,14 +91,14 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               Register (Krajowy Rejestr Sądowy), under the entry number KRS
               908712, NIP (Taxpayer ID) 7393955632, REGON 38929761300000.
             </p>
-            <h3 id="h-personal" className="m-privacy-text__header3">
+            <h3 id="h-personal" className={styles.mLegalTextHeader3}>
               Personal data
             </h3>
             <p>
               We collect and process your data on your request and through the
               following:
             </p>
-            <h4 className="m-privacy-text__header4">Contact form</h4>
+            <h4 className={styles.mLegalTextHeader4}>Contact form</h4>
             <p>
               The contact form is a basic way of communication with our
               specialists and getting updates about our product (optional). You
@@ -130,7 +129,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               <a href="mailto:policy@modino.io">policy@modino.io</a>. After
               that, all your data will be erased from our database.
             </p>
-            <h4 className="m-privacy-text__header4">Newsletter</h4>
+            <h4 className={styles.mLegalTextHeader4}>Newsletter</h4>
             <p>
               We share information about our products and services by a
               newsletter.Signing up for the newsletter is voluntary and can be
@@ -162,7 +161,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               following the “Unsubscribe” link in the email. After that, all
               your data will be erased from our database.
             </p>
-            <h3 id="h-recipients" className="m-privacy-text__header3">
+            <h3 id="h-recipients" className={styles.mLegalTextHeader3}>
               Recipients of personal data
             </h3>
             <p>
@@ -196,7 +195,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               your data may be accessed by a lawyer bound by professional
               secrecy.
             </p>
-            <h3 id="h-rights" className="m-privacy-text__header3">
+            <h3 id="h-rights" className={styles.mLegalTextHeader3}>
               Your rights
             </h3>
             <p>
@@ -218,10 +217,10 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               towards you or similarly significantly affect you. And we do not
               transfer your personal information to third countries.
             </p>
-            <h2 id="h-protection" className="m-privacy-text__header2">
+            <h2 id="h-protection" className={styles.mLegalTextHeader2}>
               Protection of personal data
             </h2>
-            <h3 id="h-data-storage" className="m-privacy-text__header3">
+            <h3 id="h-data-storage" className={styles.mLegalTextHeader3}>
               Data storage and technical solutions
             </h3>
             <p>
@@ -234,7 +233,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               stored in secured networks, accessible by a limited number of
               persons who have special access rights to these systems.
             </p>
-            <h3 id="h-third-party" className="m-privacy-text__header3">
+            <h3 id="h-third-party" className={styles.mLegalTextHeader3}>
               Third-party software
             </h3>
             <p>
@@ -314,7 +313,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               </a>
               .
             </p>
-            <h3 id="h-cookies" className="m-privacy-text__header3">
+            <h3 id="h-cookies" className={styles.mLegalTextHeader3}>
               Cookies and pixel tags
             </h3>
             <p>
@@ -347,7 +346,9 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               the website and will always be used.
             </p>
 
-            <h4 className="m-privacy-text__header4">How and why we use them</h4>
+            <h4 className={styles.mLegalTextHeader4}>
+              How and why we use them
+            </h4>
             <p>
               <b>1. For the purpose of site usage (necessary).</b> These
               cookies, pixel tags and other technologies are essential for the
@@ -360,20 +361,23 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               understand how you arrive at and browse our products and website
               to identify areas for improvement such as navigation, user
               experience, and marketing campaigns.
-              <p id="cookie-table-label">Cookies:</p>
-              <div className="m-cookies-table__container">
-                <table
-                  aria-describedby="cookie-table-label"
-                  className="m-cookies-table"
-                >
-                  <tr className="m-cookies-table__header-row">
+            </p>
+            <p id="cookie-table-label">Cookies:</p>
+            <div className={styles.mCookiesTableContainer}>
+              <table
+                aria-describedby="cookie-table-label"
+                className={styles.mCookiesTable}
+              >
+                <thead>
+                  <tr className={styles.mCookiesTableHeaderRow}>
                     <th>Cookie name</th>
                     <th>Cookie category</th>
                     <th>Cookie provider</th>
                     <th>Cookie duration</th>
                     <th>Description</th>
                   </tr>
-
+                </thead>
+                <tbody>
                   <tr>
                     <td>cc_cookie</td>
                     <td>necessary</td>
@@ -451,10 +455,10 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
                       sampling defined by your site's daily session limit.
                     </td>
                   </tr>
-                </table>
-              </div>
-            </p>
-            <h4 className="m-privacy-text__header4">How to manage cookies</h4>
+                </tbody>
+              </table>
+            </div>
+            <h4 className={styles.mLegalTextHeader4}>How to manage cookies</h4>
             <p>
               You can deactivate cookies through a functionality built into your
               web browser. Browser manufacturers provide help pages relating to
@@ -523,10 +527,10 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               the Services.
             </p>
 
-            <h2 id="h-provisions" className="m-privacy-text__header2">
+            <h2 id="h-provisions" className={styles.mLegalTextHeader2}>
               Other provisions
             </h2>
-            <h3 id="h-changes" className="m-privacy-text__header3">
+            <h3 id="h-changes" className={styles.mLegalTextHeader3}>
               Changes of privacy policy
             </h3>
             <p>
@@ -537,7 +541,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               <Link to="/privacy-policy">https://modino.io/privacy-policy</Link>
               . We encourage you to review this Privacy Policy periodically.
             </p>
-            <h3 id="h-governing" className="m-privacy-text__header3">
+            <h3 id="h-governing" className={styles.mLegalTextHeader3}>
               Governing law
             </h3>
             <p>
@@ -545,7 +549,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               laws of Poland without regard to its conflict of other law
               provisions.
             </p>
-            <h3 id="h-questions" className="m-privacy-text__header3">
+            <h3 id="h-questions" className={styles.mLegalTextHeader3}>
               Questions and contact
             </h3>
             <p>
@@ -558,7 +562,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
               <a href="mailto:policy@modino.io">policy@modino.io</a>
             </p>
             <img
-              className="m-privacy__image"
+              className={styles.mLegalImage}
               src="/img/modino-man-in-envelope.svg"
               alt="modino man in an envelope"
             />

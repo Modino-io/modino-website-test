@@ -1,18 +1,15 @@
 @use "../../scss/theme" as *;
 @use "sass:map";
 
-.m-article {
+.mArticle {
   margin-block-start: spacing(32);
+  align-items: flex-start;
 
-  &.m-section {
+  :global .m-section-content {
     align-items: flex-start;
-
-    .m-section__content {
-      align-items: flex-start;
-    }
   }
 
-  &__header {
+  &Header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto auto;
@@ -26,7 +23,7 @@
     align-items: center;
     justify-content: center;
 
-    &.m-section__header {
+    &.mSectionHeader {
       padding-inline: 0;
 
       @media (min-width: 600px) {
@@ -42,14 +39,14 @@
         "image date";
     }
 
-    &-image {
+    &Image {
       grid-area: image;
       min-width: 0;
       max-width: 100%;
       height: auto;
     }
 
-    &-text {
+    &Text {
       @include m-font("body-2");
       font-weight: 700;
       margin-block: 0;
@@ -61,7 +58,7 @@
       }
     }
 
-    &-date {
+    &Date {
       @include m-font("body-3");
 
       display: inline-flex;
@@ -70,7 +67,7 @@
       grid-area: date;
     }
 
-    &.m-section__header {
+    &.mSectionHeader {
       @include m-font("body-2");
 
       align-self: flex-start;
@@ -84,12 +81,12 @@
     }
   }
 
-  &__chips {
+  &Chips {
     display: flex;
     grid-area: chips;
   }
 
-  &__chip {
+  &Chip {
     @include m-font("body-5");
 
     padding: spacing(3, 6);
@@ -97,32 +94,32 @@
     border-radius: 15px;
     height: 30px;
 
-    &--blue {
+    &Blue {
       color: #2824ed;
       border-color: #2824ed;
       background-color: rgba(40, 36, 237, 0.15);
     }
 
-    &--red {
+    &Red {
       color: map.get($modino-colors, accent, 600);
       border-color: map.get($modino-colors, accent, 600);
       background-color: rgba(237, 45, 36, 0.15);
     }
 
-    &--green {
+    &Green {
       color: #00a511;
       border-color: #00a511;
       background-color: rgba(0, 199, 20, 0.15);
     }
   }
 
-  &__breadcrumbs {
+  &Breadcrumbs {
     display: inline-flex;
     color: map.get($modino-colors, surface, text-disabled);
     text-align: left;
     max-width: 100%;
 
-    &-container {
+    &Container {
       display: flex;
       width: 100%;
     }
@@ -132,7 +129,7 @@
       text-decoration: none;
     }
 
-    > .m-article__breadcrumb {
+    > .mArticleBreadcrumb {
       margin-inline: spacing(8);
 
       &:first-child {
@@ -151,7 +148,7 @@
     }
   }
 
-  &__content {
+  &Content {
     text-align: justify;
 
     img {
@@ -167,7 +164,7 @@
     }
   }
 
-  &__back-link {
+  &BackLink {
     display: flex;
     justify-content: flex-start;
     $color: #{map.get($modino-colors, primary, 500)};

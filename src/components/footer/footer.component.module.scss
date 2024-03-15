@@ -15,7 +15,7 @@
 @use "../../scss/theme";
 @use "sass:map";
 
-.m-footer {
+.mFooter {
   @include theme.m-font("body-3");
 
   background-color: map.get(theme.$modino-colors, surface, text);
@@ -31,7 +31,7 @@
     min-height: 25vh;
   }
 
-  &__content {
+  &Content {
     max-width: 1200px;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@
     }
   }
 
-  &__menu {
+  &Menu {
     display: flex;
     border-bottom: 2px solid rgb(255 255 255 / 0.1724);
     padding-block-end: theme.spacing(16);
@@ -63,7 +63,7 @@
       flex-wrap: nowrap;
     }
 
-    &-section {
+    &Section {
       margin-inline-end: theme.spacing(32);
 
       &:first-of-type {
@@ -83,13 +83,13 @@
         order: inherit;
       }
 
-      &-title {
+      &Title {
         margin: 0;
         margin-block-end: theme.spacing(4);
         font-weight: 700;
       }
 
-      &-list {
+      &List {
         list-style-type: none;
         padding: 0;
         margin-block: 0;
@@ -99,24 +99,19 @@
         }
       }
 
-      &.m-footer__company-info {
-        p:not(.m-footer__menu-section-title) {
+      &.mFooterCompanyInfo {
+        p:not(.mFooterMenuSectionTitle) {
           margin: 0;
         }
       }
     }
   }
 
-  &__links {
+  &Links {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: center;
-
-    .m-footer__social-link {
-      margin: auto;
-      align-self: flex-end;
-    }
 
     @media (min-width: 600px) {
       flex-direction: row-reverse;
@@ -125,13 +120,19 @@
       p {
         margin: theme.spacing(0, 8, 0, 0);
       }
-      .m-footer__social-link {
-        margin: 0;
-      }
     }
   }
 
-  &__copyright {
+  &SocialLink {
+    margin: auto;
+    align-self: flex-end;
+
+    @media (min-width: 600px) {
+      margin: 0;
+    }
+  }
+
+  &Copyright {
     display: flex;
     flex-direction: column;
     align-items: center;

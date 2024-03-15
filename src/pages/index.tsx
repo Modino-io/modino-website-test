@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
-import { HeadFC, PageProps, graphql } from "gatsby";
+import { HeadFC, Link, PageProps, graphql } from "gatsby";
 import Seo from "../components/seo.component";
 import Layout from "../components/layout/layout.component";
 import CarouselComponent from "../components/carousel/carousel.component";
 import { Button } from "@rmwc/button";
 
-import "./index.scss";
+import * as styles from "./index.module.scss";
 
 const IndexPage = ({ data }: PageProps) => {
-  const mainCtaButton = useRef(null);
+  let mainCtaButton: HTMLButtonElement;
+
   const [isMainCtaButtonVisible, setIsMainCtaButtonVisible] = useState(true);
 
   const getArticlesFromProps = (
@@ -37,19 +38,22 @@ const IndexPage = ({ data }: PageProps) => {
 
   const checkMenuCtaButton = () => {
     setIsMainCtaButtonVisible(
-      (mainCtaButton.current as unknown as HTMLElement)?.getBoundingClientRect()
-        .y > (mainCtaButton.current as unknown as HTMLElement)?.clientHeight
+      mainCtaButton?.getBoundingClientRect().y > mainCtaButton?.clientHeight
     );
   };
 
   useEffect(() => {
+    mainCtaButton = document.getElementById(
+      "main-cta-button"
+    ) as HTMLButtonElement;
+
     document.addEventListener("scroll", checkMenuCtaButton);
   }, []);
 
   return (
     <Layout isMenuButtonAMainCtaButton={!isMainCtaButtonVisible}>
       <main className="m-main">
-        <section className="m-section m-top-hero m-home-hero">
+        <section className={`m-section m-top-hero ${styles.mHomeHero}`}>
           <div className="m-section__content">
             <div className="m-top-hero__wrapper">
               <h1 className="m-header m-top-hero__title">
@@ -68,8 +72,7 @@ const IndexPage = ({ data }: PageProps) => {
               <Button
                 id="main-cta-button"
                 unelevated
-                ref={mainCtaButton}
-                className="m-top-hero__action-button mdc-button mdc-button--unelevated cta-accent-button"
+                className="m-top-hero__action-button cta-accent-button"
                 onClick={() => (window.location.href = "./get-in-touch")}
               >
                 Get in touch
@@ -77,14 +80,14 @@ const IndexPage = ({ data }: PageProps) => {
             </div>
           </div>
         </section>
-        <section className="m-section m-mission">
+        <section className={`m-section ${styles.mMission}`}>
           <h2 className="m-section__header">Our mission</h2>
           <div className="m-section__content">
-            <div className="m-quote">
-              <blockquote className="m-quote__text">
+            <div className={styles.mQuote}>
+              <blockquote className={styles.mQuoteText}>
                 <span className="highlight">
-                  Modino-io
-                  <div className="m-quote__image">
+                  Modino.io
+                  <div className={styles.mQuoteImage}>
                     <svg
                       width="12.7mm"
                       height="12.7mm"
@@ -103,7 +106,7 @@ const IndexPage = ({ data }: PageProps) => {
                       </g>
                     </svg>
                   </div>
-                </span>
+                </span>{" "}
                 is a platform for IoT vulnerability management and over-the-air
                 update orchestration at scale. A platform that is both safe and
                 secure.
@@ -111,9 +114,9 @@ const IndexPage = ({ data }: PageProps) => {
                 <br />
                 Our mission is to keep our clients' IoT devices secure and
                 online by providing stressless over-the-air update experience.
-                <cite className="m-quote__author">
+                <cite className={styles.mQuoteAuthor}>
                   <img
-                    className="m-quote__author-image"
+                    className={styles.mQuoteAuthorImage}
                     src="img/people/Blazej.webp"
                     alt="Błażej Pawlak - Modino CEO profile image"
                   />{" "}
@@ -123,14 +126,14 @@ const IndexPage = ({ data }: PageProps) => {
             </div>
           </div>
         </section>
-        <section className="m-section m-explanation">
-          <div className="m-section__content m-explanation__content">
-            <div className="m-explanation__image">
+        <section className={`m-section ${styles.mExplanation}`}>
+          <div className={`m-section__content ${styles.mExplanationContent}`}>
+            <div className={styles.mExplanationImage}>
               <img src="./img/modino-man.svg" alt="modino man" />
             </div>
-            <div className="m-explanation__text">
-              <p className="m-explanation__title">/moˈdiːno/</p>
-              <p className="m-explanation__description">
+            <div className={styles.mExplanationText}>
+              <p className={styles.mExplanationTitle}>/moˈdiːno/</p>
+              <p className={styles.mExplanationDescription}>
                 “Modino” is an Italian word used for misbehaving children, which
                 roughly translates to “behave yourself”.
                 <br />
@@ -142,16 +145,16 @@ const IndexPage = ({ data }: PageProps) => {
             </div>
           </div>
         </section>
-        <section className="m-section m-solution">
+        <section className="m-section">
           <h2 className="m-section__header">About Modino</h2>
           <div className="m-section__content">
-            <div className="m-solution__container">
-              <div className="m-solution__text">
+            <div className={styles.mSolutionContainer}>
+              <div className={styles.mSolutionText}>
                 <p>
-                  <span className="highlight">Modino.io</span> creates holistic
-                  deployable packages with your software and provides its safe
-                  and secure delivery to your IoT devices – in both private
-                  cloud and On-premise models.
+                  <span className={styles.highlight}>Modino.io</span> creates
+                  holistic deployable packages with your software and provides
+                  its safe and secure delivery to your IoT devices – in both
+                  private cloud and On-premise models.
                 </p>
                 <p>
                   Stay in control by monitoring update deployment status and
@@ -160,7 +163,7 @@ const IndexPage = ({ data }: PageProps) => {
                 <p>
                   Trust Modino.io to keep your devices up-to-date and protected.
                 </p>
-                <a className="m-solution__solution-link" href="./solution">
+                <Link className={styles.mSolutionSolutionLink} to="/solution">
                   Check our solution
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -170,9 +173,9 @@ const IndexPage = ({ data }: PageProps) => {
                   >
                     <path d="M646-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h446L532-634q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T589-691l183 183q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L589-269q-12 12-28.5 11.5T532-270q-11-12-11.5-28t11.5-28l114-114Z" />
                   </svg>
-                </a>
+                </Link>
               </div>
-              <div className="m-solution__video">
+              <div className={styles.mSolutionVideo}>
                 <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
                   <iframe
                     title="Modino.io demo video"
@@ -184,10 +187,10 @@ const IndexPage = ({ data }: PageProps) => {
             </div>
           </div>
         </section>
-        <section className="m-section m-awards">
+        <section className="m-section">
           <h2 className="m-section__header">Awards & Recognitions</h2>
-          <div className="m-section__content m-awards__content">
-            <div className="m-awards__cybersecurity-banner">
+          <div className={`m-section__content ${styles.mAwardsContent}`}>
+            <div className={styles.mAwardsCybersecurityBanner}>
               <a
                 href="https://ecs-org.eu/return-of-ecsos-polish-edition-of-cyber-investor-days-in-katowice/"
                 target="_blank"
@@ -199,7 +202,7 @@ const IndexPage = ({ data }: PageProps) => {
                 />
               </a>
             </div>
-            <div className="m-awards__cybersecurity-made">
+            <div className={styles.mAwardsCybersecurityMade}>
               <a
                 href="https://www.cybersecurity-label.eu/labelled-companies/"
                 target="_blank"
@@ -213,15 +216,28 @@ const IndexPage = ({ data }: PageProps) => {
             </div>
           </div>
         </section>
-        <section className="m-section m-articles-teaser">
+        <section className={`m-section ${styles.mArticlesTeaser}`}>
           <h2 className="m-section__header">Latest insights</h2>
-          <CarouselComponent
-            articles={getArticlesFromProps(data.allMdx.nodes)}
-          />
+          <div className="m-section__content">
+            <Link to="/articles" className={styles.mArticlesTeaserSeeAll}>
+              See all articles
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+              >
+                <path d="M646-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h446L532-634q-12-12-11.5-28t11.5-28q12-12 28.5-12.5T589-691l183 183q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L589-269q-12 12-28.5 11.5T532-270q-11-12-11.5-28t11.5-28l114-114Z" />
+              </svg>
+            </Link>
+            <CarouselComponent
+              articles={getArticlesFromProps(data.allMdx.nodes)}
+            />
+          </div>
         </section>
-        <section className="m-section m-summary">
-          <div className="m-section__content m-summary__content">
-            <div className="m-wrapper">
+        <section className={`m-section ${styles.mSummary}`}>
+          <div className={`m-section__content ${styles.mSummaryContent}`}>
+            <div className={styles.mWrapper}>
               <h2 className="m-section__header">
                 Put your <br />
                 IoT devices <br />
@@ -239,7 +255,7 @@ const IndexPage = ({ data }: PageProps) => {
             <img
               alt="Modino update guard illustration"
               src="./img/Illustration.svg"
-              className="m-security-img"
+              className={styles.mSecurityImg}
             />
           </div>
         </section>

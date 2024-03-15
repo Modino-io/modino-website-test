@@ -1,23 +1,25 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import "./footer.component.scss";
+import * as styles from "./footer.component.module.scss";
 
 const FooterComponent = () => {
   return (
-    <footer className="m-footer">
-      <div className="m-footer__content">
-        <div className="m-footer__menu">
-          <div className="m-footer__menu-section m-footer__company-info">
-            <p className="m-footer__menu-section-title">Company</p>
+    <footer className={styles.mFooter}>
+      <div className={styles.mFooterContent}>
+        <div className={styles.mFooterMenu}>
+          <div
+            className={`${styles.mFooterMenuSection} ${styles.mFooterCompanyInfo}`}
+          >
+            <p className={styles.mFooterMenuSectionTitle}>Company</p>
             <p>
               Modino.io Sp. z.o.o <br />
               EU VAT no.: PL7393955632 <br />
               E-mail: hello@modino.io
             </p>
           </div>
-          <div className="m-footer__menu-section">
-            <p className="m-footer__menu-section-title">Explore</p>
-            <ul className="m-footer__menu-section-list">
+          <div className={styles.mFooterMenuSection}>
+            <p className={styles.mFooterMenuSectionTitle}>Explore</p>
+            <ul className={styles.mFooterMenuSectionList}>
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -29,9 +31,9 @@ const FooterComponent = () => {
               </li>
             </ul>
           </div>
-          <div className="m-footer__menu-section">
-            <p className="m-footer__menu-section-title">Connect</p>
-            <ul className="m-footer__menu-section-list">
+          <div className={styles.mFooterMenuSection}>
+            <p className={styles.mFooterMenuSectionTitle}>Connect</p>
+            <ul className={styles.mFooterMenuSectionList}>
               <li>
                 <Link to="/meet-the-team">Meet the team</Link>
               </li>
@@ -44,22 +46,22 @@ const FooterComponent = () => {
             </ul>
           </div>
         </div>
-        <div className="m-footer__links">
+        <div className={styles.mFooterLinks}>
           <a
-            className="m-footer__social-link"
+            className={styles.mFooterSocialLink}
             href="https://www.linkedin.com/company/modino-io"
             target="_blank"
             rel="noopener"
           >
             <img alt="linkedIn icon" src="/img/linkedin_white.svg" />
           </a>
-          <div className="m-footer__copyright">
+          <div className={styles.mFooterCopyright}>
             <p>
               &#169; Modino.io{" "}
               <span id="footer-year">{new Date().getFullYear()}</span>. All
               rights reserved.
             </p>
-            <div className="m-footer__copyright-links">
+            <div>
               <Link to="/privacy-policy">Privacy policy</Link>
               <Link to="/terms-of-service">Terms of service</Link>
             </div>

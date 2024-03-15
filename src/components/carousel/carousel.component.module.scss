@@ -1,48 +1,14 @@
 @use "../../scss/theme" as *;
 @use "sass:map";
 
-.m-articles-teaser {
-  .m-section__header {
-    margin-block-start: 0;
-    margin-block-end: spacing(16);
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: spacing(16);
+  width: 100%;
 
-    @media (min-width: 800px) {
-      margin-block-end: spacing(24);
-    }
-  }
-
-  &__see-all {
-    $color: #{map.get($modino-colors, primary, 700)};
-    @include m-font("body-1");
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $color;
-    margin-block-end: spacing(16);
-
-    @media (min-width: 600px) {
-      margin-block-end: spacing(24);
-    }
-
-    svg {
-      margin-inline-start: spacing(4);
-      path {
-        fill: $color;
-      }
-    }
-  }
-
-  &__carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: spacing(16);
-
-    width: 100%;
-  }
-
-  &__carousel-content {
+  &Content {
     display: flex;
     position: relative;
     gap: spacing(20);
@@ -57,28 +23,28 @@
       width: auto;
     }
 
-    &--scrolled-to {
-      &-0 {
+    &ScrolledTo {
+      &0 {
         left: 0;
       }
-      &-1 {
+      &1 {
         left: calc(-320px - #{spacing(20)});
       }
-      &-2 {
+      &2 {
         left: calc(2 * (-320px - #{spacing(20)}));
       }
 
       @media (min-width: 1050px) {
-        &-0,
-        &-1,
-        &-2 {
+        &0,
+        &1,
+        &2 {
           left: 0;
         }
       }
     }
   }
 
-  &__carousel-controls {
+  &Controls {
     display: flex;
     align-items: center;
     gap: spacing(12);
@@ -99,7 +65,7 @@
     }
   }
 
-  &__carousel-page-button {
+  &PageButton {
     border-radius: 50%;
     width: 16px;
     height: 16px;
@@ -115,15 +81,16 @@
       background-color: map.get($modino-colors, secondary-2, 100);
     }
 
-    &--active {
+    &Active {
       height: 22px;
       width: 22px;
       background-color: map.get($modino-colors, primary, 900);
     }
   }
-  &__carousel-button {
-    &-prev,
-    &-next {
+
+  &Button {
+    &Prev,
+    &Next {
       padding: 0;
       width: 48px;
       height: 48px;

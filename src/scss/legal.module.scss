@@ -1,8 +1,8 @@
-@use "../../scss/theme";
+@use "../scss/theme";
 @use "sass:map";
 
-.m-privacy {
-  &-wrapper {
+.mLegal {
+  &Wrapper {
     display: flex;
     flex-direction: row;
     position: relative;
@@ -10,7 +10,7 @@
     margin-inline: auto;
   }
 
-  &-navigation {
+  &Navigation {
     display: none;
     flex-direction: column;
     justify-content: flex-start;
@@ -60,7 +60,7 @@
     }
   }
 
-  &-text {
+  &Text {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -70,7 +70,7 @@
     background-color: #f5f5f5;
     padding-block-start: theme.spacing(56);
 
-    &--decimal-lists {
+    &DecimalLists {
       ul {
         list-style-type: decimal;
       }
@@ -81,33 +81,33 @@
       padding-block-start: theme.spacing(48);
     }
 
-    &__header1,
-    &__header2,
-    &__header3,
-    &__header4 {
+    &Header1,
+    &Header2,
+    &Header3,
+    &Header4 {
       scroll-margin-top: 86px;
     }
 
-    &__header1 {
+    &Header1 {
       @include theme.m-font("heading-1");
 
       margin: 0;
       margin-block-end: theme.spacing(16);
     }
 
-    &__header2 {
+    &Header2 {
       @include theme.m-font("subheading-1");
 
       margin: theme.spacing(48, 0, 0, 0);
     }
 
-    &__header3 {
+    &Header3 {
       @include theme.m-font("body-2");
 
       margin: theme.spacing(32, 0, 12, 0);
     }
 
-    &__header4 {
+    &Header4 {
       @include theme.m-font("body-1-mobile");
 
       line-height: 1.5rem;
@@ -115,7 +115,7 @@
     }
   }
 
-  &__image {
+  &Image {
     align-self: center;
     height: 400px;
     width: 100%;

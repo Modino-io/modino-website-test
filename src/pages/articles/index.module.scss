@@ -1,6 +1,6 @@
 @use "../../scss/theme" as *;
 
-.m-articles {
+.mArticles {
   margin-block-start: spacing(48);
   padding-block: spacing(16);
 
@@ -20,7 +20,7 @@
     margin-block-start: 0;
   }
 
-  &__list {
+  &List {
     display: grid;
     grid-template-columns: repeat(auto-fit, 320px);
     width: 100%;

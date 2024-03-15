@@ -1,6 +1,29 @@
 @use "../../scss/theme";
 @use "sass:map";
 
+@use "@material/button/button" as button;
+
+:global {
+  @include button.styles();
+}
+
+@import "@rmwc/select/select.css";
+@import "@material/select/dist/mdc.select.css";
+@import "@material/floating-label/dist/mdc.floating-label.css";
+@import "@material/notched-outline/dist/mdc.notched-outline.css";
+@import "@material/line-ripple/dist/mdc.line-ripple.css";
+@import "@material/list/dist/mdc.list.css";
+@import "@material/menu/dist/mdc.menu.css";
+@import "@material/menu-surface/dist/mdc.menu-surface.css";
+@import "@material/ripple/dist/mdc.ripple.css";
+
+@import "@material/snackbar/dist/mdc.snackbar.css";
+
+@import "@material/textfield/dist/mdc.textfield.css";
+
+@import "@material/checkbox/dist/mdc.checkbox.css";
+@import "@material/form-field/dist/mdc.form-field.css";
+
 :root {
   --mdc-theme-primary: #004680;
   --mdc-theme-secondary: #004680;

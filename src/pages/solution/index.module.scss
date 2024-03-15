@@ -1,10 +1,10 @@
 @use "../../scss/theme";
 @use "sass:map";
 
-.m-key-aspects {
+.mKeyAspects {
   width: 100%;
 
-  &__list {
+  &List {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-column-gap: theme.spacing(48);
@@ -14,7 +14,7 @@
     }
   }
 
-  &__item {
+  &Item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@
     }
   }
 
-  &__item-image {
+  &ItemImage {
     height: 100px;
     margin-block-end: theme.spacing(12);
 
@@ -44,7 +44,7 @@
     }
   }
 
-  &__item-title {
+  &ItemTitle {
     @include theme.m-font("body-1");
 
     font-weight: 700;
@@ -52,7 +52,7 @@
     margin-block-end: theme.spacing(8);
   }
 
-  &__item-description {
+  &ItemDescription {
     margin: 0;
     margin-block-end: theme.spacing(24);
 
@@ -61,9 +61,9 @@
     }
   }
 
-  &__item-image,
-  &__item-title,
-  &__item-description {
+  &ItemImage,
+  &ItemTitle,
+  &ItemDescription {
     text-align: center;
     padding-inline-start: 0;
     padding-inline-end: 0;
@@ -75,41 +75,44 @@
   }
 }
 
-.m-solution-hero {
-  &.m-section {
-    padding-block-end: 0;
-  }
+.mSolutionHero {
+  padding-block-end: 0;
+  min-height: unset;
 
-  &.m-top-hero {
-    min-height: unset;
-  }
+  :global {
+    .m-top-hero__wrapper {
+      width: 100%;
+      text-align: center;
 
-  .m-top-hero__wrapper {
-    width: 100%;
-    text-align: center;
+      @media (min-width: 600px) {
+        margin-block-start: theme.spacing(32);
+      }
+    }
 
-    @media (min-width: 600px) {
+    .m-top-hero__title {
       margin-block-start: theme.spacing(32);
+      @media (min-width: 600px) {
+        margin-block-start: theme.spacing(48);
+      }
     }
-  }
 
-  .m-top-hero__title {
-    margin-block-start: theme.spacing(32);
-    @media (min-width: 600px) {
-      margin-block-start: theme.spacing(48);
-    }
-  }
+    .m-top-hero__action-button {
+      margin-block-end: theme.spacing(16);
 
-  .m-top-hero__action-button {
-    margin-block-end: theme.spacing(16);
-
-    @media (min-width: 600px) {
-      margin-block-end: theme.spacing(32);
+      @media (min-width: 600px) {
+        margin-block-end: theme.spacing(32);
+      }
     }
   }
 }
 
-.m-solution-video {
+.mSolutionVideo {
+  padding-block-start: 0;
+
+  @media (min-width: 600px) {
+    padding-block-end: theme.spacing(64);
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -141,15 +144,7 @@
     }
   }
 
-  &.m-section {
-    padding-block-start: 0;
-
-    @media (min-width: 600px) {
-      padding-block-end: theme.spacing(64);
-    }
-  }
-
-  &__video-container {
+  &VideoContainer {
     display: flex;
     align-items: center;
     position: relative;
@@ -177,19 +172,19 @@
   }
 }
 
-.m-manifesto {
+.mManifesto {
   display: flex;
   flex-direction: column;
   background-color: map.get(theme.$modino-colors, primary, 900);
   color: map.get(theme.$modino-colors, surface, text-contrast);
 
-  &-section {
-    &__content {
+  &Section {
+    &Content {
       @include theme.m-font("subheading-2");
       margin: 0;
     }
 
-    &__subtitle {
+    &Subtitle {
       @include theme.m-font("subheading-2");
 
       margin-block: theme.spacing(16);
@@ -200,22 +195,24 @@
     }
   }
 
-  & .m-section {
+  :global .m-section {
     &__header {
       margin-block-end: 0;
     }
   }
 
-  .m-security {
-    &__text {
+  .mSecurity {
+    &Text {
       grid-area: text;
       flex-direction: column;
       margin-block-end: theme.spacing(16);
+
       @media (min-width: 800px) {
         margin-block-end: 0;
       }
     }
-    &__title {
+
+    &Title {
       grid-area: title;
       margin-block-end: theme.spacing(16);
 
@@ -223,7 +220,8 @@
         margin-block-end: theme.spacing(20);
       }
     }
-    &__wrapper {
+
+    &Wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: theme.spacing(24);
@@ -241,7 +239,7 @@
       }
     }
 
-    &__graph {
+    &Graph {
       grid-area: graph;
       width: 100%;
       @media screen and (min-width: 800px) {
@@ -251,7 +249,7 @@
     }
   }
 
-  .tiles-container {
+  .tilesContainer {
     display: flex;
     gap: 32px;
     margin-block-end: theme.spacing(16);
@@ -261,30 +259,30 @@
       margin-block-end: theme.spacing(24);
     }
 
-    &.m-security__text {
+    &.mSecurityText {
       @media screen and (min-width: 800px) {
         flex-direction: column;
       }
 
-      .m-tile {
+      & .mTile {
         @media screen and (min-width: 800px) {
           flex-direction: row;
           gap: 16px;
         }
 
-        &__icon {
+        &Icon {
           @media screen and (min-width: 800px) {
             align-self: flex-start;
           }
         }
 
-        &__content {
+        &Content {
           text-align: start;
         }
       }
     }
 
-    .m-tile {
+    .mTile {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -295,7 +293,7 @@
         gap: theme.spacing(8);
       }
 
-      &__icon {
+      &Icon {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -310,18 +308,18 @@
         }
       }
 
-      &__content {
+      &Content {
         @include theme.m-font("body-3");
         text-align: center;
       }
     }
   }
 
-  .m-demo-screenshot {
+  .mDemoScreenshot {
     width: 100%;
   }
 
-  &__divider {
+  &Divider {
     width: 100%;
     height: 1px;
     border: none;
@@ -330,10 +328,10 @@
   }
 }
 
-.m-advantages {
+.mAdvantages {
   padding-block: theme.spacing(32);
 
-  .cards-container {
+  .cardsContainer {
     display: flex;
     width: 100%;
     gap: theme.spacing(16);
@@ -346,44 +344,78 @@
     p {
       margin: 0;
     }
+  }
+}
 
-    .m-card {
-      background-color: map.get(
-        theme.$modino-colors,
-        surface,
-        background-high-contrast
-      );
-      border: 1px solid map.get(theme.$modino-colors, surface, border);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: theme.spacing(8);
-      padding: theme.spacing(12) theme.spacing(6);
+.mCard {
+  background-color: map.get(
+    theme.$modino-colors,
+    surface,
+    background-high-contrast
+  );
+  border: 1px solid map.get(theme.$modino-colors, surface, border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: theme.spacing(8);
+  padding: theme.spacing(12) theme.spacing(6);
+  width: 100%;
+
+  &Icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: map.get(theme.$modino-colors, secondary-1, 200);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    img {
+      width: 32px;
+    }
+  }
+
+  &Title {
+    @include theme.m-font("subheading-2");
+    text-align: center;
+  }
+
+  &Content {
+    @include theme.m-font("body-3");
+    text-align: center;
+  }
+}
+
+.mAwards {
+  &Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: theme.spacing(16);
+    padding-inline: theme.spacing(12);
+
+    @media (min-width: 600px) {
+      padding-inline: theme.spacing(32);
+    }
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
+  }
+
+  &CybersecurityBanner {
+    flex: 1;
+
+    img {
+      max-width: 530px;
       width: 100%;
+    }
+  }
+  &CybersecurityMade {
+    flex: 1;
 
-      &__icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: map.get(theme.$modino-colors, secondary-1, 200);
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-
-        img {
-          width: 32px;
-        }
-      }
-
-      &__title {
-        @include theme.m-font("subheading-2");
-        text-align: center;
-      }
-
-      &__content {
-        @include theme.m-font("body-3");
-        text-align: center;
-      }
+    img {
+      max-width: 530px;
+      width: 100%;
     }
   }
 }

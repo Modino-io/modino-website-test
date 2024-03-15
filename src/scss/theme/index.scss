@@ -25,6 +25,11 @@
   box-sizing: border-box;
 }
 
+.highlight {
+  color: map.get(palette.$modino-colors, primary, 900);
+  font-weight: 700;
+}
+
 .mdc-button {
   --mdc-filled-button-container-shape: #{tokens.$border-radius};
   --mdc-outlined-button-container-shape: #{tokens.$border-radius};

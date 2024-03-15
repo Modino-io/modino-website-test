@@ -1,7 +1,7 @@
 @use "../../scss/theme" as *;
 @use "sass:map";
 
-.m-jobs {
+.mJobs {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -40,7 +40,7 @@
     }
   }
 
-  &__content {
+  &Content {
     display: grid;
     column-gap: spacing(64);
 
@@ -59,10 +59,10 @@
     }
   }
 
-  &__header {
+  &Header {
     grid-area: header;
 
-    &.m-section__header {
+    .m-section__header {
       @include m-font("heading-1-mobile");
 
       margin-block-end: spacing(16);
@@ -80,7 +80,7 @@
     }
   }
 
-  &__text {
+  &Text {
     @media (min-width: 600px) {
       @include m-font("body-2");
     }
@@ -100,19 +100,20 @@
       @media (min-width: 800px) {
         margin-block-start: spacing(16);
       }
-
-      li {
-        margin-block-end: spacing(4);
-        a {
-          text-decoration-thickness: 1px;
-          text-decoration-skip: none;
-          color: map.get($modino-colors, surface, text);
+      :global {
+        li {
+          margin-block-end: spacing(4);
+          a {
+            text-decoration-thickness: 1px;
+            text-decoration-skip: none;
+            color: map.get($modino-colors, surface, text);
+          }
         }
       }
     }
   }
 
-  &__image {
+  &Image {
     grid-area: image;
     justify-self: center;
     align-self: center;

@@ -1,122 +1,114 @@
-import React, { useEffect } from "react";
-import "./menu.components.scss";
+import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import { Button } from "@rmwc/button";
 
-const Menu: React.FC<{ isCtaButtonPrimary: boolean }> = ({
+import * as styles from "./menu.components.module.scss";
+
+const Menu = ({
   isCtaButtonPrimary,
+  displayMenu,
+}: {
+  isCtaButtonPrimary: boolean;
+  displayMenu: boolean;
 }) => {
-  let menu: HTMLElement;
   let menuNav: HTMLElement;
-  let hamburgerMenuButton;
-  let mobileMenu: HTMLElement;
+
+  const [isMobileMenuExpanded, setIsMobileMenuExpanded] = useState(false);
+  const [isMenuSticky, setIsMenuSticky] = useState(false);
 
   useEffect(() => {
-    menu = document.getElementsByClassName("m-menu")[0] as HTMLElement;
     menuNav = document.getElementsByClassName(
-      "m-menu__navigation"
+      styles.mMenuNavigation
     )[0] as HTMLElement;
-    hamburgerMenuButton = document.getElementsByClassName(
-      "m-menu__hamburger-button"
-    )[0];
 
-    mobileMenu = document.getElementsByClassName(
-      "m-mobile-menu"
-    )[0] as HTMLElement;
+    setIsMenuSticky(menuNav.getBoundingClientRect().top < window.scrollY);
+
     document.addEventListener("scroll", checkMenuCtaButton);
   }, []);
 
   const checkMenuCtaButton = () => {
-    if (menuNav.getBoundingClientRect().top < window.scrollY) {
-      menu.classList.add("m-menu_sticky");
-    } else {
-      menu.classList.remove("m-menu_sticky");
-    }
+    setIsMenuSticky(menuNav.getBoundingClientRect().top < window.scrollY);
   };
 
   const toggleHamburgerMenu = () => {
-    mobileMenu.classList.toggle("m-mobile-menu--expanded");
-
-    if (mobileMenu.classList.contains("m-mobile-menu--expanded")) {
-      mobileMenu.style.display = "flex";
-      setTimeout(() => {
-        mobileMenu.style.transform = "none";
-      }, 100);
-    } else {
-      mobileMenu.style.transform = "translateX(100%)";
-      setTimeout(() => {
-        mobileMenu.style.display = "none";
-      }, 300);
-    }
+    setIsMobileMenuExpanded(!isMobileMenuExpanded);
   };
 
   return (
     <React.Fragment>
-      <div className="m-menu">
-        <header className="m-menu__wrapper">
-          <nav className="m-menu__navigation">
-            <Link className="m-menu__logo-link" to="./">
+      <div className={styles.mMenu}>
+        <header className={styles.mMenuWrapper}>
+          <nav
+            className={`${styles.mMenuNavigation} ${
+              isMenuSticky ? styles.mMenuSticky : ""
+            }`}
+          >
+            <Link className={styles.mMenuLogoLink} to="./">
               <img
-                className="m-menu__logo"
+                className={styles.mMenuLogo}
                 src="/img/MODINO-logo-full.svg"
                 alt="modino logo"
               />
             </Link>
-            <div className="m-menu__actions">
-              <Link
-                to="/"
-                className="m-menu__actions-link "
-                activeClassName="m-menu__actions-link--active"
-              >
-                Home
-              </Link>
-              <Link
-                to="/solution"
-                className="m-menu__actions-link"
-                activeClassName="m-menu__actions-link--active"
-              >
-                Solution
-              </Link>
-              <Link
-                to="/articles"
-                className="m-menu__actions-link"
-                activeClassName="m-menu__actions-link--active"
-              >
-                Articles
-              </Link>
-              <Link
-                to="/meet-the-team"
-                className="m-menu__actions-link"
-                activeClassName="m-menu__actions-link--active"
-              >
-                Meet the team
-              </Link>
-              <Link
-                to="/partner-program"
-                className="m-menu__actions-link"
-                activeClassName="m-menu__actions-link--active"
-              >
-                Partner Program
-              </Link>
-              <Link
-                to="/jobs"
-                className="m-menu__actions-link"
-                activeClassName="m-menu__actions-link--active"
-              >
-                Jobs
-              </Link>
+            <div className={styles.mMenuActions}>
+              {displayMenu && (
+                <React.Fragment>
+                  <Link
+                    to="/"
+                    className={styles.mMenuActionsLink}
+                    activeClassName={styles.mMenuActionsLinkActive}
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    to="/solution"
+                    className={styles.mMenuActionsLink}
+                    activeClassName={styles.mMenuActionsLinkActive}
+                  >
+                    Solution
+                  </Link>
+                  <Link
+                    to="/articles"
+                    className={styles.mMenuActionsLink}
+                    activeClassName={styles.mMenuActionsLinkActive}
+                  >
+                    Articles
+                  </Link>
+                  <Link
+                    to="/meet-the-team"
+                    className={styles.mMenuActionsLink}
+                    activeClassName={styles.mMenuActionsLinkActive}
+                  >
+                    Meet the team
+                  </Link>
+                  <Link
+                    to="/partner-program"
+                    className={styles.mMenuActionsLink}
+                    activeClassName={styles.mMenuActionsLinkActive}
+                  >
+                    Partner Program
+                  </Link>
+                  <Link
+                    to="/jobs"
+                    className={styles.mMenuActionsLink}
+                    activeClassName={styles.mMenuActionsLinkActive}
+                  >
+                    Jobs
+                  </Link>
+                  <Button
+                    outlined={!isCtaButtonPrimary}
+                    unelevated={isCtaButtonPrimary}
+                    className={`${styles.mMenuCtaButton} ${
+                      isCtaButtonPrimary ? "cta-accent-button" : ""
+                    }`}
+                    onClick={() => (window.location.href = "/get-in-touch")}
+                  >
+                    Get in touch
+                  </Button>
+                </React.Fragment>
+              )}
               <Button
-                outlined={!isCtaButtonPrimary}
-                unelevated={isCtaButtonPrimary}
-                className={`m-menu__cta-button ${
-                  isCtaButtonPrimary ? "cta-accent-button" : ""
-                }`}
-                onClick={() => (window.location.href = "/get-in-touch")}
-              >
-                Get in touch
-              </Button>
-              <Button
-                className=" m-menu__hamburger-button"
+                className={styles.mMenuHamburgerButton}
                 onClick={toggleHamburgerMenu}
               >
                 <img src="/img/hamburger-menu.svg" alt="hamburger menu" />
@@ -126,68 +118,74 @@ const Menu: React.FC<{ isCtaButtonPrimary: boolean }> = ({
         </header>
       </div>
 
-      <aside className="m-mobile-menu m-menu">
-        <div className="m-mobile-menu__header">
-          <Link className="m-mobile-menu__logo-link" to="./">
+      <aside
+        className={`${styles.mMobileMenu} ${styles.mMenu} ${
+          isMobileMenuExpanded
+            ? styles.mMobileMenuExpanded
+            : styles.mMobileMenuHidden
+        }`}
+      >
+        <div className={styles.mMobileMenuHeader}>
+          <Link className={styles.mMenuLogoLink} to="./">
             <img
-              className="m-menu__logo"
+              className={styles.mMenuLogo}
               src="/img/MODINO-logo-short.svg"
               alt="modino logo"
             />
           </Link>
 
           <Button
-            className="m-mobile-menu__hamburger-button"
+            className={styles.mMobileMenuHamburgerButton}
             onClick={toggleHamburgerMenu}
           >
             <img src="/img/hamburger-menu.svg" alt="hamburger menu" />
           </Button>
         </div>
-        <div className="m-mobile-menu__actions">
+        <div className={styles.mMobileMenuActions}>
           <Link
             to="/"
-            className="m-mobile-menu__actions-link"
-            activeClassName="m-mobile-menu__actions-link--active"
+            className={styles.mMobileMenuActionsLink}
+            activeClassName={styles.mMobileMenuActionsLinkActive}
           >
             Home
           </Link>
           <Link
             to="/solution"
-            className="m-mobile-menu__actions-link"
-            activeClassName="m-mobile-menu__actions-link--active"
+            className={styles.mMobileMenuActionsLink}
+            activeClassName={styles.mMobileMenuActionsLinkActive}
           >
             Solution
           </Link>
           <Link
             to="/articles"
-            className="m-mobile-menu__actions-link"
-            activeClassName="m-mobile-menu__actions-link--active"
+            className={styles.mMobileMenuActionsLink}
+            activeClassName={styles.mMobileMenuActionsLinkActive}
           >
             Articles
           </Link>
           <Link
             to="/meet-the-team"
-            className="m-mobile-menu__actions-link"
-            activeClassName="m-mobile-menu__actions-link--active"
+            className={styles.mMobileMenuActionsLink}
+            activeClassName={styles.mMobileMenuActionsLinkActive}
           >
             Meet the team
           </Link>
           <Link
             to="/partner-program"
-            className="m-mobile-menu__actions-link"
-            activeClassName="m-mobile-menu__actions-link--active"
+            className={styles.mMobileMenuActionsLink}
+            activeClassName={styles.mMobileMenuActionsLinkActive}
           >
             Partner Program
           </Link>
           <Link
             to="/jobs"
-            className="m-mobile-menu__actions-link"
-            activeClassName="m-mobile-menu__actions-link--active"
+            className={styles.mMobileMenuActionsLink}
+            activeClassName={styles.mMobileMenuActionsLinkActive}
           >
             Jobs
           </Link>
           <Button
-            className="cta-accent-button m-mobile-menu__cta-button"
+            className={`${styles.ctaAccentButton} ${styles.mMobileMenuCtaButton}`}
             onClick={() => (window.location.href = "/get-in-touch")}
           >
             Get in touch

@@ -1,15 +1,17 @@
 @use "../../scss/theme";
 @use "sass:map";
 
-.m-cookies-table {
+@import "../../scss/legal.module.scss";
+
+.mCookiesTable {
   width: 100%;
   table-layout: fixed;
 
-  &__container {
+  &Container {
     max-width: 100%;
   }
 
-  &__header-row {
+  &HeaderRow {
     @include theme.m-font("body-5");
     font-weight: 400;
 

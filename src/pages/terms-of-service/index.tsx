@@ -3,17 +3,16 @@ import { HeadFC, Link, PageProps } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
-import "./index.scss";
-import "../../scss/legal.scss";
+import * as styles from "./index.module.scss";
 
 const TermsOfService: React.FC<PageProps> = () => {
   return (
-    <Layout>
-      <main className="m-main m-privacy">
-        <div className="m-privacy-wrapper">
-          <section className="m-privacy-navigation">
+    <Layout shouldMenuBeDisplayed={false}>
+      <main className="m-main">
+        <div className={styles.mLegalWrapper}>
+          <nav className={styles.mLegalNavigation}>
             <h2>Table of contents</h2>
-            <ul role="menu" className="m-privacy-navigation--menu">
+            <ul role="menu">
               <li role="menuitem">
                 <Link to="#h-general-provisions">§ 1 General provisions</Link>
               </li>
@@ -32,12 +31,14 @@ const TermsOfService: React.FC<PageProps> = () => {
                 <Link to="#h-complaints">§ 5 Complaints </Link>
               </li>
             </ul>
-          </section>
-          <section className="m-privacy-text m-privacy-text--decimal-lists">
-            <h1 id="h-privacy" className="m-privacy-text__header1">
+          </nav>
+          <section
+            className={`${styles.mLegalText} ${styles.mLegalTextDecimalLists}`}
+          >
+            <h1 id="h-privacy" className={styles.mLegalTextHeader1}>
               Updates Newsletter – terms and conditions
             </h1>
-            <h2 id="h-general-provisions" className="m-privacy-text__header2">
+            <h2 id="h-general-provisions" className={styles.mLegalTextHeader2}>
               § 1 General provisions
             </h2>
             <ul>
@@ -56,7 +57,7 @@ const TermsOfService: React.FC<PageProps> = () => {
                 7393955632, REGON 38929761300000.
               </li>
             </ul>
-            <h2 id="h-terms-of-service" className="m-privacy-text__header2">
+            <h2 id="h-terms-of-service" className={styles.mLegalTextHeader2}>
               § 2 Terms of service
             </h2>
             <ul>
@@ -104,7 +105,7 @@ const TermsOfService: React.FC<PageProps> = () => {
 
             <h2
               id="h-contracts-with-service-provider"
-              className="m-privacy-text__header2"
+              className={styles.mLegalTextHeader2}
             >
               § 3 Contracts with Service Provider
             </h2>
@@ -142,7 +143,7 @@ const TermsOfService: React.FC<PageProps> = () => {
               </li>
             </ul>
 
-            <h2 id="h-personal-data" className="m-privacy-text__header2">
+            <h2 id="h-personal-data" className={styles.mLegalTextHeader2}>
               § 4 Personal data
             </h2>
             <ul>
@@ -173,7 +174,7 @@ const TermsOfService: React.FC<PageProps> = () => {
               </li>
             </ul>
 
-            <h2 id="h-complaints" className="m-privacy-text__header2">
+            <h2 id="h-complaints" className={styles.mLegalTextHeader2}>
               § 5 Complaints
             </h2>
             <ul>
@@ -194,7 +195,7 @@ const TermsOfService: React.FC<PageProps> = () => {
             </ul>
 
             <img
-              className="m-privacy__image"
+              className={styles.mLegalImage}
               src="/img/modino-man-in-envelope.svg"
               alt="modino man in an envelope"
             />

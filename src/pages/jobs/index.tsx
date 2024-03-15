@@ -3,19 +3,19 @@ import { HeadFC, Link, PageProps, graphql } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
-import "./index.scss";
+import * as styles from "./index.module.scss";
 
 const JobsPage: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
       <main className="m-main">
-        <section className="m-section m-jobs">
+        <section className={`m-section ${styles.mJobs}`}>
           <div className="m-section__content">
-            <div className="m-jobs__content">
-              <h1 className="m-section__header m-jobs__header">
+            <div className={styles.mJobsContent}>
+              <h1 className={`m-section__header ${styles.mJobsHeader}`}>
                 Jobs at <span className="highlight">Modino.io</span>
               </h1>
-              <div className="m-jobs__text">
+              <div className={styles.mJobsText}>
                 Current openings:
                 <ul>
                   {data.allMdx.nodes.map((node) => (
@@ -29,7 +29,7 @@ const JobsPage: React.FC<PageProps> = ({ data }) => {
                 </ul>
               </div>
               <img
-                className="m-jobs__image"
+                className={styles.mJobsImage}
                 src="/img/jobs.svg"
                 alt="jobs hero image"
               />

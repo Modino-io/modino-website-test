@@ -1,20 +1,18 @@
 @use "../../scss/theme";
 @use "sass:map";
 
-.m-team-header {
+.mTeamHeader {
   margin-block-start: theme.spacing(32);
 
-  &.m-section {
-    @media (min-width: 600px) {
-      padding-block-end: theme.spacing(24);
-    }
+  @media (min-width: 600px) {
+    padding-block-end: theme.spacing(24);
   }
 
   @media (min-width: 800px) {
     margin-block-start: theme.spacing(32);
   }
 
-  .m-team-photo {
+  .mTeamPhoto {
     width: 100%;
 
     @media (min-width: 1240px) {
@@ -22,27 +20,28 @@
     }
   }
 
-  .m-section__content {
+  :global .m-section__content {
     padding-inline: 0;
   }
 }
 
-.m-team {
-  &.m-section {
-    padding-block-start: 0;
-  }
+.mTeam {
+  padding-block-start: 0;
+  padding-inline: 0;
 
-  &.m-section {
-    padding-inline: 0;
-  }
-
-  &__menu {
+  &Menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     padding-inline-start: unset;
     margin: 0;
   }
 
-  &__list {
+  &List {
+    max-width: 1240px;
+    width: 100%;
+    margin-inline: auto;
     list-style-type: none;
     display: flex;
     align-items: flex-start;
@@ -50,7 +49,7 @@
     max-width: 1200px;
     flex-wrap: wrap;
     gap: theme.spacing(4);
-    padding-inline-start: 0;
+
     margin-block-start: 0;
     margin-block-end: theme.spacing(16);
 
@@ -68,7 +67,7 @@
       display: none; /* Safari and Chrome */
     }
 
-    &-item {
+    &Item {
       @media (min-width: 800px) {
         flex: none;
         height: 100%;
@@ -76,15 +75,18 @@
         border-bottom: 2px solid transparent;
       }
 
-      button[role="tab"] {
+      :global button[role="tab"] {
         --mdc-outlined-button-label-text-color: #{map.get(
             theme.$modino-colors,
             surface,
             text
           )};
 
-        @include theme.m-font("body-3");
-
+        .mdc-button {
+          &__label {
+            @include theme.m-font("body-3");
+          }
+        }
         box-shadow: none;
 
         @media (min-width: 800px) {
@@ -106,6 +108,8 @@
               primary,
               800
             )};
+
+          --mdc-outlined-button-hover-state-layer-color: none;
         }
 
         &:focus {
@@ -138,13 +142,19 @@
         }
       }
 
-      &.active {
+      &Active {
         @media (min-width: 800px) {
           border-color: map.get(theme.$modino-colors, primary, 900);
+
           z-index: 1;
-          button[role="tab"] {
-            font-weight: bold;
+          :global button[role="tab"] {
             color: map.get(theme.$modino-colors, primary, 900);
+
+            .mdc-button {
+              &__label {
+                font-weight: bold;
+              }
+            }
           }
         }
       }
@@ -165,7 +175,7 @@
     }
   }
 
-  .m-people-list {
+  .mPeopleList {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -181,14 +191,14 @@
     }
   }
 
-  .m-person-card {
+  .mPersonCard {
     display: flex;
 
     p {
       margin: 0;
     }
 
-    &__image {
+    &Image {
       width: 150px;
       height: 150px;
       object-fit: cover;
@@ -197,7 +207,7 @@
       border-radius: theme.$border-radius;
     }
 
-    &__info {
+    &Info {
       a {
         display: inline-flex;
         margin-block-start: theme.spacing(4);
@@ -206,8 +216,8 @@
   }
 }
 
-.m-values {
-  &__list {
+.mValues {
+  &List {
     display: flex;
     flex-direction: column;
 
@@ -217,7 +227,7 @@
     }
   }
 
-  &__item {
+  &Item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,7 +238,7 @@
     }
   }
 
-  &__item-image {
+  &ItemImage {
     height: 100px;
     margin-block-end: theme.spacing(12);
 
@@ -242,7 +252,7 @@
     }
   }
 
-  &__item-title {
+  &ItemTitle {
     @include theme.m-font("subheading-3");
 
     margin: 0;
@@ -254,7 +264,7 @@
     }
   }
 
-  &__item-description {
+  &ItemDescription {
     margin: 0;
     margin-block-end: theme.spacing(24);
 
@@ -263,9 +273,9 @@
     }
   }
 
-  &__item-image,
-  &__item-title,
-  &__item-description {
+  &ItemImage,
+  &ItemTitle,
+  &ItemDescription {
     text-align: center;
     padding-inline-start: 0;
     padding-inline-end: 0;
@@ -277,12 +287,12 @@
   }
 }
 
-.m-ready-to-join {
+.mReadyToJoin {
   background-color: map.get(theme.$modino-colors, primary, 900);
   color: map.get(theme.$modino-colors, surface, background-high-contrast);
   padding-block: theme.spacing(32);
 
-  .m-section__header {
+  :global .m-section__header {
     @include theme.m-font("heading-4");
 
     @media (min-width: 600px) {
@@ -290,12 +300,12 @@
     }
   }
 
-  &__text {
+  &Text {
     margin-block-start: 0;
     text-align: center;
   }
 
-  &__link {
+  &Link {
     $text-color: map.get(theme.$modino-colors, primary, 200);
 
     @include theme.m-font("body-3");

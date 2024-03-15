@@ -1,20 +1,7 @@
 @use "../../scss/theme";
 @use "sass:map";
 
-@import "@rmwc/select/select.css";
-@import "@material/select/dist/mdc.select.css";
-@import "@material/floating-label/dist/mdc.floating-label.css";
-@import "@material/notched-outline/dist/mdc.notched-outline.css";
-@import "@material/line-ripple/dist/mdc.line-ripple.css";
-@import "@material/list/dist/mdc.list.css";
-@import "@material/menu/dist/mdc.menu.css";
-@import "@material/menu-surface/dist/mdc.menu-surface.css";
-@import "@material/ripple/dist/mdc.ripple.css";
-
-@import "@material/snackbar/dist/mdc.snackbar.css";
-@import "@material/button/dist/mdc.button.css";
-
-.m-form {
+.mForm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +15,7 @@
     background-high-contrast
   );
 
-  &__title {
+  &Title {
     @include theme.m-font("subheading-2");
 
     font-size: 2rem;
@@ -38,63 +25,51 @@
     color: map.get(theme.$modino-colors, surface, text);
   }
 
-  .mdc-text-field,
-  .mdc-select {
-    width: 100%;
+  :global {
+    .mdc-text-field,
+    .mdc-select {
+      width: 100%;
 
-    [class^="mdc-notched-outline__"] {
-      border-color: map.get(theme.$modino-colors, surface, border);
-    }
+      [class^="mdc-notched-outline__"] {
+        border-color: map.get(theme.$modino-colors, surface, border);
+      }
 
-    .mdc-floating-label--required::after {
-      content: "";
-    }
-  }
-
-  .mdc-text-field--focused {
-    &:not(.mdc-text-field--invalid) {
-      .mdc-floating-label {
-        color: map.get(theme.$modino-colors, primary, 900);
+      .mdc-floating-label--required::after {
+        content: "";
       }
     }
-    .mdc-floating-label {
-      color: map.get(theme.$modino-colors, primary, 900);
-    }
-  }
-  .mdc-text-field--invalid {
-    .mdc-floating-label {
-      color: var(--mdc-theme-error);
-    }
-  }
 
-  .m-select {
-    .mdc-select:not(.mdc-select--disabled) {
-      &.mdc-select--focused {
+    .mdc-text-field--focused {
+      &:not(.mdc-text-field--invalid) {
         .mdc-floating-label {
           color: map.get(theme.$modino-colors, primary, 900);
         }
       }
-    }
-    &.mdc-select--focused {
       .mdc-floating-label {
         color: map.get(theme.$modino-colors, primary, 900);
       }
     }
-    &.mdc-select--invalid {
+    .mdc-text-field--invalid {
       .mdc-floating-label {
         color: var(--mdc-theme-error);
       }
     }
+
+    .mdc-button {
+      text-transform: none;
+      font-weight: bold;
+      align-self: flex-start;
+    }
   }
 
-  &__checkbox-container {
+  &CheckboxContainer {
     margin-inline-start: -11px;
     margin-block-end: theme.spacing(16);
     display: flex;
     flex-direction: column;
     gap: theme.spacing(5);
 
-    .mdc-checkbox {
+    :global .mdc-checkbox {
       --mdc-checkbox-unchecked-color: #{map.get(
           theme.$modino-colors,
           surface,
@@ -109,26 +84,40 @@
         }
       }
     }
-
-    .m-link {
-      color: map.get(theme.$modino-colors, primary, 900);
-      text-decoration: underline;
-      cursor: pointer;
-    }
   }
 
-  .mdc-button {
-    text-transform: none;
-    font-weight: bold;
-    align-self: flex-start;
-  }
-
-  &__field-wrapper {
+  &FieldWrapper {
     width: 100%;
   }
 }
 
-.m-form-section {
+.mSelect {
+  .mdc-select:not(.mdc-select--disabled) {
+    &.mdc-select--focused {
+      .mdc-floating-label {
+        color: map.get(theme.$modino-colors, primary, 900);
+      }
+    }
+  }
+  &.mdc-select--focused {
+    .mdc-floating-label {
+      color: map.get(theme.$modino-colors, primary, 900);
+    }
+  }
+  &.mdc-select--invalid {
+    .mdc-floating-label {
+      color: var(--mdc-theme-error);
+    }
+  }
+}
+
+.mLink {
+  color: map.get(theme.$modino-colors, primary, 900);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mFormSection {
   display: flex;
   align-items: center;
   padding: theme.spacing(16, 12);
@@ -141,7 +130,7 @@
   }
 }
 
-.m-image-section {
+.mImageSection {
   flex-grow: 1;
   background-color: map.get(theme.$modino-colors, primary, 900);
   display: flex;
@@ -155,18 +144,18 @@
     text-align: center;
     min-width: 0;
   }
-
-  .m-logo-img {
-    margin-block-end: theme.spacing(20);
-  }
-
-  .m-request-access-img {
-    width: 100%;
-    max-width: 500px;
-  }
 }
 
-.m-request-main {
+.mLogoImg {
+  margin-block-end: theme.spacing(20);
+}
+
+.mRequestAccessImg {
+  width: 100%;
+  max-width: 500px;
+}
+
+.mRequestMain {
   height: 100%;
   max-width: unset;
   display: grid;

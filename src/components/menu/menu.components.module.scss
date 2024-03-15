@@ -14,48 +14,50 @@
 
 @use "../../scss/theme";
 @use "sass:map";
-@import "@material/button/dist/mdc.button.min.css";
+@use "@material/button/button" as button;
 
-.m-menu,
-.m-mobile-menu {
-  &__hamburger-button {
+:global {
+  @include button.styles();
+}
+
+.mMenu,
+.mMobileMenu {
+  &HamburgerButton {
+    $width: 42px;
+
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    height: $width;
+    width: $width;
+    min-width: unset;
+    padding: 0;
+
     @media (min-width: 800px) {
       display: none;
     }
 
-    &.mdc-button {
-      $width: 42px;
+    :global .mdc-button {
+      &__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
 
-      margin-left: auto;
-      justify-content: center;
-      align-items: center;
-      height: $width;
-      width: $width;
-      min-width: unset;
-      padding: 0;
-
-      .mdc-button {
-        &__label {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        img {
           height: 100%;
-
-          img {
-            height: 100%;
-          }
         }
       }
     }
   }
 
-  &__actions-link {
+  &ActionsLink {
     @include theme.m-font("body-4");
 
     text-decoration: none;
     color: map.get(theme.$modino-colors, surface, text);
 
-    &--active {
+    &Active {
       font-weight: 700;
       color: map.get(theme.$modino-colors, primary, 900);
       text-decoration: underline;
@@ -63,7 +65,7 @@
     }
   }
 
-  &__cta-button {
+  &CtaButton {
     --mdc-outlined-button-outline-color: #{map.get(
         theme.$modino-colors,
         primary,
@@ -98,7 +100,7 @@
   }
 }
 
-.m-menu {
+.mMenu {
   display: flex;
   position: sticky;
   top: 0;
@@ -106,14 +108,19 @@
   z-index: 2;
   transition: all ease 100ms;
 
-  &__wrapper {
+  &:has(.mMenuSticky) {
+    background-color: map.get(theme.$modino-colors, surface, background);
+    border-bottom: 1px solid map.get(theme.$modino-colors, surface, border);
+  }
+
+  &Wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
   }
 
-  &__navigation {
+  &Navigation {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -133,7 +140,7 @@
     }
   }
 
-  &__actions {
+  &Actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -145,14 +152,14 @@
     }
   }
 
-  &__actions-link {
+  &ActionsLink {
     display: none;
 
     @media (min-width: 800px) {
       display: inline;
     }
 
-    &--active {
+    &Active {
       font-weight: 700;
       color: map.get(theme.$modino-colors, primary, 900);
       text-decoration: underline;
@@ -160,31 +167,23 @@
     }
   }
 
-  &__cta-button {
-    &.mdc-button {
-      display: none;
+  &CtaButton {
+    display: none;
 
-      @media (min-width: 800px) {
-        display: inline-flex;
-      }
-    }
-
-    @media screen and (min-width: 600px) {
-      display: block;
+    @media (min-width: 800px) {
+      display: inline-flex;
     }
   }
 
-  &_sticky {
-    background-color: map.get(theme.$modino-colors, surface, background);
-    border-bottom: 1px solid map.get(theme.$modino-colors, surface, border);
+  &Sticky {
     transition: all ease 500ms;
 
-    .m-menu__logo {
+    .mMenuLogo {
       content: url("/img/MODINO-logo-short.svg");
     }
   }
 
-  &__logo-link {
+  &LogoLink {
     margin-inline-end: theme.spacing(16);
 
     @media (min-width: 1000px) {
@@ -192,7 +191,7 @@
     }
   }
 
-  &__logo {
+  &Logo {
     width: 100px;
 
     @media screen and (min-width: 600px) {
@@ -201,12 +200,38 @@
   }
 }
 
-.m-mobile-menu {
+.mMobileMenu {
+  @keyframes expand-animation {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: none;
+    }
+  }
+
+  @keyframes hide-animation {
+    0% {
+      transform: none;
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  display: flex;
   position: fixed;
   transform: translateX(100%);
   top: 0;
   left: 0;
-  display: none;
+
   flex-direction: column;
   width: 100%;
   min-height: 100%;
@@ -214,9 +239,7 @@
   z-index: 2;
   padding-inline: theme.spacing(16);
 
-  transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
-
-  &__header {
+  &Header {
     flex-basis: 100%;
     display: flex;
     justify-content: space-between;
@@ -224,18 +247,29 @@
     min-height: 84px;
   }
 
-  &--expanded {
-    transition: all cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+  &Hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: visibility 0, hide-animation cubic-bezier(0.4, 0, 0.2, 1) 250ms;
   }
 
-  &__actions {
+  &Expanded {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0,
+      expand-animation cubic-bezier(0.4, 0, 0.2, 1) 250ms;
+  }
+
+  &Actions {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
   }
 
-  &__actions-link {
+  &ActionsLink {
     @include theme.m-font("body-2");
 
     margin-block-end: theme.spacing(16);
@@ -244,44 +278,9 @@
       margin-block-end: theme.spacing(32);
     }
 
-    &--active {
+    &Active {
       text-decoration: none;
       font-weight: 700;
-    }
-  }
-}
-
-.cta-accent-button {
-  text-transform: none;
-  font-weight: bold;
-
-  --mdc-filled-button-container-color: #{map.get(
-      theme.$modino-colors,
-      accent,
-      600
-    )};
-  --mdc-filled-button-hover-state-layer-color: #{map.get(
-      theme.$modino-colors,
-      accent,
-      400
-    )};
-
-  --mdc-filled-button-hover-state-layer-opacity: 1;
-  --mdc-filled-button-focus-state-layer-opacity: 1;
-  --mdc-filled-button-pressed-state-layer-opacity: 1;
-
-  &.mdc-ripple-upgraded--background-focused {
-    .mdc-button__ripple {
-      &:before {
-        background-color: map.get(theme.$modino-colors, accent, 500);
-      }
-    }
-  }
-
-  .mdc-button__ripple {
-    &:after {
-      background-color: map.get(theme.$modino-colors, accent, 300);
-      z-index: 1;
     }
   }
 }

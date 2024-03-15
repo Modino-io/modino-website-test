@@ -1,44 +1,43 @@
 import * as React from "react";
-import "./job.scss";
 import Layout from "../../components/layout/layout.component";
 import { HeadFC, Link, graphql } from "gatsby";
 import Seo from "../../components/seo.component";
+
+import * as styles from "./job.module.scss";
 
 const BlogPost = ({
   data,
   children,
 }: React.PropsWithChildren<{ data: object }>) => {
-  console.log(data);
-
   return (
     <Layout>
       <main className="m-main">
-        <section className="m-section m-job">
+        <section className={`m-section ${styles.mJob}`}>
           <div className="m-section__content">
-            <div className="m-job__breadcrumbs">
-              <Link to="/" className="m-job__breadcrumb">
+            <div className={styles.mJobBreadcrumbs}>
+              <Link to="/" className={styles.mJobBreadcrumb}>
                 Home
               </Link>{" "}
               |
-              <Link to="../" className="m-job__breadcrumb">
+              <Link to="../" className={styles.mJobBreadcrumb}>
                 Jobs
               </Link>{" "}
               |
-              <div className="m-job__breadcrumb">
+              <div className={styles.mJobBreadcrumb}>
                 {data.mdx.frontmatter.title}
               </div>
             </div>
-            <h1 className="m-section__header m-job__header">
+            <h1 className={`m-section__header ${styles.mJobHeader}`}>
               {data.mdx.frontmatter.title}
             </h1>
-            <div className="m-job__content">
+            <div className={styles.mJobContent}>
               <p>
                 <b>Location:</b> Bydgoszcz, Poland / Warsaw, Poland or remote –
                 Full time
               </p>
 
               {children}
-              <Link to="../" className="m-job__back-link">
+              <Link to="../" className={styles.mJobBackLink}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="24"

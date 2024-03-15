@@ -2,12 +2,13 @@ import React, { FormEvent, useState } from "react";
 import { HeadFC, Link } from "gatsby";
 import Seo from "../../components/seo.component";
 
-import "./index.scss";
 import { Button } from "@rmwc/button";
 import { TextField } from "@rmwc/textfield";
 import { Checkbox } from "@rmwc/checkbox";
 import { Select } from "@rmwc/select";
 import { Snackbar } from "@rmwc/snackbar";
+
+import * as styles from "./index.module.scss";
 
 const GetInTouch = () => {
   const [isEmailInputValid, setIsEmailInputValid] = useState(true);
@@ -38,7 +39,7 @@ const GetInTouch = () => {
     e.preventDefault();
 
     if (!validateEmail(email)) {
-      setEmailValidationMessage("Incorrect email format");
+      setEmailValidationMessage("Incorrect e-mail format");
       setIsEmailInputValid(false);
       return;
     } else {
@@ -66,17 +67,17 @@ const GetInTouch = () => {
   };
 
   return (
-    <main className="m-request-main">
-      <section className="m-form-section">
+    <main className={styles.mRequestMain}>
+      <section className={styles.mFormSection}>
         <form
           onSubmit={(e) => {
             handleSubmit(e);
           }}
-          className="m-form"
+          className={styles.mForm}
           id="request-access-form"
         >
-          <h1 className="m-form__title">Get in touch</h1>
-          <div className="m-form__field-wrapper">
+          <h1 className={styles.mFormTitle}>Get in touch</h1>
+          <div className={styles.mFormFieldWrapper}>
             <TextField
               outlined
               label="Full name"
@@ -91,10 +92,10 @@ const GetInTouch = () => {
               name="fullname"
             />
           </div>
-          <div className="m-form__field-wrapper">
+          <div className={styles.mFormFieldWrapper}>
             <TextField
               outlined
-              label="Email"
+              label="E-mail"
               required
               autoComplete="off"
               helpText={{
@@ -107,7 +108,7 @@ const GetInTouch = () => {
               name="email"
             />
           </div>
-          <div className="m-form__field-wrapper">
+          <div className={styles.mFormFieldWrapper}>
             <TextField
               outlined
               label="Phone (optional)"
@@ -123,9 +124,9 @@ const GetInTouch = () => {
               name="phone"
             />
           </div>
-          <div className="m-form__field-wrapper">
+          <div className={styles.mFormFieldWrapper}>
             <Select
-              className="m-select"
+              className={styles.mSelect}
               label="Company role (optional)"
               outlined
               options={[
@@ -146,7 +147,7 @@ const GetInTouch = () => {
             />
           </div>
 
-          <div className="m-form__checkbox-container">
+          <div className={styles.mFormCheckboxContainer}>
             <Checkbox
               checked={isLetMeKnowCheckboxChecked}
               value={isLetMeKnowCheckboxChecked.toString()}
@@ -167,11 +168,19 @@ const GetInTouch = () => {
               name="legal"
             >
               I have read and agree to the{" "}
-              <a className="m-link" href="/privacy-policy" target="_blank">
+              <a
+                className={styles.mLink}
+                href="/privacy-policy"
+                target="_blank"
+              >
                 Privacy Policy
               </a>{" "}
               and{" "}
-              <a className="m-link" href="/terms-of-service" target="_blank">
+              <a
+                className={styles.mLink}
+                href="/terms-of-service"
+                target="_blank"
+              >
                 Terms of Service
               </a>
             </Checkbox>
@@ -181,16 +190,16 @@ const GetInTouch = () => {
           </Button>
         </form>
       </section>
-      <section className="m-image-section">
+      <section className={styles.mImageSection}>
         <Link to="/">
           <img
-            className="m-logo-img"
+            className={styles.mLogoImg}
             src="/img/MODINO-logo-full-white.svg"
             alt="modino logo"
           />
         </Link>
         <img
-          className="m-request-access-img"
+          className={styles.mRequestAccessImg}
           src="/img/modino-man-in-envelope.svg"
           alt="modino man in an envelope"
         />

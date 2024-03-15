@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HeadFC, Link, PageProps } from "gatsby";
 import Layout from "../../components/layout/layout.component";
 
-import "./index.scss";
+import * as styles from "./index.module.scss";
 import Seo from "../../components/seo.component";
 import { Button } from "@rmwc/button";
 
@@ -20,49 +20,49 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
   return (
     <Layout>
       <main className="m-main">
-        <section className="m-section m-team-header">
+        <section className={`m-section ${styles.mTeamHeader}`}>
           <h2 className="m-section__header">Meet the team</h2>
           <div className="m-section__content">
             <img
               alt="Modino team photo"
               src="/img/people/team-photo.webp"
-              className="m-team-photo"
+              className={styles.mTeamPhoto}
             />
           </div>
         </section>
-        <section className="m-section m-team">
-          <div className="m-section__content">
-            <menu className="m-team__menu">
-              <ul className="m-team__list" role="tablist">
-                {tabLabels.map((label, index) => (
-                  <li
-                    className={`m-team__list-item ${
-                      currentTabIndex === index ? "active" : ""
-                    }`}
+        <section className={`m-section ${styles.mTeam}`}>
+          <menu className={styles.mTeamMenu}>
+            <ul className={styles.mTeamList} role="tablist">
+              {tabLabels.map((label, index) => (
+                <li
+                  className={`${styles.mTeamListItem} ${
+                    currentTabIndex === index ? styles.mTeamListItemActive : ""
+                  }`}
+                  key={index}
+                >
+                  <Button
+                    raised={currentTabIndex === index}
+                    outlined={currentTabIndex !== index}
+                    role="tab"
                     key={index}
+                    onClick={() => setCurrentTabIndex(index)}
                   >
-                    <Button
-                      raised={currentTabIndex === index}
-                      outlined={currentTabIndex !== index}
-                      role="tab"
-                      key={index}
-                      onClick={() => setCurrentTabIndex(index)}
-                    >
-                      {label}
-                    </Button>
-                  </li>
-                ))}
-              </ul>
-              <hr />
-            </menu>
-            <div className="m-people-list" hidden={currentTabIndex !== 0}>
-              <div className="m-person-card">
+                    {label}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+            <hr />
+          </menu>
+          <div className="m-section__content">
+            <div className={styles.mPeopleList} hidden={currentTabIndex !== 0}>
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Błażej Pawlak Modino - CEO profile image"
                   src="/img/people/Blazej.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Błażej Pawlak</strong>
                   </p>
@@ -76,13 +76,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   src="/img/people/Kuba.webp"
                   alt="Jakub Jelonek Modino - CTO profile image"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Jakub Jelonek</strong>
                   </p>
@@ -96,13 +96,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Radek Ratajczak - Modino CDO profile image"
                   src="/img/people/Radek.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Radek Ratajczak</strong>
                   </p>
@@ -117,14 +117,14 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="m-people-list" hidden={currentTabIndex !== 1}>
-              <div className="m-person-card">
+            <div className={styles.mPeopleList} hidden={currentTabIndex !== 1}>
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Michał Pawlak - Modino Scrum Master profile image"
                   src="/img/people/Michal.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Michał Pawlak</strong>
                   </p>
@@ -138,13 +138,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Paweł Żebrowski - Modino Business Development Manager profile image"
                   src="/img/people/Pawel-Z.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Paweł Żebrowski</strong>
                   </p>
@@ -159,14 +159,14 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="m-people-list" hidden={currentTabIndex !== 2}>
-              <div className="m-person-card">
+            <div className={styles.mPeopleList} hidden={currentTabIndex !== 2}>
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Radosław Ratajczak - Modino CDO profile image"
                   src="/img/people/Radek.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Radosław Ratajczak</strong>
                   </p>
@@ -180,13 +180,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Katarzyna Chmielewska - Modino Design Lead profile image"
                   src="/img/people/Kasia.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Katarzyna Chmielewska</strong>
                   </p>
@@ -200,13 +200,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Karolina Szpera - Modino UX/UI Designer profile image"
                   src="/img/people/Karolina.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Karolina Szpera</strong>
                   </p>
@@ -221,14 +221,14 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="m-people-list" hidden={currentTabIndex !== 3}>
-              <div className="m-person-card">
+            <div className={styles.mPeopleList} hidden={currentTabIndex !== 3}>
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Jakub Jelonek - Modino CTO profile image"
                   src="/img/people/Kuba.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Jakub Jelonek</strong>
                   </p>
@@ -242,13 +242,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Artur Pałka profile image"
                   src="/img/people/Artur.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Artur Pałka</strong>
                   </p>
@@ -262,13 +262,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Wojtek Henszke - Modino Software Engineer profile image"
                   src="/img/people/Wojtek.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Wojtek Henszke</strong>
                   </p>
@@ -282,13 +282,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Krzysztof Klarkowski - Modino Software Engineer profile image"
                   src="/img/people/Krzysztof.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Krzysztof Klarkowski</strong>
                   </p>
@@ -302,13 +302,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Filip Gorczyca - Modino Software Engineer profile image"
                   src="/img/people/Filip.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Filip Gorczyca</strong>
                   </p>
@@ -323,14 +323,14 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="m-people-list" hidden={currentTabIndex !== 4}>
-              <div className="m-person-card">
+            <div className={styles.mPeopleList} hidden={currentTabIndex !== 4}>
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Błażej Pawlak - Modino CEO profile image"
                   src="/img/people/Blazej.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Błażej Pawlak</strong>
                   </p>
@@ -344,13 +344,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Paweł Sobkowski - Modino Software Engineer profile image"
                   src="/img/people/Pawel-S.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Paweł Sobkowski</strong>
                   </p>
@@ -364,13 +364,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Kacper Kaźmierkiewicz - Modino Software Engineer profile image"
                   src="/img/people/Kacper.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Kacper Kaźmierkiewicz</strong>
                   </p>
@@ -385,14 +385,14 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="m-people-list" hidden={currentTabIndex !== 5}>
-              <div className="m-person-card">
+            <div className={styles.mPeopleList} hidden={currentTabIndex !== 5}>
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Patryk Janas - Modino DevOps Engineer profile image"
                   src="/img/people/Patryk.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Patryk Janas</strong>
                   </p>
@@ -406,13 +406,13 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   </a>
                 </div>
               </div>
-              <div className="m-person-card">
+              <div className={styles.mPersonCard}>
                 <img
                   alt="Jan Kwarciński - Modino DevOps Engineer profile image"
                   src="/img/people/Jan.webp"
-                  className="m-person-card__image"
+                  className={styles.mPersonCardImage}
                 />
-                <div className="m-person-card__info">
+                <div className={styles.mPersonCardInfo}>
                   <p>
                     <strong>Jan Kwarciński</strong>
                   </p>
@@ -429,43 +429,45 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className="m-section m-values">
+        <section className={`m-section`}>
           <h2 className="m-section__header">Values we live by</h2>
           <div className="m-section__content">
-            <div className="m-values__list">
-              <div className="m-values__item">
+            <div className={styles.mValuesList}>
+              <div className={styles.mValuesItem}>
                 <img
                   src="/img/values-illustration-1.svg"
                   alt="Modino values illustration - there is always a way"
-                  className="m-values__item-image"
+                  className={styles.mValuesItemImage}
                 />
-                <h3 className="m-values__item-title">There is always a way</h3>
-                <p className="m-values__item-description">
+                <h3 className={styles.mValuesItemTitle}>
+                  There is always a way
+                </h3>
+                <p className={styles.mValuesItemDescription}>
                   For us, nothing is impossible - even if it seems that way. We
                   encourage our team to think outside the box and to find
                   creative solutions to challenges that arise.
                 </p>
               </div>
-              <div className="m-values__item">
+              <div className={styles.mValuesItem}>
                 <img
                   src="/img/values-illustration-2.svg"
                   alt="Modino values illustration - dream big"
-                  className="m-values__item-image"
+                  className={styles.mValuesItemImage}
                 />
-                <h3 className="m-values__item-title">Dream big</h3>
-                <p className="m-values__item-description">
+                <h3 className={styles.mValuesItemTitle}>Dream big</h3>
+                <p className={styles.mValuesItemDescription}>
                   We believe that setting ambitious goals and pursuing them with
                   passion is the key to driving innovation.
                 </p>
               </div>
-              <div className="m-values__item">
+              <div className={styles.mValuesItem}>
                 <img
                   src="/img/values-illustration-3.svg"
                   alt="Modino values illustration - less is more"
-                  className="m-values__item-image"
+                  className={styles.mValuesItemImage}
                 />
-                <h3 className="m-values__item-title">Less is more</h3>
-                <p className="m-values__item-description">
+                <h3 className={styles.mValuesItemTitle}>Less is more</h3>
+                <p className={styles.mValuesItemDescription}>
                   We believe that technology should be intuitive, easy to use,
                   and seamlessly integrated into our lives. This is why we’re
                   designing our platform with simplicity in mind.
@@ -474,14 +476,14 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className="m-section m-ready-to-join">
+        <section className={`m-section ${styles.mReadyToJoin}`}>
           <h2 className="m-section__header">Ready to Join Our Team?</h2>
           <div className="m-section__content">
-            <p className="m-ready-to-join__text">
+            <p className={styles.mReadyToJoinText}>
               Explore our job opportunities and take the first step to join us
               on this exciting journey.
             </p>
-            <Link to="/jobs" className="m-ready-to-join__link">
+            <Link to="/jobs" className={styles.mReadyToJoinLink}>
               View job openings
               <svg
                 xmlns="http://www.w3.org/2000/svg"
