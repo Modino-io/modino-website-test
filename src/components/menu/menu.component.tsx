@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import { Button } from "@rmwc/button";
 
 import * as styles from "./menu.components.module.scss";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Menu = ({
   isCtaButtonPrimary,
@@ -185,7 +186,8 @@ const Menu = ({
             Jobs
           </Link>
           <Button
-            className={`${styles.ctaAccentButton} ${styles.mMobileMenuCtaButton}`}
+            unelevated
+            className={`cta-accent-button ${styles.mMobileMenuCtaButton}`}
             onClick={() => (window.location.href = "/get-in-touch")}
           >
             Get in touch

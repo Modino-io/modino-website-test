@@ -5,6 +5,7 @@ import Layout from "../../components/layout/layout.component";
 import * as styles from "./index.module.scss";
 import Seo from "../../components/seo.component";
 import { Button } from "@rmwc/button";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 
 const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
   const tabLabels = [
@@ -23,9 +24,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
         <section className={`m-section ${styles.mTeamHeader}`}>
           <h2 className="m-section__header">Meet the team</h2>
           <div className="m-section__content">
-            <img
+            <StaticImage
               alt="Modino team photo"
-              src="/img/people/team-photo.webp"
+              src="./../../images/people/team-photo.webp"
               className={styles.mTeamPhoto}
             />
           </div>
@@ -57,9 +58,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
           <div className="m-section__content">
             <div className={styles.mPeopleList} hidden={currentTabIndex !== 0}>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Błażej Pawlak Modino - CEO profile image"
-                  src="/img/people/Blazej.webp"
+                  src="./../../images/people/Blazej.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -77,8 +78,8 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
-                  src="/img/people/Kuba.webp"
+                <StaticImage
+                  src="./../../images/people/Kuba.webp"
                   alt="Jakub Jelonek Modino - CTO profile image"
                   className={styles.mPersonCardImage}
                 />
@@ -97,9 +98,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Radek Ratajczak - Modino CDO profile image"
-                  src="/img/people/Radek.webp"
+                  src="./../../images/people/Radek.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -119,9 +120,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
             </div>
             <div className={styles.mPeopleList} hidden={currentTabIndex !== 1}>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Michał Pawlak - Modino Scrum Master profile image"
-                  src="/img/people/Michal.webp"
+                  src="./../../images/people/Michal.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -139,9 +140,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Paweł Żebrowski - Modino Business Development Manager profile image"
-                  src="/img/people/Pawel-Z.webp"
+                  src="./../../images/people/Pawel-Z.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -161,9 +162,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
             </div>
             <div className={styles.mPeopleList} hidden={currentTabIndex !== 2}>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Radosław Ratajczak - Modino CDO profile image"
-                  src="/img/people/Radek.webp"
+                  src="./../../images/people/Radek.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -181,9 +182,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Katarzyna Chmielewska - Modino Design Lead profile image"
-                  src="/img/people/Kasia.webp"
+                  src="./../../images/people/Kasia.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -201,9 +202,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Karolina Szpera - Modino UX/UI Designer profile image"
-                  src="/img/people/Karolina.webp"
+                  src="./../../images/people/Karolina.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -223,9 +224,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
             </div>
             <div className={styles.mPeopleList} hidden={currentTabIndex !== 3}>
               <div className={styles.mPersonCard}>
-                <img
-                  alt="Jakub Jelonek - Modino CTO profile image"
-                  src="/img/people/Kuba.webp"
+                <StaticImage
+                  src="./../../images/people/Kuba.webp"
+                  alt="Jakub Jelonek Modino - CTO profile image"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -243,9 +244,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Artur Pałka profile image"
-                  src="/img/people/Artur.webp"
+                  src="./../../images/people/Artur.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -263,9 +264,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Wojtek Henszke - Modino Software Engineer profile image"
-                  src="/img/people/Wojtek.webp"
+                  src="./../../images/people/Wojtek.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -283,9 +284,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Krzysztof Klarkowski - Modino Software Engineer profile image"
-                  src="/img/people/Krzysztof.webp"
+                  src="./../../images/people/Krzysztof.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -303,9 +304,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Filip Gorczyca - Modino Software Engineer profile image"
-                  src="/img/people/Filip.webp"
+                  src="./../../images/people/Filip.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -325,9 +326,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
             </div>
             <div className={styles.mPeopleList} hidden={currentTabIndex !== 4}>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Błażej Pawlak - Modino CEO profile image"
-                  src="/img/people/Blazej.webp"
+                  src="./../../images/people/Blazej.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -345,9 +346,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Paweł Sobkowski - Modino Software Engineer profile image"
-                  src="/img/people/Pawel-S.webp"
+                  src="./../../images/people/Pawel-S.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -365,9 +366,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Kacper Kaźmierkiewicz - Modino Software Engineer profile image"
-                  src="/img/people/Kacper.webp"
+                  src="./../../images/people/Kacper.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -387,9 +388,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
             </div>
             <div className={styles.mPeopleList} hidden={currentTabIndex !== 5}>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Patryk Janas - Modino DevOps Engineer profile image"
-                  src="/img/people/Patryk.webp"
+                  src="./../../images/people/Patryk.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>
@@ -407,9 +408,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                 </div>
               </div>
               <div className={styles.mPersonCard}>
-                <img
+                <StaticImage
                   alt="Jan Kwarciński - Modino DevOps Engineer profile image"
-                  src="/img/people/Jan.webp"
+                  src="./../../images/people/Jan.webp"
                   className={styles.mPersonCardImage}
                 />
                 <div className={styles.mPersonCardInfo}>

@@ -375,21 +375,11 @@ blockquote {
     }
   }
 
-  &CybersecurityBanner {
-    flex: 1;
-
-    img {
-      max-width: 530px;
-      width: 100%;
-    }
-  }
+  &CybersecurityBanner,
   &CybersecurityMade {
     flex: 1;
-
-    img {
-      max-width: 530px;
-      width: 100%;
-    }
+    max-width: 530px;
+    width: 100%;
   }
 }
 

@@ -5,6 +5,7 @@ import Layout from "../../components/layout/layout.component";
 import { Button } from "@rmwc/button";
 
 import * as styles from "./index.module.scss";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Solution = () => {
   let mainCtaButton: HTMLButtonElement;
@@ -174,9 +175,10 @@ const Solution = () => {
                 </p>
               </div>
             </div>
-            <img
-              src="/img/demo-screenshot.png"
+            <StaticImage
+              src="./../../images/demo-screenshot.png"
               className={styles.mDemoScreenshot}
+              alt="modino UI screenshot"
             />
             <hr className={styles.mManifestoDivider} />
 
@@ -253,8 +255,8 @@ const Solution = () => {
                 target="_blank"
                 rel="noopener"
               >
-                <img
-                  src="/img/cybersecurity-award-banner.jpeg"
+                <StaticImage
+                  src="./../../images/cybersecurity-award-banner.jpeg"
                   alt="European Cybersecurity STARTup Award for Modino.io"
                 />
               </a>
@@ -265,8 +267,8 @@ const Solution = () => {
                 target="_blank"
                 rel="noopener"
               >
-                <img
-                  src="/img/cybersecurity-made-in-europe.png"
+                <StaticImage
+                  src="./../../images/cybersecurity-made-in-europe.png"
                   alt="cybersecurity made in Europe badge"
                 />
               </a>

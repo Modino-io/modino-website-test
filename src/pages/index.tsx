@@ -6,7 +6,7 @@ import CarouselComponent from "../components/carousel/carousel.component";
 import { Button } from "@rmwc/button";
 
 import * as styles from "./index.module.scss";
-import { ImageDataLike } from "gatsby-plugin-image";
+import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = ({ data }: PageProps) => {
   let mainCtaButton: HTMLButtonElement;
@@ -116,9 +116,9 @@ const IndexPage = ({ data }: PageProps) => {
                 Our mission is to keep our clients' IoT devices secure and
                 online by providing stressless over-the-air update experience.
                 <cite className={styles.mQuoteAuthor}>
-                  <img
+                  <StaticImage
                     className={styles.mQuoteAuthorImage}
-                    src="img/people/Blazej.webp"
+                    src="./../images/people/Blazej.webp"
                     alt="Błażej Pawlak - Modino CEO profile image"
                   />{" "}
                   Błażej Pawlak, CEO & Co-Founder
@@ -130,7 +130,7 @@ const IndexPage = ({ data }: PageProps) => {
         <section className={`m-section ${styles.mExplanation}`}>
           <div className={`m-section__content ${styles.mExplanationContent}`}>
             <div className={styles.mExplanationImage}>
-              <img src="./img/modino-man.svg" alt="modino man" />
+              <img src="img/modino-man.svg" alt="modino man" />
             </div>
             <div className={styles.mExplanationText}>
               <p className={styles.mExplanationTitle}>/moˈdiːno/</p>
@@ -197,8 +197,9 @@ const IndexPage = ({ data }: PageProps) => {
                 target="_blank"
                 rel="noopener"
               >
-                <img
-                  src="img/cybersecurity-award-banner.jpeg"
+                <StaticImage
+                  layout="fullWidth"
+                  src="./../images/cybersecurity-award-banner.jpeg"
                   alt="European Cybersecurity STARTup Award for Modino.io"
                 />
               </a>
@@ -209,8 +210,8 @@ const IndexPage = ({ data }: PageProps) => {
                 target="_blank"
                 rel="noopener"
               >
-                <img
-                  src="img/cybersecurity-made-in-europe.png"
+                <StaticImage
+                  src="./../images/cybersecurity-made-in-europe.png"
                   alt="cybersecurity made in Europe badge"
                 />
               </a>
