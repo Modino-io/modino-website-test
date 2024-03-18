@@ -3,6 +3,7 @@ import React from "react";
 
 import * as styles from "./article-tile.component.module.scss";
 import ArticleChipComponent from "../article-chip/article-chip.component";
+import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 const ArticleTileComponent: React.FC<any> = ({
   title,
@@ -15,14 +16,19 @@ const ArticleTileComponent: React.FC<any> = ({
   title: string;
   date: string;
   summary: string;
-  thumbnailPhotoUrl: string;
+  thumbnailPhotoUrl: ImageDataLike;
   slug: string;
   categories: Array<string>;
 }) => {
+  const image = getImage(thumbnailPhotoUrl);
   return (
     <React.Fragment>
       <Link to={`/articles/${slug}`} className={styles.mArticleTile}>
-        <img src={thumbnailPhotoUrl} className={styles.mArticleTileImage} />
+        <GatsbyImage
+          image={image}
+          className={styles.mArticleTileImage}
+          alt="article thumbnail photo"
+        />
         <div className={styles.mArticleTileContent}>
           <div className={styles.mArticleTileChips}>
             {categories.map((element, index) => (

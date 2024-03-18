@@ -37,14 +37,6 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: `${__dirname}/src/images`,
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "pages",
         path: `${__dirname}/src/pages/`,
       },
@@ -56,6 +48,7 @@ const config: GatsbyConfig = {
         name: `articles`,
         path: `${__dirname}/src/articles`,
       },
+      __key: "articles",
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -63,6 +56,15 @@ const config: GatsbyConfig = {
         name: `jobs`,
         path: `${__dirname}/src/jobs`,
       },
+      __key: "jobs",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `./src/images`,
+      },
+      __key: "images",
     },
   ],
 };

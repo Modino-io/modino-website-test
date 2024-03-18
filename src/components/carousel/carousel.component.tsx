@@ -3,13 +3,14 @@ import ArticleTileComponent from "../article-tile/article-tile.component";
 import { Button } from "@rmwc/button";
 
 import * as styles from "./carousel.component.module.scss";
+import { ImageDataLike } from "gatsby-plugin-image";
 
 const CarouselComponent: React.FC<{
   articles: Array<{
     title: string;
     date: string;
     summary: string;
-    thumbnailPhotoUrl: string;
+    thumbnailPhotoUrl: ImageDataLike;
     slug: string;
     categories: Array<string>;
   }>;

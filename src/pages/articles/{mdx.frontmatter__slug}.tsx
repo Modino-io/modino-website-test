@@ -4,11 +4,13 @@ import { HeadFC, Link, graphql } from "gatsby";
 import Seo from "../../components/seo.component";
 
 import * as styles from "./article.module.scss";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const BlogPost = ({
   data,
   children,
 }: React.PropsWithChildren<{ data: object }>) => {
+  const image = getImage(data.mdx.frontmatter.thumbnail);
   return (
     <Layout>
       <main className="m-main">
@@ -28,9 +30,9 @@ const BlogPost = ({
               </div>
             </div>
             <div className={`m-section__header ${styles.mArticleHeader}`}>
-              <img
+              <GatsbyImage
                 className={styles.mArticleHeaderImage}
-                src={data.mdx.frontmatter.thumbnail}
+                image={image}
                 alt=""
               />
               <h1 className={styles.mArticleHeaderText}>
@@ -78,7 +80,11 @@ export const query = graphql`
         meta_description
         date(formatString: "MMMM D, YYYY")
         slug
-        thumbnail
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          }
+        }
       }
     }
   }

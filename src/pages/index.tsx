@@ -6,6 +6,7 @@ import CarouselComponent from "../components/carousel/carousel.component";
 import { Button } from "@rmwc/button";
 
 import * as styles from "./index.module.scss";
+import { ImageDataLike } from "gatsby-plugin-image";
 
 const IndexPage = ({ data }: PageProps) => {
   let mainCtaButton: HTMLButtonElement;
@@ -19,7 +20,7 @@ const IndexPage = ({ data }: PageProps) => {
         tile_title: string;
         slug: string;
         summary: string;
-        thumbnail: string;
+        thumbnail: ImageDataLike;
         category: unknown;
       };
     }>
@@ -276,7 +277,11 @@ export const query = graphql`
           tile_title
           slug
           summary
-          thumbnail
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            }
+          }
           category
         }
       }
