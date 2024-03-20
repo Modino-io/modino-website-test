@@ -4,9 +4,9 @@ import Seo from "../components/seo.component";
 import Layout from "../components/layout/layout.component";
 import CarouselComponent from "../components/carousel/carousel.component";
 import { Button } from "@rmwc/button";
+import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 
 import * as styles from "./index.module.scss";
-import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = ({ data }: PageProps) => {
   let mainCtaButton: HTMLButtonElement;
@@ -180,7 +180,7 @@ const IndexPage = ({ data }: PageProps) => {
                 <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
                   <iframe
                     title="Modino.io demo video"
-                    src="https://player.vimeo.com/video/510677701?h=f87b25b0fa"
+                    src="https://player.vimeo.com/video/510677701?dnt=1"
                     allow="autoplay; fullscreen; picture-in-picture"
                   ></iframe>
                 </div>
