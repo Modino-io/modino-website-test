@@ -39,12 +39,11 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   className={`${styles.mTeamListItem} ${
                     currentTabIndex === index ? styles.mTeamListItemActive : ""
                   }`}
-                  key={index}
+                  key={`${label}${index}`}
                 >
                   <Button
                     raised={currentTabIndex === index}
                     outlined={currentTabIndex !== index}
-                    key={index}
                     onClick={() => setCurrentTabIndex(index)}
                     className={styles.mTeamListItemButton}
                   >
