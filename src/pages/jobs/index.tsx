@@ -31,7 +31,7 @@ const JobsPage: React.FC<PageProps> = ({ data }) => {
               <img
                 className={styles.mJobsImage}
                 src="/img/jobs.svg"
-                alt="jobs hero image"
+                alt="jobs hero"
               />
             </div>
           </div>

@@ -32,8 +32,8 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
           </div>
         </section>
         <section className={`m-section ${styles.mTeam}`}>
-          <menu className={styles.mTeamMenu}>
-            <ul className={styles.mTeamList} role="tablist">
+          <nav className={styles.mTeamMenu}>
+            <ul className={styles.mTeamList}>
               {tabLabels.map((label, index) => (
                 <li
                   className={`${styles.mTeamListItem} ${
@@ -44,9 +44,9 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                   <Button
                     raised={currentTabIndex === index}
                     outlined={currentTabIndex !== index}
-                    role="tab"
                     key={index}
                     onClick={() => setCurrentTabIndex(index)}
+                    className={styles.mTeamListItemButton}
                   >
                     {label}
                   </Button>
@@ -54,7 +54,7 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
               ))}
             </ul>
             <hr />
-          </menu>
+          </nav>
           <div className="m-section__content">
             <div className={styles.mPeopleList} hidden={currentTabIndex !== 0}>
               <div className={styles.mPersonCard}>

@@ -1,16 +1,12 @@
-FROM node:alpine as installer
+FROM node:20-alpine as builder
 
 WORKDIR /app
 
 COPY package.json .
-COPY package-lock.json .
-RUN npm ci
-
-
-FROM installer as builder
+RUN npm install --ignore-scripts
 COPY . .
 RUN ["npm", "run", "build"]
 
-FROM nginx
+FROM nginx:1.25.4
 EXPOSE 80
-COPY --from=builder /app/public/zopfli /usr/share/nginx/html
+COPY --from=builder /app/public /usr/share/nginx/html

@@ -22,27 +22,25 @@ const ArticleTileComponent: React.FC<any> = ({
 }) => {
   const image = getImage(thumbnailPhotoUrl);
   return (
-    <React.Fragment>
-      <Link to={`/articles/${slug}`} className={styles.mArticleTile}>
-        <GatsbyImage
-          image={image}
-          className={styles.mArticleTileImage}
-          alt="article thumbnail photo"
-        />
-        <div className={styles.mArticleTileContent}>
-          <div className={styles.mArticleTileChips}>
-            {categories.map((element, index) => (
-              <ArticleChipComponent type="red" key={index}>
-                {element}
-              </ArticleChipComponent>
-            ))}
-          </div>
-          <h3 className={styles.mArticleTileTitle}>{title}</h3>
-          <i className={styles.mArticleTileDate}> {date} </i>
-          <p className={styles.mArticleTileDescription}>{summary}</p>
+    <Link to={`/articles/${slug}`} className={styles.mArticleTile}>
+      <GatsbyImage
+        image={image}
+        className={styles.mArticleTileImage}
+        alt="article thumbnail photo"
+      />
+      <div className={styles.mArticleTileContent}>
+        <div className={styles.mArticleTileChips}>
+          {categories.map((element, index) => (
+            <ArticleChipComponent type="red" key={`${element}-index`}>
+              {element}
+            </ArticleChipComponent>
+          ))}
         </div>
-      </Link>
-    </React.Fragment>
+        <h3 className={styles.mArticleTileTitle}>{title}</h3>
+        <i className={styles.mArticleTileDate}> {date} </i>
+        <p className={styles.mArticleTileDescription}>{summary}</p>
+      </div>
+    </Link>
   );
 };
 

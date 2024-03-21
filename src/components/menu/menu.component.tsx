@@ -4,12 +4,17 @@ import { Button } from "@rmwc/button";
 
 import * as styles from "./menu.components.module.scss";
 
+const defaultProps = {
+  isCtaButtonPrimary: true,
+  displayMenu: true,
+};
+
 const Menu = ({
   isCtaButtonPrimary,
   displayMenu,
 }: {
-  isCtaButtonPrimary: boolean;
-  displayMenu: boolean;
+  isCtaButtonPrimary?: boolean;
+  displayMenu?: boolean;
 }) => {
   let menuNav: HTMLElement;
 
@@ -196,5 +201,7 @@ const Menu = ({
     </React.Fragment>
   );
 };
+
+Menu.defaultProps = defaultProps;
 
 export default Menu;

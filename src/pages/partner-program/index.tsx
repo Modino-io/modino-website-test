@@ -23,8 +23,7 @@ const PartnerProgram = ({ data }: PageProps) => {
   );
 
   const validateEmail = (emailAddress: string) => {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
     return re.test(emailAddress);
   };
 
@@ -329,8 +328,8 @@ const PartnerProgram = ({ data }: PageProps) => {
               target="_blank"
               rel="noopener"
             >
-              <img src="/img/icons/pdf.svg" alt="pdf icon" />
-              Modino Partner Program.pdf
+              <img src="/img/icons/pdf.svg" alt="pdf icon" /> Modino Partner
+              Program.pdf
             </a>
           </div>
         </section>
