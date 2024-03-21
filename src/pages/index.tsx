@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HeadFC, Link, PageProps, graphql } from "gatsby";
 import Seo from "../components/seo.component";
 import Layout from "../components/layout/layout.component";

@@ -3,11 +3,6 @@
 
 .mArticle {
   margin-block-start: spacing(32);
-  align-items: flex-start;
-
-  :global .m-section-content {
-    align-items: flex-start;
-  }
 
   &Header {
     display: grid;
@@ -23,12 +18,11 @@
     align-items: center;
     justify-content: center;
 
-    &.mSectionHeader {
-      padding-inline: 0;
+    padding-inline: 0;
 
-      @media (min-width: 600px) {
-        padding-inline: 0;
-      }
+    @media (min-width: 600px) {
+      padding-inline: 0;
+      margin-block: spacing(8, 16);
     }
 
     @media (min-width: 800px) {
@@ -150,14 +144,7 @@
 
   &Content {
     text-align: justify;
-
-    img {
-      display: block;
-      min-width: 0;
-      max-width: 70%;
-      height: auto;
-      margin-inline: auto;
-    }
+    align-items: flex-start;
 
     h2 {
       @include m-font("subheading-4");

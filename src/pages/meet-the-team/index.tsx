@@ -5,7 +5,7 @@ import Layout from "../../components/layout/layout.component";
 import * as styles from "./index.module.scss";
 import Seo from "../../components/seo.component";
 import { Button } from "@rmwc/button";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
   const tabLabels = [

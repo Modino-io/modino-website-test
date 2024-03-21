@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import { HeadFC, Link } from "gatsby";
 import Seo from "../../components/seo.component";
 
@@ -140,6 +140,7 @@ const GetInTouch = () => {
                 "Quality Assurance",
                 "Other",
               ]}
+              value={jobPosition}
               onChange={(val: any) => {
                 setJobPosition(val.currentTarget.value);
               }}

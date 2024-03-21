@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import { Button } from "@rmwc/button";
 
 import * as styles from "./menu.components.module.scss";
-import { StaticImage } from "gatsby-plugin-image";
 
 const Menu = ({
   isCtaButtonPrimary,

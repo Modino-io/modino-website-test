@@ -145,7 +145,7 @@ const Solution = () => {
             <div className={styles.tilesContainer}>
               <div className={styles.mTile}>
                 <div className={styles.mTileIcon}>
-                  <img src="/img/icons/atom-icon.svg" />
+                  <img src="/img/icons/atom-icon.svg" alt="atomic updates" />
                 </div>
                 <p className={styles.mTileContent}>
                   Modino.io platform ensures safe software delivery – data to be
@@ -156,7 +156,10 @@ const Solution = () => {
               </div>
               <div className={styles.mTile}>
                 <div className={styles.mTileIcon}>
-                  <img src="/img/icons/cloud_sync-icon.svg" />
+                  <img
+                    src="/img/icons/cloud_sync-icon.svg"
+                    alt="automatic rollback"
+                  />
                 </div>
                 <p className={styles.mTileContent}>
                   Never be offline again - if the update fails, an automatic
@@ -166,7 +169,7 @@ const Solution = () => {
               </div>
               <div className={styles.mTile}>
                 <div className={styles.mTileIcon}>
-                  <img src="/img/icons/update-icon.svg" />
+                  <img src="/img/icons/update-icon.svg" alt="regular updates" />
                 </div>
                 <p className={styles.mTileContent}>
                   With a purchased annual license, each client gets regular
@@ -195,7 +198,10 @@ const Solution = () => {
               >
                 <div className={styles.mTile}>
                   <div className={styles.mTileIcon}>
-                    <img src="/img/icons/lan.svg" />
+                    <img
+                      src="/img/icons/lan.svg"
+                      alt="security and containers"
+                    />
                   </div>
                   <p className={styles.mTileContent}>
                     Modino.io is delivered as a set of interconnected OCI
@@ -206,7 +212,7 @@ const Solution = () => {
                 </div>
                 <div className={styles.mTile}>
                   <div className={styles.mTileIcon}>
-                    <img src="/img/icons/encrypted.svg" />
+                    <img src="/img/icons/encrypted.svg" alt="zero-trust" />
                   </div>
                   <p className={styles.mTileContent}>
                     Users are authenticated and authorized like any other system
@@ -218,7 +224,10 @@ const Solution = () => {
                 </div>
                 <div className={styles.mTile}>
                   <div className={styles.mTileIcon}>
-                    <img src="/img/icons/support_agent.svg" />
+                    <img
+                      src="/img/icons/support_agent.svg"
+                      alt="modino agent"
+                    />
                   </div>
                   <p className={styles.mTileContent}>
                     Modino.io Agent installed on endpoint devices does not
@@ -229,7 +238,7 @@ const Solution = () => {
                 </div>
                 <div className={styles.mTile}>
                   <div className={styles.mTileIcon}>
-                    <img src="/img/icons/key.svg" />
+                    <img src="/img/icons/key.svg" alt="enrypted containers" />
                   </div>
                   <p className={styles.mTileContent}>
                     Container images with software updates are encrypted and
