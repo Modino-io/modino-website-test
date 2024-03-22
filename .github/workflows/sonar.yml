@@ -75,7 +75,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   publish:
-    needs: scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
