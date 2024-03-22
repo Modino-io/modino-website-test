@@ -12,22 +12,22 @@ const TermsOfService: React.FC<PageProps> = () => {
         <div className={styles.mLegalWrapper}>
           <nav className={styles.mLegalNavigation}>
             <h2>Table of contents</h2>
-            <ul role="menu">
-              <li role="menuitem">
+            <ul>
+              <li>
                 <Link to="#h-general-provisions">§ 1 General provisions</Link>
               </li>
-              <li role="menuitem">
+              <li>
                 <Link to="#h-terms-of-service">§ 2 Terms of service</Link>
               </li>
-              <li role="menuitem">
+              <li>
                 <Link to="#h-contracts-with-service-provider">
                   § 3 Contracts with Service Provider
                 </Link>
               </li>
-              <li role="menuitem">
+              <li>
                 <Link to="#h-personal-data">§ 4 Personal data</Link>
               </li>
-              <li role="menuitem">
+              <li>
                 <Link to="#h-complaints">§ 5 Complaints </Link>
               </li>
             </ul>
@@ -121,7 +121,7 @@ const TermsOfService: React.FC<PageProps> = () => {
                 Newsletter”) is concluded for an indefinite period of time. You
                 can terminate this agreement by unsubscribing from the
                 subscriber list, which is done by sending a written statement to
-                the following email address:
+                the following email address:{" "}
                 <a href="mailto:policy@modino.io">policy@modino.io</a>.
               </li>
               <li>
@@ -180,7 +180,7 @@ const TermsOfService: React.FC<PageProps> = () => {
             <ul>
               <li>
                 Any complaints regarding the “Updates Newsletter” service should
-                be submitted to the following email address:
+                be submitted to the following email address:{" "}
                 <a href="mailto:policy@modino.io">policy@modino.io</a>.
               </li>
               <li>

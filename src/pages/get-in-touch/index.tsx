@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import { HeadFC, Link } from "gatsby";
 import Seo from "../../components/seo.component";
 
@@ -30,8 +30,7 @@ const GetInTouch = () => {
   const [email, setEmail] = useState("");
 
   const validateEmail = (emailAddress: string) => {
-    const re =
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
     return re.test(emailAddress);
   };
 
@@ -140,6 +139,7 @@ const GetInTouch = () => {
                 "Quality Assurance",
                 "Other",
               ]}
+              value={jobPosition}
               onChange={(val: any) => {
                 setJobPosition(val.currentTarget.value);
               }}

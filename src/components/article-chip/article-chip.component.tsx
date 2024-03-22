@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, ReactNode } from "react";
+import React, { PropsWithChildren } from "react";
 import * as styles from "./article-chip.component.module.scss";
 
 const ArticleChipComponent: React.FC<

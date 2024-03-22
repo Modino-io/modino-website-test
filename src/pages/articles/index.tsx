@@ -38,8 +38,8 @@ const ArticlesPage: React.FC<PageProps> = ({ data }) => {
           <h1 className="m-section__header">Articles</h1>
           <div className="m-section__content">
             <div className={styles.mArticlesList}>
-              {getArticlesFromProps(data.allMdx.nodes).map((article, index) => (
-                <ArticleTileComponent key={index} {...article} />
+              {getArticlesFromProps(data.allMdx.nodes).map((article) => (
+                <ArticleTileComponent key={article.slug} {...article} />
               ))}
             </div>
           </div>

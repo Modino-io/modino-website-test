@@ -83,7 +83,7 @@
       --mdc-outlined-button-hover-state-layer-opacity: 1;
     }
 
-    &.mdc-ripple-upgraded--background-focused {
+    :global &.mdc-ripple-upgraded--background-focused {
       .mdc-button__ripple {
         &:before {
           background-color: map.get(theme.$modino-colors, secondary-2, 100);
@@ -91,7 +91,7 @@
       }
     }
 
-    .mdc-button__ripple {
+    :global .mdc-button__ripple {
       &:after {
         background-color: map.get(theme.$modino-colors, secondary-2, 200);
         z-index: 1;

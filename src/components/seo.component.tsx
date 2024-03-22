@@ -12,7 +12,7 @@ const Seo: React.FC<{
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#fafafa" />
-      <meta name="robots" content="index,follow" />
+      <meta name="robots" content="noindex,nofollow" />
       <link href={link} rel="canonical" />
       <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"

@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import * as styles from "./footer.component.module.scss";
-import { StaticImage } from "gatsby-plugin-image";
 
 const FooterComponent = () => {
   return (

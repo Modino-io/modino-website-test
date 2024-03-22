@@ -12,7 +12,7 @@ const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
         <div className={styles.mLegalWrapper}>
           <nav className={styles.mLegalNavigation}>
             <h2>Table of contents</h2>
-            <ul role="menu">
+            <ul>
               <li>
                 <Link to="#h-processing">Processing personal data</Link>
                 <ul>

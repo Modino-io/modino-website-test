@@ -189,14 +189,10 @@
   }
 
   &Image {
-    margin-block-end: spacing(32);
-
-    @media (min-width: 800px) {
-      margin-block-end: 0;
-    }
-  }
-
-  :global .m-section__header {
+    grid-area: image;
+    min-width: 0;
+    max-height: auto;
+    max-width: 500px;
     margin-block-end: spacing(32);
 
     @media (min-width: 800px) {
@@ -207,18 +203,13 @@
   :global .m-section__header {
     grid-area: header;
     margin-block-start: 0;
+    margin-block-end: spacing(32);
 
     @media (min-width: 800px) {
       text-align: left;
       margin-block-end: spacing(20);
+      padding-inline: 0;
     }
-  }
-
-  &Image {
-    grid-area: image;
-    min-width: 0;
-    max-height: auto;
-    max-width: 500px;
   }
 
   &Text {
@@ -431,13 +422,22 @@
     }
 
     &Checkbox {
-      .mdc-checkbox {
+      :global .mdc-checkbox {
         --mdc-checkbox-unchecked-color: #{map.get(
             $modino-colors,
             surface,
             disabled
           )};
+
+        &.mdc-ripple-upgraded--background-focused {
+          .mdc-checkbox__ripple {
+            &:before {
+              background-color: map.get($modino-colors, surface, border);
+            }
+          }
+        }
       }
+
       label {
         text-align: left;
       }
@@ -451,6 +451,10 @@
       &:last-of-type {
         padding-bottom: spacing(14);
       }
+    }
+
+    &Field {
+      width: 100%;
     }
 
     form {

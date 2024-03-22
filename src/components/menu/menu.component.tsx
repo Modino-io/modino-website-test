@@ -3,14 +3,18 @@ import { Link } from "gatsby";
 import { Button } from "@rmwc/button";
 
 import * as styles from "./menu.components.module.scss";
-import { StaticImage } from "gatsby-plugin-image";
+
+const defaultProps = {
+  isCtaButtonPrimary: true,
+  displayMenu: true,
+};
 
 const Menu = ({
   isCtaButtonPrimary,
   displayMenu,
 }: {
-  isCtaButtonPrimary: boolean;
-  displayMenu: boolean;
+  isCtaButtonPrimary?: boolean;
+  displayMenu?: boolean;
 }) => {
   let menuNav: HTMLElement;
 
@@ -44,7 +48,7 @@ const Menu = ({
               isMenuSticky ? styles.mMenuSticky : ""
             }`}
           >
-            <Link className={styles.mMenuLogoLink} to="./">
+            <Link className={styles.mMenuLogoLink} to="/">
               <img
                 className={styles.mMenuLogo}
                 src="/img/MODINO-logo-full.svg"
@@ -65,6 +69,7 @@ const Menu = ({
                     to="/solution"
                     className={styles.mMenuActionsLink}
                     activeClassName={styles.mMenuActionsLinkActive}
+                    partiallyActive
                   >
                     Solution
                   </Link>
@@ -72,6 +77,7 @@ const Menu = ({
                     to="/articles"
                     className={styles.mMenuActionsLink}
                     activeClassName={styles.mMenuActionsLinkActive}
+                    partiallyActive
                   >
                     Articles
                   </Link>
@@ -79,6 +85,7 @@ const Menu = ({
                     to="/meet-the-team"
                     className={styles.mMenuActionsLink}
                     activeClassName={styles.mMenuActionsLinkActive}
+                    partiallyActive
                   >
                     Meet the team
                   </Link>
@@ -86,6 +93,7 @@ const Menu = ({
                     to="/partner-program"
                     className={styles.mMenuActionsLink}
                     activeClassName={styles.mMenuActionsLinkActive}
+                    partiallyActive
                   >
                     Partner Program
                   </Link>
@@ -93,6 +101,7 @@ const Menu = ({
                     to="/jobs"
                     className={styles.mMenuActionsLink}
                     activeClassName={styles.mMenuActionsLinkActive}
+                    partiallyActive
                   >
                     Jobs
                   </Link>
@@ -127,7 +136,7 @@ const Menu = ({
         }`}
       >
         <div className={styles.mMobileMenuHeader}>
-          <Link className={styles.mMenuLogoLink} to="./">
+          <Link className={styles.mMenuLogoLink} to="/">
             <img
               className={styles.mMenuLogo}
               src="/img/MODINO-logo-short.svg"
@@ -154,6 +163,7 @@ const Menu = ({
             to="/solution"
             className={styles.mMobileMenuActionsLink}
             activeClassName={styles.mMobileMenuActionsLinkActive}
+            partiallyActive
           >
             Solution
           </Link>
@@ -161,6 +171,7 @@ const Menu = ({
             to="/articles"
             className={styles.mMobileMenuActionsLink}
             activeClassName={styles.mMobileMenuActionsLinkActive}
+            partiallyActive
           >
             Articles
           </Link>
@@ -168,6 +179,7 @@ const Menu = ({
             to="/meet-the-team"
             className={styles.mMobileMenuActionsLink}
             activeClassName={styles.mMobileMenuActionsLinkActive}
+            partiallyActive
           >
             Meet the team
           </Link>
@@ -175,6 +187,7 @@ const Menu = ({
             to="/partner-program"
             className={styles.mMobileMenuActionsLink}
             activeClassName={styles.mMobileMenuActionsLinkActive}
+            partiallyActive
           >
             Partner Program
           </Link>
@@ -182,6 +195,7 @@ const Menu = ({
             to="/jobs"
             className={styles.mMobileMenuActionsLink}
             activeClassName={styles.mMobileMenuActionsLinkActive}
+            partiallyActive
           >
             Jobs
           </Link>
@@ -197,5 +211,7 @@ const Menu = ({
     </React.Fragment>
   );
 };
+
+Menu.defaultProps = defaultProps;
 
 export default Menu;

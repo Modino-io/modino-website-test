@@ -16,8 +16,8 @@ const Layout = ({
   shouldMenuBeDisplayed,
   children,
 }: React.PropsWithChildren<{
-  isMenuButtonAMainCtaButton: boolean;
-  shouldMenuBeDisplayed: boolean;
+  isMenuButtonAMainCtaButton?: boolean;
+  shouldMenuBeDisplayed?: boolean;
 }>) => {
   useEffect(() => {
     cookies.run({

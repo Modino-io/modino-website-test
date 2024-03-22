@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HeadFC, Link, PageProps, graphql } from "gatsby";
 import Seo from "../components/seo.component";
 import Layout from "../components/layout/layout.component";
@@ -247,7 +247,7 @@ const IndexPage = ({ data }: PageProps) => {
               </h2>
               <Button
                 unelevated
-                className="cta-accent-button"
+                className={`cta-accent-button ${styles.mSummaryActionButton}`}
                 onClick={() => (window.location.href = "./get-in-touch")}
                 id="summary-cta-btn"
               >

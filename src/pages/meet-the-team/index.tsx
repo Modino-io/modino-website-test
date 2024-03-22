@@ -5,7 +5,7 @@ import Layout from "../../components/layout/layout.component";
 import * as styles from "./index.module.scss";
 import Seo from "../../components/seo.component";
 import { Button } from "@rmwc/button";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
   const tabLabels = [
@@ -32,21 +32,20 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
           </div>
         </section>
         <section className={`m-section ${styles.mTeam}`}>
-          <menu className={styles.mTeamMenu}>
-            <ul className={styles.mTeamList} role="tablist">
+          <nav className={`m-section__content ${styles.mTeamMenu}`}>
+            <ul className={styles.mTeamList}>
               {tabLabels.map((label, index) => (
                 <li
                   className={`${styles.mTeamListItem} ${
                     currentTabIndex === index ? styles.mTeamListItemActive : ""
                   }`}
-                  key={index}
+                  key={`${label}${index}`}
                 >
                   <Button
                     raised={currentTabIndex === index}
                     outlined={currentTabIndex !== index}
-                    role="tab"
-                    key={index}
                     onClick={() => setCurrentTabIndex(index)}
+                    className={styles.mTeamListItemButton}
                   >
                     {label}
                   </Button>
@@ -54,7 +53,7 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
               ))}
             </ul>
             <hr />
-          </menu>
+          </nav>
           <div className="m-section__content">
             <div className={styles.mPeopleList} hidden={currentTabIndex !== 0}>
               <div className={styles.mPersonCard}>

@@ -41,8 +41,8 @@ const CarouselComponent: React.FC<{
           styles["carouselContentScrolledTo" + currentCarouselItemIndex]
         }`}
       >
-        {articles.map((article, index) => {
-          return <ArticleTileComponent {...article} key={index} />;
+        {articles.map((article) => {
+          return <ArticleTileComponent {...article} key={article.slug} />;
         })}
       </div>
       <div className={styles.carouselControls}>
@@ -68,7 +68,7 @@ const CarouselComponent: React.FC<{
                 : ""
             }`}
             onClick={() => displayNthCarouselItem(index)}
-            key={index}
+            key={article.slug}
           ></button>
         ))}
         <Button

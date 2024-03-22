@@ -34,7 +34,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-inline-start: unset;
+
     margin: 0;
   }
 
@@ -75,14 +75,14 @@
         border-bottom: 2px solid transparent;
       }
 
-      :global button[role="tab"] {
+      .mTeamListItemButton {
         --mdc-outlined-button-label-text-color: #{map.get(
             theme.$modino-colors,
             surface,
             text
           )};
 
-        .mdc-button {
+        :global .mdc-button {
           &__label {
             @include theme.m-font("body-3");
           }
@@ -147,10 +147,10 @@
           border-color: map.get(theme.$modino-colors, primary, 900);
 
           z-index: 1;
-          :global button[role="tab"] {
+          .mTeamListItemButton {
             color: map.get(theme.$modino-colors, primary, 900);
 
-            .mdc-button {
+            :global .mdc-button {
               &__label {
                 font-weight: bold;
               }

@@ -15,7 +15,7 @@ const BlogPost = ({
     <Layout>
       <main className="m-main">
         <section className={`m-section ${styles.mArticle}`}>
-          <div className="m-section-content">
+          <div className={`m-section__content ${styles.mArticleContent}`}>
             <div className={styles.mArticleBreadcrumbs}>
               <Link to="/" className={styles.mArticleBreadcrumb}>
                 Home
