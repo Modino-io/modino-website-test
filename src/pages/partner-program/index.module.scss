@@ -422,13 +422,22 @@
     }
 
     &Checkbox {
-      .mdc-checkbox {
+      :global .mdc-checkbox {
         --mdc-checkbox-unchecked-color: #{map.get(
             $modino-colors,
             surface,
             disabled
           )};
+
+        &.mdc-ripple-upgraded--background-focused {
+          .mdc-checkbox__ripple {
+            &:before {
+              background-color: map.get($modino-colors, surface, border);
+            }
+          }
+        }
       }
+
       label {
         text-align: left;
       }
@@ -442,6 +451,10 @@
       &:last-of-type {
         padding-bottom: spacing(14);
       }
+    }
+
+    &Field {
+      width: 100%;
     }
 
     form {

@@ -132,6 +132,11 @@ blockquote {
       text-align: left;
     }
   }
+
+  &ActionButton {
+    padding: theme.spacing(6, 16);
+    height: unset;
+  }
 }
 
 .mMission {

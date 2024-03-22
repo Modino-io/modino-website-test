@@ -64,6 +64,8 @@
     "@types/react": "^18.2.62",
     "@types/react-dom": "^18.2.19",
     "clean-css-cli": "^5.6.2",
+    "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-remark-images": "^7.13.1",
     "sass": "^1.69.4",
     "typescript": "^5.3.3"
   }

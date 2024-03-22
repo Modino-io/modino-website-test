@@ -45,6 +45,7 @@
       font-weight: 700;
       margin-block: 0;
       grid-area: title;
+      text-align: left;
 
       @media (min-width: 800px) {
         @include m-font("heading-3");
@@ -143,6 +144,10 @@
   }
 
   &Content {
+    :global .gatsby-resp-image-wrapper {
+      max-width: 70% !important;
+    }
+
     text-align: justify;
     align-items: flex-start;
 

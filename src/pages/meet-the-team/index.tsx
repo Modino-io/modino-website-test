@@ -32,7 +32,7 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
           </div>
         </section>
         <section className={`m-section ${styles.mTeam}`}>
-          <nav className={styles.mTeamMenu}>
+          <nav className={`m-section__content ${styles.mTeamMenu}`}>
             <ul className={styles.mTeamList}>
               {tabLabels.map((label, index) => (
                 <li

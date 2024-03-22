@@ -247,7 +247,7 @@ const IndexPage = ({ data }: PageProps) => {
               </h2>
               <Button
                 unelevated
-                className="cta-accent-button"
+                className={`cta-accent-button ${styles.mSummaryActionButton}`}
                 onClick={() => (window.location.href = "./get-in-touch")}
                 id="summary-cta-btn"
               >

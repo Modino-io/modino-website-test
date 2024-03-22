@@ -272,8 +272,9 @@ const PartnerProgram = ({ data }: PageProps) => {
                 >
                   <div className={styles.mJoinGrowJoinFormFieldWrapper}>
                     <TextField
+                      className={styles.mJoinGrowJoinFormField}
                       outlined
-                      label="Email"
+                      label="E-mail"
                       required
                       autoComplete="off"
                       onChange={(e: any) =>

@@ -4,7 +4,7 @@
 .mJobs {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   min-height: 100vh;
 
@@ -60,23 +60,20 @@
   }
 
   &Header {
+    @include m-font("heading-1-mobile");
+
     grid-area: header;
+    margin-block-end: spacing(16);
+    padding-inline: 0;
 
-    .m-section__header {
-      @include m-font("heading-1-mobile");
+    @media (min-width: 600px) {
+      @include m-font("heading-2");
 
-      margin-block-end: spacing(16);
       padding-inline: 0;
+    }
 
-      @media (min-width: 600px) {
-        @include m-font("heading-2");
-
-        padding-inline: 0;
-      }
-
-      @media (min-width: 800px) {
-        text-align: left;
-      }
+    @media (min-width: 800px) {
+      text-align: left;
     }
   }
 
