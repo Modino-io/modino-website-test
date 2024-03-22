@@ -82,5 +82,6 @@ jobs:
         with:
           access-token: ${{ secrets.MODINO_CI_GITHUB_TOKEN }}
           deploy-branch: gh-pages
+          gatsby-args: --prefix-paths
 
 
