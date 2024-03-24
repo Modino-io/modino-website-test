@@ -1,6 +1,11 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  flags: {
+    DEV_SSR: true,
+  },
+  pathPrefix: "/modino-gatsby-website",
+  // pathPrefix: "/",
   siteMetadata: {
     siteUrl: `https://www.modino.io`,
   },
