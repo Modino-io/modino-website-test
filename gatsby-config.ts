@@ -4,7 +4,7 @@ const config: GatsbyConfig = {
   flags: {
     DEV_SSR: true,
   },
-  pathPrefix: "/modino-gatsby-website",
+  pathPrefix: "/modino-website",
   siteMetadata: {
     siteUrl: `https://www.modino.io`,
   },
