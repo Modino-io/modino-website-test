@@ -26,8 +26,7 @@
   }
 
   :global {
-    .mdc-text-field,
-    .mdc-select {
+    .mdc-text-field {
       width: 100%;
 
       [class^="mdc-notched-outline__"] {
@@ -37,21 +36,33 @@
       .mdc-floating-label--required::after {
         content: "";
       }
-    }
 
-    .mdc-text-field--focused {
-      &:not(.mdc-text-field--invalid) {
-        .mdc-floating-label {
-          color: map.get(theme.$modino-colors, primary, 900);
+      &--focused {
+        &:not(.mdc-text-field--invalid) {
+          .mdc-floating-label {
+            color: map.get(theme.$modino-colors, primary, 900);
+          }
         }
       }
-      .mdc-floating-label {
-        color: map.get(theme.$modino-colors, primary, 900);
-      }
     }
-    .mdc-text-field--invalid {
-      .mdc-floating-label {
-        color: var(--mdc-theme-error);
+
+    .mdc-select {
+      width: 100%;
+
+      &:not(.mdc-select--disabled) {
+        &.mdc-select--focused {
+          .mdc-floating-label {
+            color: map.get(theme.$modino-colors, primary, 900);
+          }
+        }
+      }
+
+      [class^="mdc-notched-outline__"] {
+        border-color: map.get(theme.$modino-colors, surface, border);
+      }
+
+      .mdc-floating-label--required::after {
+        content: "";
       }
     }
 
