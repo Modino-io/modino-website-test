@@ -337,7 +337,7 @@ const PartnerProgram = ({ data }: PageProps) => {
             </div>
             <a
               className={styles.mProgramPresentationLink}
-              href="/files/Modino Partner Program.pdf"
+              href={withPrefix("/files/Modino Partner Program.pdf")}
               target="_blank"
               rel="noopener"
             >
