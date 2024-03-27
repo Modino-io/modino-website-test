@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import * as styles from "./footer.component.module.scss";
 
 const FooterComponent = () => {
@@ -53,7 +53,10 @@ const FooterComponent = () => {
             target="_blank"
             rel="noopener"
           >
-            <img alt="linkedIn icon" src="/img/linkedin_white.svg" />
+            <img
+              alt="linkedIn icon"
+              src={withPrefix("/img/linkedin_white.svg")}
+            />
           </a>
           <div className={styles.mFooterCopyright}>
             <p>

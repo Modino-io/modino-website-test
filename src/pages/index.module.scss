@@ -29,7 +29,7 @@ blockquote {
     transform: translate(-50%, calc(-50% - 12vw));
     width: calc(70vh + 70vw);
     height: 130vh;
-    background-image: url("/img/top_hero.svg");
+    background-image: url("#{theme.$gatsby-path-prefix}/img/top_hero.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -75,7 +75,7 @@ blockquote {
 
   &::before {
     content: "";
-    background-image: url("/img/Decoration - Full.svg");
+    background-image: url("#{theme.$gatsby-path-prefix}/img/Decoration - Full.svg");
     background-position: center;
     background-size: 100% 100%;
     left: calc(-85% - 5vw);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HeadFC, Link, PageProps } from "gatsby";
+import { HeadFC, Link, PageProps, withPrefix } from "gatsby";
 import Layout from "../../components/layout/layout.component";
 
 import * as styles from "./index.module.scss";
@@ -72,7 +72,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -92,7 +95,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -112,7 +118,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -134,7 +143,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -154,7 +166,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -176,7 +191,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -196,7 +214,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -216,7 +237,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -238,7 +262,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -258,7 +285,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -278,7 +308,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -298,7 +331,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -318,7 +354,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -340,7 +379,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -360,7 +402,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -380,7 +425,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -402,7 +450,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -422,7 +473,10 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
                     target="_blank"
                     rel="noopener"
                   >
-                    <img alt="linkedIn icon" src="/img/linkedin.svg" />
+                    <img
+                      alt="linkedIn icon"
+                      src={withPrefix("/img/linkedin.svg")}
+                    />
                   </a>
                 </div>
               </div>
@@ -435,7 +489,7 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
             <div className={styles.mValuesList}>
               <div className={styles.mValuesItem}>
                 <img
-                  src="/img/values-illustration-1.svg"
+                  src={withPrefix("/img/values-illustration-1.svg")}
                   alt="Modino values illustration - there is always a way"
                   className={styles.mValuesItemImage}
                 />
@@ -450,7 +504,7 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
               </div>
               <div className={styles.mValuesItem}>
                 <img
-                  src="/img/values-illustration-2.svg"
+                  src={withPrefix("/img/values-illustration-2.svg")}
                   alt="Modino values illustration - dream big"
                   className={styles.mValuesItemImage}
                 />
@@ -462,7 +516,7 @@ const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
               </div>
               <div className={styles.mValuesItem}>
                 <img
-                  src="/img/values-illustration-3.svg"
+                  src={withPrefix("/img/values-illustration-3.svg")}
                   alt="Modino values illustration - less is more"
                   className={styles.mValuesItemImage}
                 />

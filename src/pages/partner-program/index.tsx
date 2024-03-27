@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HeadFC, Link, PageProps } from "gatsby";
+import { HeadFC, Link, PageProps, withPrefix } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
@@ -81,7 +81,7 @@ const PartnerProgram = ({ data }: PageProps) => {
                   difference.
                 </p>
               </div>
-              <img src="/img/shape-the-future-hero.svg" alt="" />
+              <img src={withPrefix("/img/shape-the-future-hero.svg")} alt="" />
             </div>
           </div>
         </section>
@@ -91,7 +91,10 @@ const PartnerProgram = ({ data }: PageProps) => {
             <div className={styles.mPartnerProgramContent}>
               <div className={styles.mProgramTile}>
                 <div className={styles.mProgramTileTitle}>
-                  <img src="/img/program-illustration-1.svg" alt="" />
+                  <img
+                    src={withPrefix("/img/program-illustration-1.svg")}
+                    alt=""
+                  />
                 </div>
                 <div className={styles.mProgramTileText}>
                   With your feedback we can grow faster and in a more tailored
@@ -101,7 +104,10 @@ const PartnerProgram = ({ data }: PageProps) => {
               </div>
               <div className={styles.mProgramTile}>
                 <div className={styles.mProgramTileTitle}>
-                  <img src="/img/program-illustration-2.svg" alt="" />
+                  <img
+                    src={withPrefix("/img/program-illustration-2.svg")}
+                    alt=""
+                  />
                 </div>
                 <div className={styles.mProgramTileText}>
                   A place where you can have a direct impact on how our
@@ -113,7 +119,10 @@ const PartnerProgram = ({ data }: PageProps) => {
               </div>
               <div className={styles.mProgramTile}>
                 <div className={styles.mProgramTileTitle}>
-                  <img src="/img/program-illustration-3.svg" alt="" />
+                  <img
+                    src={withPrefix("/img/program-illustration-3.svg")}
+                    alt=""
+                  />
                 </div>
                 <div className={styles.mProgramTileText}>
                   Let us know about your needs and pain points, so we can find a
@@ -131,7 +140,7 @@ const PartnerProgram = ({ data }: PageProps) => {
                 Benefits of joining the Program
               </h2>
               <img
-                src="/img/checklist.svg"
+                src={withPrefix("/img/checklist.svg")}
                 alt=""
                 className={styles.mBenefitsImage}
               />
@@ -140,7 +149,7 @@ const PartnerProgram = ({ data }: PageProps) => {
                   <li>
                     <img
                       className={styles.mBenefitsListItemCounter}
-                      src="/img/checklist-item.svg"
+                      src={withPrefix("/img/checklist-item.svg")}
                       alt="list item icon"
                     />
                     <p>
@@ -151,7 +160,7 @@ const PartnerProgram = ({ data }: PageProps) => {
                   <li>
                     <img
                       className={styles.mBenefitsListItemCounter}
-                      src="/img/checklist-item.svg"
+                      src={withPrefix("/img/checklist-item.svg")}
                       alt="list item icon"
                     />
                     <p>
@@ -163,7 +172,7 @@ const PartnerProgram = ({ data }: PageProps) => {
                   <li>
                     <img
                       className={styles.mBenefitsListItemCounter}
-                      src="/img/checklist-item.svg"
+                      src={withPrefix("/img/checklist-item.svg")}
                       alt="list item icon"
                     />
                     <p>
@@ -185,23 +194,26 @@ const PartnerProgram = ({ data }: PageProps) => {
               </p>
               <div className={styles.mHowWorksSteps}>
                 <div className={styles.mHowWorksStep}>
-                  <img src="/img/icons/fact_check.svg" alt="" />
+                  <img src={withPrefix("/img/icons/fact_check.svg")} alt="" />
                   <p>Usability tests</p>
                 </div>
                 <div className={styles.mHowWorksStep}>
-                  <img src="/img/icons/forum.svg" alt="" />
+                  <img src={withPrefix("/img/icons/forum.svg")} alt="" />
                   <p>Initial design consultations</p>
                 </div>
                 <div className={styles.mHowWorksStep}>
-                  <img src="/img/icons/handshake.svg" alt="" />
+                  <img src={withPrefix("/img/icons/handshake.svg")} alt="" />
                   <p>In-depth interviews</p>
                 </div>
                 <div className={styles.mHowWorksStep}>
-                  <img src="/img/icons/diversity_3.svg" alt="" />
+                  <img src={withPrefix("/img/icons/diversity_3.svg")} alt="" />
                   <p>Participation in workshops</p>
                 </div>
                 <div className={styles.mHowWorksStep}>
-                  <img src="/img/icons/contract_edit.svg" alt="" />
+                  <img
+                    src={withPrefix("/img/icons/contract_edit.svg")}
+                    alt=""
+                  />
                   <p>Surveys</p>
                 </div>
               </div>
@@ -256,7 +268,7 @@ const PartnerProgram = ({ data }: PageProps) => {
               </div>
               <div className={styles.mJoinGrowJoinForm}>
                 <img
-                  src="/img/meeting_join.svg"
+                  src={withPrefix("/img/meeting_join.svg")}
                   alt=""
                   className={styles.mJoinGrowImage}
                 />
@@ -325,12 +337,12 @@ const PartnerProgram = ({ data }: PageProps) => {
             </div>
             <a
               className={styles.mProgramPresentationLink}
-              href="/files/Modino Partner Program.pdf"
+              href={withPrefix("/files/Modino Partner Program.pdf")}
               target="_blank"
               rel="noopener"
             >
-              <img src="/img/icons/pdf.svg" alt="pdf icon" /> Modino Partner
-              Program.pdf
+              <img src={withPrefix("/img/icons/pdf.svg")} alt="pdf icon" />{" "}
+              Modino Partner Program.pdf
             </a>
           </div>
         </section>

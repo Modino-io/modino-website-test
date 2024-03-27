@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HeadFC, Link, PageProps, graphql } from "gatsby";
+import { HeadFC, Link, PageProps, graphql, withPrefix } from "gatsby";
 import Seo from "../components/seo.component";
 import Layout from "../components/layout/layout.component";
 import CarouselComponent from "../components/carousel/carousel.component";
@@ -256,7 +256,7 @@ const IndexPage = ({ data }: PageProps) => {
             </div>
             <img
               alt="Modino update guard illustration"
-              src="./img/Illustration.svg"
+              src={withPrefix("/img/Illustration.svg")}
               className={styles.mSecurityImg}
             />
           </div>

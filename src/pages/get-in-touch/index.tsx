@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HeadFC, Link } from "gatsby";
+import { HeadFC, Link, withPrefix } from "gatsby";
 import Seo from "../../components/seo.component";
 
 import { Button } from "@rmwc/button";
@@ -170,7 +170,7 @@ const GetInTouch = () => {
               I have read and agree to the{" "}
               <a
                 className={styles.mLink}
-                href="/privacy-policy"
+                href={withPrefix("/privacy-policy")}
                 target="_blank"
               >
                 Privacy Policy
@@ -178,7 +178,7 @@ const GetInTouch = () => {
               and{" "}
               <a
                 className={styles.mLink}
-                href="/terms-of-service"
+                href={withPrefix("/terms-of-service")}
                 target="_blank"
               >
                 Terms of Service
@@ -194,13 +194,13 @@ const GetInTouch = () => {
         <Link to="/">
           <img
             className={styles.mLogoImg}
-            src="/img/MODINO-logo-full-white.svg"
+            src={withPrefix("/img/MODINO-logo-full-white.svg")}
             alt="modino logo"
           />
         </Link>
         <img
           className={styles.mRequestAccessImg}
-          src="/img/modino-man-in-envelope.svg"
+          src={withPrefix("/img/modino-man-in-envelope.svg")}
           alt="modino man in an envelope"
         />
       </section>

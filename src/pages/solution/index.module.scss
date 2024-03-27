@@ -117,7 +117,7 @@
     content: "";
     position: absolute;
     box-sizing: border-box;
-    background-image: url("/img/decoration_blob.svg");
+    background-image: url("#{theme.$gatsby-path-prefix}/img/decoration_blob.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

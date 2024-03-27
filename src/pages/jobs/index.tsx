@@ -1,5 +1,5 @@
 import React from "react";
-import { HeadFC, Link, PageProps, graphql } from "gatsby";
+import { HeadFC, Link, PageProps, graphql, withPrefix } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
@@ -30,7 +30,7 @@ const JobsPage: React.FC<PageProps> = ({ data }) => {
               </div>
               <img
                 className={styles.mJobsImage}
-                src="/img/jobs.svg"
+                src={withPrefix("/img/jobs.svg")}
                 alt="jobs hero"
               />
             </div>

@@ -21,6 +21,8 @@
 @use "palette";
 @use "sass:map";
 
+$gatsby-path-prefix: "/modino-gatsby-website";
+
 * {
   box-sizing: border-box;
 }

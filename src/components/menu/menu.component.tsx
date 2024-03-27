@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "gatsby";
+import { Link, withPrefix } from "gatsby";
 import { Button } from "@rmwc/button";
 
 import * as styles from "./menu.components.module.scss";
@@ -51,7 +51,11 @@ const Menu = ({
             <Link className={styles.mMenuLogoLink} to="/">
               <img
                 className={styles.mMenuLogo}
-                src="/img/MODINO-logo-full.svg"
+                src={withPrefix(
+                  isMenuSticky
+                    ? "/img/MODINO-logo-short.svg"
+                    : "/img/MODINO-logo-full.svg"
+                )}
                 alt="modino logo"
               />
             </Link>
@@ -111,7 +115,9 @@ const Menu = ({
                     className={`${styles.mMenuCtaButton} ${
                       isCtaButtonPrimary ? "cta-accent-button" : ""
                     }`}
-                    onClick={() => (window.location.href = "/get-in-touch")}
+                    onClick={() =>
+                      (window.location.href = withPrefix("/get-in-touch"))
+                    }
                   >
                     Get in touch
                   </Button>
@@ -121,7 +127,10 @@ const Menu = ({
                 className={styles.mMenuHamburgerButton}
                 onClick={toggleHamburgerMenu}
               >
-                <img src="/img/hamburger-menu.svg" alt="hamburger menu" />
+                <img
+                  src={withPrefix("/img/hamburger-menu.svg")}
+                  alt="hamburger menu"
+                />
               </Button>
             </div>
           </nav>
@@ -139,7 +148,7 @@ const Menu = ({
           <Link className={styles.mMenuLogoLink} to="/">
             <img
               className={styles.mMenuLogo}
-              src="/img/MODINO-logo-short.svg"
+              src={withPrefix("/img/MODINO-logo-short.svg")}
               alt="modino logo"
             />
           </Link>
@@ -148,7 +157,10 @@ const Menu = ({
             className={styles.mMobileMenuHamburgerButton}
             onClick={toggleHamburgerMenu}
           >
-            <img src="/img/hamburger-menu.svg" alt="hamburger menu" />
+            <img
+              src={withPrefix("/img/hamburger-menu.svg")}
+              alt="hamburger menu"
+            />
           </Button>
         </div>
         <div className={styles.mMobileMenuActions}>
@@ -202,7 +214,7 @@ const Menu = ({
           <Button
             unelevated
             className={`cta-accent-button ${styles.mMobileMenuCtaButton}`}
-            onClick={() => (window.location.href = "/get-in-touch")}
+            onClick={() => (window.location.href = withPrefix("/get-in-touch"))}
           >
             Get in touch
           </Button>
