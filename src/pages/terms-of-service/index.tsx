@@ -1,5 +1,5 @@
 import * as React from "react";
-import { HeadFC, Link, PageProps } from "gatsby";
+import { HeadFC, Link, PageProps, withPrefix } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 
@@ -196,7 +196,7 @@ const TermsOfService: React.FC<PageProps> = () => {
 
             <img
               className={styles.mLegalImage}
-              src="/img/modino-man-in-envelope.svg"
+              src={withPrefix("/img/modino-man-in-envelope.svg")}
               alt="modino man in an envelope"
             />
           </section>

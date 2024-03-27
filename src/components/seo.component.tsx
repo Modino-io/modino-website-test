@@ -1,3 +1,4 @@
+import { withPrefix } from "gatsby";
 import React from "react";
 
 const Seo: React.FC<{
@@ -19,7 +20,7 @@ const Seo: React.FC<{
         rel="stylesheet"
       />
       <link rel="apple-touch-icon" href="icon.png" />
-      <link rel="icon" href="favicon.ico" />
+      <link rel="icon" href={withPrefix("/favicon.ico")} />
     </React.Fragment>
   );
 };

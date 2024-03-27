@@ -26,7 +26,7 @@
     transform: translate(-60%, calc(-50% - 12vw));
     width: calc(80vh + 80vw);
     height: 130vh;
-    background-image: url("/img/decoration-shape-the-future.svg");
+    background-image: url("#{$gatsby-path-prefix}/img/decoration-shape-the-future.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -321,7 +321,7 @@
     transform: translate(-60%, calc(-50% - 12vw));
     width: 1220px;
     height: 1220px;
-    background-image: url("/img/join_engage_grow-blob.svg");
+    background-image: url("#{$gatsby-path-prefix}/img/join_engage_grow-blob.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;

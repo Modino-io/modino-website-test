@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HeadFC } from "gatsby";
+import { HeadFC, withPrefix } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 import { Button } from "@rmwc/button";
@@ -70,7 +70,7 @@ const Solution = () => {
             <div className={styles.mKeyAspectsList}>
               <div className={styles.mKeyAspectsItem}>
                 <img
-                  src="/img/key-aspect-illustration-1.svg"
+                  src={withPrefix("/img/key-aspect-illustration-1.svg")}
                   alt="Modino values illustration - universal solution"
                   className={styles.mKeyAspectsItemImage}
                 />
@@ -87,7 +87,7 @@ const Solution = () => {
               </div>
               <div className={styles.mKeyAspectsItem}>
                 <img
-                  src="/img/key-aspect-illustration-2.svg"
+                  src={withPrefix("/img/key-aspect-illustration-2.svg")}
                   alt="Modino values illustration - not hardware bound"
                   className={styles.mKeyAspectsItemImage}
                 />
@@ -104,7 +104,7 @@ const Solution = () => {
               </div>
               <div className={styles.mKeyAspectsItem}>
                 <img
-                  src="/img/key-aspect-illustration-3.svg"
+                  src={withPrefix("/img/key-aspect-illustration-3.svg")}
                   alt="Modino values illustration - safe software delivery"
                   className={styles.mKeyAspectsItemImage}
                 />
@@ -120,7 +120,7 @@ const Solution = () => {
               </div>
               <div className={styles.mKeyAspectsItem}>
                 <img
-                  src="/img/key-aspect-illustration-4.svg"
+                  src={withPrefix("/img/key-aspect-illustration-4.svg")}
                   alt="Modino values illustration - ensured software application"
                   className={styles.mKeyAspectsItemImage}
                 />
@@ -145,7 +145,10 @@ const Solution = () => {
             <div className={styles.tilesContainer}>
               <div className={styles.mTile}>
                 <div className={styles.mTileIcon}>
-                  <img src="/img/icons/atom-icon.svg" alt="atomic updates" />
+                  <img
+                    src={withPrefix("/img/icons/atom-icon.svg")}
+                    alt="atomic updates"
+                  />
                 </div>
                 <p className={styles.mTileContent}>
                   Modino.io platform ensures safe software delivery – data to be
@@ -157,7 +160,7 @@ const Solution = () => {
               <div className={styles.mTile}>
                 <div className={styles.mTileIcon}>
                   <img
-                    src="/img/icons/cloud_sync-icon.svg"
+                    src={withPrefix("/img/icons/cloud_sync-icon.svg")}
                     alt="automatic rollback"
                   />
                 </div>
@@ -169,7 +172,10 @@ const Solution = () => {
               </div>
               <div className={styles.mTile}>
                 <div className={styles.mTileIcon}>
-                  <img src="/img/icons/update-icon.svg" alt="regular updates" />
+                  <img
+                    src={withPrefix("/img/icons/update-icon.svg")}
+                    alt="regular updates"
+                  />
                 </div>
                 <p className={styles.mTileContent}>
                   With a purchased annual license, each client gets regular
@@ -199,7 +205,7 @@ const Solution = () => {
                 <div className={styles.mTile}>
                   <div className={styles.mTileIcon}>
                     <img
-                      src="/img/icons/lan.svg"
+                      src={withPrefix("/img/icons/lan.svg")}
                       alt="security and containers"
                     />
                   </div>
@@ -212,7 +218,10 @@ const Solution = () => {
                 </div>
                 <div className={styles.mTile}>
                   <div className={styles.mTileIcon}>
-                    <img src="/img/icons/encrypted.svg" alt="zero-trust" />
+                    <img
+                      src={withPrefix("/img/icons/encrypted.svg")}
+                      alt="zero-trust"
+                    />
                   </div>
                   <p className={styles.mTileContent}>
                     Users are authenticated and authorized like any other system
@@ -225,7 +234,7 @@ const Solution = () => {
                 <div className={styles.mTile}>
                   <div className={styles.mTileIcon}>
                     <img
-                      src="/img/icons/support_agent.svg"
+                      src={withPrefix("/img/icons/support_agent.svg")}
                       alt="modino agent"
                     />
                   </div>
@@ -238,7 +247,10 @@ const Solution = () => {
                 </div>
                 <div className={styles.mTile}>
                   <div className={styles.mTileIcon}>
-                    <img src="/img/icons/key.svg" alt="enrypted containers" />
+                    <img
+                      src={withPrefix("/img/icons/key.svg")}
+                      alt="enrypted containers"
+                    />
                   </div>
                   <p className={styles.mTileContent}>
                     Container images with software updates are encrypted and
@@ -248,7 +260,7 @@ const Solution = () => {
                 </div>
               </div>
               <img
-                src="/img/Graph.svg"
+                src={withPrefix("/img/Graph.svg")}
                 className={styles.mSecurityGraph}
                 alt="modino graph"
               />
@@ -290,7 +302,7 @@ const Solution = () => {
             <div className={styles.cardsContainer}>
               <div className={styles.mCard}>
                 <div className={styles.mCardIcon}>
-                  <img src="/img/icons/work.svg" alt="" />
+                  <img src={withPrefix("/img/icons/work.svg")} alt="" />
                 </div>
                 <p className={styles.mCardTitle}>Experience</p>
                 <p className={styles.mCardContent}>
@@ -300,7 +312,7 @@ const Solution = () => {
               </div>
               <div className={styles.mCard}>
                 <div className={styles.mCardIcon}>
-                  <img src="/img/icons/alt_route.svg" alt="" />
+                  <img src={withPrefix("/img/icons/alt_route.svg")} alt="" />
                 </div>
                 <p className={styles.mCardTitle}>Flexibility</p>
                 <p className={styles.mCardContent}>
@@ -310,7 +322,7 @@ const Solution = () => {
               </div>
               <div className={styles.mCard}>
                 <div className={styles.mCardIcon}>
-                  <img src="/img/icons/visibility.svg" alt="" />
+                  <img src={withPrefix("/img/icons/visibility.svg")} alt="" />
                 </div>
                 <p className={styles.mCardTitle}>Monitoring and detection</p>
                 <p className={styles.mCardContent}>
@@ -320,7 +332,7 @@ const Solution = () => {
               </div>
               <div className={styles.mCard}>
                 <div className={styles.mCardIcon}>
-                  <img src="/img/icons/volunteer.svg" alt="" />
+                  <img src={withPrefix("/img/icons/volunteer.svg")} alt="" />
                 </div>
                 <p className={styles.mCardTitle}>Trust</p>
                 <p className={styles.mCardContent}>

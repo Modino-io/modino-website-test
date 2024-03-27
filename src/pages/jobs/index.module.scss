@@ -20,7 +20,7 @@
     transform: translate(20%, 45%);
     height: 1100px;
     width: 1100px;
-    background-image: url("/img/jobs-blob.svg");
+    background-image: url("#{$gatsby-path-prefix}/img/jobs-blob.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
