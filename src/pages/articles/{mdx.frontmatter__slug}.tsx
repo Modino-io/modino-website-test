@@ -9,8 +9,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const BlogPost = ({
   data,
   children,
-}: React.PropsWithChildren<{ data: object }>) => {
-  const image = getImage(data.mdx.frontmatter.thumbnail);
+}: React.PropsWithChildren<{ data: { [key: string]: any } }>) => {
+  const image = getImage(data.mdx.frontmatter.thumbnail)!;
   return (
     <Layout>
       <main className="m-main">
@@ -90,7 +90,7 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC = ({ data }) => (
+export const Head: HeadFC = ({ data }: { data: { [key: string]: any } }) => (
   <Seo
     pageTitle={data.mdx.frontmatter.title}
     description={data.mdx.frontmatter.meta_description}

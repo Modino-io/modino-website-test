@@ -8,7 +8,7 @@ import { ImageDataLike, StaticImage } from "gatsby-plugin-image";
 
 import * as styles from "./index.module.scss";
 
-const IndexPage = ({ data }: PageProps) => {
+const IndexPage = ({ data }: { data: { [key: string]: any } }) => {
   let mainCtaButton: HTMLButtonElement;
 
   const [isMainCtaButtonVisible, setIsMainCtaButtonVisible] = useState(true);

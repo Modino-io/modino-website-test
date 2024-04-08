@@ -5,7 +5,7 @@ import Layout from "../../components/layout/layout.component";
 
 import * as styles from "./index.module.scss";
 
-const JobsPage: React.FC<PageProps> = ({ data }) => {
+const JobsPage = ({ data }: { data: { [key: string]: any } }) => {
   return (
     <Layout>
       <main className="m-main">
@@ -18,7 +18,7 @@ const JobsPage: React.FC<PageProps> = ({ data }) => {
               <div className={styles.mJobsText}>
                 Current openings:
                 <ul>
-                  {data.allMdx.nodes.map((node) => (
+                  {data.allMdx.nodes.map((node: { [key: string]: any }) => (
                     <li key={node.frontmatter.slug}>
                       <Link to={`/jobs/${node.frontmatter.slug}`}>
                         {node.frontmatter.title}

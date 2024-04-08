@@ -5,8 +5,13 @@ import Layout from "../../components/layout/layout.component";
 import ArticleTileComponent from "../../components/article-tile/article-tile.component";
 
 import * as styles from "./index.module.scss";
+import { ImageDataLike } from "gatsby-plugin-image";
 
-const ArticlesPage: React.FC<PageProps> = ({ data }) => {
+const ArticlesPage: React.FC<PageProps> = ({
+  data,
+}: {
+  data: { [key: string]: any };
+}) => {
   const getArticlesFromProps = (
     propsArticles: Array<{
       frontmatter: {
@@ -14,8 +19,8 @@ const ArticlesPage: React.FC<PageProps> = ({ data }) => {
         tile_title: string;
         slug: string;
         summary: string;
-        thumbnail: string;
-        category: unknown;
+        thumbnail: ImageDataLike;
+        category: string;
       };
     }>
   ) => {

@@ -1,9 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import * as styles from "./article-chip.component.module.scss";
 
-const ArticleChipComponent: React.FC<
-  PropsWithChildren<{ type: "red" | "blue" | "green" }>
-> = ({
+const ArticleChipComponent = ({
   type,
   children,
 }: PropsWithChildren<{ type: "red" | "blue" | "green" }>) => {

@@ -8,7 +8,7 @@ import * as styles from "./job.module.scss";
 const BlogPost = ({
   data,
   children,
-}: React.PropsWithChildren<{ data: object }>) => {
+}: React.PropsWithChildren<{ data: { [key: string]: any } }>) => {
   return (
     <Layout>
       <main className="m-main">
@@ -69,7 +69,7 @@ export const query = graphql`
   }
 `;
 
-export const Head: HeadFC = ({ data }) => (
+export const Head: HeadFC = ({ data }: { data: { [key: string]: any } }) => (
   <Seo
     pageTitle={`Modino.io - ${data.mdx.frontmatter.title}`}
     description={data.mdx.frontmatter.meta_description}
