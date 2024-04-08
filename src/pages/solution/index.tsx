@@ -57,9 +57,9 @@ const Solution = () => {
           <div className="m-section__content">
             <div className={styles.mSolutionVideoVideoContainer}>
               <iframe
-                src="https://drive.google.com/file/d/1LX6aUjYMPFSh70V5xUAew0XW9NPJE03Z/preview"
-                allow="autoplay"
-                title="pitch-video"
+                src="https://player.vimeo.com/video/931944106?dnt=1"
+                allow="autoplay; fullscreen; picture-in-picture"
+                title="Safe and secure software updates for IoT - ITM 2023 (EN)"
               ></iframe>
             </div>
           </div>
