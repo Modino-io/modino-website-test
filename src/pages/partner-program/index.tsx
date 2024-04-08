@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HeadFC, Link, PageProps, withPrefix } from "gatsby";
+import { HeadFC, Link, withPrefix } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 

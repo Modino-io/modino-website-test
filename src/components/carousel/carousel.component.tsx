@@ -12,7 +12,7 @@ const CarouselComponent: React.FC<{
     summary: string;
     thumbnailPhotoUrl: ImageDataLike;
     slug: string;
-    categories: Array<string>;
+    categories: string;
   }>;
 }> = ({ articles }) => {
   const [currentCarouselItemIndex, setCurrentCarouselItemIndex] = useState(0);

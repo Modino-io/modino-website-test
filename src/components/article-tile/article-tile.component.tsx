@@ -3,12 +3,7 @@ import React, { PropsWithChildren } from "react";
 
 import * as styles from "./article-tile.component.module.scss";
 import ArticleChipComponent from "../article-chip/article-chip.component";
-import {
-  GatsbyImage,
-  IGatsbyImageData,
-  ImageDataLike,
-  getImage,
-} from "gatsby-plugin-image";
+import { GatsbyImage, ImageDataLike, getImage } from "gatsby-plugin-image";
 
 const ArticleTileComponent = ({
   title,

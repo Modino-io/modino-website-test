@@ -1,5 +1,5 @@
 import React from "react";
-import { HeadFC, PageProps, graphql } from "gatsby";
+import { HeadFC, graphql } from "gatsby";
 import Seo from "../../components/seo.component";
 import Layout from "../../components/layout/layout.component";
 import ArticleTileComponent from "../../components/article-tile/article-tile.component";
