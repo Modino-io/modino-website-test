@@ -7,11 +7,7 @@ import ArticleTileComponent from "../../components/article-tile/article-tile.com
 import * as styles from "./index.module.scss";
 import { ImageDataLike } from "gatsby-plugin-image";
 
-const ArticlesPage: React.FC<PageProps> = ({
-  data,
-}: {
-  data: { [key: string]: any };
-}) => {
+const ArticlesPage = ({ data }: { data: { [key: string]: any } }) => {
   const getArticlesFromProps = (
     propsArticles: Array<{
       frontmatter: {

@@ -5,7 +5,7 @@ import Layout from "../../components/layout/layout.component";
 
 import * as styles from "./index.module.scss";
 
-const PrivacyPolicy: React.FC<PageProps> = ({ data }) => {
+const PrivacyPolicy = () => {
   return (
     <Layout shouldMenuBeDisplayed={false}>
       <main className="m-main">

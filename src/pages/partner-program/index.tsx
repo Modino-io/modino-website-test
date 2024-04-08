@@ -10,7 +10,7 @@ import { Snackbar } from "@rmwc/snackbar";
 
 import * as styles from "./index.module.scss";
 
-const PartnerProgram = ({ data }: PageProps) => {
+const PartnerProgram = () => {
   const [email, setEmail] = useState("");
   const [isEmailInputValid, setIsEmailInputValid] = useState(true);
   const [emailValidationMessage, setEmailValidationMessage] = useState(

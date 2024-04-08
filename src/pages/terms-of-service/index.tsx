@@ -5,7 +5,7 @@ import Layout from "../../components/layout/layout.component";
 
 import * as styles from "./index.module.scss";
 
-const TermsOfService: React.FC<PageProps> = () => {
+const TermsOfService = () => {
   return (
     <Layout shouldMenuBeDisplayed={false}>
       <main className="m-main">

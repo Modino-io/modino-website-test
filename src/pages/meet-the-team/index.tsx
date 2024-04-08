@@ -7,7 +7,7 @@ import Seo from "../../components/seo.component";
 import { Button } from "@rmwc/button";
 import { StaticImage } from "gatsby-plugin-image";
 
-const MeetTheTeam: React.FC<PageProps> = ({ data }) => {
+const MeetTheTeam = () => {
   const tabLabels = [
     "Founders",
     "Management",
