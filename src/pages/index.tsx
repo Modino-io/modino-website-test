@@ -21,7 +21,7 @@ const IndexPage = ({ data }: { data: { [key: string]: any } }) => {
         slug: string;
         summary: string;
         thumbnail: ImageDataLike;
-        category: unknown;
+        category: string;
       };
     }>
   ) => {
@@ -31,9 +31,7 @@ const IndexPage = ({ data }: { data: { [key: string]: any } }) => {
       slug: propArticle.frontmatter.slug,
       thumbnailPhotoUrl: propArticle.frontmatter.thumbnail,
       summary: propArticle.frontmatter.summary,
-      categories: Array.isArray(propArticle.frontmatter.category)
-        ? propArticle.frontmatter.category
-        : [propArticle.frontmatter.category],
+      categories: propArticle.frontmatter.category,
     }));
   };
 
