@@ -25,9 +25,7 @@ const ArticlesPage: React.FC<PageProps> = ({ data }) => {
       slug: propArticle.frontmatter.slug,
       thumbnailPhotoUrl: propArticle.frontmatter.thumbnail,
       summary: propArticle.frontmatter.summary,
-      categories: Array.isArray(propArticle.frontmatter.category)
-        ? propArticle.frontmatter.category
-        : [propArticle.frontmatter.category],
+      categories: propArticle.frontmatter.category,
     }));
   };
 

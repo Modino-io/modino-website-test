@@ -18,7 +18,7 @@ const ArticleTileComponent: React.FC<any> = ({
   summary: string;
   thumbnailPhotoUrl: ImageDataLike;
   slug: string;
-  categories: Array<string>;
+  categories: string;
 }) => {
   const image = getImage(thumbnailPhotoUrl);
   return (
@@ -30,8 +30,8 @@ const ArticleTileComponent: React.FC<any> = ({
       />
       <div className={styles.mArticleTileContent}>
         <div className={styles.mArticleTileChips}>
-          {categories.map((element, index) => (
-            <ArticleChipComponent type="red" key={`${element}-index`}>
+          {categories.split(",").map((element) => (
+            <ArticleChipComponent type="red" key={`${element}`}>
               {element}
             </ArticleChipComponent>
           ))}
