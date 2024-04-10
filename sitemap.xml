@@ -1,0 +1,59 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+  <loc>https://modino.io/</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+
+<url>
+  <loc>https://modino.io/privacy-policy</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://modino.io/terms-of-service</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>0.5</priority>
+</url>
+
+<url>
+  <loc>https://modino.io/get-in-touch</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://modino.io/solution</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://modino.io/partner-program</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://modino.io/articles</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://modino.io/meet-the-team</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://modino.io/jobs</loc>
+  <lastmod>2023-11-23T13:25:37+00:00</lastmod>
+  <priority>0.7</priority>
+</url>
+
+</urlset>
