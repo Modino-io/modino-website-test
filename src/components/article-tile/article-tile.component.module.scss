@@ -1,0 +1,57 @@
+@use "../../scss/theme" as *;
+@use "sass:map";
+
+.mArticleTile {
+  flex: 1;
+  min-width: 320px;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  border: 1px solid map.get($modino-colors, surface, border);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.16);
+  text-decoration: none;
+  color: unset;
+  max-height: 570px;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+
+  &Image {
+    border-radius: 12px 12px 0 0;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &Title {
+    @include m-font("subheading-2");
+    margin-block: spacing(12, 4);
+  }
+
+  &Date {
+    @media (min-width: 600px) {
+      margin-top: auto;
+    }
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+    position: relative;
+    margin-top: -#{spacing(8)};
+    padding: spacing(6);
+    border-radius: 12px;
+    background-color: map.get($modino-colors, surface, background);
+  }
+
+  &Description {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  &Chips {
+    display: flex;
+  }
+}

@@ -2,14 +2,17 @@
   "name": "modino-website",
   "version": "1.0.0",
   "description": "modino.io web page",
-  "main": "index.html",
   "directories": {
     "doc": "doc"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --no-source-map scss/main.scss:css/main.css && cleancss -o css/main.css css/main.css --inline all",
-    "sass:watch": "sass --no-source-map --watch scss/main.scss:css/main.css"
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
@@ -28,9 +31,44 @@
     "url": "https://github.com/Modino-io/modino-cupcake-website/issues"
   },
   "homepage": "https://github.com/Modino-io/modino-cupcake-website#readme",
+  "dependencies": {
+    "@material/button": "^14.0.0",
+    "@material/checkbox": "^14.0.0",
+    "@material/ripple": "^14.0.0",
+    "@material/select": "^14.0.0",
+    "@material/snackbar": "^14.0.0",
+    "@material/textfield": "^14.0.0",
+    "@mdx-js/react": "^2.3.0",
+    "@rmwc/button": "^14.1.0",
+    "@rmwc/checkbox": "^14.1.0",
+    "@rmwc/formfield": "^14.1.0",
+    "@rmwc/select": "^14.1.0",
+    "@rmwc/snackbar": "^14.1.0",
+    "@rmwc/textfield": "^14.1.0",
+    "@rmwc/touch-target": "^14.1.0",
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-google-gtag": "^5.13.1",
+    "gatsby-plugin-hotjar": "^1.1.1",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-mdx": "^5.13.1",
+    "gatsby-plugin-sass": "^6.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.71.1",
+    "vanilla-cookieconsent": "^3.0.0"
+  },
   "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.62",
+    "@types/react-dom": "^18.2.19",
     "clean-css-cli": "^5.6.2",
-    "node-sass": "^9.0.0",
-    "sass": "^1.69.4"
+    "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-remark-images": "^7.13.1",
+    "gh-pages": "^6.1.1",
+    "sass": "^1.69.4",
+    "typescript": "^5.3.3"
   }
 }

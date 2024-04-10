@@ -1,0 +1,195 @@
+@use "../../scss/theme" as *;
+@use "sass:map";
+
+@use "@material/button/button" as button;
+
+:global {
+  @include button.styles();
+}
+
+@import "@rmwc/select/select.css";
+@import "@material/select/dist/mdc.select.css";
+@import "@material/floating-label/dist/mdc.floating-label.css";
+@import "@material/notched-outline/dist/mdc.notched-outline.css";
+@import "@material/line-ripple/dist/mdc.line-ripple.css";
+@import "@material/list/dist/mdc.list.css";
+@import "@material/menu/dist/mdc.menu.css";
+@import "@material/menu-surface/dist/mdc.menu-surface.css";
+@import "@material/ripple/dist/mdc.ripple.css";
+
+@import "@material/snackbar/dist/mdc.snackbar.css";
+
+@import "@material/textfield/dist/mdc.textfield.css";
+
+@import "@material/checkbox/dist/mdc.checkbox.css";
+@import "@material/form-field/dist/mdc.form-field.css";
+
+:root {
+  --mdc-theme-primary: #004680;
+  --mdc-theme-secondary: #004680;
+
+  --cc-font-family: "Nunito", sans-serif;
+  --cc-text: map.get($modino-colors, surface, text);
+  --cc-btn-primary-bg: #{map.get($modino-colors, primary, 900)};
+  --cc-btn-primary-hover-bg: #{map.get($modino-colors, primary, 800)};
+  --cc-btn-primary-text: #{map.get($modino-colors, surface, text-contrast)};
+  --cc-btn-primary-hover-text: #{map.get($modino-colors, surface, text-contrast)};
+  --cc-btn-secondary-bg: #{map.get(
+      $modino-colors,
+      surface,
+      background-high-contrast
+    )};
+  --cc-btn-secondary-hover-bg: #{map.get($modino-colors, secondary-2, 50)};
+  --cc-btn-secondary-text: #{map.get($modino-colors, primary, 900)};
+  --cc-btn-secondary-hover-text: #{map.get($modino-colors, primary, 900)};
+}
+
+html {
+  font-size: 16px;
+  color: map.get($modino-colors, surface, text);
+  margin: 0;
+  overflow-x: clip;
+}
+
+body {
+  @include m-font("body-3");
+
+  letter-spacing: 0.25px;
+  background-color: map.get($modino-colors, surface, background);
+  height: 100%;
+  margin: 0;
+  overflow-x: clip;
+}
+
+a {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+main {
+  position: relative;
+  margin: 0 auto;
+  overflow-y: clip;
+  margin-top: -56px;
+
+  @media screen and (min-width: 600px) {
+    margin-top: -84px;
+  }
+}
+
+.highlight {
+  color: map.get($modino-colors, primary, 900);
+  font-weight: 700;
+}
+
+.m-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-block: spacing(32);
+
+  &__header {
+    @include m-font("heading-4");
+
+    padding-inline: spacing(12);
+    margin-block: 0 spacing(16);
+    text-align: center;
+
+    @media (min-width: 600px) {
+      @include m-font("heading-2");
+
+      padding-inline: spacing(32);
+      margin-block: 0 spacing(24);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1240px;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: spacing(12);
+
+    @media screen and (min-width: 600px) {
+      padding-inline: spacing(32);
+    }
+  }
+}
+
+.m-top-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  padding-block-start: 0;
+
+  .m-section__content {
+    justify-content: flex-start;
+    align-items: center;
+
+    @media (min-width: 600px) {
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+
+    @media screen and (min-width: 600px) {
+      text-align: left;
+      top: unset;
+      width: 500px;
+    }
+  }
+
+  &__title {
+    @include m-font("heading-1-mobile");
+
+    margin-block-start: spacing(48);
+
+    @media screen and (min-width: 600px) {
+      @include m-font("heading-1");
+
+      margin-block-end: spacing(8);
+    }
+
+    &-highlight {
+      color: map.get($modino-colors, primary, 900);
+    }
+  }
+
+  &__description {
+    @include m-font("body-3");
+
+    max-width: 350px;
+    margin: 0 auto;
+    margin-block-end: spacing(12);
+
+    @media screen and (min-width: 600px) {
+      @include m-font("body-1");
+
+      margin: unset;
+      max-width: unset;
+      margin-block-end: spacing(24);
+    }
+  }
+
+  &__action-button {
+    padding: spacing(6, 16);
+    height: unset;
+  }
+
+  .m-header__title {
+    @include m-font("heading-1");
+  }
+}

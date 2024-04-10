@@ -1,0 +1,73 @@
+@use "../../scss/theme" as *;
+@use "sass:map";
+
+.mJob {
+  margin-block: spacing(32);
+  margin-block-start: spacing(64);
+
+  :global .m-section__content {
+    align-items: flex-start;
+  }
+
+  &Header {
+    @include m-font("body-2");
+
+    align-self: flex-start;
+    text-align: left;
+    margin-block: spacing(16);
+    padding-inline: 0;
+
+    @media (min-width: 600px) {
+      margin-block: spacing(8, 16);
+      @include m-font("heading-3");
+    }
+  }
+
+  &Breadcrumbs {
+    display: flex;
+    color: map.get($modino-colors, surface, text-disabled);
+    text-align: left;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    > .mJobBreadcrumb {
+      margin-inline: spacing(8);
+
+      &:first-child {
+        margin-inline-start: 0;
+      }
+
+      &:last-child {
+        font-weight: 700;
+        margin-inline-end: 0;
+        color: map.get($modino-colors, surface, text);
+      }
+    }
+  }
+
+  &Content {
+    text-align: justify;
+
+    p:first-of-type {
+      margin-block-start: 0;
+    }
+  }
+
+  &BackLink {
+    display: flex;
+    justify-content: flex-start;
+    $color: #{map.get($modino-colors, primary, 500)};
+    margin-block-start: spacing(32);
+
+    color: $color;
+
+    svg {
+      margin-inline-end: spacing(4);
+      path {
+        fill: $color;
+      }
+    }
+  }
+}

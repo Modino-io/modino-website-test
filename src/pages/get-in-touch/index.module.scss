@@ -1,0 +1,184 @@
+@use "../../scss/theme";
+@use "sass:map";
+
+.mForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: theme.spacing(6);
+  padding: 32px;
+  border: 1px solid map.get(theme.$modino-colors, surface, border);
+  border-radius: theme.$border-radius;
+  background-color: map.get(
+    theme.$modino-colors,
+    surface,
+    background-high-contrast
+  );
+
+  &Title {
+    @include theme.m-font("subheading-2");
+
+    font-size: 2rem;
+    margin: unset;
+    margin-block-end: theme.spacing(10);
+    align-self: flex-start;
+    color: map.get(theme.$modino-colors, surface, text);
+  }
+
+  :global {
+    .mdc-text-field {
+      width: 100%;
+
+      [class^="mdc-notched-outline__"] {
+        border-color: map.get(theme.$modino-colors, surface, border);
+      }
+
+      .mdc-floating-label--required::after {
+        content: "";
+      }
+
+      &--focused {
+        &:not(.mdc-text-field--invalid) {
+          .mdc-floating-label {
+            color: map.get(theme.$modino-colors, primary, 900);
+          }
+        }
+      }
+    }
+
+    .mdc-select {
+      width: 100%;
+
+      &:not(.mdc-select--disabled) {
+        &.mdc-select--focused {
+          .mdc-floating-label {
+            color: map.get(theme.$modino-colors, primary, 900);
+          }
+        }
+      }
+
+      [class^="mdc-notched-outline__"] {
+        border-color: map.get(theme.$modino-colors, surface, border);
+      }
+
+      .mdc-floating-label--required::after {
+        content: "";
+      }
+    }
+
+    .mdc-button {
+      text-transform: none;
+      font-weight: bold;
+      align-self: flex-start;
+    }
+  }
+
+  &CheckboxContainer {
+    margin-inline-start: -11px;
+    margin-block-end: theme.spacing(16);
+    display: flex;
+    flex-direction: column;
+    gap: theme.spacing(5);
+
+    :global .mdc-checkbox {
+      --mdc-checkbox-unchecked-color: #{map.get(
+          theme.$modino-colors,
+          surface,
+          border
+        )};
+
+      &.mdc-ripple-upgraded--background-focused {
+        .mdc-checkbox__ripple {
+          &:before {
+            background-color: map.get(theme.$modino-colors, surface, border);
+          }
+        }
+      }
+    }
+  }
+
+  &FieldWrapper {
+    width: 100%;
+  }
+}
+
+.mSelect {
+  .mdc-select:not(.mdc-select--disabled) {
+    &.mdc-select--focused {
+      .mdc-floating-label {
+        color: map.get(theme.$modino-colors, primary, 900);
+      }
+    }
+  }
+  &.mdc-select--focused {
+    .mdc-floating-label {
+      color: map.get(theme.$modino-colors, primary, 900);
+    }
+  }
+  &.mdc-select--invalid {
+    .mdc-floating-label {
+      color: var(--mdc-theme-error);
+    }
+  }
+}
+
+.mLink {
+  color: map.get(theme.$modino-colors, primary, 900);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mFormSection {
+  display: flex;
+  align-items: center;
+  padding: theme.spacing(16, 12);
+  justify-content: center;
+  background-color: map.get(theme.$modino-colors, surface, background);
+  height: 100vh;
+
+  @media (min-width: 1240px) {
+    padding: theme.spacing(30, 40);
+  }
+}
+
+.mImageSection {
+  flex-grow: 1;
+  background-color: map.get(theme.$modino-colors, primary, 900);
+  display: flex;
+  padding: theme.spacing(45, 40);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    display: inline-block;
+    text-align: center;
+    min-width: 0;
+  }
+}
+
+.mLogoImg {
+  margin-block-end: theme.spacing(20);
+}
+
+.mRequestAccessImg {
+  width: 100%;
+  max-width: 500px;
+}
+
+.mRequestMain {
+  height: 100%;
+  max-width: unset;
+  display: grid;
+  grid-template-rows: 100vh 100vh;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 600px) {
+    margin-top: 0;
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}

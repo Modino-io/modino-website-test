@@ -1,0 +1,412 @@
+@use "../../scss/theme";
+@use "sass:map";
+
+.mKeyAspects {
+  width: 100%;
+
+  &List {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-column-gap: theme.spacing(48);
+
+    @media screen and (min-width: 600px) {
+      grid-row-gap: theme.spacing(24);
+    }
+  }
+
+  &Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: 600px) {
+      margin-block-start: theme.spacing(8);
+    }
+
+    &:last-of-type {
+      .m-key-aspects__item-description {
+        margin-block-end: 0;
+      }
+    }
+  }
+
+  &ItemImage {
+    height: 100px;
+    margin-block-end: theme.spacing(12);
+
+    @media (min-width: 600px) and (max-width: 999px) {
+      height: 140px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      height: 180px;
+      margin-block-end: theme.spacing(24);
+    }
+  }
+
+  &ItemTitle {
+    @include theme.m-font("body-1");
+
+    font-weight: 700;
+    margin: 0;
+    margin-block-end: theme.spacing(8);
+  }
+
+  &ItemDescription {
+    margin: 0;
+    margin-block-end: theme.spacing(24);
+
+    @media screen and (min-width: 600px) {
+      margin-block-end: 0;
+    }
+  }
+
+  &ItemImage,
+  &ItemTitle,
+  &ItemDescription {
+    text-align: center;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+
+    @media screen and (min-width: 600px) {
+      padding-inline-start: theme.spacing(12);
+      padding-inline-end: theme.spacing(12);
+    }
+  }
+}
+
+.mSolutionHero {
+  padding-block-end: 0;
+  min-height: unset;
+
+  :global {
+    .m-top-hero__wrapper {
+      width: 100%;
+      text-align: center;
+
+      @media (min-width: 600px) {
+        margin-block-start: theme.spacing(32);
+      }
+    }
+
+    .m-top-hero__title {
+      margin-block-start: theme.spacing(32);
+      @media (min-width: 600px) {
+        margin-block-start: theme.spacing(48);
+      }
+    }
+
+    .m-top-hero__action-button {
+      margin-block-end: theme.spacing(16);
+
+      @media (min-width: 600px) {
+        margin-block-end: theme.spacing(32);
+      }
+    }
+  }
+}
+
+.mSolutionVideo {
+  padding-block-start: 0;
+
+  @media (min-width: 600px) {
+    padding-block-end: theme.spacing(64);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    background-image: url("#{theme.$gatsby-path-prefix}/img/decoration_blob.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 6.8%;
+    width: 100vw;
+    height: 650px;
+
+    @media (min-width: 600px) and (max-width: 799px) {
+      top: calc(10% - 2vw);
+      height: 750px;
+    }
+    @media (min-width: 800px) and (max-width: 1239px) {
+      top: 11%;
+      height: 950px;
+    }
+
+    @media (min-width: 1240px) {
+      top: 12%;
+
+      height: 1100px;
+    }
+  }
+
+  &VideoContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-inline: auto;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      margin-inline: auto;
+      border: none;
+
+      @media screen and (max-width: 800px) {
+        height: 50vw;
+      }
+    }
+  }
+}
+
+.mManifesto {
+  display: flex;
+  flex-direction: column;
+  background-color: map.get(theme.$modino-colors, primary, 900);
+  color: map.get(theme.$modino-colors, surface, text-contrast);
+
+  &Section {
+    &Content {
+      @include theme.m-font("subheading-2");
+      margin: 0;
+    }
+
+    &Subtitle {
+      @include theme.m-font("subheading-2");
+
+      margin-block: theme.spacing(16);
+
+      @media screen and (min-width: 800px) {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  :global .m-section {
+    &__header {
+      margin-block-end: 0;
+    }
+  }
+
+  .mSecurity {
+    &Text {
+      grid-area: text;
+      flex-direction: column;
+      margin-block-end: theme.spacing(16);
+
+      @media (min-width: 800px) {
+        margin-block-end: 0;
+      }
+    }
+
+    &Title {
+      grid-area: title;
+      margin-block-end: theme.spacing(16);
+
+      @media (min-width: 800px) {
+        margin-block-end: theme.spacing(20);
+      }
+    }
+
+    &Wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: theme.spacing(24);
+      grid-template-areas:
+        "title title"
+        "text text"
+        "graph graph";
+      max-width: 100%;
+
+      @media screen and (min-width: 800px) {
+        grid-template-areas:
+          "title graph"
+          "text graph"
+          "text graph";
+      }
+    }
+
+    &Graph {
+      grid-area: graph;
+      width: 100%;
+      @media screen and (min-width: 800px) {
+        flex-grow: 2;
+        margin-block-start: 0;
+      }
+    }
+  }
+
+  .tilesContainer {
+    display: flex;
+    gap: 32px;
+    margin-block-end: theme.spacing(16);
+
+    @media screen and (max-width: 800px) {
+      flex-direction: column;
+      margin-block-end: theme.spacing(24);
+    }
+
+    &.mSecurityText {
+      @media screen and (min-width: 800px) {
+        flex-direction: column;
+      }
+
+      & .mTile {
+        @media screen and (min-width: 800px) {
+          flex-direction: row;
+          gap: 16px;
+        }
+
+        &Icon {
+          @media screen and (min-width: 800px) {
+            align-self: flex-start;
+          }
+        }
+
+        &Content {
+          text-align: start;
+        }
+      }
+    }
+
+    .mTile {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: theme.spacing(4);
+
+      @media screen and (min-width: 800px) {
+        gap: theme.spacing(8);
+      }
+
+      &Icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: map.get(theme.$modino-colors, secondary-1, 200);
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        flex-shrink: 0;
+
+        img {
+          width: 48px;
+        }
+      }
+
+      &Content {
+        @include theme.m-font("body-3");
+        text-align: center;
+      }
+    }
+  }
+
+  .mDemoScreenshot {
+    width: 100%;
+  }
+
+  &Divider {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: rgb(255 255 255 / 0.1724);
+    margin-block: theme.spacing(24);
+  }
+}
+
+.mAdvantages {
+  padding-block: theme.spacing(32);
+
+  .cardsContainer {
+    display: flex;
+    width: 100%;
+    gap: theme.spacing(16);
+    flex-direction: column;
+
+    @media screen and (min-width: 1200px) {
+      flex-direction: row;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.mCard {
+  background-color: map.get(
+    theme.$modino-colors,
+    surface,
+    background-high-contrast
+  );
+  border: 1px solid map.get(theme.$modino-colors, surface, border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: theme.spacing(8);
+  padding: theme.spacing(12) theme.spacing(6);
+  width: 100%;
+
+  &Icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: map.get(theme.$modino-colors, secondary-1, 200);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    img {
+      width: 32px;
+    }
+  }
+
+  &Title {
+    @include theme.m-font("subheading-2");
+    text-align: center;
+  }
+
+  &Content {
+    @include theme.m-font("body-3");
+    text-align: center;
+  }
+}
+
+.mAwards {
+  &Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: theme.spacing(16);
+    padding-inline: theme.spacing(12);
+
+    @media (min-width: 600px) {
+      padding-inline: theme.spacing(32);
+    }
+    @media (min-width: 1200px) {
+      flex-direction: row;
+    }
+  }
+
+  &CybersecurityBanner,
+  &CybersecurityMade {
+    flex: 1;
+
+    max-width: 530px;
+    width: 100%;
+  }
+}
